@@ -2,7 +2,7 @@ import logging
 from discord.ext import commands
 from urllib import request
 import requests
-from raw_tft import RIOT_API, DISCORD_API
+from keys import RIOT_API, DISCORD_API
 
 logging.basicConfig(level=logging.INFO)
 
@@ -22,8 +22,5 @@ async def matches(ctx, summonerName, queue='normal'):
             lambda match: requests.get(f'https://sea.api.riotgames.com/tft/match/v1/matches/{match}?api_key={RIOT_API}').json()['info']['queue_id'] == 1100, matches))
         
     await ctx.reply(f"{summonerName}'s {queue} matches: {len(matches)}")
-
-@bot.command()
-async def help(ctx):
 
 bot.run(DISCORD_API)

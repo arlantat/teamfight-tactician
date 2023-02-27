@@ -1,36 +1,46 @@
 import discord
+import logging
+from discord.ext import commands
 import random
-import asyncio
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print('Logged in as')
-        print(self.user.name)
-        print(self.user.id)
-        print('------')
+logging.basicConfig(level=logging.INFO)
 
-    async def on_message(self, message):
-        # we do not want the bot to reply to itself
-        if message.author.id == self.user.id:
-            return
+bot = commands.Bot(command_prefix="$")
+flag = False
+number = -1
+guesses_left = 20
+rules = "I will think of a secret number from 1 to 1000000. Your mission is to guess it in 20 tries! Simple enough?\n"
 
-        if message.content.startswith('$guess'):
-            await message.channel.send('Guess a number between 1 and 10.')
+@bot.command()
+async def start(ctx):
+    global flag, number
+    flag = True
+    number = random.randint(1, 10**6)
+    await ctx.reply(f'{rules}Please type `$guess [number]` to start guessing!')
 
-            def is_correct(m):
-                return m.author == message.author and m.content.isdigit()
-
-            answer = random.randint(1, 10)
-
-            try:
-                guess = await self.wait_for('message', check=is_correct, timeout=5.0)
-            except asyncio.TimeoutError:
-                return await message.channel.send('Sorry, you took too long it was {}.'.format(answer))
-
-            if int(guess.content) == answer:
-                await message.channel.send('You are right!')
+@bot.command()
+async def guess(ctx, i=None):
+    if i:
+        i = int(i)
+    global flag, guesses_left
+    if not flag:
+        await ctx.reply('There is no session')
+    else:
+        if guesses_left == 0:
+            flag = False
+            await ctx.reply(f"You LOST, it's {number}")
+        if not i:
+            await ctx.reply('You should provide at least a number')
+        else:
+            if i == number:
+                flag = False
+                await ctx.reply('You WIN')
+            elif i < number:
+                guesses_left -= 1
+                await ctx.reply(f'{i} is SMALLER than my secret number')
             else:
-                await message.channel.send('Oops. It is actually {}.'.format(answer))
+                guesses_left -= 1
+                await ctx.reply(f'{i} is BIGGER than my secret number')
 
-client = MyClient()
-client.run('MTAwNjc5ODE3ODY4ODk3MDc3Mg.G5csUe.qWC5BfZ8J59CVcLotLb5w-bxq_PgLLGTMR6-yE')
+
+bot.run('token')
