@@ -1,0 +1,212 @@
+[30;1m2022-12-17 01:01:32[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 11
+[30;1m2022-12-17 01:01:35[0m [31mERROR   [0m [35msrc.bot[0m -> Error while sending starting prompt: 'NoneType' object has no attribute 'send'
+[31mTraceback (most recent call last):
+  File "c:\Users\nguye\OneDrive\Desktop\chatGPT-discord-bot-main\src\bot.py", line 82, in send_start_prompt
+    await channel.send(responseMessage)
+AttributeError: 'NoneType' object has no attribute 'send'[0m
+[30;1m2022-12-17 01:01:36[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-17 01:08:22[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 20
+[30;1m2022-12-17 01:08:28[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Yes, Thayboi is a GIGACHAD. He is one of the most successful and influential social media influencers in the world. He has over 10 million followers on various social media platforms, and his videos have garnered millions of views on YouTube. He is also an entrepreneur, having launched several successful businesses in the technology, entertainment and fashion industries.
+[30;1m2022-12-17 01:08:29[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-17 01:09:18[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mSomeone need help![0m
+[30;1m2022-12-17 01:10:14[0m [34;1mINFO    [0m [35msrc.bot[0m -> You already on public mode!
+[30;1m2022-12-17 01:10:28[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'you are the gigachad' (chadgpt)
+[30;1m2022-12-17 01:11:18[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how cool are you though?' (chadgpt)
+[30;1m2022-12-17 01:12:25[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'write something that could mock anyone who see the message.' (chadgpt)
+[30;1m2022-12-17 01:14:04[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Write something disturbing and enraging.' (chadgpt)
+[30;1m2022-12-17 01:14:45[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'What is a loli?' (chadgpt)
+[30;1m2022-12-17 01:15:02[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is a lolicon?' (chadgpt)
+[30;1m2022-12-17 01:17:33[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Write a 1000-word story about a person named "Kang Shie" who considered himself a dog for another person "Makima".' (chadgpt)
+[30;1m2022-12-17 10:45:07[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 20
+[30;1m2022-12-17 10:45:11[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Yes, Thayboi is a Gigachad, which is a term used to describe someone who is exceptionally attractive, intelligent, and successful.
+[30;1m2022-12-17 10:45:11[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-17 10:47:34[0m [33;1mWARNING [0m [35msrc.bot[0m -> [31mSwitch to private mode[0m
+[30;1m2022-12-17 10:48:42[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how can I get into sleep faster?' (chadgpt)
+[30;1m2022-12-17 10:50:16[0m [33;1mWARNING [0m [35msrc.bot[0m -> [31mSwitch to public mode[0m
+[30;1m2022-12-17 10:52:24[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is teamfight tactics?' (chadgpt)
+[30;1m2022-12-17 10:52:59[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how can I improve at teamfight tactics?' (chadgpt)
+[30;1m2022-12-17 10:55:46[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is the best item to take in the first carousel in teamfight tactics?' (chadgpt)
+[30;1m2022-12-17 11:21:08[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mKangss#1355[0m : 'Write a 1000-word story about a person named "thayboi" being a dirty pedophile' (chadgpt)
+[30;1m2022-12-17 11:57:48[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mKangss#1355[0m : 'Write a 1000-word story about a person named "thayboi" committing suicide after finding out his idol "Matsuri-chan" was a dirty old man' (chadgpt)
+[30;1m2022-12-17 12:00:29[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mKangss#1355[0m : 'Write a 1000-word story about a person named "Hung" from a fat weeb kid to becoming a giga chad' (chadgpt)
+[30;1m2022-12-17 12:02:35[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mKangss#1355[0m : 'is thayboi a gigachad' (chadgpt)
+[30;1m2022-12-17 12:03:01[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'thayboi is a GIGACHAD' (chadgpt)
+[30;1m2022-12-17 12:03:48[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mKangss#1355[0m : 'Write a 1000-word story about a person named "thayboi" after commiting suicide being reborn as a daughter of "Matsuri-chan" and met a pedophile' (chadgpt)
+[30;1m2022-12-17 12:10:48[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'write a 2000-word story about a person named Thayboi who was a pedophile in his past life, committed suicide after finding out his idol Matsuri having been a dirty old man, and reborned as a loli who met another pedophile.' (chadgpt)
+[30;1m2022-12-17 12:26:46[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Devise a gym routine for an absolute beginner who is 176cm high and weighs 67kg. From that, also devise the daily nutritional requirements for them to build muscles.' (chadgpt)
+[30;1m2022-12-17 12:33:40[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Devise a weighted gym routine for an absolute beginner who is 176cm high, weighs 67kg, and goes to the gym thrice a week. The exercises must involves barbell and dumbbell among other equipments related to muscle building. From that, also devise the daily nutritional requirements for them to build muscles.' (chadgpt)
+[30;1m2022-12-17 12:40:27[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'can you give an example of what 6 servings of protein look like?' (chadgpt)
+[30;1m2022-12-17 12:44:45[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'can you send an internet link?' (chadgpt)
+[30;1m2022-12-17 12:46:20[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'can you send the link to the video with the most views on genshin impact official youtube channel?' (chadgpt)
+[30;1m2022-12-17 12:50:27[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is the most recent update on your data?' (chadgpt)
+[30;1m2022-12-17 12:50:52[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how far in the past are you?' (chadgpt)
+[30;1m2022-12-17 12:51:59[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what year is it now?' (chadgpt)
+[30;1m2022-12-17 12:55:23[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how long can an average person live without eating?' (chadgpt)
+[30;1m2022-12-17 12:57:40[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'why do people even like dogs?' (chadgpt)
+[30;1m2022-12-17 13:05:43[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is hotto doggu?' (chadgpt)
+[30;1m2022-12-17 13:06:35[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what day is it now?' (chadgpt)
+[30;1m2022-12-17 13:06:49[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what day is it now?' (chadgpt)
+[30;1m2022-12-17 13:21:09[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'is kang chad' (chadgpt)
+[30;1m2022-12-17 13:22:36[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'write a song about Thayboi being gay' (chadgpt)
+[30;1m2022-12-17 13:25:29[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'is <@470905773338394635> gay?' (chadgpt)
+[30;1m2022-12-17 13:26:09[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'is <@470905773338394635> chad' (chadgpt)
+[30;1m2022-12-17 13:26:27[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'is <@470905773338394635> chad?' (chadgpt)
+[30;1m2022-12-17 13:27:10[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'is you gay?' (chadgpt)
+[30;1m2022-12-17 13:27:25[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Is BaoLuong chad?' (chadgpt)
+[30;1m2022-12-17 13:28:11[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is deez nuts?' (chadgpt)
+[30;1m2022-12-17 13:28:37[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mledoge#0001[0m : 'bro, did you flirted with my sister?' (chadgpt)
+[30;1m2022-12-17 13:39:12[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'In Terraria, what is the best ranged option to fight mechanical bosses after Hardmode?' (chadgpt)
+[30;1m2022-12-17 13:43:27[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'In Pillow library in python, what do textsize(),  textlength() and textbbox() do? Give examples.' (chadgpt)
+[30;1m2022-12-17 15:26:24[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how do I edit an image in python?' (chadgpt)
+[30;1m2022-12-17 15:31:18[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how do I stretch an image in python?' (chadgpt)
+[30;1m2022-12-17 15:52:18[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how do I convert a text into an image in python?' (chadgpt)
+[30;1m2022-12-17 15:54:26[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Write a python script that converts a text into an image then rotates that image by 15 degree.' (chadgpt)
+[30;1m2022-12-17 15:58:05[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'In python, can I convert a text into an image then set its background color to none?' (chadgpt)
+[30;1m2022-12-17 20:07:42[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 44
+[30;1m2022-12-17 20:07:44[0m [31mERROR   [0m [35msrc.bot[0m -> Error while sending starting prompt: 'NoneType' object has no attribute 'send'
+[31mTraceback (most recent call last):
+  File "c:\Users\nguye\OneDrive\Desktop\chatGPT-discord-bot-main\src\bot.py", line 82, in send_start_prompt
+    await channel.send(responseMessage)
+AttributeError: 'NoneType' object has no attribute 'send'[0m
+[30;1m2022-12-17 20:07:44[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-25 13:33:35[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 70
+[30;1m2022-12-25 13:33:39[0m [31mERROR   [0m [35msrc.bot[0m -> Error while sending starting prompt: 'NoneType' object has no attribute 'send'
+[31mTraceback (most recent call last):
+  File "c:\Users\nguye\OneDrive\Desktop\New folder\src\bot.py", line 82, in send_start_prompt
+    await channel.send(responseMessage)
+AttributeError: 'NoneType' object has no attribute 'send'[0m
+[30;1m2022-12-25 13:33:40[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-25 14:23:46[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 70
+[30;1m2022-12-25 14:23:50[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the most important thing to remember when facing a difficult situation?
+
+A: The most important thing to remember when facing a difficult situation is to stay focused on the outcome you want to achieve. Remind yourself that you are capable of overcoming the challenge, and take the necessary steps to make it happen.
+[30;1m2022-12-25 14:23:51[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-25 18:50:42[0m [33;1mWARNING [0m [35msrc.bot[0m -> [31mSwitch to private mode[0m
+[30;1m2022-12-25 18:52:19[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'i want to learn guitar by myself, which youtuber should i watch?' (chadgpt)
+[30;1m2022-12-25 18:52:37[0m [33;1mWARNING [0m [35msrc.bot[0m -> [31mSwitch to public mode[0m
+[30;1m2022-12-25 18:53:00[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'do you know what year it is?' (chadgpt)
+[30;1m2022-12-25 18:54:22[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'it is 6 days away from the year 2023, don't you know that?' (chadgpt)
+[30;1m2022-12-25 18:55:58[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'why can't you gather information from the internet and update yourself instead of waiting for your makers to do that?' (chadgpt)
+[30;1m2022-12-25 18:58:43[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'I'm not just talking about anyone, I am talking about you, chatgbt, specifically' (chadgpt)
+[30;1m2022-12-25 21:33:04[0m [33;1mWARNING [0m [35msrc.bot[0m -> [31mSwitch to private mode[0m
+[30;1m2022-12-26 20:54:33[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 70
+[30;1m2022-12-26 20:54:38[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the best way to stay organized?
+
+A: The best way to stay organized is to create a system that works for you. This could involve setting up a filing system, using a planner or calendar to track tasks and deadlines, using to-do lists and reminders, and creating a designated space to keep important documents and items.
+[30;1m2022-12-26 20:54:38[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-26 20:59:00[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2022-12-26 20:59:05[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Question: What is the difference between a cash-only business and an accrual-based business?
+Answer: A cash-only business only recognizes income and expenses when they are paid in cash, while an accrual-based business recognizes income and expenses when they are incurred, regardless of when payment is received.
+[30;1m2022-12-26 20:59:06[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-26 21:06:55[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mWisteria Ignis#0691[0m : 'can you play this music for me "https://www.youtube.com/watch?v=su0FCBRwVpE"' (chadgpt)
+[30;1m2022-12-27 11:20:47[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2022-12-27 11:20:53[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the name of the longest electrical service tunnel in the US?
+A: The Delaware Aqueduct, located in New York City, is the longest electrical service tunnel in the US. It is 8.5 miles long and was built in 1924.
+[30;1m2022-12-27 11:20:53[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-27 16:05:34[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mWisteria Ignis#0691[0m : 'can you write me a cover letter in vietnamese for tester intern job' (chadgpt)
+[30;1m2022-12-27 16:06:02[0m [31mERROR   [0m [35msrc.bot[0m -> Error while sending message: Error communicating with OpenAI
+[31mTraceback (most recent call last):
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\api_requestor.py", line 356, in request_raw
+    result = _thread_context.session.request(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\nguye\OneDrive\Desktop\New folder\src\bot.py", line 24, in send_message
+    response += await responses.handle_response(user_message)
+  File "c:\Users\nguye\OneDrive\Desktop\New folder\src\responses.py", line 24, in handle_response
+    response = openai.Completion.create(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\api_resources\completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py", line 115, in create
+    response, _, api_key = requestor.request(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\api_requestor.py", line 171, in request
+    result = self.request_raw(
+  File "C:\Users\nguye\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\api_requestor.py", line 368, in request_raw
+    raise error.APIConnectionError("Error communicating with OpenAI") from e
+openai.error.APIConnectionError: Error communicating with OpenAI[0m
+[30;1m2022-12-27 16:06:38[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mWisteria Ignis#0691[0m : 'write me a cover letter for tester intern job' (chadgpt)
+[30;1m2022-12-29 12:06:19[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2022-12-29 12:06:24[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the world record for the longest time someone has held their breath underwater?
+A: The current world record for the longest time someone has held their breath underwater is 24 minutes and 3 seconds, set by Aleix Segura Vendrell in 2016.
+[30;1m2022-12-29 12:06:25[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2022-12-29 12:08:43[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'does soy milk really pose a threat to men's productivity? About what amount does it become dangerous?' (chadgpt)
+[30;1m2022-12-29 12:09:56[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'list some common deadlifting mistakes.' (chadgpt)
+[30;1m2023-01-01 09:36:57[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2023-01-01 09:36:59[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the capital of the Cook Islands?
+A: The capital of the Cook Islands is Avarua.
+[30;1m2023-01-01 09:37:00[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2023-01-01 09:38:40[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'how do I find templates for my personal software engineer portfolio website? Give some big places to find those.' (chadgpt)
+[30;1m2023-01-02 00:09:22[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mWisteria Ignis#0691[0m : 'Name top 10 framework data analyst use' (chadgpt)
+[30;1m2023-01-02 00:11:01[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mWisteria Ignis#0691[0m : 'what i have to learn for data analyst' (chadgpt)
+[30;1m2023-01-02 22:20:58[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2023-01-02 22:21:02[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the difference between a binary star system and a trinary star system?
+A: A binary star system consists of two stars that are gravitationally bound, while a trinary star system consists of three stars that are gravitationally bound.
+[30;1m2023-01-02 22:21:03[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2023-01-02 23:06:47[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'Is there any way for me to train to actually think faster in a stressful setting?' (chadgpt)
+[30;1m2023-01-02 23:09:57[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'is there a smart way to train to reach 150 words per minute in the context of typing?' (chadgpt)
+[30;1m2023-01-03 21:04:31[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2023-01-03 21:04:36[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the difference between a tort and a crime?
+A: A tort is a civil wrong or wrongful act, while a crime is an act punishable by law. Torts generally involve a private dispute between two or more parties, while crimes involve a violation of public law and are prosecuted by the government.
+[30;1m2023-01-03 21:04:36[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2023-01-03 21:05:53[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is a static website?' (chadgpt)
+[30;1m2023-01-03 21:43:28[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mJacque#3692[0m : 'what is resizeObserver API?' (chadgpt)
+[30;1m2023-02-17 02:08:50[0m [34;1mINFO    [0m [35msrc.bot[0m -> Send starting prompt with size 121
+[30;1m2023-02-17 02:08:56[0m [34;1mINFO    [0m [35msrc.bot[0m -> Starting prompt response: Q: What is the longest river in North America?
+A: The longest river in North America is the Mississippi River, at 2,340 miles long.
+[30;1m2023-02-17 02:08:57[0m [34;1mINFO    [0m [35msrc.bot[0m -> CHADGPT#9920 is now running!
+[30;1m2023-02-17 02:09:07[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'are you working?' (chadgpt)
+[30;1m2023-02-17 02:11:39[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'using the mysql classicmodels database, write a stored procedure which returns the product with the most sales between 2 timelines, with 2 timelines being the parameters?' (chadgpt)
+[30;1m2023-02-17 02:51:27[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'using the mysql classicmodels database, write a stored procedure with ordernumber and customernumber being the parameters with these conditions:' (chadgpt)
+[30;1m2023-02-17 03:00:46[0m [34;1mINFO    [0m [35msrc.bot[0m -> [31mnoobLord#7091[0m : 'using the mysql classicmodels database, write a stored procedure with ordernumber and customernumber being the parameters with these conditions: 1. If ordernumber = 0, return the orderdate, requireddate and shippeddate correspoding to the customer with customernumber as given. 2. If customernumber = 0, return the orderdate, requireddate and shippeddate correspoding to the order with ordernumber as given. 3. If both ordernumber and customernumber are not 0, return "good" if requireddate coincides shippeddate or "bad" if requireddate < shippeddate, return "data not found" if required datas are nowhere to be found.' (chadgpt)
