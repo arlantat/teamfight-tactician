@@ -1,3 +1,5 @@
+# unmaintained
+
 import logging
 from discord.ext import commands
 from urllib import request

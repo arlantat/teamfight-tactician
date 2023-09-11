@@ -5,10 +5,26 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+def main():
+    con = sqlite3.connect("raw_matches.db")
+    cur = con.cursor()
+
+    # will double check this again
+    # insert_match(cur, 'na1', 'NA1_4761820603')
+    # cur.execute('SELECT * FROM matches')
+    # print(len(cur.fetchall()))
+    # cur.execute('SELECT * FROM player_states')
+    # print(len(cur.fetchall()))
+    # cur.execute('SELECT * FROM unit_states')
+    # print(len(cur.fetchall()))
+    # cur.execute('SELECT * FROM trait_states')
+    # print(len(cur.fetchall()))
+    con.close()
+
 logging.basicConfig(level=logging.INFO)
 SERVERS = ['br1','eun1','euw1','jp1','kr','la1','la2','na1','oc1','ph2','ru','sg2','th2','tr1','tw2','vn2']
 REGIONS = ['americas', 'asia', 'europe', 'sea']
-VERSION = 'VERSION 13.17'
+VERSION = 'Version 13.17'
 MAPPINGS = {
     SERVERS[0]: REGIONS[0],
     SERVERS[1]: REGIONS[2],
@@ -29,21 +45,42 @@ MAPPINGS = {
     }
 RIOT_API = os.environ.get('RIOT_API')
 
-def match_info(region, match):
-    url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/{match}"
+def insert_match(cursor, server, match_id):
+    region = server_to_region(server)
+    url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/{match_id}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
         print(res.status_code)
         return
-    info = res.json()['info']
-    if info['game_version'].startswith(VERSION):
-        con = sqlite3.connect("matches.db")
-        cur = con.cursor()
+    json = res.json()
+    info = json['info']
+    if info['game_version'].startswith(VERSION) and info['queue_id'] == 1100:
+        cursor.execute("INSERT OR IGNORE INTO matches (match_id) VALUES (?)", (match_id,))
+        if cursor.rowcount == 0:  # duplicate match
+            print('wtf2')
+            return
         for participant in info['participants']:
-            ...
-
-
+            augments = participant['augments']
+            while len(augments) < 3:
+                augments.append(None)
+            cursor.execute("""
+                INSERT INTO player_states (puuid, match_id, augment1, augment2, augment3, placement)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (participant['puuid'], match_id, augments[0], augments[1], augments[2], participant['placement'],))
+            for unit in participant['units']:
+                items = unit['itemNames']
+                while len(items) < 3:
+                    items.append(None)
+                cursor.execute("""
+                    INSERT INTO unit_states (character_id, puuid, match_id, tier, item1, item2, item3)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                """, (unit['character_id'], participant['puuid'], match_id, unit['tier'], items[0], items[1], items[2],))
+            for trait in participant['traits']:
+                cursor.execute("""
+                    INSERT INTO trait_states (name, puuid, match_id, tier_current)
+                    VALUES (?, ?, ?, ?)
+                """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
 
 def get_puuid(server, summonerName):
     url = f"https://{server}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}"
@@ -53,7 +90,7 @@ def get_puuid(server, summonerName):
         print(res.status_code)
         return
     json = res.json()
-    region = MAPPINGS[server]
+    region = server_to_region(server)
     return json['puuid'], region
 
 
@@ -87,4 +124,8 @@ def get_league(server, league):
             print(entry)
     print(f'{league}s count in {server}: {cnt}')
 
-print(matches('na1', 'C9 k3soju', count=5))
+def server_to_region(server):
+    return MAPPINGS[server]
+
+if __name__ == "__main__":
+    main()
