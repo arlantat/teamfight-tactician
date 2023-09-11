@@ -45,6 +45,7 @@ MAPPINGS = {
     }
 RIOT_API = os.environ.get('RIOT_API')
 
+# 92 traits for 1 match alone is quite a problem. That's because even inactive traits are stored.
 def insert_match(cursor, server, match_id):
     region = server_to_region(server)
     url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/{match_id}"
