@@ -3,6 +3,7 @@ import logging
 import requests
 import os
 import random
+import time
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -10,10 +11,10 @@ req = 0
 def main():
     con = sqlite3.connect("raw_matches.db")
     cur = con.cursor()
-    server = 'vn2'
-    region = server_to_region(server)
-    server_to_matches(cur, server, region)
-    print(req)
+    # server = 'vn2'
+    ## region = server_to_region(server)
+    # server_to_matches(cur, server, region)
+    check_db(cur)
     con.close()
 
 logging.basicConfig(level=logging.INFO)
@@ -46,6 +47,7 @@ def insert_match(cursor, server, region, match_id):
     res = requests.get(url, headers=headers)
     global req
     req += 1
+    checkreq()
     if res.status_code != 200:
         print(res.status_code)
         return
@@ -78,44 +80,54 @@ def insert_match(cursor, server, region, match_id):
                         VALUES (?, ?, ?, ?)
                     """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
 
-def summoner_to_matches(cursor, server, region, summonerName, count=10):
-    '''return list_of_matches and region'''
+def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
+    '''return list_of_matches'''
     puuid = name_to_puuid(server, server_to_region(server), summonerName)
+    if puuid is None:
+        return
     url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?count={count}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
     global req
     req += 1
+    checkreq()
     if res.status_code != 200:
         print(res.status_code)
-        return
+        return []
     list_of_matches = res.json()
     return list_of_matches
 
 def server_to_matches(cursor, server, region):
-    '''from a given server, insert 10 closest matches from each of 2000 players'''
+    '''
+        from a given server, insert 10 closest matches from each of 2000 players to the database.
+        for now only challengers (~500ish) as rate limit is not feeling good.
+    '''
+
     challengers = get_league(cursor, server, region, 'challenger')
-    grandmasters = get_league(cursor, server, region, 'grandmaster')
-    mastercnt = 2000 - len(challengers) - len(grandmasters)
-    masters = get_league(cursor, server, region, 'master', mastercnt)
+    # grandmasters = get_league(cursor, server, region, 'grandmaster')
+    # mastercnt = 2000 - len(challengers) - len(grandmasters)
+    # masters = get_league(cursor, server, region, 'master', mastercnt)
     print(req)
+    cnt = 0
     for name in challengers:
         list_of_matches = summoner_to_matches(cursor, server, region, name)
         print('success')
+        cnt += 1
+        print(cnt)
         for match in list_of_matches:
             print(req)
             if match is not None:
                 insert_match(cursor, server, region, match)
-    for name in grandmasters:
-        list_of_matches = summoner_to_matches(cursor, server, region, name)
-        for match in list_of_matches:
-            insert_match(cursor, server, region, match)
-    for name in masters:
-        list_of_matches = summoner_to_matches(cursor, server, region, name)
-        for match in list_of_matches:
-            insert_match(cursor, server, region, match)
+    # for name in grandmasters:
+    #     list_of_matches = summoner_to_matches(cursor, server, region, name)
+    #     for match in list_of_matches:
+    #         insert_match(cursor, server, region, match)
+    # for name in masters:
+    #     list_of_matches = summoner_to_matches(cursor, server, region, name)
+    #     for match in list_of_matches:
+    #         insert_match(cursor, server, region, match)
 
-def get_league(cursor, server, region, league, mastercnt=0):
+def get_league(cursor, server, region, league, mastercnt=0) -> list:
     '''league: master, grandmaster, master'''
     '''return list of summonerName'''
 
@@ -124,9 +136,10 @@ def get_league(cursor, server, region, league, mastercnt=0):
     res = requests.get(url, headers=headers)
     global req
     req += 1
+    checkreq()
     if res.status_code != 200:
         print(res.status_code)
-        return
+        return []
     json = res.json()
 
     if league == 'master':
@@ -147,11 +160,28 @@ def name_to_puuid(server, region, summonerName):
     res = requests.get(url, headers=headers)
     global req
     req += 1
+    checkreq()
     if res.status_code != 200:
         print(res.status_code)
         return
     json = res.json()
     return json['puuid']
+
+def checkreq():  # rate limit
+    global req
+    if req >= 100:
+        req = 0
+        time.sleep(60)
+
+def check_db(cursor):
+    cursor.execute("SELECT COUNT(*) FROM matches")
+    print(cursor.fetchone()[0])
+    cursor.execute("SELECT COUNT(*) FROM player_states")
+    print(cursor.fetchone()[0])
+    cursor.execute("SELECT COUNT(*) FROM unit_states")
+    print(cursor.fetchone()[0])
+    cursor.execute("SELECT COUNT(*) FROM trait_states")
+    print(cursor.fetchone()[0])
 
 if __name__ == "__main__":
     main()
