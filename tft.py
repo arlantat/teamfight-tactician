@@ -91,8 +91,6 @@ def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
     url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?count={count}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
-    global req
-    req += 1
     if res.status_code != 200:
         print(res.status_code)
         return []
@@ -132,8 +130,6 @@ def get_league(cursor, server, region, league, mastercnt=0) -> list:
     url = f"https://{server}.api.riotgames.com/tft/league/v1/{league}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
-    global req
-    req += 1
     if res.status_code != 200:
         print(res.status_code)
         return []
