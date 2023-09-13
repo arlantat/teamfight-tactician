@@ -9,14 +9,15 @@ UNITS1 = ['TFT9_Graves','TFT9_Orianna','TFT9_Illaoi','TFT9_Renekton','TFT9_Ireli
 UNITS2 = ['TFT9_Vi','TFT9_Naafiri','TFT9_Taliyah','TFT9_Swain','TFT9_Warwick','TFT9_Soraka','TFT9_Qiyana','TFT9_Galio','TFT9_TwistedFate','TFT9_Sett','TFT9_Ashe','TFT9_Jinx','TFT9_Kassadin',]
 UNITS3 = ['TFT9_Jayce','TFT9_Ekko','TFT9_Nautilus','TFT9_MissFortune','TFT9_Taric','TFT9_Neeko','TFT9_Katarina','TFT9_Quinn','TFT9_Darius','tft9_reksai','TFT9_Karma','TFT9_Sona','TFT9_VelKoz',]
 UNITS4 = ['TFT9_Nilah','TFT9_Silco','TFT9_JarvanIV','TFT9_Azir','TFT9_Nasus','TFT9_Fiora','TFT9_KaiSa','TFT9_Sejuani','TFT9_Mordekaiser','TFT9_Xayah','TFT9_Shen','TFT9_Aphelios',]
-# miss ryze noxus, shadowisles, zaun, will confirm all ryzes
-UNITS5 = ['TFT9_KSante','TFT9b_Aatrox','TFT9_Heimerdinger','TFT9_Sion','TFT9_Gangplank','TFT9_Ahri','TFT9_BelVeth','TFT9_RyzeTargon','TFT9_RyzeShurima','TFT9_RyzePiltover','TFT9_RyzeIonia','TFT9_RyzeBandleCity','TFT9_RyzeDemacia','TFT9_RyzeFreljord','TFT9_RyzeNoxus','TFT9_RyzeShadowIsles','TFT9_RyzeZaun',]
+# miss TFT9_RyzeNoxus, TFT9_RyzeShadowIsles, TFT9_RyzeZaun, TFT9_RyzeIxtal, TFT9_RyzeBilgewater will confirm all ryzes
+UNITS5 = ['TFT9_KSante','TFT9b_Aatrox','TFT9_Heimerdinger','TFT9_Sion','TFT9_Gangplank','TFT9_Ahri','TFT9_BelVeth','TFT9_RyzeTargon','TFT9_RyzeShurima','TFT9_RyzePiltover','TFT9_RyzeIonia','TFT9_RyzeBandleCity','TFT9_RyzeDemacia','TFT9_RyzeFreljord','TFT9_RyzeNoxus','TFT9_RyzeShadowIsles','TFT9_RyzeZaun','TFT9_RyzeBilgewater','TFT9_RyzeIxtal']
 # armorclad = juggernaut, marksman = gunner, preserver = invoker
 TRAITS = ['Set9_Armorclad','Set9_Bruiser','Set9_Marksman','Set9_Piltover','Set9_Rogue','Set9_Sorcerer','Set9_Zaun','Set9b_Bilgewater','Set9b_Vanquisher','Set9_Bastion','Set9_Demacia','Set9_Shurima','Set9_Strategist','Set9_Challenger','Set9_Multicaster','Set9_Noxus','Set9_Slayer','Set9b_Darkin','Set9_Preserver','Set9_Targon','Set9_Technogenius','Set9_Ionia','Set9_Void','Set9_Ixtal','Set9_Freljord','Set9_Wanderer','Set9_ReaverKing','Set9_Empress',]
 RIOT_API = os.environ.get('RIOT_API')
 
 def init_db():
     con = sqlite3.connect("raw_matches.db")
+    con.isolation_level = None
     cur = con.cursor()
     cur.execute("CREATE TABLE matches(match_id TEXT PRIMARY KEY)")
     cur.execute("""
@@ -67,13 +68,25 @@ def init_db():
     """)
     con.close()
 
-def reset_db():
-    db_file_path = "raw_matches.db"
-    if os.path.exists(db_file_path):
-        os.remove(db_file_path)
-    init_db()
+def reset_db(per_set=False):
+    '''if per_set is set to True, also wipes units and traits tables'''
+    if per_set:
+        db_file_path = "raw_matches.db"
+        if os.path.exists(db_file_path):
+            os.remove(db_file_path)
+        init_db()
+        return
+    con = sqlite3.connect("raw_matches.db")
+    con.isolation_level = None
+    cur = con.cursor()
+    cur.execute("DELETE FROM matches")
+    cur.execute("DELETE FROM player_states")
+    cur.execute("DELETE FROM unit_states")
+    cur.execute("DELETE FROM trait_states")
+    con.close()
 
 def init_per_set():
+    reset_db(True)
     con = sqlite3.connect("raw_matches.db")
     con.isolation_level = None
     cur = con.cursor()
@@ -115,10 +128,23 @@ def init_per_set():
     con.close()
 
 def manual_per_set():
-    ...
+    con = sqlite3.connect("raw_matches.db")
+    con.isolation_level = None
+    cur = con.cursor()
+    character_ids = ['TFT9_RyzeNoxus','TFT9_RyzeShadowIsles','TFT9_RyzeZaun','TFT9_RyzeBilgewater','TFT9_RyzeIxtal']
+    for character_id in character_ids:
+        cur.execute("SELECT * FROM units WHERE character_id = ?", (character_id,))
+        if cur.fetchone() is not None:
+            continue
+        cur.execute("""
+            INSERT INTO units (character_id, rarity)
+            VALUES (?, ?)
+        """, (character_id, 6))
+    con.close()
 
 # reset_db()
 # init_per_set()
+# manual_per_set()
 # print(len(UNITS1))
 # print(len(UNITS2))
 # print(len(UNITS3))

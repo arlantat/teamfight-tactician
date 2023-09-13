@@ -11,14 +11,14 @@ def main():
     con = sqlite3.connect("raw_matches.db")
     con.isolation_level = None
     cur = con.cursor()
-    cur.execute('SELECT * FROM units')
-    print(f"Number of units is {len(cur.fetchall())}")
-    cur.execute('SELECT * FROM traits')
-    print(f"Number of traits is {len(cur.fetchall())}")
-    server = 'na1'
-    region = server_to_region(server)
+    server = 'vn2'
+    region = server_to_region(server) 
+    list_of_matches = summoner_to_matches(cur, server, region, 'Huyee')
+    print('found summoner!')
+    for match in list_of_matches:
+        insert_match(cur, server, region, match)
     # server_to_matches(cur, server, region)
-    # check_db(cur)
+    check_db(cur)
     con.close()
 
 logging.basicConfig(level=logging.INFO)
@@ -163,13 +163,13 @@ def name_to_puuid(server, region, summonerName):
 
 def check_db(cursor):
     cursor.execute("SELECT COUNT(*) FROM matches")
-    print(cursor.fetchone()[0])
+    print(f"matches: {cursor.fetchone()[0]}")
     cursor.execute("SELECT COUNT(*) FROM player_states")
-    print(cursor.fetchone()[0])
+    print(f"player_states: {cursor.fetchone()[0]}")
     cursor.execute("SELECT COUNT(*) FROM unit_states")
-    print(cursor.fetchone()[0])
+    print(f"unit_states: {cursor.fetchone()[0]}")
     cursor.execute("SELECT COUNT(*) FROM trait_states")
-    print(cursor.fetchone()[0])
+    print(f"trait_states: {cursor.fetchone()[0]}")
 
 if __name__ == "__main__":
     main()
