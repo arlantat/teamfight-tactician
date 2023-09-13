@@ -9,19 +9,23 @@ load_dotenv()
 
 def main():
     con = sqlite3.connect("raw_matches.db")
+    con.isolation_level = None
     cur = con.cursor()
+    cur.execute('SELECT * FROM units')
+    print(f"Number of units is {len(cur.fetchall())}")
+    cur.execute('SELECT * FROM traits')
+    print(f"Number of traits is {len(cur.fetchall())}")
     server = 'na1'
     region = server_to_region(server)
-    server_to_matches(cur, server, region)
-    con.commit()
-    check_db(cur)
+    # server_to_matches(cur, server, region)
+    # check_db(cur)
     con.close()
 
 logging.basicConfig(level=logging.INFO)
 SERVERS = ['br1','eun1','euw1','jp1','kr','la1','la2','na1','oc1','ph2','ru','sg2','th2','tr1','tw2','vn2']
 REGIONS = ['americas', 'asia', 'europe', 'sea']
-VERSION = 'Version 13.17'
-MAPPINGS = {  # this is not 100% true, for now I can only verify na1 and vn2
+VERSION = 'Version 13.18'
+MAPPINGS = {  # na1, vn2, kr confirmed
     SERVERS[0]: REGIONS[0],
     SERVERS[1]: REGIONS[2],
     SERVERS[2]: REGIONS[2],
