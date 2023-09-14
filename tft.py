@@ -45,16 +45,35 @@ MAPPINGS = {  # na1, vn2, kr confirmed
     }
 RIOT_API = os.environ.get('RIOT_API')
 
-def unit_avg(cursor):
-    cursor.execute('SELECT character_id, CAST(sum_placement AS REAL) / num_placement AS avg FROM units')
+def augment_avg(cursor):
+    cursor.execute('SELECT name, tier_current, CAST(sum_placement AS REAL) / num_placement AS avg FROM traits')
+    rows = cursor.fetchall()
+    li = []
+    for row in rows:
+        name, tier_current, avg = row[0], row[1], row[2]
+        if avg is not None:
+            li.append((name, tier_current, avg))
+    li.sort(key=lambda x: x[2])
+    for name, tier_current, avg in li:
+        print(f"average placement of tier {tier_current} {name} is {avg:.2f}")
+
+def unit_avg(cursor, maxed=False):
+    table = 'units'
+    if maxed:
+        table = 'units_3'
+    cursor.execute(f'SELECT character_id, CAST(sum_placement AS REAL) / num_placement AS avg FROM {table}')
     rows = cursor.fetchall()
     li = []
     for row in rows:
         character_id, avg = row[0], row[1]
-        li.append((character_id, avg))
+        if avg is not None:
+            li.append((character_id, avg))
     li.sort(key=lambda x: x[1])
     for character_id, avg in li:
-        print(f"average placement of {character_id} is {avg:.2f}")
+        if maxed:
+            print(f"average placement of 3 star {character_id} is {avg:.2f}")
+        else:
+            print(f"average placement of {character_id} is {avg:.2f}")
 
 def insert_match(cursor, server, region, match_id):
     # save unnecessary get requests
@@ -91,12 +110,23 @@ def insert_match(cursor, server, region, match_id):
                     INSERT INTO unit_states (character_id, puuid, match_id, tier, item1, item2, item3)
                     VALUES (?, ?, ?, ?, ?, ?, ?)
                 """, (unit['character_id'], participant['puuid'], match_id, unit['tier'], items[0], items[1], items[2],))
+                cursor.execute("""
+                    UPDATE units SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE character_id = ?
+                """, (participant['placement'], unit['character_id']))
+                if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units
+                    cursor.execute("""
+                        UPDATE units_3 SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE character_id = ?
+                    """, (participant['placement'], unit['character_id']))
             for trait in participant['traits']:
                 if trait['tier_current'] > 0:
                     cursor.execute("""
                         INSERT INTO trait_states (name, puuid, match_id, tier_current)
                         VALUES (?, ?, ?, ?)
                     """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
+                    cursor.execute("""
+                        UPDATE traits SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 
+                        WHERE name = ? AND tier_current = ?
+                    """, (participant['placement'], trait['name'], trait['tier_current']))
 
 def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
     '''return list_of_matches'''

@@ -41,6 +41,13 @@ def init_db():
         )
     """)
     cur.execute("""
+        CREATE TABLE units_3 (
+            character_id TEXT PRIMARY KEY,
+            sum_placement INTEGER,
+            num_placement INTEGER
+        )
+    """)
+    cur.execute("""
         CREATE TABLE unit_states (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             character_id TEXT,
@@ -53,20 +60,22 @@ def init_db():
         )
     """)
     # per set
-    # needs redesign to name, tier_current
     cur.execute("""
         CREATE TABLE traits (
-            name TEXT PRIMARY KEY,
-            tier_total INTEGER
+            name TEXT,
+            tier_current INTEGER,
+            sum_placement INTEGER,
+            num_placement INTEGER,
+            PRIMARY KEY (name, tier_current)
         )
     """)
     cur.execute("""
         CREATE TABLE trait_states (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             puuid TEXT,
             match_id TEXT,
-            tier_current INTEGER
+            tier_current INTEGER,
+            PRIMARY KEY (name, puuid, match_id)
         )
     """)
     con.close()
