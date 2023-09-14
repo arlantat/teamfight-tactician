@@ -45,6 +45,17 @@ MAPPINGS = {  # na1, vn2, kr confirmed
     }
 RIOT_API = os.environ.get('RIOT_API')
 
+def unit_avg(cursor):
+    cursor.execute('SELECT character_id, CAST(sum_placement AS REAL) / num_placement AS avg FROM units')
+    rows = cursor.fetchall()
+    li = []
+    for row in rows:
+        character_id, avg = row[0], row[1]
+        li.append((character_id, avg))
+    li.sort(key=lambda x: x[1])
+    for character_id, avg in li:
+        print(f"average placement of {character_id} is {avg:.2f}")
+
 def insert_match(cursor, server, region, match_id):
     # save unnecessary get requests
     cursor.execute("SELECT * FROM matches WHERE match_id = ?", (match_id,))

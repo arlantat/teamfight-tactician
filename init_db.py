@@ -35,7 +35,9 @@ def init_db():
     cur.execute("""
         CREATE TABLE units (
             character_id TEXT PRIMARY KEY,
-            rarity INTEGER
+            rarity INTEGER,
+            sum_placement INTEGER,
+            num_placement INTEGER
         )
     """)
     cur.execute("""
@@ -51,6 +53,7 @@ def init_db():
         )
     """)
     # per set
+    # needs redesign to name, tier_current
     cur.execute("""
         CREATE TABLE traits (
             name TEXT PRIMARY KEY,
