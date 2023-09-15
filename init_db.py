@@ -81,12 +81,14 @@ def init_db():
     con.close()
 
 def reset_db(per_set=False):
-    '''if per_set is set to True, also wipes units and traits tables'''
+    '''if per_set is set to True, wipes the entire db'''
     if per_set:
         db_file_path = "raw_matches.db"
         if os.path.exists(db_file_path):
             os.remove(db_file_path)
         init_db()
+        sample_matches = ["KR_6699363465","KR_6699331498","KR_6699306560","KR_6699280913","KR_6699266683","OC1_585314895","OC1_585315221","OC1_585309892","OC1_585310292","OC1_585305572","OC1_585300927","OC1_585300609","KR_6699383920","KR_6699352607","KR_6699330790","KR_6699314296","KR_6699294617"]
+        init_per_set(sample_matches)
         return
     con = sqlite3.connect("raw_matches.db")
     con.isolation_level = None
@@ -95,14 +97,15 @@ def reset_db(per_set=False):
     cur.execute("DELETE FROM player_states")
     cur.execute("DELETE FROM unit_states")
     cur.execute("DELETE FROM trait_states")
+    cur.execute("UPDATE units SET sum_placement = NULL, num_placement = NULL")
+    cur.execute("UPDATE units_3 SET sum_placement = NULL, num_placement = NULL")
+    cur.execute("UPDATE traits SET sum_placement = NULL, num_placement = NULL")
     con.close()
 
-def init_per_set():
-    reset_db(True)
+def init_per_set(sample_matches):
     con = sqlite3.connect("raw_matches.db")
     con.isolation_level = None
     cur = con.cursor()
-    sample_matches = ["KR_6699363465","KR_6699331498","KR_6699306560","KR_6699280913","KR_6699266683","OC1_585314895","OC1_585315221","OC1_585309892","OC1_585310292","OC1_585305572","OC1_585300927","OC1_585300609","KR_6699383920","KR_6699352607","KR_6699330790","KR_6699314296","KR_6699294617"]
     cnt = 1
     for match in sample_matches:
         print(f"match number {cnt}, currently {match}")
@@ -125,10 +128,11 @@ def init_per_set():
                 cur.execute("SELECT * FROM traits WHERE name = ?", (trait['name'],))
                 if cur.fetchone() is not None:  # skip stored traits
                     continue
-                cur.execute("""
-                    INSERT INTO traits (name, tier_total)
-                    VALUES (?, ?)
-                """, (trait['name'], trait['tier_total']))
+                for i in range(1, trait['tier_total']+1):
+                    cur.execute("""
+                        INSERT INTO traits (name, tier_current)
+                        VALUES (?, ?)
+                    """, (trait['name'], i))
             for unit in participant['units']:
                 cur.execute("SELECT * FROM units WHERE character_id = ?", (unit['character_id'],))
                 if cur.fetchone() is not None:
@@ -137,6 +141,11 @@ def init_per_set():
                     INSERT INTO units (character_id, rarity)
                     VALUES (?, ?)
                 """, (unit['character_id'], unit['rarity']))
+                if unit['rarity'] in [0, 1, 2]:
+                    cur.execute("""
+                        INSERT INTO units_3 (character_id)
+                        VALUES (?)
+                    """, (unit['character_id'],))
     con.close()
 
 def manual_per_set():

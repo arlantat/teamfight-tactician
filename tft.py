@@ -13,12 +13,20 @@ def main():
     cur = con.cursor()
     server = 'vn2'
     region = server_to_region(server) 
-    list_of_matches = summoner_to_matches(cur, server, region, 'Huyee')
-    print('found summoner!')
-    for match in list_of_matches:
-        insert_match(cur, server, region, match)
+    players = ['Hôm Nay Tí Buồn', 'DNR Cu Chỉ Ngược', 'htd2006', 'p1va', 'HNZ MIDFEEDD', 'Sự Tĩnh Lặng', 'Cold snap', 'Onlive TrungVla', 'VN YBY1', 'KND Finn']
+    # for player in players:
+    #     list_of_matches = summoner_to_matches(cur, server, region, player)
+    #     print('found summoner!')
+    #     for match in list_of_matches:
+    #         insert_match(cur, server, region, match)
     # server_to_matches(cur, server, region)
-    check_db(cur)
+    # trait_avg(cur)
+    # print("-------------------------")
+    # unit_avg(cur)
+    # print("-------------------------")
+    # unit_avg(cur, True)
+    # print("-------------------------")
+    # check_db(cur)
     con.close()
 
 logging.basicConfig(level=logging.INFO)
@@ -46,6 +54,18 @@ MAPPINGS = {  # na1, vn2, kr confirmed
 RIOT_API = os.environ.get('RIOT_API')
 
 def augment_avg(cursor):
+    cursor.execute('SELECT name, CAST(sum_placement AS REAL) / num_placement AS avg FROM augments')
+    rows = cursor.fetchall()
+    li = []
+    for row in rows:
+        name, avg = row[0], row[1]
+        if avg is not None:
+            li.append((name, avg))
+    li.sort(key=lambda x: x[1])
+    for name, avg in li:
+        print(f"average placement of {name} is {avg:.2f}")
+
+def trait_avg(cursor):
     cursor.execute('SELECT name, tier_current, CAST(sum_placement AS REAL) / num_placement AS avg FROM traits')
     rows = cursor.fetchall()
     li = []
@@ -96,6 +116,16 @@ def insert_match(cursor, server, region, match_id):
         cursor.execute("INSERT INTO matches (match_id) VALUES (?)", (match_id,))
         for participant in info['participants']:
             augments = participant['augments']
+            for name in augments:
+                cursor.execute('SELECT name FROM augments WHERE name = ?', (name,))
+                if cursor.fetchone() is None:
+                    cursor.execute('''INSERT INTO augments (name, sum_placement, num_placement)
+                                VALUES (?, ?, ?)
+                                ''', (name, participant['placement'], 1))
+                else:
+                    cursor.execute('''UPDATE augments SET sum_placement = sum_placement + ?, num_placement = num_placement + 1
+                                WHERE name = ?
+                                ''', (participant['placement'], name))
             while len(augments) < 3:
                 augments.append(None)
             cursor.execute("""
@@ -113,7 +143,7 @@ def insert_match(cursor, server, region, match_id):
                 cursor.execute("""
                     UPDATE units SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE character_id = ?
                 """, (participant['placement'], unit['character_id']))
-                if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units
+                if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units for tier 3 and below
                     cursor.execute("""
                         UPDATE units_3 SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE character_id = ?
                     """, (participant['placement'], unit['character_id']))
