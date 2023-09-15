@@ -20,12 +20,10 @@ def main():
     #     for match in list_of_matches:
     #         insert_match(cur, server, region, match)
     # server_to_matches(cur, server, region)
-    # trait_avg(cur)
-    # print("-------------------------")
-    # unit_avg(cur)
-    # print("-------------------------")
-    # unit_avg(cur, True)
-    # print("-------------------------")
+    avg(cur, 'traits')
+    avg(cur, 'augments')
+    avg(cur, 'units')
+    avg(cur, 'units_3')
     # check_db(cur)
     con.close()
 
@@ -53,47 +51,37 @@ MAPPINGS = {  # na1, vn2, kr confirmed
     }
 RIOT_API = os.environ.get('RIOT_API')
 
-def augment_avg(cursor):
-    cursor.execute('SELECT name, CAST(sum_placement AS REAL) / num_placement AS avg FROM augments')
+def avg(cursor, table):
+    col1, col2 = None, None
+    if table == 'traits':
+        col1 = 'name'
+        col2 = 'tier_current'
+    elif table == 'augments':
+        col1 = 'name'
+    elif table == 'units' or table == 'units_3':
+        col1 = 'character_id'
+    if col2 is None:
+        cursor.execute(f"SELECT CAST(sum_placement AS REAL) / num_placement AS avg, {col1} FROM {table}")
+    elif col2 is not None:
+        cursor.execute(f"SELECT CAST(sum_placement AS REAL) / num_placement AS avg, {col1}, {col2} FROM {table}")
     rows = cursor.fetchall()
     li = []
     for row in rows:
-        name, avg = row[0], row[1]
+        avg, col1, col2 = row[0], row[1], None
+        if len(row) == 3:
+            col2 = row[2]
         if avg is not None:
-            li.append((name, avg))
-    li.sort(key=lambda x: x[1])
-    for name, avg in li:
-        print(f"average placement of {name} is {avg:.2f}")
-
-def trait_avg(cursor):
-    cursor.execute('SELECT name, tier_current, CAST(sum_placement AS REAL) / num_placement AS avg FROM traits')
-    rows = cursor.fetchall()
-    li = []
-    for row in rows:
-        name, tier_current, avg = row[0], row[1], row[2]
-        if avg is not None:
-            li.append((name, tier_current, avg))
-    li.sort(key=lambda x: x[2])
-    for name, tier_current, avg in li:
-        print(f"average placement of tier {tier_current} {name} is {avg:.2f}")
-
-def unit_avg(cursor, maxed=False):
-    table = 'units'
-    if maxed:
-        table = 'units_3'
-    cursor.execute(f'SELECT character_id, CAST(sum_placement AS REAL) / num_placement AS avg FROM {table}')
-    rows = cursor.fetchall()
-    li = []
-    for row in rows:
-        character_id, avg = row[0], row[1]
-        if avg is not None:
-            li.append((character_id, avg))
-    li.sort(key=lambda x: x[1])
-    for character_id, avg in li:
-        if maxed:
-            print(f"average placement of 3 star {character_id} is {avg:.2f}")
+            li.append((avg, col1, col2))
+    li.sort(key=lambda x: x[0])
+    for row in li:
+        if row[2] is not None:
+            print(f"average placement of tier {row[2]} {row[1]} is {row[0]:.2f}")
         else:
-            print(f"average placement of {character_id} is {avg:.2f}")
+            if table == 'units_3':
+                print(f"average placement of 3 star {row[1]} is {row[0]:.2f}")
+            else:
+                print(f"average placement of {row[1]} is {row[0]:.2f}")
+    print('-----------------------')
 
 def insert_match(cursor, server, region, match_id):
     # save unnecessary get requests
@@ -153,10 +141,15 @@ def insert_match(cursor, server, region, match_id):
                         INSERT INTO trait_states (name, puuid, match_id, tier_current)
                         VALUES (?, ?, ?, ?)
                     """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
-                    cursor.execute("""
-                        UPDATE traits SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 
-                        WHERE name = ? AND tier_current = ?
-                    """, (participant['placement'], trait['name'], trait['tier_current']))
+                    cursor.execute("SELECT name, tier_current FROM traits WHERE name = ? AND tier_current = ?", (trait['name'],trait['tier_current']))
+                    if cursor.fetchone() is None:
+                        cursor.execute("INSERT INTO traits (name, tier_current, sum_placement, num_placement) VALUES (?, ?, ?, 1)"
+                                    , (trait['name'],trait['tier_current'],participant['placement']))
+                    else:
+                        cursor.execute("""
+                            UPDATE traits SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 
+                            WHERE name = ? AND tier_current = ?
+                        """, (participant['placement'], trait['name'], trait['tier_current']))
 
 def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
     '''return list_of_matches'''
