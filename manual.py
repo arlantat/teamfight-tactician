@@ -6,10 +6,28 @@ import re
 IGNOREDITEMS = ['TFT_Item_Spatula','TFT_Item_RecurveBow','TFT_Item_SparringGloves','TFT_Item_ChainVest','TFT_Item_BFSword','TFT_Item_GiantsBelt','TFT_Item_NegatronCloak','TFT_Item_NeedlesslyLargeRod','TFT_Item_TearOfTheGoddess','TFT9_HeimerUpgrade_SelfRepair','TFT9_HeimerUpgrade_MicroRockets','TFT9_HeimerUpgrade_Goldification','TFT9_Item_PiltoverCharges','TFT9_HeimerUpgrade_ShrinkRay','TFT_Item_EmptyBag','TFT9_Item_PiltoverProgress','TFT_Item_ForceOfNature']
 EXCEPTIONS = ['TFT4_Item_OrnnObsidianCleaver','TFT4_Item_OrnnRanduinsSanctum','TFT7_Item_ShimmerscaleHeartOfGold','TFT5_Item_ZzRotPortalRadiant']
 con = sqlite3.connect("raw_matches.db")
-# con.isolation_level = None
+con.isolation_level = None
 cur = con.cursor()
 
-cur.execute('SELECT * from matches')
+cur.execute('UPDATE units_3 SET sum_placement = NULL, num_placement = NULL')
+cur.execute('SELECT character_id FROM units_3')
+rs = cur.fetchall()
+for r in rs:
+    character_id = r[0]
+    cur.execute('''SELECT SUM(ps.placement)
+                FROM player_states ps INNER JOIN unit_states us
+                ON ps.puuid = us.puuid AND ps.match_id = us.match_id
+                WHERE us.character_id = ? AND us.tier = 3
+                ''', (character_id,))
+    sm = cur.fetchone()[0]
+    cur.execute('''SELECT COUNT(ps.placement)
+                FROM player_states ps INNER JOIN unit_states us
+                ON ps.puuid = us.puuid AND ps.match_id = us.match_id
+                WHERE us.character_id = ? AND us.tier = 3
+                ''', (character_id,))
+    cnt = cur.fetchone()[0]
+    cur.execute('UPDATE units_3 SET sum_placement = ?, num_placement = ? WHERE character_id = ?', (sm, cnt, character_id))
+cur.execute('SELECT * FROM units_3')
 print(cur.fetchall())
 
 # cur.execute('SELECT character_id FROM units')

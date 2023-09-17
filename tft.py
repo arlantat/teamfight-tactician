@@ -10,9 +10,9 @@ load_dotenv()
 
 def main():
     con = sqlite3.connect("raw_matches.db")
-    # con.isolation_level = None
+    con.isolation_level = None
     cur = con.cursor()
-    server = 'vn2'
+    server = 'na1'
     region = server_to_region(server) 
     # players = ['ID Tiêu Daoo', 'HNZ boi tháng 8', 'Hiu Jc', 'TFA SukiReiichi', 'H E N I S S', 'NG Yugi', 'choicogiaitri', 'Forget The Past', 'Hôm Nay Tí Buồn', 'DNR Cu Chỉ Ngược', 'htd2006', 'p1va', 'HNZ MIDFEEDD', 'Sự Tĩnh Lặng', 'Cold snap', 'Onlive TrungVla', 'VN YBY1', 'KND Finn', 'Perfaketo', 'y Tiger1']
     # for player in players:
@@ -20,8 +20,16 @@ def main():
     #     print('found summoner!')
     #     for match in list_of_matches:
     #         insert_match(cur, server, region, match)
-    server_to_matches(cur, server, region)
+    # server_to_matches(cur, server, region)
+    
     update_best_items(cur)
+
+    avg(cur, 'traits')
+    avg(cur, 'units')
+    avg(cur, 'units', 'maxed')
+    avg(cur, 'items')
+    avg(cur, 'augments')
+
     check_db(cur)
     con.close()
 
@@ -88,8 +96,8 @@ def update_best_items(cursor):
         ornn1 = [s for s in li if (re.search(r'.*Shimmerscale.+$', s[2]) and s[2] not in EXCEPTIONITEMS)]
         ornn2 = [s for s in li if (re.search(r'.*Ornn.+$', s[2]) and s[2] not in EXCEPTIONITEMS)]
         ornn = ornn1 + ornn2
-        radiant = [s for s in li if s[2].endswith('Radiant')]
-        emblem = [s for s in li if s[2].endswith('Emblem')]
+        radiant = [s for s in li if (s[2].endswith('Radiant') and s[2] not in EXCEPTIONITEMS)]
+        emblem = [s for s in li if (s[2].endswith('Emblem') and s[2] not in EXCEPTIONITEMS)]
         all_nonnormals = [s[2] for s in (ornn+radiant+emblem)] + IGNOREDITEMS
         normal = [s for s in li if s[2] not in all_nonnormals]
 
@@ -98,11 +106,12 @@ def update_best_items(cursor):
         best_radiants = sorted(radiant[:5], key=lambda x: x[1])
         best_emblems = sorted(emblem[:3], key=lambda x: x[1])
         best_ornns = sorted(ornn[:3], key=lambda x: x[1])
-        print(f"best normals for {unit} are {[s[2] for s in best_normals]}")
-        print(f"best radiants for {unit} are {[s[2] for s in best_radiants]}")
-        print(f"best emblems for {unit} are {[s[2] for s in best_emblems]}")
-        print(f"best ornns for {unit} are {[s[2] for s in best_ornns]}")
-        print('-------------------')
+        with open('meta.txt', 'a') as file:
+            file.write('---------BEST ITEMS---------\n')
+            file.write(f"best normals for {unit} are {[s[2] for s in best_normals]}\n")
+            file.write(f"best radiants for {unit} are {[s[2] for s in best_radiants]}\n")
+            file.write(f"best emblems for {unit} are {[s[2] for s in best_emblems]}\n")
+            file.write(f"best ornns for {unit} are {[s[2] for s in best_ornns]}\n")
 
 
 def avg(cursor, table, arg=None):
@@ -137,17 +146,18 @@ def avg(cursor, table, arg=None):
         if avrg is not None:
             li.append((avrg, col1, col2))
     li.sort(key=lambda x: x[0])
-    if arg in ['normal', 'radiant', 'ornn', 'emblem']:
-        print(f"---------{arg.upper()} ITEMS----------")
-    elif arg == 'maxed':
-        print(f"---------3 STAR UNITS----------")
-    else:
-        print(f"--------------{table.upper()}---------------")
-    for row in li:
-        if table == 'traits':
-            print(f"average placement of tier {row[2]} {row[1]} is {row[0]:.2f}")
+    with open('meta.txt', 'a') as file:
+        if arg in ['normal', 'radiant', 'ornn', 'emblem']:
+            file.write(f"---------{arg.upper()} ITEMS----------\n")
+        elif arg == 'maxed':
+            file.write(f"---------3 STAR UNITS----------\n")
         else:
-            print(f"average placement of {row[1]} is {row[0]:.2f}")
+            file.write(f"--------------{table.upper()}---------------\n")
+        for row in li:
+            if table == 'traits':
+                file.write(f"average placement of tier {row[2]} {row[1]} is {row[0]:.2f}\n")
+            else:
+                file.write(f"average placement of {row[1]} is {row[0]:.2f}\n")
 
 def insert_match(cursor, server, region, match_id):
     # save unnecessary get requests
@@ -174,13 +184,11 @@ def insert_match(cursor, server, region, match_id):
             for name in augments:
                 cursor.execute('SELECT name FROM augments WHERE name = ?', (name,))
                 if cursor.fetchone() is None:
-                    cursor.execute('''INSERT INTO augments (name, sum_placement, num_placement)
-                                VALUES (?, ?, ?)
+                    cursor.execute('''INSERT INTO augments (name, sum_placement, num_placement) VALUES (?, ?, ?)
                                 ''', (name, participant['placement'], 1))
                 else:
                     cursor.execute('''UPDATE augments SET sum_placement = sum_placement + ?, num_placement = num_placement + 1
-                                WHERE name = ?
-                                ''', (participant['placement'], name))
+                                WHERE name = ?''', (participant['placement'], name))
             while len(augments) < 3:
                 augments.append(None)
             cursor.execute("""
@@ -194,8 +202,11 @@ def insert_match(cursor, server, region, match_id):
                     for item in items:
                         if item not in IGNOREDITEMS:
                             cursor.execute('SELECT sum_placement FROM items WHERE name = ?', (item,))
-                            sum_placement = cursor.fetchone()[0]
-                            if sum_placement is None:
+                            r = cursor.fetchone()
+                            if not r:
+                                cursor.execute("INSERT INTO items (name, sum_placement, num_placement) VALUES (?, ?, 1)"
+                                    , (item, participant['placement']))
+                            elif r[0] is None:
                                 cursor.execute('UPDATE items SET sum_placement = ?, num_placement = 1 WHERE name = ?', (participant['placement'], item))
                             else:
                                 cursor.execute('UPDATE items SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE name = ?', (participant['placement'], item))
@@ -207,18 +218,20 @@ def insert_match(cursor, server, region, match_id):
                     """, (unit['character_id'], participant['puuid'], match_id, unit['tier'], items[0], items[1], items[2]))
                     # update units avg
                     cursor.execute('SELECT sum_placement FROM units WHERE character_id = ?', (unit['character_id'],))
-                    sum_placement = cursor.fetchone()[0]
-                    if sum_placement is None:
+                    r = cursor.fetchone()[0]
+                    if r is None:
                         cursor.execute('UPDATE units SET sum_placement = ?, num_placement = 1 WHERE character_id = ?', (participant['placement'], unit['character_id']))
-                        if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units for tier 3 and below
-                            cursor.execute("""
-                                UPDATE units_3 SET sum_placement = ?, num_placement = 1 WHERE character_id = ?
-                            """, (participant['placement'], unit['character_id']))
                     else:
                         cursor.execute("""
                             UPDATE units SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE character_id = ?
                         """, (participant['placement'], unit['character_id']))
-                        if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units for tier 3 and below
+                    # update units_3 avg
+                    if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units for tier 3 and below
+                        cursor.execute('SELECT sum_placement FROM units_3 WHERE character_id = ?', (unit['character_id'],))
+                        r = cursor.fetchone()[0]
+                        if r is None:
+                            cursor.execute('UPDATE units_3 SET sum_placement = ?, num_placement = 1 WHERE character_id = ?', (participant['placement'], unit['character_id']))
+                        else:
                             cursor.execute("""
                                 UPDATE units_3 SET sum_placement = sum_placement + ?, num_placement = num_placement + 1 WHERE character_id = ?
                             """, (participant['placement'], unit['character_id']))
@@ -267,15 +280,18 @@ def server_to_matches(cursor, server, region):
     grandmasters = get_league(cursor, server, region, 'grandmaster')
     mastercnt = 1000 - len(challengers) - len(grandmasters)
     masters = get_league(cursor, server, region, 'master', mastercnt)
-    for name in challengers:
+    for i, name in enumerate(challengers):
+        print(f"player {i}")
         list_of_matches = summoner_to_matches(cursor, server, region, name)
         for match in list_of_matches:
             insert_match(cursor, server, region, match)
-    for name in grandmasters:
+    for i, name in enumerate(grandmasters):
+        print(f"player {i}")
         list_of_matches = summoner_to_matches(cursor, server, region, name)
         for match in list_of_matches:
             insert_match(cursor, server, region, match)
-    # for name in masters:
+    # for i, name in enumerate(masters):
+        # print(f"player {i}")
         # list_of_matches = summoner_to_matches(cursor, server, region, name)
         # for match in list_of_matches:
         #     insert_match(cursor, server, region, match)
