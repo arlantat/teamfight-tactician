@@ -9,26 +9,11 @@ con = sqlite3.connect("raw_matches.db")
 con.isolation_level = None
 cur = con.cursor()
 
-cur.execute('UPDATE units_3 SET sum_placement = NULL, num_placement = NULL')
-cur.execute('SELECT character_id FROM units_3')
-rs = cur.fetchall()
-for r in rs:
-    character_id = r[0]
-    cur.execute('''SELECT SUM(ps.placement)
-                FROM player_states ps INNER JOIN unit_states us
-                ON ps.puuid = us.puuid AND ps.match_id = us.match_id
-                WHERE us.character_id = ? AND us.tier = 3
-                ''', (character_id,))
-    sm = cur.fetchone()[0]
-    cur.execute('''SELECT COUNT(ps.placement)
-                FROM player_states ps INNER JOIN unit_states us
-                ON ps.puuid = us.puuid AND ps.match_id = us.match_id
-                WHERE us.character_id = ? AND us.tier = 3
-                ''', (character_id,))
-    cnt = cur.fetchone()[0]
-    cur.execute('UPDATE units_3 SET sum_placement = ?, num_placement = ? WHERE character_id = ?', (sm, cnt, character_id))
-cur.execute('SELECT * FROM units_3')
-print(cur.fetchall())
+cur.execute('ALTER TABLE units ADD COLUMN top4 INTEGER')
+cur.execute('ALTER TABLE units_3 ADD COLUMN top4 INTEGER')
+cur.execute('ALTER TABLE traits ADD COLUMN top4 INTEGER')
+cur.execute('ALTER TABLE items ADD COLUMN top4 INTEGER')
+cur.execute('ALTER TABLE augments ADD COLUMN top4 INTEGER')
 
 # cur.execute('SELECT character_id FROM units')
 # character_ids =  cur.fetchall()

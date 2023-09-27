@@ -40,14 +40,16 @@ def init_db():
             character_id TEXT PRIMARY KEY,
             rarity INTEGER,
             sum_placement INTEGER,
-            num_placement INTEGER
+            num_placement INTEGER,
+            top4 INTEGER
         )
     """)
     cur.execute("""
         CREATE TABLE units_3 (
             character_id TEXT PRIMARY KEY,
             sum_placement INTEGER,
-            num_placement INTEGER
+            num_placement INTEGER,
+            top4 INTEGER
         )
     """)
     cur.execute("""
@@ -69,6 +71,7 @@ def init_db():
             tier_current INTEGER,
             sum_placement INTEGER,
             num_placement INTEGER,
+            top4 INTEGER,
             PRIMARY KEY (name, tier_current)
         )
     """)
@@ -86,14 +89,16 @@ def init_db():
             name TEXT PRIMARY KEY,
             class TEXT,
             sum_placement INTEGER,
-            num_placement INTEGER
+            num_placement INTEGER,
+            top4 INTEGER
         )
     """)
     cur.execute("""
         CREATE TABLE augments (
             name TEXT PRIMARY KEY,
             sum_placement INTEGER,
-            num_placement INTEGER
+            num_placement INTEGER,
+            top4 INTEGER
         )
     """)
     con.close()
@@ -116,10 +121,10 @@ def reset_db(per_set=False):
     cur.execute("DELETE FROM unit_states")
     cur.execute("DELETE FROM trait_states")
     cur.execute("DELETE FROM augments")
-    cur.execute("UPDATE units SET sum_placement = NULL, num_placement = NULL")
-    cur.execute("UPDATE units_3 SET sum_placement = NULL, num_placement = NULL")
-    cur.execute("UPDATE traits SET sum_placement = NULL, num_placement = NULL")
-    cur.execute("UPDATE items SET sum_placement = NULL, num_placement = NULL")
+    cur.execute("UPDATE units SET sum_placement = NULL, num_placement = NULL, top4 = NULL")
+    cur.execute("UPDATE units_3 SET sum_placement = NULL, num_placement = NULL, top4 = NULL")
+    cur.execute("UPDATE traits SET sum_placement = NULL, num_placement = NULL, top4 = NULL")
+    cur.execute("UPDATE items SET sum_placement = NULL, num_placement = NULL, top4 = NULL")
     con.close()
 
 def init_per_set(sample_matches):
