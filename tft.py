@@ -20,9 +20,7 @@ def main():
     #     print('found summoner!')
     #     for match in list_of_matches:
     #         insert_match(cur, server, region, match)
-    
     server_to_matches(cur, server, region)
-    
     update_meta(cur)
 
     check_db(cur)
@@ -38,6 +36,16 @@ IGNOREDUNITS = ["TFT9_HeimerdingerTurret", "TFT9_THex"]
 IGNOREDAUGMENTS = []
 # imposter items
 EXCEPTIONITEMS = ['TFT4_Item_OrnnObsidianCleaver','TFT4_Item_OrnnRanduinsSanctum','TFT7_Item_ShimmerscaleHeartOfGold','TFT5_Item_ZzRotPortalRadiant']
+# exclude radiants for demacia
+DEMACIA = {
+    'TFT9_Kayle': 'TFT5_Item_GiantSlayerRadiant',
+    'TFT9_Poppy': 'TFT5_Item_FrozenHeartRadiant',
+    'TFT9_Galio': 'TFT5_Item_RedemptionRadiant',
+    'TFT9_Sona': 'TFT5_Item_SpearOfShojinRadiant',
+    'TFT9_Quinn': 'TFT5_Item_DeathbladeRadiant',
+    'TFT9_Fiora': 'TFT5_Item_SteraksGageRadiant',
+    'TFT9_JarvanIV': 'TFT5_Item_WarmogsArmorRadiant'
+}
 MAPPINGS = {  # na1, vn2, kr confirmed
     SERVERS[0]: REGIONS[0],
     SERVERS[1]: REGIONS[2],
@@ -189,13 +197,17 @@ def insert_match(cursor, server, region, match_id):
             # update augments avg
             augments = participant['augments']
             for name in augments:
-                cursor.execute('SELECT name FROM augments WHERE name = ?', (name,))
-                if cursor.fetchone() is None:
+                cursor.execute('SELECT sum_placement FROM augments WHERE name = ?', (name,))
+                r = cursor.fetchone()
+                if not r:
                     cursor.execute('''INSERT INTO augments (name, sum_placement, num_placement, top4) VALUES (?, ?, ?, ?)
                                 ''', (name, participant['placement'], 1, (1 if participant['placement']<=4 else 0)))
+                elif r[0] is None:
+                    cursor.execute('''UPDATE augments SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ?'''
+                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), name))
                 else:
                     cursor.execute('''UPDATE augments SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
-                                WHERE name = ?''', (participant['placement'], name, (1 if participant['placement']<=4 else 0)))
+                                WHERE name = ?''', (participant['placement'], (1 if participant['placement']<=4 else 0), name))
             while len(augments) < 3:
                 augments.append(None)
             cursor.execute("""
@@ -206,8 +218,11 @@ def insert_match(cursor, server, region, match_id):
                 if unit['character_id'] not in IGNOREDUNITS:
                     # update items avg
                     items = unit['itemNames']
+                    # ignore the radiant item for demacia units
+                    if unit['character_id'] in DEMACIA:
+                        items[items.index(DEMACIA[unit['character_id']])] = None
                     for item in items:
-                        if item not in IGNOREDITEMS:
+                        if item is not None or item not in IGNOREDITEMS:
                             cursor.execute('SELECT sum_placement FROM items WHERE name = ?', (item,))
                             r = cursor.fetchone()
                             if not r:
@@ -289,8 +304,8 @@ def server_to_matches(cursor, server, region):
 
     challengers = get_league(cursor, server, region, 'challenger')
     grandmasters = get_league(cursor, server, region, 'grandmaster')
-    mastercnt = 1000 - len(challengers) - len(grandmasters)
-    masters = get_league(cursor, server, region, 'master', mastercnt)
+    # mastercnt = 2000 - len(challengers) - len(grandmasters)
+    # masters = get_league(cursor, server, region, 'master', mastercnt)
     for i, name in enumerate(challengers):
         print(f"player {i}")
         list_of_matches = summoner_to_matches(cursor, server, region, name)

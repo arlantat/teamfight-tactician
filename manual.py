@@ -6,14 +6,18 @@ import re
 IGNOREDITEMS = ['TFT_Item_Spatula','TFT_Item_RecurveBow','TFT_Item_SparringGloves','TFT_Item_ChainVest','TFT_Item_BFSword','TFT_Item_GiantsBelt','TFT_Item_NegatronCloak','TFT_Item_NeedlesslyLargeRod','TFT_Item_TearOfTheGoddess','TFT9_HeimerUpgrade_SelfRepair','TFT9_HeimerUpgrade_MicroRockets','TFT9_HeimerUpgrade_Goldification','TFT9_Item_PiltoverCharges','TFT9_HeimerUpgrade_ShrinkRay','TFT_Item_EmptyBag','TFT9_Item_PiltoverProgress','TFT_Item_ForceOfNature']
 EXCEPTIONS = ['TFT4_Item_OrnnObsidianCleaver','TFT4_Item_OrnnRanduinsSanctum','TFT7_Item_ShimmerscaleHeartOfGold','TFT5_Item_ZzRotPortalRadiant']
 con = sqlite3.connect("raw_matches.db")
-con.isolation_level = None
+# con.isolation_level = None
 cur = con.cursor()
 
-cur.execute('ALTER TABLE units ADD COLUMN top4 INTEGER')
-cur.execute('ALTER TABLE units_3 ADD COLUMN top4 INTEGER')
-cur.execute('ALTER TABLE traits ADD COLUMN top4 INTEGER')
-cur.execute('ALTER TABLE items ADD COLUMN top4 INTEGER')
-cur.execute('ALTER TABLE augments ADD COLUMN top4 INTEGER')
+cur.execute('''
+    SELECT us.item1, us.item2, us.item3
+            FROM unit_states us INNER JOIN trait_states ts 
+            ON us.puuid = ts.puuid AND us.match_id = ts.match_id
+            WHERE ts.name = 'Set9_Demacia' AND ts.tier_current = 4 AND us.character_id = 'TFT9_Fiora';
+''')
+rows = cur.fetchall()
+for on, tw, th in rows[:10]:
+    print(on, tw, th)
 
 # cur.execute('SELECT character_id FROM units')
 # character_ids =  cur.fetchall()
