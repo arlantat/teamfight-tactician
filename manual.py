@@ -9,6 +9,68 @@ con = sqlite3.connect("raw_matches.db")
 # con.isolation_level = None
 cur = con.cursor()
 
+def update_best_items(file, cursor):
+    cursor.execute('''SELECT us.item1, us.item2, us.item3, ps.placement, us.tier, us.character_id 
+                FROM unit_states us INNER JOIN player_states ps
+                ON us.match_id = ps.match_id AND us.puuid = ps.puuid
+        ''')
+    rs = cursor.fetchall()
+    unit_map = {} # dictionary of unit: item_map
+    for r in rs:
+        items = r[:3]
+        placement = r[3]
+        tier = r[4]
+        unit = r[5]
+        if unit not in unit_map:
+            unit_map[unit] = {} # dictionary of item: [sum, cnt]
+        for item in items:
+            if item is not None:
+                if item not in unit_map[unit]:
+                    unit_map[unit][item] = [placement, 1]
+                else:
+                    unit_map[unit][item][0] += placement
+                    unit_map[unit][item][1] += 1
+    best_units = {}  # item: [cnt, avrg, unit]
+    for unit, item_map in unit_map.items():
+        li = []
+        for item, val in item_map.items():
+            avrg = val[0]/val[1]
+            li.append((val[1], avrg, item))
+            if item in EXCEPTIONITEMS or item in IGNOREDITEMS:
+                continue
+            if item not in best_units:
+                best_units[item] = []
+            best_units[item].append([val[1], avrg, unit])
+        # first sort by matches
+        li.sort(key=lambda s: s[0], reverse=True)
+
+        ornn1 = [s for s in li if (re.search(r'.*Shimmerscale.+$', s[2]) and s[2] not in EXCEPTIONITEMS)]
+        ornn2 = [s for s in li if (re.search(r'.*Ornn.+$', s[2]) and s[2] not in EXCEPTIONITEMS)]
+        ornn = sorted((ornn1 + ornn2), key=lambda s: s[0], reverse=True)
+        radiant = [s for s in li if (s[2].endswith('Radiant') and s[2] not in EXCEPTIONITEMS)]
+        emblem = [s for s in li if (s[2].endswith('Emblem') and s[2] not in EXCEPTIONITEMS)]
+        all_nonnormals = [s[2] for s in (ornn+radiant+emblem)] + IGNOREDITEMS
+        normal = [s for s in li if s[2] not in all_nonnormals]
+
+        # now sort by avrg
+        best_normals = sorted(normal[:7], key=lambda x: x[1])
+        best_radiants = sorted(radiant[:5], key=lambda x: x[1])
+        best_emblems = sorted(emblem[:3], key=lambda x: x[1])
+        best_ornns = sorted(ornn[:3], key=lambda x: x[1])
+        file.write('---------BEST ITEMS---------\n')
+        file.write(f"best normals for {unit} are {[(s[2], round(s[1], 2)) for s in best_normals]}\n")
+        file.write(f"best radiants for {unit} are {[(s[2], round(s[1], 2)) for s in best_radiants]}\n")
+        file.write(f"best emblems for {unit} are {[(s[2], round(s[1], 2)) for s in best_emblems]}\n")
+        file.write(f"best ornns for {unit} are {[(s[2], round(s[1], 2)) for s in best_ornns]}\n")
+    
+    # best units for each item, same process
+    file.write('---------BEST UNITS---------\n')
+    for item in best_units:
+        best_units[item].sort(key=lambda s: s[0], reverse=True)
+        # if item in normal: unimplemented
+        li = sorted(best_units[item][:7], key=lambda x: x[1])
+        file.write(f"best units for {item} are {[(s[2], round(s[1], 2)) for s in li]}\n")
+
 cur.execute('''
     SELECT us.item1, us.item2, us.item3
             FROM unit_states us INNER JOIN trait_states ts 
