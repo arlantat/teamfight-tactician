@@ -30,6 +30,7 @@ def init_db():
             augment1 TEXT,
             augment2 TEXT,
             augment3 TEXT,
+            comp_encoded TEXT,
             placement INTEGER,
             PRIMARY KEY (puuid, match_id)
         )
@@ -95,10 +96,12 @@ def init_db():
     """)
     cur.execute("""
         CREATE TABLE augments (
-            name TEXT PRIMARY KEY,
+            name TEXT,
+            stage INTEGER,
             sum_placement INTEGER,
             num_placement INTEGER,
-            top4 INTEGER
+            top4 INTEGER,
+            PRIMARY KEY (name, stage)
         )
     """)
     con.close()

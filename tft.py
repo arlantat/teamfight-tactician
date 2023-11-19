@@ -20,8 +20,8 @@ def main():
     #     print('found summoner!')
     #     for match in list_of_matches:
     #         insert_match(cur, server, region, match)
-    # server_to_matches(cur, server, region)
-    update_meta(cur)
+    server_to_matches(cur, server, region)
+    # update_meta(cur)
 
     check_db(cur)
     con.close()
@@ -36,15 +36,31 @@ IGNOREDUNITS = ["TFT9_HeimerdingerTurret", "TFT9_THex"]
 IGNOREDAUGMENTS = []
 # imposter items
 EXCEPTIONITEMS = ['TFT4_Item_OrnnObsidianCleaver','TFT4_Item_OrnnRanduinsSanctum','TFT7_Item_ShimmerscaleHeartOfGold','TFT5_Item_ZzRotPortalRadiant']
-# exclude radiants for demacia
-DEMACIA = {
-    'TFT9_Kayle': 'TFT5_Item_GiantSlayerRadiant',
-    'TFT9_Poppy': 'TFT5_Item_FrozenHeartRadiant',
-    'TFT9_Galio': 'TFT5_Item_RedemptionRadiant',
-    'TFT9_Sona': 'TFT5_Item_SpearOfShojinRadiant',
-    'TFT9_Quinn': 'TFT5_Item_DeathbladeRadiant',
-    'TFT9_Fiora': 'TFT5_Item_SteraksGageRadiant',
-    'TFT9_JarvanIV': 'TFT5_Item_WarmogsArmorRadiant'
+TRAITPRIO = {  # account for how many space the trait is taking, which determines comps. will change the name
+    'spellweaver': 'a', 'pentakill': 'b',
+    'kda': 'c', 'heartsteel': 'd',
+    'edgelord': 'e', 'country': 'f',
+    'truedmg': 'g', 'sentinel': 'h', '8bit': 'i',
+    'emo': 'j', 'punk': 'k',
+    'bigshot': 'l', 'bruiser': 'm',
+    'crowddiver': 'n', 'dazzler': 'o',
+    'exe': 'p', 'mosher': 'q',
+    'guardian': 'r', 'rapidfire': 's',
+    'disco': 't', 'superfan': 'u',
+    'jazz': 'v', 'edm': 'w', 'hyperpop': 'x'
+}
+TRAITREVERSE = {  # reverse mapping back to trait
+    'a': 'spellweaver', 'b': '',
+    'c': '', 'd': '',
+    'e': '', 'f': '',
+    'g': '', 'h': '', 'i': '',
+    'j': '', 'k': '',
+    'l': '', 'm': '',
+    'n': '', 'o': '',
+    'p': '', 'q': '',
+    'r': '', 's': '',
+    't': '', 'u': '',
+    'v': '', 'w': '', 'x': ''
 }
 MAPPINGS = {  # na1, vn2, kr confirmed
     SERVERS[0]: REGIONS[0],
@@ -70,11 +86,40 @@ RIOT_API = os.environ.get('RIOT_API')
 def update_meta(cursor):
     with open('meta.txt', 'w') as file:
         update_best_items(file, cursor)
+        comps(file, cursor)
         avg(file, cursor, 'traits')
         avg(file, cursor, 'units')
         avg(file, cursor, 'units', 'maxed')
         avg(file, cursor, 'items')
         avg(file, cursor, 'augments')
+
+#debug
+def comps(file, cursor):
+    cursor.execute('SELECT comp_encoded, placement FROM player_states')
+    counter = {}
+    rs = cursor.fetchall()
+    for r in rs:
+        comp_encoded = r[0]
+        placement = r[1]
+        if comp_encoded not in counter:
+            counter[comp_encoded] = [placement, 1]  # sum_placement, matches
+        else:
+            counter[comp_encoded][0] += placement
+            counter[comp_encoded][1] += 1
+
+    counter = sorted(list(counter.items()), key=lambda x: x[1][1], reverse=True)  # sort by matches
+    file.write('---------BEST COMPS---------\n')
+    num_comps = 10  # number of comps that would be listed
+    for k, v in counter[:comps]:
+        i = 0
+        comp = ''
+        avg = v[0] / v[1]
+        while i < len(k):
+            trait = TRAITREVERSE[k[i]]
+            tier_current = k[i+1]
+            i += 2
+            comp += f"tier {tier_current} {trait}, "
+        file.write(f"{comp}avg {avg}\n")
 
 
 # added find best units for each item here, but still want to separate it in a different module
@@ -145,6 +190,7 @@ def avg(file, cursor, table, arg=None):
     '''table = traits, units, items, augments.
     if 'units' is passed, arg can be 'maxed'.
     if 'items' is passed, arg can be 'normal', 'radiant', 'ornn', 'emblem'.
+    if 'augments' is passed, arg can be '1', '2', '3'.
     '''
     head = 'SELECT CAST(sum_placement AS REAL) / num_placement AS avg, CAST(top4 AS REAL) / num_placement AS top4_rate'
     if table == 'traits':
@@ -159,7 +205,13 @@ def avg(file, cursor, table, arg=None):
         else:
             cursor.execute(f"{head}, name FROM {table} WHERE class = ?", (arg,))
     elif table == 'augments':
-        cursor.execute(f"{head}, name FROM {table}")
+        if arg is None:
+            avg(file, cursor, table, arg='1')
+            avg(file, cursor, table, arg='2')
+            avg(file, cursor, table, arg='3')
+            return
+        else:
+            cursor.execute(f"{head}, name FROM {table} WHERE stage = ?", (arg,))
     elif table == 'units':
         if arg == 'maxed':
             table = 'units_3'
@@ -175,6 +227,8 @@ def avg(file, cursor, table, arg=None):
     li.sort(key=lambda x: x[0])
     if arg in ['normal', 'radiant', 'ornn', 'emblem']:
         file.write(f"---------{arg.upper()} ITEMS----------\n")
+    elif arg in ['1', '2', '3']:
+        file.write(f"---------AUGMENT {arg.upper()}----------\n")
     elif arg == 'maxed':
         file.write(f"---------3 STAR UNITS----------\n")
     else:
@@ -183,9 +237,10 @@ def avg(file, cursor, table, arg=None):
         if table == 'traits':
             file.write(f"average placement of tier {row[3]} {row[2]} is {row[0]:.2f}, top 4 rate {row[1]*100:.2f}\n")
         else:
-            if table == 'augments' and row[2].endswith(('Trait', 'Trait2', 'Emblem', 'Emblem2')):
-                file.write(f"average placement of {row[2]} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f} EMBLEM OR TRAIT\n")
-                continue
+            # emblems from augments are removed in set 10
+            # if table == 'augments' and row[2].endswith(('Trait', 'Trait2', 'Emblem', 'Emblem2')):
+            #     file.write(f"average placement of {row[2]} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f} EMBLEM OR TRAIT\n")
+            #     continue
             file.write(f"average placement of {row[2]} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f}\n")
 
 def insert_match(cursor, server, region, match_id):
@@ -208,33 +263,75 @@ def insert_match(cursor, server, region, match_id):
     if info['game_version'].startswith(VERSION) and info['queue_id'] == 1100:
         cursor.execute("INSERT INTO matches (match_id) VALUES (?)", (match_id,))
         for participant in info['participants']:
-            # update augments avg
+            # augments
             augments = participant['augments']
-            for name in augments:
-                cursor.execute('SELECT sum_placement FROM augments WHERE name = ?', (name,))
+            for i, name in enumerate(augments):
+                cursor.execute('SELECT sum_placement FROM augments WHERE name = ? AND stage = ?', (name, i+1))
                 r = cursor.fetchone()
                 if not r:
-                    cursor.execute('''INSERT INTO augments (name, sum_placement, num_placement, top4) VALUES (?, ?, ?, ?)
-                                ''', (name, participant['placement'], 1, (1 if participant['placement']<=4 else 0)))
+                    cursor.execute('''INSERT INTO augments (name, stage, sum_placement, num_placement, top4) VALUES (?, ?, ?, ?, ?)
+                                ''', (name, i+1, participant['placement'], 1, (1 if participant['placement']<=4 else 0)))
                 elif r[0] is None:
-                    cursor.execute('''UPDATE augments SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ?'''
-                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), name))
+                    cursor.execute('''UPDATE augments SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND stage = ?'''
+                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), name, i+1))
                 else:
                     cursor.execute('''UPDATE augments SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
-                                WHERE name = ?''', (participant['placement'], (1 if participant['placement']<=4 else 0), name))
+                                WHERE name = ? AND stage = ?''', (participant['placement'], (1 if participant['placement']<=4 else 0), name, i+1))
             while len(augments) < 3:
                 augments.append(None)
+            
+            # traits #debug
+            notable_traits = [] # for recognising the composition, into comp_encoded
+            candidate_traits = []
+            for trait in participant['traits']:
+                if len(notable_traits) < 3 and trait in TRAITPRIO:
+                    if trait['tier_current'] >= 3:
+                        notable_traits.append(TRAITPRIO[trait] + str(trait['tier_current']))
+                    else:
+                        candidate_traits.append(TRAITPRIO[trait] + str(trait['tier_current']))
+                if trait['tier_current'] > 0:
+                    cursor.execute("""
+                        INSERT INTO trait_states (name, puuid, match_id, tier_current)
+                        VALUES (?, ?, ?, ?)
+                    """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
+                    cursor.execute("SELECT name, tier_current, sum_placement FROM traits WHERE name = ? AND tier_current = ?", (trait['name'],trait['tier_current']))
+                    r = cursor.fetchone()
+                    if not r:
+                        cursor.execute("INSERT INTO traits (name, tier_current, sum_placement, num_placement, top4) VALUES (?, ?, ?, 1, ?)"
+                                    , (trait['name'],trait['tier_current'],participant['placement'],(1 if participant['placement']<=4 else 0)))
+                    elif r[2] is None:
+                        cursor.execute("UPDATE traits SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND tier_current = ?"
+                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), trait['name'], trait['tier_current']))
+                    else:
+                        cursor.execute("""
+                            UPDATE traits SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
+                            WHERE name = ? AND tier_current = ?
+                        """, (participant['placement'], (1 if participant['placement']<=4 else 0), trait['name'], trait['tier_current']))
+            if len(notable_traits) < 3:
+                candidate_traits.sort(key=lambda x: x[1], reverse=True)
+                candidate_traits.sort(key=lambda x: x[0])
+            i = 0
+            while len(notable_traits) < 3 and i < len(candidate_traits):
+                notable_traits.append(candidate_traits[i])
+                i += 1
+            notable_traits.sort(key=lambda x: x[0])
+            comp_encoded = ''.join(notable_traits)
+            print(comp_encoded)
+
+            #debug
             cursor.execute("""
-                INSERT INTO player_states (puuid, match_id, augment1, augment2, augment3, placement)
+                INSERT INTO player_states (puuid, match_id, augment1, augment2, augment3, comp_encoded, placement)
                 VALUES (?, ?, ?, ?, ?, ?)
-            """, (participant['puuid'], match_id, augments[0], augments[1], augments[2], participant['placement'],))
+            """, (participant['puuid'], match_id, augments[0], augments[1], augments[2], comp_encoded, participant['placement'],))
+            
+            # units
             for unit in participant['units']:
                 if unit['character_id'] not in IGNOREDUNITS:
                     # update items avg
                     items = unit['itemNames']
-                    # ignore the radiant item for demacia units
-                    if unit['character_id'] in DEMACIA and DEMACIA[unit['character_id']] in items:
-                        items[items.index(DEMACIA[unit['character_id']])] = None
+                    # # ignore the radiant item for demacia units
+                    # if unit['character_id'] in DEMACIA and DEMACIA[unit['character_id']] in items:
+                    #     items[items.index(DEMACIA[unit['character_id']])] = None
                     for item in items:
                         if item is not None or item not in IGNOREDITEMS:
                             cursor.execute('SELECT sum_placement FROM items WHERE name = ?', (item,))
@@ -275,26 +372,7 @@ def insert_match(cursor, server, region, match_id):
                             cursor.execute("""
                                 UPDATE units_3 SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? WHERE character_id = ?
                             """, (participant['placement'], (1 if participant['placement']<=4 else 0), unit['character_id']))
-            for trait in participant['traits']:
-                if trait['tier_current'] > 0:
-                    cursor.execute("""
-                        INSERT INTO trait_states (name, puuid, match_id, tier_current)
-                        VALUES (?, ?, ?, ?)
-                    """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
-                    # update traits avg
-                    cursor.execute("SELECT name, tier_current, sum_placement FROM traits WHERE name = ? AND tier_current = ?", (trait['name'],trait['tier_current']))
-                    r = cursor.fetchone()
-                    if not r:
-                        cursor.execute("INSERT INTO traits (name, tier_current, sum_placement, num_placement, top4) VALUES (?, ?, ?, 1, ?)"
-                                    , (trait['name'],trait['tier_current'],participant['placement'],(1 if participant['placement']<=4 else 0)))
-                    elif r[2] is None:
-                        cursor.execute("UPDATE traits SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND tier_current = ?"
-                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), trait['name'], trait['tier_current']))
-                    else:
-                        cursor.execute("""
-                            UPDATE traits SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
-                            WHERE name = ? AND tier_current = ?
-                        """, (participant['placement'], (1 if participant['placement']<=4 else 0), trait['name'], trait['tier_current']))
+
 
 def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
     '''return list_of_matches'''
