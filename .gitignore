@@ -5,6 +5,6 @@ raw_matches.db-journal
 raw_matches.db
 lookup_guide.xlsx
 augments.txt
-items.txt
+dictionary.txt
 meta.txt
 test.py
