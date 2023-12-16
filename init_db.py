@@ -228,7 +228,7 @@ def manual_per_set():
     
     con.close()
 
-reset_db(per_set=True)
+reset_db()
 # init_per_set()
 # manual_per_set()
 # print(len(UNITS1))
