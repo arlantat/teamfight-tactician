@@ -31,4 +31,4 @@ pool(db_cursor, file, i_augments=[], i_units=[], i_traits=[])
 ```
 
 ### Developer's Thought
-This application is the product of my passion for programming and my love with TFT. I have been hardstuck at Master, but after developing this app, I finally reach Challenger (which is the highest rank in the game, 2 tiers above Master for those who are unaware). More functionalities coming real soon, as I continue to enjoy pro-gaming!
+This application embodies my passion for programming and my love with TFT. I have been hardstuck at Master, but after developing this app, I finally reach Challenger (which is the highest rank in the game, 2 tiers above Master for those who are unaware). More functionalities coming real soon, as I continue to enjoy pro-gaming!
