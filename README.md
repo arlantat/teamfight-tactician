@@ -2,7 +2,7 @@
 ![Static Badge](https://img.shields.io/badge/Python-blue)
 ![Static Badge](https://img.shields.io/badge/SQLite-brightgreen)
 
-The app designed to give competitive advantage to Teamfight Tactics (TFT) players by fetching match history data from the Riot API and transforming it to helpful information, including champions, traits, augments, and compositions on playrates, winrates and best combinations.
+Welcome to TF-Tactician - the app designed to give competitive advantage to Teamfight Tactics (TFT) players by fetching match history data from the Riot API and transforming it to helpful information, including champions, traits, augments, and compositions on playrates, winrates and best combinations.
 
 ### Procedures:
 Reset DB Per patch:
@@ -31,4 +31,4 @@ pool(db_cursor, file, i_augments=[], i_units=[], i_traits=[])
 ```
 
 ### Developer's Thought
-As you might have noticed, I haven't yet deployed this to a web server, but I promise it is coming real soon. I have been hardstuck at Master, but after developing this app, I finally reach Challenger (which is the highest rank in the game, 2 tiers above Master for those who are unaware) only with the insight from here alone. This reinforces my love with the game and my love with programming all the same. So yeah, it's comin'.
+This application is the product of my passion for programming and my love with TFT. I have been hardstuck at Master, but after developing this app, I finally reach Challenger (which is the highest rank in the game, 2 tiers above Master for those who are unaware). More functionalities coming real soon, as I continue to enjoy pro-gaming!
