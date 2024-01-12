@@ -1,13 +1,15 @@
-import sqlite3
 import logging
-import requests
 import os
 import random
+import sqlite3
 import time
-import re
 from itertools import permutations
+
+import requests
 from dotenv import load_dotenv
+
 load_dotenv()
+
 
 def main():
     con = sqlite3.connect("raw_matches.db")
@@ -32,17 +34,55 @@ def main():
     # pool(cur,'',[],[],[['Set10_TrueDamage'],[3]])
     con.close()
 
-logging.basicConfig(level=logging.INFO)
-SERVERS = ['br1','eun1','euw1','jp1','kr','la1','la2','na1','oc1','ph2','ru','sg2','th2','tr1','tw2','vn2']
-REGIONS = ['americas', 'asia', 'europe', 'sea']
-VERSION = 'Version 13.24'
 
-CRAFTABLES = {'TFT_Item_GargoyleStoneplate', 'TFT_Item_SpearOfShojin', 'TFT_Item_Deathblade', 'TFT_Item_AdaptiveHelm', 'TFT_Item_Redemption', 'TFT_Item_SteraksGage', 'TFT_Item_DragonsClaw', 'TFT_Item_StatikkShiv', 'TFT_Item_WarmogsArmor', 'TFT_Item_Bloodthirster', 'TFT_Item_PowerGauntlet', 'TFT_Item_BrambleVest', 'TFT_Item_GuardianAngel', 'TFT_Item_IonicSpark', 'TFT_Item_MadredsBloodrazor', 'TFT_Item_InfinityEdge', 'TFT_Item_GuinsoosRageblade', 'TFT_Item_FrozenHeart', 'TFT_Item_BlueBuff', 'TFT_Item_ThiefsGloves', 'TFT_Item_SpectralGauntlet', 'TFT_Item_RabadonsDeathcap', 'TFT_Item_LastWhisper', 'TFT_Item_RunaansHurricane', 'TFT_Item_RapidFireCannon', 'TFT_Item_HextechGunblade', 'TFT_Item_UnstableConcoction', 'TFT_Item_Crownguard', 'TFT_Item_Quicksilver', 'TFT_Item_TitansResolve', 'TFT_Item_NightHarvester', 'TFT_Item_ArchangelsStaff', 'TFT_Item_RedBuff', 'TFT_Item_JeweledGauntlet', 'TFT_Item_Leviathan', 'TFT_Item_Morellonomicon'}
-RADIANTS = {'TFT5_Item_StatikkShivRadiant','TFT5_Item_LeviathanRadiant','TFT5_Item_SpectralGauntletRadiant','TFT5_Item_RunaansHurricaneRadiant','TFT5_Item_QuicksilverRadiant','TFT5_Item_MorellonomiconRadiant','TFT5_Item_BrambleVestRadiant', 'TFT5_Item_AdaptiveHelmRadiant', 'TFT5_Item_InfinityEdgeRadiant', 'TFT5_Item_HandOfJusticeRadiant', 'TFT5_Item_GuinsoosRagebladeRadiant', 'TFT5_Item_RabadonsDeathcapRadiant', 'TFT5_Item_JeweledGauntletRadiant', 'TFT5_Item_GiantSlayerRadiant', 'TFT5_Item_IonicSparkRadiant', 'TFT5_Item_SpearOfShojinRadiant', 'TFT5_Item_HextechGunbladeRadiant', 'TFT5_Item_SteraksGageRadiant', 'TFT5_Item_ThiefsGlovesRadiant', 'TFT5_Item_FrozenHeartRadiant', 'TFT5_Item_ArchangelsStaffRadiant', 'TFT5_Item_CrownguardRadiant', 'TFT5_Item_GargoyleStoneplateRadiant', 'TFT5_Item_DragonsClawRadiant', 'TFT5_Item_RapidFirecannonRadiant', 'TFT5_Item_WarmogsArmorRadiant', 'TFT5_Item_BloodthirsterRadiant', 'TFT5_Item_DeathbladeRadiant', 'TFT5_Item_LastWhisperRadiant', 'TFT5_Item_TrapClawRadiant', 'TFT5_Item_SunfireCapeRadiant', 'TFT5_Item_TitansResolveRadiant', 'TFT5_Item_NightHarvesterRadiant', 'TFT5_Item_RedemptionRadiant', 'TFT5_Item_GuardianAngelRadiant', 'TFT5_Item_BlueBuffRadiant'}
-EMBLEMS = {'TFT10_Item_BigShotEmblem', 'TFT10_Item_KDAEmblem', 'TFT10_Item_SuperfanEmblem', 'TFT10_Item_GuardianEmblem', 'TFT10_Item_ExecutionerEmblem', 'TFT10_Item_CountryEmblem', 'TFT10_Item_EdgelordEmblem', 'TFT10_Item_8bitEmblem', 'TFT10_Item_PBJEmblem', 'TFT10_Item_DiscoEmblem', 'TFT10_Item_BrawlerEmblem', 'TFT10_Item_PentakillEmblem', 'TFT10_Item_FighterEmblem', 'TFT10_Item_CrowdDiverEmblem', 'TFT10_Item_RapidfireEmblem', 'TFT10_Item_TrueDamageEmblem', 'TFT10_Item_DazzlerEmblem', 'TFT10_Item_EmoEmblem', 'TFT10_Item_JazzEmblem', 'TFT10_Item_HyperPopEmblem', 'TFT10_Item_PunkEmblem', 'TFT10_Item_WardenEmblem', 'TFT10_Item_SpellweaverEmblem'}
-ARTIFACTS = {'TFT9_Item_OrnnHullbreaker', 'TFT7_Item_ShimmerscaleGamblersBlade', 'TFT7_Item_ShimmerscaleMogulsMail', 'TFT9_Item_OrnnPrototypeForge', 'TFT4_Item_OrnnInfinityForce', 'TFT9_Item_OrnnDeathfireGrasp', 'TFT4_Item_OrnnAnimaVisage', 'TFT9_Item_OrnnTrickstersGlass', 'TFT7_Item_ShimmerscaleGoldmancersStaff','TFT4_Item_OrnnDeathsDefiance', 'TFT7_Item_ShimmerscaleDiamondHands', 'TFT9_Item_OrnnHorizonFocus','TFT4_Item_OrnnZhonyasParadox', 'TFT4_Item_OrnnEternalWinter', 'TFT4_Item_OrnnMuramana', 'TFT4_Item_OrnnTheCollector'}
-SUPPORTS = {'TFT5_Item_ZzRotPortalRadiant','TFT4_Item_OrnnRanduinsSanctum','TFT4_Item_OrnnObsidianCleaver','TFT7_Item_ShimmerscaleHeartOfGold','TFT_Item_BansheesVeil','TFT_Item_Shroud','TFT_Item_Zephyr','TFT_Item_Chalice','TFT_Item_ZekesHerald','TFT_Item_RadiantVirtue','TFT_Item_LocketOfTheIronSolari','TFT_Item_AegisOfTheLegion'}
-IGNOREDITEMS = {'TFT_Item_BFSword','TFT_Item_ChainVest','TFT_Item_EmptyBag','TFT_Item_NegatronCloak','TFT_Item_SparringGloves','TFT_Item_TearOfTheGoddess','TFT_Item_NeedlesslyLargeRod','TFT_Item_GiantsBelt','TFT_Item_RecurveBow','TFT_Item_ForceOfNature','TFT_Item_Spatula'}
+logging.basicConfig(level=logging.INFO)
+SERVERS = ['br1', 'eun1', 'euw1', 'jp1', 'kr', 'la1', 'la2', 'na1', 'oc1', 'ph2', 'ru', 'sg2', 'th2', 'tr1', 'tw2',
+           'vn2']
+REGIONS = ['americas', 'asia', 'europe', 'sea']
+VERSION = 'Version 14.1'
+
+CRAFTABLES = {'TFT_Item_GargoyleStoneplate', 'TFT_Item_SpearOfShojin', 'TFT_Item_Deathblade', 'TFT_Item_AdaptiveHelm',
+              'TFT_Item_Redemption', 'TFT_Item_SteraksGage', 'TFT_Item_DragonsClaw', 'TFT_Item_StatikkShiv',
+              'TFT_Item_WarmogsArmor', 'TFT_Item_Bloodthirster', 'TFT_Item_PowerGauntlet', 'TFT_Item_BrambleVest',
+              'TFT_Item_GuardianAngel', 'TFT_Item_IonicSpark', 'TFT_Item_MadredsBloodrazor', 'TFT_Item_InfinityEdge',
+              'TFT_Item_GuinsoosRageblade', 'TFT_Item_FrozenHeart', 'TFT_Item_BlueBuff', 'TFT_Item_ThiefsGloves',
+              'TFT_Item_SpectralGauntlet', 'TFT_Item_RabadonsDeathcap', 'TFT_Item_LastWhisper',
+              'TFT_Item_RunaansHurricane', 'TFT_Item_RapidFireCannon', 'TFT_Item_HextechGunblade',
+              'TFT_Item_UnstableConcoction', 'TFT_Item_Crownguard', 'TFT_Item_Quicksilver', 'TFT_Item_TitansResolve',
+              'TFT_Item_NightHarvester', 'TFT_Item_ArchangelsStaff', 'TFT_Item_RedBuff', 'TFT_Item_JeweledGauntlet',
+              'TFT_Item_Leviathan', 'TFT_Item_Morellonomicon'}
+RADIANTS = {'TFT5_Item_StatikkShivRadiant', 'TFT5_Item_LeviathanRadiant', 'TFT5_Item_SpectralGauntletRadiant',
+            'TFT5_Item_RunaansHurricaneRadiant', 'TFT5_Item_QuicksilverRadiant', 'TFT5_Item_MorellonomiconRadiant',
+            'TFT5_Item_BrambleVestRadiant', 'TFT5_Item_AdaptiveHelmRadiant', 'TFT5_Item_InfinityEdgeRadiant',
+            'TFT5_Item_HandOfJusticeRadiant', 'TFT5_Item_GuinsoosRagebladeRadiant', 'TFT5_Item_RabadonsDeathcapRadiant',
+            'TFT5_Item_JeweledGauntletRadiant', 'TFT5_Item_GiantSlayerRadiant', 'TFT5_Item_IonicSparkRadiant',
+            'TFT5_Item_SpearOfShojinRadiant', 'TFT5_Item_HextechGunbladeRadiant', 'TFT5_Item_SteraksGageRadiant',
+            'TFT5_Item_ThiefsGlovesRadiant', 'TFT5_Item_FrozenHeartRadiant', 'TFT5_Item_ArchangelsStaffRadiant',
+            'TFT5_Item_CrownguardRadiant', 'TFT5_Item_GargoyleStoneplateRadiant', 'TFT5_Item_DragonsClawRadiant',
+            'TFT5_Item_RapidFirecannonRadiant', 'TFT5_Item_WarmogsArmorRadiant', 'TFT5_Item_BloodthirsterRadiant',
+            'TFT5_Item_DeathbladeRadiant', 'TFT5_Item_LastWhisperRadiant', 'TFT5_Item_TrapClawRadiant',
+            'TFT5_Item_SunfireCapeRadiant', 'TFT5_Item_TitansResolveRadiant', 'TFT5_Item_NightHarvesterRadiant',
+            'TFT5_Item_RedemptionRadiant', 'TFT5_Item_GuardianAngelRadiant', 'TFT5_Item_BlueBuffRadiant'}
+EMBLEMS = {'TFT10_Item_BigShotEmblem', 'TFT10_Item_KDAEmblem', 'TFT10_Item_SuperfanEmblem', 'TFT10_Item_GuardianEmblem',
+           'TFT10_Item_ExecutionerEmblem', 'TFT10_Item_CountryEmblem', 'TFT10_Item_EdgelordEmblem',
+           'TFT10_Item_8bitEmblem', 'TFT10_Item_PBJEmblem', 'TFT10_Item_DiscoEmblem', 'TFT10_Item_BrawlerEmblem',
+           'TFT10_Item_PentakillEmblem', 'TFT10_Item_FighterEmblem', 'TFT10_Item_CrowdDiverEmblem',
+           'TFT10_Item_RapidfireEmblem', 'TFT10_Item_TrueDamageEmblem', 'TFT10_Item_DazzlerEmblem',
+           'TFT10_Item_EmoEmblem', 'TFT10_Item_JazzEmblem', 'TFT10_Item_HyperPopEmblem', 'TFT10_Item_PunkEmblem',
+           'TFT10_Item_WardenEmblem', 'TFT10_Item_SpellweaverEmblem'}
+ARTIFACTS = {'TFT9_Item_OrnnHullbreaker', 'TFT7_Item_ShimmerscaleGamblersBlade', 'TFT7_Item_ShimmerscaleMogulsMail',
+             'TFT9_Item_OrnnPrototypeForge', 'TFT4_Item_OrnnInfinityForce', 'TFT9_Item_OrnnDeathfireGrasp',
+             'TFT4_Item_OrnnAnimaVisage', 'TFT9_Item_OrnnTrickstersGlass', 'TFT7_Item_ShimmerscaleGoldmancersStaff',
+             'TFT4_Item_OrnnDeathsDefiance', 'TFT7_Item_ShimmerscaleDiamondHands', 'TFT9_Item_OrnnHorizonFocus',
+             'TFT4_Item_OrnnZhonyasParadox', 'TFT4_Item_OrnnEternalWinter', 'TFT4_Item_OrnnMuramana',
+             'TFT4_Item_OrnnTheCollector'}
+SUPPORTS = {'TFT5_Item_ZzRotPortalRadiant', 'TFT4_Item_OrnnRanduinsSanctum', 'TFT4_Item_OrnnObsidianCleaver',
+            'TFT7_Item_ShimmerscaleHeartOfGold', 'TFT_Item_BansheesVeil', 'TFT_Item_Shroud', 'TFT_Item_Zephyr',
+            'TFT_Item_Chalice', 'TFT_Item_ZekesHerald', 'TFT_Item_RadiantVirtue', 'TFT_Item_LocketOfTheIronSolari',
+            'TFT_Item_AegisOfTheLegion'}
+IGNOREDITEMS = {'TFT_Item_BFSword', 'TFT_Item_ChainVest', 'TFT_Item_EmptyBag', 'TFT_Item_NegatronCloak',
+                'TFT_Item_SparringGloves', 'TFT_Item_TearOfTheGoddess', 'TFT_Item_NeedlesslyLargeRod',
+                'TFT_Item_GiantsBelt', 'TFT_Item_RecurveBow', 'TFT_Item_ForceOfNature', 'TFT_Item_Spatula'}
 
 IGNOREDUNITS = []
 # UNITS1 = ['TFT10_Nami','TFT10_Annie','TFT10_Kennen','TFT10_Evelynn','TFT10_KSante','TFT10_Olaf','TFT10_Jinx','TFT10_Yasuo','TFT10_Lillia','TFT10_Vi','TFT10_Taric','TFT10_TahmKench','TFT10_Corki',]
@@ -96,7 +136,7 @@ MAPPINGS = {  # na1, vn2, kr confirmed
     SERVERS[13]: REGIONS[2],
     SERVERS[14]: REGIONS[1],
     SERVERS[15]: REGIONS[3]
-    }
+}
 RIOT_API = os.environ.get('RIOT_API')
 
 
@@ -111,15 +151,22 @@ def update_meta(cursor):
         avg(file, cursor, 'comps')
 
 
-def pool(cursor, file, i_augments=[], i_units=[], i_traits=[]):
+def pool(cursor, file, i_augments=None, i_units=None, i_traits=None):
     '''
         i_augments: a list of max length 3 of augments, unordered
         i_units: a 8x3 list, with the first being character_id, second being tier, third being item in the form of lists
         i_traits: a 8x2 list, with the first being name, the second being tier. Remember to make it so names are unique later
     '''
-    inputs = [[i_augments,'p','player_states',None,None,'augment'],
-              [i_units,'u','unit_states','character_id','tier','item'],
-              [i_traits,'t','trait_states','name','tier_current',None]
+    global trio
+    if i_traits is None:
+        i_traits = []
+    if i_units is None:
+        i_units = []
+    if i_augments is None:
+        i_augments = []
+    inputs = [[i_augments, 'p', 'player_states', None, None, 'augment'],
+              [i_units, 'u', 'unit_states', 'character_id', 'tier', 'item'],
+              [i_traits, 't', 'trait_states', 'name', 'tier_current', None]
               ]
     subqueries = []
     for arg in inputs:
@@ -138,12 +185,12 @@ def pool(cursor, file, i_augments=[], i_units=[], i_traits=[]):
                 loops = len(cur[0])
             for i in range(loops):
                 if i != 0:  # inner joins start from u2
-                    innerjoin = f"INNER JOIN {table} {alias}{i+1} ON {alias}1.puuid = {alias}{i+1}.puuid AND {alias}1.match_id = {alias}{i+1}.match_id "
+                    innerjoin = f"INNER JOIN {table} {alias}{i + 1} ON {alias}1.puuid = {alias}{i + 1}.puuid AND {alias}1.match_id = {alias}{i + 1}.match_id "
                     subquery += innerjoin
                 if alias != 'p':  # primary, character_id and name
-                    wheres.append(f"{alias}{i+1}.{primary} = '{string_to_canon(cursor, cur[0][i])}'")
+                    wheres.append(f"{alias}{i + 1}.{primary} = '{string_to_canon(cursor, cur[0][i])}'")
                 if alias != 'p' and cur[1][i] != 0:  # secondary, tier and tier_current
-                    wheres.append(f"{alias}{i+1}.{secondary} = {cur[1][i]}")
+                    wheres.append(f"{alias}{i + 1}.{secondary} = {cur[1][i]}")
                 if (alias == 'u' and cur[2][i] != []) or (alias == 'p' and cur != []):  # tertiary, item and augment
                     if alias == 'p':
                         trio = list(map(lambda x: string_to_canon(cursor, x), cur))
@@ -151,18 +198,18 @@ def pool(cursor, file, i_augments=[], i_units=[], i_traits=[]):
                         trio = list(map(lambda x: string_to_canon(cursor, x), cur[2][i]))
                     inner_query = ""
                     if len(trio) == 1:
-                        inner_query = f"{alias}{i+1}.{tertiary}1 = '{trio[0]}' OR {alias}{i+1}.{tertiary}2 = '{trio[0]}' OR {alias}{i+1}.{tertiary}3 = '{trio[0]}'"
+                        inner_query = f"{alias}{i + 1}.{tertiary}1 = '{trio[0]}' OR {alias}{i + 1}.{tertiary}2 = '{trio[0]}' OR {alias}{i + 1}.{tertiary}3 = '{trio[0]}'"
                     else:
                         all_items = []
                         if len(trio) == 2:
-                            all_permutations = [(1,2),(2,1),(1,3),(3,1),(2,3),(3,2)]
+                            all_permutations = [(1, 2), (2, 1), (1, 3), (3, 1), (2, 3), (3, 2)]
                             for x, y in all_permutations:
-                                statement = f"({alias}{i+1}.{tertiary}{x} = '{trio[0]}' AND {alias}{i+1}.{tertiary}{y} = '{trio[1]}')"
+                                statement = f"({alias}{i + 1}.{tertiary}{x} = '{trio[0]}' AND {alias}{i + 1}.{tertiary}{y} = '{trio[1]}')"
                                 all_items.append(statement)
                         elif len(trio) == 3:
                             all_permutations = list(permutations(trio))
                             for perm in all_permutations:
-                                statement = f"({alias}{i+1}.{tertiary}1 = '{perm[0]}' AND {alias}{i+1}.{tertiary}2 = '{perm[1]}' AND {alias}{i+1}.{tertiary}3 = '{perm[2]}')"
+                                statement = f"({alias}{i + 1}.{tertiary}1 = '{perm[0]}' AND {alias}{i + 1}.{tertiary}2 = '{perm[1]}' AND {alias}{i + 1}.{tertiary}3 = '{perm[2]}')"
                                 all_items.append(statement)
                         inner_query = " OR ".join(all_items)
                     wheres.append(f"({inner_query})")
@@ -178,7 +225,7 @@ def pool(cursor, file, i_augments=[], i_units=[], i_traits=[]):
             main_query += f" JOIN ({subquery}) AS {alias} ON {subqueries[0][1]}.puuid = {alias}.puuid AND {subqueries[0][1]}.match_id = {alias}.match_id"
         cursor.execute(main_query)
         print(main_query)
-    
+
     rs = cursor.fetchall()
     if not rs:
         print('no records found')
@@ -203,14 +250,14 @@ def update_best_items(file, cursor):
                 ON us.match_id = ps.match_id AND us.puuid = ps.puuid
         ''')
     rs = cursor.fetchall()
-    unit_map = {} # dictionary of unit: item_map
+    unit_map = {}  # dictionary of unit: item_map
     for r in rs:
         items = r[:3]
         placement = r[3]
         tier = r[4]
         unit = r[5]
         if unit not in unit_map:
-            unit_map[unit] = {} # dictionary of item: [sum, cnt]
+            unit_map[unit] = {}  # dictionary of item: [sum, cnt]
         for item in items:
             if item is not None:
                 if item not in unit_map[unit]:
@@ -223,7 +270,7 @@ def update_best_items(file, cursor):
     for unit, item_map in unit_map.items():
         li = []
         for item, val in item_map.items():
-            avrg = val[0]/val[1]
+            avrg = val[0] / val[1]
             li.append((val[1], avrg, item))
             if item in IGNOREDITEMS:
                 continue
@@ -244,11 +291,15 @@ def update_best_items(file, cursor):
         best_radiants = sorted(radiant[:3], key=lambda x: x[1])
         best_emblems = sorted(emblem[:3], key=lambda x: x[1])
         best_artifacts = sorted(artifact[:3], key=lambda x: x[1])
-        file.write(f"best craftables for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_craftables]}\n")
-        file.write(f"best radiants for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_radiants]}\n")
-        file.write(f"best emblems for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_emblems]}\n")
-        file.write(f"best artifacts for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_artifacts]}\n\n")
-    
+        file.write(
+            f"best craftables for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_craftables]}\n")
+        file.write(
+            f"best radiants for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_radiants]}\n")
+        file.write(
+            f"best emblems for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_emblems]}\n")
+        file.write(
+            f"best artifacts for {unit[6:]} are {[(_shortened(s[2]), round(s[1], 2), s[0]) for s in best_artifacts]}\n\n")
+
     # best units for each item, same process
     file.write('---------BEST UNITS FOR EACH ITEM---------\n')
     for item in best_units:
@@ -268,7 +319,7 @@ def avg(file, cursor, table, arg=None):
     if table == 'traits':
         cursor.execute(f"{head}, name, tier_current FROM {table}")
     elif table == "comps":
-        cursor.execute(f"{head}, encoded FROM {table} ORDER BY num_placement DESC LIMIT 30")
+        cursor.execute(f"{head}, encoded FROM {table} ORDER BY num_placement DESC LIMIT 50")
     elif table == 'items':
         if arg is None:
             avg(file, cursor, table, arg='craftable')
@@ -310,17 +361,22 @@ def avg(file, cursor, table, arg=None):
         file.write(f"--------------{table.upper()}---------------\n")
     for row in li:
         if table == 'traits':
-            file.write(f"average placement of tier {row[4]} {row[3][6:]} is {row[0]:.2f}, top 4 rate {row[1]*100:.2f}, {row[2]} games played\n")
+            file.write(
+                f"average placement of tier {row[4]} {row[3][6:]} is {row[0]:.2f}, top 4 rate {row[1] * 100:.2f}, {row[2]} games played\n")
         elif table == 'comps':
-            file.write(f"average placement of tier {row[3][1]} {TRAITREVERSE[row[3][0]][6:]}, tier {row[3][3]} {TRAITREVERSE[row[3][2]][6:]}, tier {row[3][5]} {TRAITREVERSE[row[3][4]][6:]} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f}, {row[2]} games played\n")
+            file.write(
+                f"average placement of tier {row[3][1]} {TRAITREVERSE[row[3][0]][6:]}, tier {row[3][3]} {TRAITREVERSE[row[3][2]][6:]}, tier {row[3][5]} {TRAITREVERSE[row[3][4]][6:]} is {row[0]:.2f}, top 4 rate {(row[1] * 100):.2f}, {row[2]} games played\n")
         elif table == 'units':
-            file.write(f"average placement of {row[3][6:]} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f}, {row[2]} games played\n")
+            file.write(
+                f"average placement of {row[3][6:]} is {row[0]:.2f}, top 4 rate {(row[1] * 100):.2f}, {row[2]} games played\n")
         else:
             # emblems from augments are removed in set 10
             # if table == 'augments' and row[2].endswith(('Trait', 'Trait2', 'Emblem', 'Emblem2')):
             #     file.write(f"average placement of {row[2]} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f} EMBLEM OR TRAIT\n")
             #     continue
-            file.write(f"average placement of {_shortened(row[3])} is {row[0]:.2f}, top 4 rate {(row[1]*100):.2f}, {row[2]} games played\n")
+            file.write(
+                f"average placement of {_shortened(row[3])} is {row[0]:.2f}, top 4 rate {(row[1] * 100):.2f}, {row[2]} games played\n")
+
 
 def insert_match(cursor, server, region, match_id):
     # save unnecessary get requests
@@ -332,6 +388,8 @@ def insert_match(cursor, server, region, match_id):
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
         print(res.status_code)
+        if res.status_code == 403:
+            print(match_id)
         # wait and retry if rate limit exceeded
         if res.status_code == 429:
             time.sleep(25)
@@ -347,20 +405,23 @@ def insert_match(cursor, server, region, match_id):
             if len(augments) < 3:  # the dude quitted the game, next participant
                 continue
             for i, name in enumerate(augments):
-                cursor.execute('SELECT sum_placement FROM augments WHERE name = ? AND stage = ?', (name, i+1))
+                cursor.execute('SELECT sum_placement FROM augments WHERE name = ? AND stage = ?', (name, i + 1))
                 r = cursor.fetchone()
                 if not r:
                     cursor.execute('''INSERT INTO augments (name, stage, sum_placement, num_placement, top4) VALUES (?, ?, ?, ?, ?)
-                                ''', (name, i+1, participant['placement'], 1, (1 if participant['placement']<=4 else 0)))
+                                ''', (
+                        name, i + 1, participant['placement'], 1, (1 if participant['placement'] <= 4 else 0)))
                 elif r[0] is None:
-                    cursor.execute('''UPDATE augments SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND stage = ?'''
-                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), name, i+1))
+                    cursor.execute(
+                        '''UPDATE augments SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND stage = ?'''
+                        , (participant['placement'], (1 if participant['placement'] <= 4 else 0), name, i + 1))
                 else:
                     cursor.execute('''UPDATE augments SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
-                                WHERE name = ? AND stage = ?''', (participant['placement'], (1 if participant['placement']<=4 else 0), name, i+1))
-            
+                                WHERE name = ? AND stage = ?''',
+                                   (participant['placement'], (1 if participant['placement'] <= 4 else 0), name, i + 1))
+
             # traits #debug
-            notable_traits = [] # for recognising the composition, into comp_encoded
+            notable_traits = []  # for recognising the composition, into comp_encoded
             candidate_traits = []
             for trait in participant['traits']:
                 if trait['tier_current'] > 0:
@@ -373,19 +434,26 @@ def insert_match(cursor, server, region, match_id):
                         INSERT INTO trait_states (name, puuid, match_id, tier_current)
                         VALUES (?, ?, ?, ?)
                     """, (trait['name'], participant['puuid'], match_id, trait['tier_current'],))
-                    cursor.execute("SELECT name, tier_current, sum_placement FROM traits WHERE name = ? AND tier_current = ?", (trait['name'],trait['tier_current']))
+                    cursor.execute(
+                        "SELECT name, tier_current, sum_placement FROM traits WHERE name = ? AND tier_current = ?",
+                        (trait['name'], trait['tier_current']))
                     r = cursor.fetchone()
                     if not r:
-                        cursor.execute("INSERT INTO traits (name, tier_current, sum_placement, num_placement, top4) VALUES (?, ?, ?, 1, ?)"
-                                    , (trait['name'],trait['tier_current'],participant['placement'],(1 if participant['placement']<=4 else 0)))
+                        cursor.execute(
+                            "INSERT INTO traits (name, tier_current, sum_placement, num_placement, top4) VALUES (?, ?, ?, 1, ?)"
+                            , (trait['name'], trait['tier_current'], participant['placement'],
+                               (1 if participant['placement'] <= 4 else 0)))
                     elif r[2] is None:
-                        cursor.execute("UPDATE traits SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND tier_current = ?"
-                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), trait['name'], trait['tier_current']))
+                        cursor.execute(
+                            "UPDATE traits SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ? AND tier_current = ?"
+                            , (participant['placement'], (1 if participant['placement'] <= 4 else 0), trait['name'],
+                               trait['tier_current']))
                     else:
                         cursor.execute("""
                             UPDATE traits SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
                             WHERE name = ? AND tier_current = ?
-                        """, (participant['placement'], (1 if participant['placement']<=4 else 0), trait['name'], trait['tier_current']))
+                        """, (participant['placement'], (1 if participant['placement'] <= 4 else 0), trait['name'],
+                              trait['tier_current']))
             if len(notable_traits) < 3:
                 candidate_traits.sort(key=lambda x: x[1], reverse=True)
                 candidate_traits.sort(key=lambda x: x[0])
@@ -396,27 +464,32 @@ def insert_match(cursor, server, region, match_id):
             notable_traits.sort(key=lambda x: x[0])
             comp_encoded = ''.join(notable_traits)
             if comp_encoded != '':
-            # update comps
+                # update comps
                 cursor.execute("SELECT encoded, sum_placement FROM comps WHERE encoded = ?", (comp_encoded,))
                 r = cursor.fetchone()
                 if not r:
                     cursor.execute("INSERT INTO comps (encoded, sum_placement, num_placement, top4) VALUES (?, ?, 1, ?)"
-                                , (comp_encoded,participant['placement'],(1 if participant['placement']<=4 else 0)))
+                                   , (
+                                       comp_encoded, participant['placement'],
+                                       (1 if participant['placement'] <= 4 else 0)))
                 elif r[1] is None:
                     cursor.execute("UPDATE comps SET sum_placement = ?, num_placement = 1, top4 = ? WHERE encoded = ?"
-                                , (participant['placement'], (1 if participant['placement']<=4 else 0), comp_encoded))
+                                   , (
+                                       participant['placement'], (1 if participant['placement'] <= 4 else 0),
+                                       comp_encoded))
                 else:
                     cursor.execute("""
                         UPDATE comps SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? 
                         WHERE encoded = ?
-                    """, (participant['placement'], (1 if participant['placement']<=4 else 0), comp_encoded))
+                    """, (participant['placement'], (1 if participant['placement'] <= 4 else 0), comp_encoded))
 
-            #debug
+            # debug
             cursor.execute("""
                 INSERT INTO player_states (puuid, match_id, augment1, augment2, augment3, comp_encoded, placement)
                 VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (participant['puuid'], match_id, augments[0], augments[1], augments[2], comp_encoded, participant['placement'],))
-            
+            """, (participant['puuid'], match_id, augments[0], augments[1], augments[2], comp_encoded,
+                  participant['placement'],))
+
             # units
             for unit in participant['units']:
                 if unit['character_id'] not in IGNOREDUNITS:
@@ -427,62 +500,78 @@ def insert_match(cursor, server, region, match_id):
                             cursor.execute('SELECT sum_placement FROM items WHERE name = ?', (item,))
                             r = cursor.fetchone()
                             if not r:
-                                cursor.execute("INSERT INTO items (name, sum_placement, num_placement, top4) VALUES (?, ?, 1, ?)"
-                                    , (item, participant['placement'], (1 if participant['placement']<=4 else 0)))
+                                cursor.execute(
+                                    "INSERT INTO items (name, sum_placement, num_placement, top4) VALUES (?, ?, 1, ?)"
+                                    , (item, participant['placement'], (1 if participant['placement'] <= 4 else 0)))
                             elif r[0] is None:
-                                cursor.execute('''UPDATE items SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ?'''
-                                            , (participant['placement'], (1 if participant['placement']<=4 else 0), item))
+                                cursor.execute(
+                                    '''UPDATE items SET sum_placement = ?, num_placement = 1, top4 = ? WHERE name = ?'''
+                                    , (participant['placement'], (1 if participant['placement'] <= 4 else 0), item))
                             else:
-                                cursor.execute('''UPDATE items SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? WHERE name = ?'''
-                                            , (participant['placement'], (1 if participant['placement']<=4 else 0), item))
+                                cursor.execute(
+                                    '''UPDATE items SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? WHERE name = ?'''
+                                    , (participant['placement'], (1 if participant['placement'] <= 4 else 0), item))
                     while len(items) < 3:
                         items.append(None)
                     cursor.execute("""
                         INSERT INTO unit_states (character_id, puuid, match_id, tier, item1, item2, item3)
                         VALUES (?, ?, ?, ?, ?, ?, ?)
-                    """, (unit['character_id'], participant['puuid'], match_id, unit['tier'], items[0], items[1], items[2]))
+                    """, (
+                        unit['character_id'], participant['puuid'], match_id, unit['tier'], items[0], items[1],
+                        items[2]))
                     # update units avg
                     cursor.execute('SELECT sum_placement FROM units WHERE character_id = ?', (unit['character_id'],))
                     r = cursor.fetchone()[0]
                     if r is None:
-                        cursor.execute('''UPDATE units SET sum_placement = ?, num_placement = 1, top4 = ? WHERE character_id = ?'''
-                                    , (participant['placement'], (1 if participant['placement']<=4 else 0), unit['character_id']))
+                        cursor.execute(
+                            '''UPDATE units SET sum_placement = ?, num_placement = 1, top4 = ? WHERE character_id = ?'''
+                            , (participant['placement'], (1 if participant['placement'] <= 4 else 0),
+                               unit['character_id']))
                     else:
                         cursor.execute("""
                             UPDATE units SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? WHERE character_id = ?
-                        """, (participant['placement'], (1 if participant['placement']<=4 else 0), unit['character_id']))
+                        """, (
+                            participant['placement'], (1 if participant['placement'] <= 4 else 0),
+                            unit['character_id']))
                     # update units_3 avg
                     if unit['tier'] == 3 and (unit['rarity'] in [0, 1, 2]):  # 3 star units for tier 3 and below
-                        cursor.execute('SELECT sum_placement FROM units_3 WHERE character_id = ?', (unit['character_id'],))
+                        cursor.execute('SELECT sum_placement FROM units_3 WHERE character_id = ?',
+                                       (unit['character_id'],))
                         r = cursor.fetchone()[0]
                         if r is None:
-                            cursor.execute('''UPDATE units_3 SET sum_placement = ?, num_placement = 1, top4 = ? WHERE character_id = ?'''
-                                        , (participant['placement'], (1 if participant['placement']<=4 else 0), unit['character_id']))
+                            cursor.execute(
+                                '''UPDATE units_3 SET sum_placement = ?, num_placement = 1, top4 = ? WHERE character_id = ?'''
+                                , (participant['placement'], (1 if participant['placement'] <= 4 else 0),
+                                   unit['character_id']))
                         else:
                             cursor.execute("""
                                 UPDATE units_3 SET sum_placement = sum_placement + ?, num_placement = num_placement + 1, top4 = top4 + ? WHERE character_id = ?
-                            """, (participant['placement'], (1 if participant['placement']<=4 else 0), unit['character_id']))
+                            """, (participant['placement'], (1 if participant['placement'] <= 4 else 0),
+                                  unit['character_id']))
 
 
 def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
     '''return list_of_matches'''
     puuid = name_to_puuid(server, server_to_region(server), summonerName)
     if puuid is None:
-        return
+        return []
     url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?count={count}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
         print(res.status_code)
+        if res.status_code == 403:
+            print(summonerName)
         if res.status_code == 429:
             time.sleep(25)
             summoner_to_matches(cursor, server, region, summonerName, count)
         else:
             return []
     # print('found summoner!')
-    
+
     list_of_matches = res.json()
     return list_of_matches
+
 
 def server_to_matches(cursor, server, region):
     '''
@@ -499,19 +588,23 @@ def server_to_matches(cursor, server, region):
         list_of_matches = summoner_to_matches(cursor, server, region, name)
         if list_of_matches:
             for match in list_of_matches:
-                insert_match(cursor, server, region, match)
+                if match:
+                    insert_match(cursor, server, region, match)
     for i, name in enumerate(grandmasters):
         # print(f"player {i}")
         list_of_matches = summoner_to_matches(cursor, server, region, name)
         if list_of_matches:
             for match in list_of_matches:
-                insert_match(cursor, server, region, match)
+                if match:
+                    insert_match(cursor, server, region, match)
     # for i, name in enumerate(masters):
     #     print(f"player {i}")
     #     list_of_matches = summoner_to_matches(cursor, server, region, name, count=20)
     #     if list_of_matches:
     #         for match in list_of_matches:
-    #             insert_match(cursor, server, region, match)
+    # if match:
+    #     insert_match(cursor, server, region, match)
+
 
 def get_league(cursor, server, region, league, mastercnt=0) -> list:
     '''league: master, grandmaster, master'''
@@ -522,6 +615,8 @@ def get_league(cursor, server, region, league, mastercnt=0) -> list:
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
         print(res.status_code)
+        if res.status_code == 403:
+            print(league)
         if res.status_code == 429:
             time.sleep(25)
             get_league(cursor, server, region, league, mastercnt)
@@ -538,6 +633,7 @@ def get_league(cursor, server, region, league, mastercnt=0) -> list:
     print(f'{league}s count in {server}: {len(json["entries"])}')
     return [x['summonerName'] for x in json['entries']]
 
+
 def string_to_canon(cursor, user_input: str):
     '''
     honestly just look at implementation to see what to search. The general rule is that everything is
@@ -546,13 +642,84 @@ def string_to_canon(cursor, user_input: str):
     or it would return the wrong thing.
     '''
 
-    u_premap = {'mf':'TFT10_MissFortune','tf':'TFT10_TwistedFate','akali2':'TFT10_Akali_TrueDamage'}
-    t_premap = {'crowddiver':'Set10_CrowdDive','mixmaster':'Set10_DJ','bruiser':'Set10_Brawler','truedmg':'Set10_TrueDamage','heartsteel':'Set10_PopBand','bigshot':'Set10_Deadeye','mosher':'Set10_Fighter','rapidfire':'Set10_Quickshot','disco':'Set10_Funk','maestro':'Set10_Classical','wildcard':'Set10_TwoSides'}
-    ic_premap = {'adapticone':'TFT_Item_AdaptiveHelm','lw':'TFT_Item_LastWhisper','db':'TFT_Item_Deathblade','dclaw':'TFT_Item_DragonsClaw','bt':'TFT_Item_Bloodthirster','guardbreaker':'TFT_Item_PowerGauntlet','ga':'TFT_Item_GuardianAngel','eon':'TFT_Item_GuardianAngel','gs':'TFT_Item_MadredsBloodrazor','giantslayer':'TFT_Item_MadredsBloodrazor','ie':'TFT_Item_InfinityEdge','vow':'TFT_Item_FrozenHeart','protector':'TFT_Item_FrozenHeart','tg':'TFT_Item_ThiefsGloves','evenshroud':'TFT_Item_SpectralGauntlet','dcap':'TFT_Item_RabadonsDeathcap','redbuff':'TFT_Item_RapidFireCannon','hoj':'TFT_Item_UnstableConcoction','qss':'TFT_Item_Quicksilver','heart':'TFT_Item_NightHarvester','sunfire':'TFT_Item_RedBuff','jg':'TFT_Item_JeweledGauntlet','nashor':'TFT_Item_Leviathan'}
-    ir_premap = {'hoj':'TFT5_Item_HandOfJusticeRadiant','guardbreaker':'TFT5_Item_TrapClawRadiant','sunfire':'TFT5_Item_SunfireCapeRadiant','adapticone':'TFT5_Item_AdaptiveHelmRadiant','lw':'TFT5_Item_LastWhisperRadiant','db':'TFT5_Item_DeathbladeRadiant','dclaw':'TFT5_Item_DragonsClawRadiant','bt':'TFT5_Item_BloodthirsterRadiant','eon':'TFT5_Item_GuardianAngelRadiant','ga':'TFT5_Item_GuardianAngelRadiant','gs':'TFT5_Item_GiantSlayerRadiant','giantslayer':'TFT5_Item_GiantSlayerRadiant','ie':'TFT5_Item_InfinityEdgeRadiant','vow':'TFT5_Item_FrozenHeartRadiant','protector':'TFT5_Item_FrozenHeartRadiant','tg':'TFT5_Item_ThiefsGlovesRadiant','evenshroud':'TFT5_Item_SpectralGauntletRadiant','dcap':'TFT5_Item_RabadonsDeathcapRadiant','redbuff':'TFT5_Item_RapidFirecannonRadiant','qss':'TFT5_Item_QuicksilverRadiant','heart':'TFT5_Item_NightHarvesterRadiant','jg':'TFT5_Item_JeweledGauntletRadiant','nashor':'TFT5_Item_LeviathanRadiant'}
-    ia_premap = {'hullcrusher':'TFT9_Item_OrnnHullbreaker','tg':'TFT9_Item_OrnnPrototypeForge','triforce':'TFT4_Item_OrnnInfinityForce','dfg':'TFT9_Item_OrnnDeathfireGrasp','sniper':'TFT9_Item_OrnnHorizonFocus','snipersfocus':'TFT9_Item_OrnnHorizonFocus','manazane':'TFT4_Item_OrnnMuramana'}
-    is_premap = {'biggem':'TFT7_Item_ShimmerscaleHeartOfGold','cone':'TFT_Item_Chalice','kewkcone':'TFT_Item_Chalice'}
-    a_premap = {'tiniest':'TFT9_Augment_TiniestTitan','tiniest+':'TFT9_Augment_TiniestTitanPlus','tiny':'TFT6_Augment_TinyTitans','salvagebin+':'TFT8_Augment_SalvageBinPlus','newrecruit':'TFT6_Augment_ForceOfNature','lilbuddies':'TFT10_Augment_LittleBuddies','salvagebin':'TFT6_Augment_SalvageBin','luckygloves':'TFT7_Augment_LuckyGloves','luckygloves+':'TFT7_Augment_LuckyGlovesPlus','raisethetempo':'TFT10_Augment_SpellweaverHalftimeShow','buried1':'TFT9_Augment_BuildingACollection','buried2':'TFT9_Augment_BuildingACollectionPlus','buried3':'TFT9_Augment_BuildingACollectionPlusPlus','longdistancepals':'TFT9_Augment_LongDistanceRelationship2','ldp':'TFT9_Augment_LongDistanceRelationship2','phreaky':'TFT9_Augment_PhreakyFriday','phreaky+':'TFT9_Augment_PhreakyFridayPlus','componentbuffet':'TFT9_Augment_CustomerIsAlwaysRight','partinggifts':'TFT9_Augment_DangerousToGoAlone','vampirism1':'TFT10_Augment_Vampirism','vampirism2':'TFT10_Augment_VampirismPlus','portableforge':'TFT6_Augment_PortableForge','portableforge+':'TFT6_Augment_PortableForgePlus','portableforge++':'TFT6_Augment_PortableForgePlusPlus','patientstudy':'TFT9_Augment_LearningFromExperience2','jeweledlotus2':'TFT9_Augment_JeweledLotus','jeweledlotus3':'TFT9_Augment_GreaterJeweledLotus','hologram':'TFT10_Augment_HeadlinerWoodlandCharm','goodforsomething1':'TFT10_Augment_GoodForSomethingSilver','goodforsomething2':'TFT10_Augment_GoodForSomething','frequentflier':'TFT9_Augment_JustKeepRolling','spoilsofwar1':'TFT9_Augment_DravenSpoilsOfWar','extendedplay':'TFT10_Augment_RepetitiveRiffing','finalascension':'TFT9_Augment_Commander_FinalAscension','ascension':'TFT9_Augment_Commander_Ascension','partialascension':'TFT9_Augment_Commander_PartialAscension','pumpingup1':'TFT9_Augment_PumpingUp','caretakersally':'TFT9_Augment_BardPlaybook1','caretakersfavor':'TFT9_Augment_BardPlaybook2','caretakerschosen':'TFT9_Augment_BardPlaybook3','blisteringstrikes':'TFT9_Augment_RedBuff','hedgefund':'TFT9_Augment_HedgeFund','hedgefund+':'TFT9_Augment_HedgeFundPlus','hedgefund++':'TFT9_Augment_HedgeFundPlusPlus','orbs1':'TFT9_Augment_HealingOrbsI','orbs2':'TFT9_Augment_HealingOrbsII','rollingfordays1':'TFT9_Augment_Commander_RollingForDays','magicwand':'TFT9_Augment_OldMansWalkingStick','scrappyinventions':'TFT9_Augment_ImpromptuInventions','marchofprogress':'TFT6_Augment_SlowAndSteady','march':'TFT6_Augment_SlowAndSteady','unified1':'TFT9_Augment_Formation1','unified2':'TFT9_Augment_Formation2','unifiedresistance1':'TFT9_Augment_Formation1','unifiedresistance2':'TFT9_Augment_Formation2','levelup':'TFT6_Augment_MaxLevel10','prismaticticket':'TFT6_Augment_GachaAddict','pandoras3':'TFT9_Augment_PandorasRadiantBox','pandorasitems3':'TFT9_Augment_PandorasRadiantBox','pandoras':'TFT6_Augment_PandorasItems','pandoras2':'TFT9_Augment_PandorasItems2','tiniesttitan':'TFT9_Augment_TiniestTitan','tiniesttitan+':'TFT9_Augment_TiniestTitanPlus','richgetricher+':'TFT6_Augment_RichGetRicherPlus','richgetricher':'TFT6_Augment_RichGetRicher','latentforge':'TFT9_Augment_LongTimeCrafting','doitforthefans':'TFT10_Augment_Superfan_ForTheFans','silverticket':'TFT9_Augment_BronzeTicket','goldenticket':'TFT9_Augment_SilverTicket','wellnesstrust':'TFT9_Augment_MoneyHealsAllWounds','theolrazzledazzle':'TFT10_Augment_Bedazzled','dazzle':'TFT10_Augment_Bedazzled','heartthrobs':'TFT10_Augment_HeartCollector','cruelpact':'TFT7_Augment_SacrificialPact','shoppingspree':'TFT9_Augment_HighEndSector','endlesshordes':'TFT9_Augment_OneHundredDuckSizedHorses'}
+    global d, s
+    u_premap = {'mf': 'TFT10_MissFortune', 'tf': 'TFT10_TwistedFate', 'akali2': 'TFT10_Akali_TrueDamage'}
+    t_premap = {'crowddiver': 'Set10_CrowdDive', 'mixmaster': 'Set10_DJ', 'bruiser': 'Set10_Brawler',
+                'truedmg': 'Set10_TrueDamage', 'heartsteel': 'Set10_PopBand', 'bigshot': 'Set10_Deadeye',
+                'mosher': 'Set10_Fighter', 'rapidfire': 'Set10_Quickshot', 'disco': 'Set10_Funk',
+                'maestro': 'Set10_Classical', 'wildcard': 'Set10_TwoSides'}
+    ic_premap = {'adapticone': 'TFT_Item_AdaptiveHelm', 'lw': 'TFT_Item_LastWhisper', 'db': 'TFT_Item_Deathblade',
+                 'dclaw': 'TFT_Item_DragonsClaw', 'bt': 'TFT_Item_Bloodthirster',
+                 'guardbreaker': 'TFT_Item_PowerGauntlet', 'ga': 'TFT_Item_GuardianAngel',
+                 'eon': 'TFT_Item_GuardianAngel', 'gs': 'TFT_Item_MadredsBloodrazor',
+                 'giantslayer': 'TFT_Item_MadredsBloodrazor', 'ie': 'TFT_Item_InfinityEdge',
+                 'vow': 'TFT_Item_FrozenHeart', 'protector': 'TFT_Item_FrozenHeart', 'tg': 'TFT_Item_ThiefsGloves',
+                 'evenshroud': 'TFT_Item_SpectralGauntlet', 'dcap': 'TFT_Item_RabadonsDeathcap',
+                 'redbuff': 'TFT_Item_RapidFireCannon', 'hoj': 'TFT_Item_UnstableConcoction',
+                 'qss': 'TFT_Item_Quicksilver', 'heart': 'TFT_Item_NightHarvester', 'sunfire': 'TFT_Item_RedBuff',
+                 'jg': 'TFT_Item_JeweledGauntlet', 'nashor': 'TFT_Item_Leviathan'}
+    ir_premap = {'hoj': 'TFT5_Item_HandOfJusticeRadiant', 'guardbreaker': 'TFT5_Item_TrapClawRadiant',
+                 'sunfire': 'TFT5_Item_SunfireCapeRadiant', 'adapticone': 'TFT5_Item_AdaptiveHelmRadiant',
+                 'lw': 'TFT5_Item_LastWhisperRadiant', 'db': 'TFT5_Item_DeathbladeRadiant',
+                 'dclaw': 'TFT5_Item_DragonsClawRadiant', 'bt': 'TFT5_Item_BloodthirsterRadiant',
+                 'eon': 'TFT5_Item_GuardianAngelRadiant', 'ga': 'TFT5_Item_GuardianAngelRadiant',
+                 'gs': 'TFT5_Item_GiantSlayerRadiant', 'giantslayer': 'TFT5_Item_GiantSlayerRadiant',
+                 'ie': 'TFT5_Item_InfinityEdgeRadiant', 'vow': 'TFT5_Item_FrozenHeartRadiant',
+                 'protector': 'TFT5_Item_FrozenHeartRadiant', 'tg': 'TFT5_Item_ThiefsGlovesRadiant',
+                 'evenshroud': 'TFT5_Item_SpectralGauntletRadiant', 'dcap': 'TFT5_Item_RabadonsDeathcapRadiant',
+                 'redbuff': 'TFT5_Item_RapidFirecannonRadiant', 'qss': 'TFT5_Item_QuicksilverRadiant',
+                 'heart': 'TFT5_Item_NightHarvesterRadiant', 'jg': 'TFT5_Item_JeweledGauntletRadiant',
+                 'nashor': 'TFT5_Item_LeviathanRadiant'}
+    ia_premap = {'hullcrusher': 'TFT9_Item_OrnnHullbreaker', 'tg': 'TFT9_Item_OrnnPrototypeForge',
+                 'triforce': 'TFT4_Item_OrnnInfinityForce', 'dfg': 'TFT9_Item_OrnnDeathfireGrasp',
+                 'sniper': 'TFT9_Item_OrnnHorizonFocus', 'snipersfocus': 'TFT9_Item_OrnnHorizonFocus',
+                 'manazane': 'TFT4_Item_OrnnMuramana'}
+    is_premap = {'biggem': 'TFT7_Item_ShimmerscaleHeartOfGold', 'cone': 'TFT_Item_Chalice',
+                 'kewkcone': 'TFT_Item_Chalice'}
+    a_premap = {'tiniest': 'TFT9_Augment_TiniestTitan', 'tiniest+': 'TFT9_Augment_TiniestTitanPlus',
+                'tiny': 'TFT6_Augment_TinyTitans', 'salvagebin+': 'TFT8_Augment_SalvageBinPlus',
+                'newrecruit': 'TFT6_Augment_ForceOfNature', 'lilbuddies': 'TFT10_Augment_LittleBuddies',
+                'salvagebin': 'TFT6_Augment_SalvageBin', 'luckygloves': 'TFT7_Augment_LuckyGloves',
+                'luckygloves+': 'TFT7_Augment_LuckyGlovesPlus',
+                'raisethetempo': 'TFT10_Augment_SpellweaverHalftimeShow', 'buried1': 'TFT9_Augment_BuildingACollection',
+                'buried2': 'TFT9_Augment_BuildingACollectionPlus',
+                'buried3': 'TFT9_Augment_BuildingACollectionPlusPlus',
+                'longdistancepals': 'TFT9_Augment_LongDistanceRelationship2',
+                'ldp': 'TFT9_Augment_LongDistanceRelationship2', 'phreaky': 'TFT9_Augment_PhreakyFriday',
+                'phreaky+': 'TFT9_Augment_PhreakyFridayPlus', 'componentbuffet': 'TFT9_Augment_CustomerIsAlwaysRight',
+                'partinggifts': 'TFT9_Augment_DangerousToGoAlone', 'vampirism1': 'TFT10_Augment_Vampirism',
+                'vampirism2': 'TFT10_Augment_VampirismPlus', 'portableforge': 'TFT6_Augment_PortableForge',
+                'portableforge+': 'TFT6_Augment_PortableForgePlus',
+                'portableforge++': 'TFT6_Augment_PortableForgePlusPlus',
+                'patientstudy': 'TFT9_Augment_LearningFromExperience2', 'jeweledlotus2': 'TFT9_Augment_JeweledLotus',
+                'jeweledlotus3': 'TFT9_Augment_GreaterJeweledLotus', 'hologram': 'TFT10_Augment_HeadlinerWoodlandCharm',
+                'goodforsomething1': 'TFT10_Augment_GoodForSomethingSilver',
+                'goodforsomething2': 'TFT10_Augment_GoodForSomething', 'frequentflier': 'TFT9_Augment_JustKeepRolling',
+                'spoilsofwar1': 'TFT9_Augment_DravenSpoilsOfWar', 'extendedplay': 'TFT10_Augment_RepetitiveRiffing',
+                'finalascension': 'TFT9_Augment_Commander_FinalAscension',
+                'ascension': 'TFT9_Augment_Commander_Ascension',
+                'partialascension': 'TFT9_Augment_Commander_PartialAscension', 'pumpingup1': 'TFT9_Augment_PumpingUp',
+                'caretakersally': 'TFT9_Augment_BardPlaybook1', 'caretakersfavor': 'TFT9_Augment_BardPlaybook2',
+                'caretakerschosen': 'TFT9_Augment_BardPlaybook3', 'blisteringstrikes': 'TFT9_Augment_RedBuff',
+                'hedgefund': 'TFT9_Augment_HedgeFund', 'hedgefund+': 'TFT9_Augment_HedgeFundPlus',
+                'hedgefund++': 'TFT9_Augment_HedgeFundPlusPlus', 'orbs1': 'TFT9_Augment_HealingOrbsI',
+                'orbs2': 'TFT9_Augment_HealingOrbsII', 'rollingfordays1': 'TFT9_Augment_Commander_RollingForDays',
+                'magicwand': 'TFT9_Augment_OldMansWalkingStick',
+                'scrappyinventions': 'TFT9_Augment_ImpromptuInventions',
+                'marchofprogress': 'TFT6_Augment_SlowAndSteady', 'march': 'TFT6_Augment_SlowAndSteady',
+                'unified1': 'TFT9_Augment_Formation1', 'unified2': 'TFT9_Augment_Formation2',
+                'unifiedresistance1': 'TFT9_Augment_Formation1', 'unifiedresistance2': 'TFT9_Augment_Formation2',
+                'levelup': 'TFT6_Augment_MaxLevel10', 'prismaticticket': 'TFT6_Augment_GachaAddict',
+                'pandoras3': 'TFT9_Augment_PandorasRadiantBox', 'pandorasitems3': 'TFT9_Augment_PandorasRadiantBox',
+                'pandoras': 'TFT6_Augment_PandorasItems', 'pandoras2': 'TFT9_Augment_PandorasItems2',
+                'tiniesttitan': 'TFT9_Augment_TiniestTitan', 'tiniesttitan+': 'TFT9_Augment_TiniestTitanPlus',
+                'richgetricher+': 'TFT6_Augment_RichGetRicherPlus', 'richgetricher': 'TFT6_Augment_RichGetRicher',
+                'latentforge': 'TFT9_Augment_LongTimeCrafting', 'doitforthefans': 'TFT10_Augment_Superfan_ForTheFans',
+                'silverticket': 'TFT9_Augment_BronzeTicket', 'goldenticket': 'TFT9_Augment_SilverTicket',
+                'wellnesstrust': 'TFT9_Augment_MoneyHealsAllWounds', 'theolrazzledazzle': 'TFT10_Augment_Bedazzled',
+                'dazzle': 'TFT10_Augment_Bedazzled', 'heartthrobs': 'TFT10_Augment_HeartCollector',
+                'cruelpact': 'TFT7_Augment_SacrificialPact', 'shoppingspree': 'TFT9_Augment_HighEndSector',
+                'endlesshordes': 'TFT9_Augment_OneHundredDuckSizedHorses'}
 
     cursor.execute("SELECT character_id FROM units")
     units = {item[0] for item in cursor.fetchall()}
@@ -591,8 +758,10 @@ def string_to_canon(cursor, user_input: str):
             print(f"full name of query: {full}")
             return full
 
+
 def server_to_region(server):
     return MAPPINGS[server]
+
 
 def name_to_puuid(server, region, summonerName):
     url = f"https://{server}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}"
@@ -600,12 +769,15 @@ def name_to_puuid(server, region, summonerName):
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
         print(res.status_code)
+        if res.status_code == 403:
+            print(summonerName)
         if res.status_code == 429:
             time.sleep(25)
             name_to_puuid(server, region, summonerName)
         return
     json = res.json()
     return json['puuid']
+
 
 def check_db(cursor):
     cursor.execute("SELECT COUNT(*) FROM matches")
@@ -617,12 +789,14 @@ def check_db(cursor):
     cursor.execute("SELECT COUNT(*) FROM trait_states")
     print(f"trait_states: {cursor.fetchone()[0]}")
 
+
 def _shortened(s: str):
     '''applies only to items and augments. Just used [:6] to traits and units'''
-    substrings = s.split('_',2)
+    substrings = s.split('_', 2)
     if len(substrings) != 3:
         return substrings[1]
     return substrings[2]
+
 
 if __name__ == "__main__":
     main()
