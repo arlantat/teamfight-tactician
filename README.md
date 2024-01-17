@@ -4,6 +4,8 @@
 
 Welcome to TF-Tactician - the app designed to give competitive advantage to Teamfight Tactics (TFT) players by fetching match history data from the Riot API and transforming it to helpful information, including champions, traits, augments, and compositions on playrates, winrates and best combinations.
 
+[![TF-Tactician](https://github.com/arlantat/teamfight-tactician/assets/88363323/26f2b930-a7d7-4335-9809-54faac4f9f88)](https://youtu.be/xUiEJ9vxqnc)
+
 ### Procedures:
 Reset DB Per patch:
 ```python
