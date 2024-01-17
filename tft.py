@@ -26,12 +26,13 @@ def main():
     #     for match in list_of_matches:
     #         insert_match(cur, server, region, match)
 
-    server_to_matches(cur, server, region)
-    update_meta(cur)
+    # server_to_matches(cur, server, region)
+    # update_meta(cur)
+
     check_db(cur)
 
-    # pool(cur,'',[],[['TFT10_Qiyana'],[2],[[]]],[['Set10_TrueDamage'],[3]])
-    # pool(cur,'',[],[],[['Set10_TrueDamage'],[3]])
+    pool(cur, '', i_augments=['a portableforge'], i_units=[['u illaoi'], [2], [[]]], i_traits=[['t bruiser'], [1]])
+
     con.close()
 
 
@@ -152,11 +153,16 @@ def update_meta(cursor):
 
 
 def pool(cursor, file, i_augments=None, i_units=None, i_traits=None):
-    '''
+    """
         i_augments: a list of max length 3 of augments, unordered
-        i_units: a 8x3 list, with the first being character_id, second being tier, third being item in the form of lists
-        i_traits: a 8x2 list, with the first being name, the second being tier. Remember to make it so names are unique later
-    '''
+        i_units: a 8x3 list, with the first being units, second being tiers, third being items in the form of lists
+        i_traits: a 8x2 list, with the first being traits, the second being tiers.
+        augment string: "a {augment_name}"
+        unit string: "u {unit_name}"
+        item string: "{ir OR ic OR ia OR is} {item_name}"
+        trait string: "t {trait_name}"
+        tier int: int from 0 to highest tier of the intended object
+    """
     global trio
     if i_traits is None:
         i_traits = []
@@ -379,6 +385,8 @@ def avg(file, cursor, table, arg=None):
 
 
 def insert_match(cursor, server, region, match_id):
+    if match_id == '' or match_id is None:
+        return
     # save unnecessary get requests
     cursor.execute("SELECT * FROM matches WHERE match_id = ?", (match_id,))
     if cursor.fetchone() is not None:
@@ -551,10 +559,11 @@ def insert_match(cursor, server, region, match_id):
 
 
 def summoner_to_matches(cursor, server, region, summonerName, count=10) -> list:
+    if summonerName == '' or summonerName is None:
+        return []
     '''return list_of_matches'''
     puuid = name_to_puuid(server, server_to_region(server), summonerName)
-    if puuid is None:
-        return []
+
     url = f"https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?count={count}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
@@ -607,31 +616,53 @@ def server_to_matches(cursor, server, region):
 
 
 def get_league(cursor, server, region, league, mastercnt=0) -> list:
-    '''league: master, grandmaster, master'''
-    '''return list of summonerName'''
+    """league: challenger, grandmaster, master, diamond, emerald, platinum, gold, silver, bronze, iron
+       return list of summonerName for 3 high-elo tiers, empty list for the rests"""
 
-    url = f"https://{server}.api.riotgames.com/tft/league/v1/{league}"
     headers = {'X-Riot-Token': RIOT_API}
-    res = requests.get(url, headers=headers)
-    if res.status_code != 200:
-        print(res.status_code)
-        if res.status_code == 403:
-            print(league)
-        if res.status_code == 429:
-            time.sleep(25)
-            get_league(cursor, server, region, league, mastercnt)
-        else:
-            return []
-    json = res.json()
 
-    if league == 'master':
-        summonerNames = [x['summonerName'] for x in json['entries'] if x['leaguePoints'] > 0]
+    if league in ['challenger', 'grandmaster', 'master']:
+        high_url = f"https://{server}.api.riotgames.com/tft/league/v1/{league}"
+        res = requests.get(high_url, headers=headers)
+        if res.status_code != 200:
+            print(res.status_code)
+            if res.status_code == 429:
+                time.sleep(25)
+                get_league(cursor, server, region, league, mastercnt)
+            else:
+                print("check status code")
+                return []
+        json = res.json()
+        if league == 'master':
+            print(f'{league}s count in {server}: {len(json["entries"])}')
+            summonerNames = [x['summonerName'] for x in json['entries'] if x['leaguePoints'] > 0]
+            if len(summonerNames) <= mastercnt:
+                return summonerNames
+            return random.sample(summonerNames, mastercnt)
         print(f'{league}s count in {server}: {len(json["entries"])}')
-        if len(summonerNames) <= mastercnt:
-            return summonerNames
-        return random.sample(summonerNames, mastercnt)
-    print(f'{league}s count in {server}: {len(json["entries"])}')
-    return [x['summonerName'] for x in json['entries']]
+        return [x['summonerName'] for x in json['entries']]
+    else:
+        league = league.upper()
+        league_cnt = 0
+        for division in ['I', 'II', 'III', 'IV']:
+            page = 1
+            while page:
+                low_url = f"https://{server}.api.riotgames.com/tft/league/v1/entries/{league}/{division}?queue=RANKED_TFT&page={page}"
+                res = requests.get(low_url, headers=headers)
+                if res.status_code != 200:
+                    print(res.status_code)
+                    if res.status_code == 429:
+                        time.sleep(30)
+                        res = requests.get(low_url, headers=headers)
+                    else:
+                        print("a new status code")
+                        return []
+                league_cnt += len(res.json())
+                if len(res.json()) == 0:
+                    break
+                page += 1
+        print(f'{league.lower()}s count in {server}: {league_cnt}')
+        return []
 
 
 def string_to_canon(cursor, user_input: str):
@@ -680,7 +711,7 @@ def string_to_canon(cursor, user_input: str):
                 'tiny': 'TFT6_Augment_TinyTitans', 'salvagebin+': 'TFT8_Augment_SalvageBinPlus',
                 'newrecruit': 'TFT6_Augment_ForceOfNature', 'lilbuddies': 'TFT10_Augment_LittleBuddies',
                 'salvagebin': 'TFT6_Augment_SalvageBin', 'luckygloves': 'TFT7_Augment_LuckyGloves',
-                'luckygloves+': 'TFT7_Augment_LuckyGlovesPlus',
+                'luckygloves+': 'TFT7_Augment_LuckyGlovesPlus', 'tempo': 'TFT10_Augment_SpellweaverHalftimeShow',
                 'raisethetempo': 'TFT10_Augment_SpellweaverHalftimeShow', 'buried1': 'TFT9_Augment_BuildingACollection',
                 'buried2': 'TFT9_Augment_BuildingACollectionPlus',
                 'buried3': 'TFT9_Augment_BuildingACollectionPlusPlus',
@@ -751,11 +782,11 @@ def string_to_canon(cursor, user_input: str):
         s = augments
     word = word.replace(" ", "").lower()
     if word in d:
-        print(f"full name of query: {d[word]}")
+        print(f"canon name of word: {d[word]}")
         return d[word]
     for full in s:
         if word in full.lower():
-            print(f"full name of query: {full}")
+            print(f"canon name of word: {full}")
             return full
 
 
@@ -764,13 +795,13 @@ def server_to_region(server):
 
 
 def name_to_puuid(server, region, summonerName):
+    if not summonerName:
+        return ''
     url = f"https://{server}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}"
     headers = {'X-Riot-Token': RIOT_API}
     res = requests.get(url, headers=headers)
     if res.status_code != 200:
         print(res.status_code)
-        if res.status_code == 403:
-            print(summonerName)
         if res.status_code == 429:
             time.sleep(25)
             name_to_puuid(server, region, summonerName)
@@ -791,7 +822,7 @@ def check_db(cursor):
 
 
 def _shortened(s: str):
-    '''applies only to items and augments. Just used [:6] to traits and units'''
+    """applies only to items and augments. Just used [:6] to traits and units"""
     substrings = s.split('_', 2)
     if len(substrings) != 3:
         return substrings[1]

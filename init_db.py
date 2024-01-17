@@ -1,14 +1,17 @@
-import sqlite3
 import os
-import requests
+import sqlite3
 import time
-from tft import server_to_region
+
+import requests
 from dotenv import load_dotenv
-import re
-from tft import summoner_to_matches, insert_match, CRAFTABLES, RADIANTS, SUPPORTS, EMBLEMS, ARTIFACTS, IGNOREDITEMS
+
+from tft import server_to_region
+from tft import summoner_to_matches, CRAFTABLES, RADIANTS, SUPPORTS, EMBLEMS, ARTIFACTS
+
 load_dotenv()
 
 RIOT_API = os.environ.get('RIOT_API')
+
 
 def init_db():
     con = sqlite3.connect("raw_matches.db")
@@ -106,6 +109,7 @@ def init_db():
     """)
     con.close()
 
+
 def reset_db(per_set=False):
     '''if per_set is set to True, wipes the entire db'''
     if per_set:
@@ -130,14 +134,21 @@ def reset_db(per_set=False):
     cur.execute("UPDATE items SET sum_placement = NULL, num_placement = NULL, top4 = NULL")
     con.close()
 
+
 def init_per_set():
     con = sqlite3.connect("raw_matches.db")
     con.isolation_level = None
     cur = con.cursor()
     cnt = 1
     server = 'vn2'
-    region = server_to_region(server) 
-    players = ['KhanhTri1810','adversary','St3Mura','Noob Guy','HNZ MIDFEEDD','xayah nilah','KND Finn','H E N I S S','RoT T2','PRX f0rs4keN','TVQ 1','PRX someth1ng','KND iCynS','GGx Lemonss','temppploutmmlggs','DB HighRoll','LLAETUM','paranoise','JayDee 333','KND k1an', 'Đình Tuấn1', 'M1nhbeso', 'Nâng cúp 4 lần', 'Just Dante', 'Dòng Máu Họ Đỗ', 'Marry Shaco', 'GD Shaw1', 'Dizzyland', 'Yasuo Không Q', 'CFNP Mèo Hor1', 'Onlive TrungVla', 'y Tiger1','Cloudyyyyyyyy','INF Kiss Kiss', 'Setsuko','1atsA','Twinkling Whales','TSK Milfhunter','me from nowhere','severthaidinh','Won Joon Soo']
+    region = server_to_region(server)
+    players = ['KhanhTri1810', 'adversary', 'St3Mura', 'Noob Guy', 'HNZ MIDFEEDD', 'xayah nilah', 'KND Finn',
+               'H E N I S S', 'RoT T2', 'PRX f0rs4keN', 'TVQ 1', 'PRX someth1ng', 'KND iCynS', 'GGx Lemonss',
+               'temppploutmmlggs', 'DB HighRoll', 'LLAETUM', 'paranoise', 'JayDee 333', 'KND k1an', 'Đình Tuấn1',
+               'M1nhbeso', 'Nâng cúp 4 lần', 'Just Dante', 'Dòng Máu Họ Đỗ', 'Marry Shaco', 'GD Shaw1', 'Dizzyland',
+               'Yasuo Không Q', 'CFNP Mèo Hor1', 'Onlive TrungVla', 'y Tiger1', 'Cloudyyyyyyyy', 'INF Kiss Kiss',
+               'Setsuko', '1atsA', 'Twinkling Whales', 'TSK Milfhunter', 'me from nowhere', 'severthaidinh',
+               'Won Joon Soo']
     for player in players:
         list_of_matches = summoner_to_matches(cur, server, region, player, count=30)
         if not list_of_matches:
@@ -162,7 +173,7 @@ def init_per_set():
                     cur.execute("SELECT * FROM traits WHERE name = ?", (trait['name'],))
                     if cur.fetchone() is not None:  # skip stored traits
                         continue
-                    for i in range(1, trait['tier_total']+1):
+                    for i in range(1, trait['tier_total'] + 1):
                         cur.execute("""
                             INSERT INTO traits (name, tier_current)
                             VALUES (?, ?)
@@ -181,7 +192,8 @@ def init_per_set():
                             INSERT INTO units_3 (character_id)
                             VALUES (?)
                         """, (unit['character_id'],))
-    itemss = [(CRAFTABLES, 'craftable'), (RADIANTS, 'radiant'), (SUPPORTS, 'support'), (EMBLEMS, 'emblem'), (ARTIFACTS,'artifact')]
+    itemss = [(CRAFTABLES, 'craftable'), (RADIANTS, 'radiant'), (SUPPORTS, 'support'), (EMBLEMS, 'emblem'),
+              (ARTIFACTS, 'artifact')]
     for items, c in itemss:
         for item in items:
             cur.execute("INSERT INTO items (name, class) VALUES (?, ?)", (item, c,))
@@ -221,12 +233,9 @@ def manual_per_set():
     # support = [s for s in li if s in SUPPORTS]
     # artifact = [s for s in li if s in ARTIFACTS]
     # ignored = [s for s in li if s in IGNOREDITEMS]
-    
-    
-    
-    
-    
+
     con.close()
+
 
 reset_db()
 # init_per_set()
@@ -237,4 +246,3 @@ reset_db()
 # print(len(UNITS4))
 # print(len(UNITS5))
 # print(len(TRAITS))
-
