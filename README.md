@@ -7,30 +7,24 @@ Welcome to TF-Tactician - the app designed to give competitive advantage to Team
 [![TF-Tactician](https://github.com/arlantat/teamfight-tactician/assets/88363323/26f2b930-a7d7-4335-9809-54faac4f9f88)](https://youtu.be/xUiEJ9vxqnc)
 
 ### Procedures:
-Reset DB Per patch:
-```python
-reset_db()  # init_db.py
+
+Once per patch:
+
+```
+$ python init.py patch
 ```
 
-Reset DB Per set:
-```python
-# init_db.py
-# find sample matches by invoking riot api first then
-reset_db(per_set=True)
-# then manually check if there are discrepancies in units and items in
-manual_per_set()
-# and run it.
+Once per set:
+```
+$ python init.py set
 ```
 
 ### Main Functionalities:
 ```python
 # fetch info from the top-rated ladder of the current region into SQLite
-server_to_matches(db_cursor, server, region)
+server_to_matches
 # update strongest compositions
-update_meta(db_cursor)
+update_meta
 # find average placement for a specified combination of augments, units, and traits
-pool(db_cursor, file, i_augments=[], i_units=[], i_traits=[])
+pool
 ```
-
-### Developer's Thought
-This application embodies my passion for programming and my love with TFT. I have been hardstuck at Master, but after developing this app, I finally reach Challenger (which is the highest rank in the game, 2 tiers above Master for those who are unaware). More functionalities coming soon, as I am about to learn machine learning in my next semester and continue to enjoy pro-gaming!
