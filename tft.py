@@ -37,16 +37,24 @@ with open('item_augment_map.json', 'r') as f:
     ITEM_AUGMENT_MAP = json.load(f)
 
 
-def update_meta(cursor, server):
+def update_meta(cursor, server, fn=None):
     with open('meta.txt', 'w') as file:
-        check_db(cursor, file, server, CURRENT_VERSION)
-        update_best_items(file, cursor)
-        avg(file, cursor, 'traits')
-        avg(file, cursor, 'units')
-        avg(file, cursor, 'units', 'maxed')
-        avg(file, cursor, 'items')
-        avg(file, cursor, 'augments')
-        avg(file, cursor, 'comps')
+        if fn is None or fn == 'check':
+            check_db(cursor, file, server, CURRENT_VERSION)
+        if fn is None or fn == 'best-items':
+            update_best_items(file, cursor)
+        if fn is None or fn == 'traits':
+            avg(file, cursor, 'traits')
+        if fn is None or fn == 'units':
+            avg(file, cursor, 'units')
+        if fn is None or fn == '3-star-units':
+            avg(file, cursor, 'units', 'maxed')
+        if fn is None or fn == 'items':
+            avg(file, cursor, 'items')
+        if fn is None or fn == 'augments':
+            avg(file, cursor, 'augments')
+        if fn is None or fn == 'comps':
+            avg(file, cursor, 'comps')
 
 
 def pool(cursor, file, i_augments=None, i_units=None, i_traits=None):
@@ -146,7 +154,6 @@ def pool(cursor, file, i_augments=None, i_units=None, i_traits=None):
     return
 
 
-# added find best units for each item here, but still want to separate it in a different module
 def update_best_items(file, cursor):
     cursor.execute('''SELECT us.item1, us.item2, us.item3, ps.placement, us.tier, u.name 
                 FROM unit_states us INNER JOIN player_states ps INNER JOIN units u
@@ -289,6 +296,10 @@ def avg(file, cursor, table, arg=None):
                 file.write(
                     f"average placement of Built Different is {row[0]:.2f}, top 4 rate {row[1] * 100:.2f}, {row[2]} spots\n")
                 continue
+            elif row[3] == 'lg':
+                file.write(
+                    f"average placement of Legendary Variants is {row[0]:.2f}, top 4 rate {row[1] * 100:.2f}, {row[2]} spots\n")
+                continue
             trait1 = get_trait_name(cursor, ENCODED_TO_TRAIT[row[3][0]], int(row[3][1]))
             if len(row[3]) >= 4:
                 trait2 = get_trait_name(cursor, ENCODED_TO_TRAIT[row[3][2]], int(row[3][3]))
@@ -400,12 +411,15 @@ def insert_match(cursor, server, region, match_id):
             if 1 <= len(notable_traits) <= 3:
                 comp_encoded = ''.join(notable_traits)
             elif not notable_traits:
-                comp_encoded = 'bd'  # built different
-                # print all units
-                print('Built Diff?')
+                comp_encoded = 'lg'
                 for augment in augments:
-                    print(augment)
-                print('-----------------')
+                    if 'Traitless' in augment:
+                        comp_encoded = 'bd'
+                        break
+                if comp_encoded == 'lg':
+                    print([unit for unit in participant['units']])
+                    print(participant['placement'])
+                    print('-------------------')
             else:
                 print('comp_encoded error')
             if comp_encoded != '':
