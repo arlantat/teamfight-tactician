@@ -4,8 +4,5 @@ sql-schema-example.docx
 raw_matches.db-journal
 tft_stats.db
 lookup_guide.xlsx
-endpoints.txt
-meta.txt
 test.py
-identifier.sqlite
 manual.py

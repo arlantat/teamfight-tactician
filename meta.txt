@@ -1,0 +1,1571 @@
+Server: VN2 - Version 14.7
+matches: 8656
+player_states: 68437
+unit_states: 616121
+trait_states: 397677
+
+---------BEST ITEMS FOR EACH UNIT---------
+best craftables for Cho'Gath are [('Bloodthirster', 3.93, 41), ('Ionic Spark', 3.97, 781), ("Dragon's Claw", 4.03, 639), ('Crownguard', 4.06, 158), ("Protector's Vow", 4.13, 82), ("Thief's Gloves", 4.14, 84), ('Redemption', 4.17, 413), ('Bramble Vest', 4.2, 514), ('Gargoyle Stoneplate', 4.25, 775), ('Steadfast Heart', 4.27, 500), ("Warmog's Armor", 4.28, 653), ('Adaptive Helm', 4.3, 88), ("Titan's Resolve", 4.37, 97), ('Evenshroud', 4.44, 27), ('Sunfire Cape', 4.48, 223)]
+best radiants for Cho'Gath are [('Legacy of the Colossus', 3.59, 17), ("Warmog's Pride", 4.0, 14), ("Dragon's Will", 4.08, 13)]
+best emblems for Cho'Gath are [('Heavenly Emblem', 4.17, 42), ('Ghostly Emblem', 5.22, 9), ('Invoker Emblem', 6.67, 6)]
+best ornns for Cho'Gath are [('Anima Visage', 3.88, 80), ('Eternal Winter', 4.19, 83), ('Hullcrusher', 4.33, 42)]
+best others for Cho'Gath are [('Tattoo of Vitality', 3.0, 1), ("Blacksmith's Gloves", 4.8, 5), ("Accomplice's Gloves", 5.2, 5)]
+
+best craftables for Morgana are [('Statikk Shiv', 4.03, 604), ("Thief's Gloves", 4.09, 305), ('Guardbreaker', 4.16, 278), ('Red Buff', 4.26, 705), ("Nashor's Tooth", 4.27, 701), ('Adaptive Helm', 4.27, 733), ('Hextech Gunblade', 4.35, 532), ('Blue Buff', 4.36, 722), ("Archangel's Staff", 4.38, 770), ('Giant Slayer', 4.45, 541), ("Rabadon's Deathcap", 4.47, 1022), ('Spear of Shojin', 4.58, 3150), ('Morellonomicon', 4.61, 4554), ("Guinsoo's Rageblade", 4.62, 335), ('Jeweled Gauntlet', 4.69, 1540)]
+best radiants for Morgana are [('More More-ellonomicon', 4.57, 46), ('Spear of Hirana', 5.09, 23), ('Glamorous Gauntlet', 5.95, 21)]
+best emblems for Morgana are [('Heavenly Emblem', 3.98, 537), ('Storyweaver Emblem', 4.3, 182), ('Reaper Emblem', 4.62, 204)]
+best ornns for Morgana are [('Deathfire Grasp', 4.69, 137), ('Manazane', 4.83, 277), ("Sniper's Focus", 5.15, 149)]
+best others for Morgana are [('Tattoo of Fury', 3.98, 48), ('Tattoo of Toxin', 4.0, 369), ('Tattoo of Bombardment', 4.08, 24)]
+
+best craftables for Kayn are [("Sterak's Gage", 3.75, 762), ('Quicksilver', 3.81, 415), ('Hextech Gunblade', 3.98, 521), ('Giant Slayer', 4.0, 1168), ('Red Buff', 4.01, 201), ("Thief's Gloves", 4.04, 679), ('Edge of Night', 4.07, 3841), ('Deathblade', 4.08, 363), ("Runaan's Hurricane", 4.1, 206), ('Last Whisper', 4.15, 608), ('Hand Of Justice', 4.21, 5127), ('Infinity Edge', 4.25, 1174), ('Bloodthirster', 4.26, 4246), ('Guardbreaker', 4.3, 392), ("Titan's Resolve", 4.4, 4465)]
+best radiants for Kayn are [('Brink of Dawn', 4.15, 94), ("Titan's Vow", 4.32, 103), ('Fist of Fairness', 4.45, 87)]
+best emblems for Kayn are [('Dryad Emblem', 3.59, 153), ('Heavenly Emblem', 3.92, 662), ('Umbral Emblem', 4.3, 293)]
+best ornns for Kayn are [('Infinity Force', 4.24, 527), ("Death's Defiance", 4.3, 405), ("Zhonya's Paradox", 4.32, 184)]
+best others for Kayn are [('Tattoo of Force', 3.82, 110), ("Blacksmith's Gloves", 4.2, 59), ('Tattoo of Vitality', 4.49, 69)]
+
+best craftables for Galio are [("Protector's Vow", 4.21, 1616), ('Redemption', 4.31, 4303), ('Ionic Spark', 4.32, 1009), ('Crownguard', 4.33, 1660), ("Thief's Gloves", 4.35, 797), ('Adaptive Helm', 4.39, 1470), ("Dragon's Claw", 4.42, 4316), ('Evenshroud', 4.43, 1693), ("Titan's Resolve", 4.44, 301), ('Bramble Vest', 4.44, 2976), ('Steadfast Heart', 4.45, 3445), ('Gargoyle Stoneplate', 4.5, 8763), ('Sunfire Cape', 4.53, 2491), ("Warmog's Armor", 4.55, 6158), ('Morellonomicon', 4.59, 163)]
+best radiants for Galio are [("Dragon's Will", 4.77, 65), ("Warmog's Pride", 4.9, 104), ('Dvarapala Stoneplate', 4.96, 113)]
+best emblems for Galio are [('Dragonlord Emblem', 4.19, 107), ('Ghostly Emblem', 4.36, 106), ('Inkshadow Emblem', 4.36, 100)]
+best ornns for Galio are [('Eternal Winter', 4.25, 1082), ('Anima Visage', 4.3, 926), ('Hullcrusher', 4.35, 664)]
+best others for Galio are [('Tattoo of Protection', 3.7, 404), ("Blacksmith's Gloves", 4.01, 92), ('Tattoo of Vitality', 4.63, 139)]
+
+best craftables for Lee Sin are [("Dragon's Claw", 3.77, 312), ("Sterak's Gage", 3.84, 785), ('Evenshroud', 3.87, 562), ('Sunfire Cape', 3.94, 436), ("Thief's Gloves", 3.96, 1434), ("Warmog's Armor", 4.0, 457), ('Edge of Night', 4.01, 722), ('Redemption', 4.01, 470), ('Guardbreaker', 4.15, 371), ('Gargoyle Stoneplate', 4.21, 321), ("Titan's Resolve", 4.25, 1959), ('Bloodthirster', 4.27, 1889), ('Hand Of Justice', 4.37, 1538), ('Giant Slayer', 4.39, 395), ('Quicksilver', 4.4, 360)]
+best radiants for Lee Sin are [('Blessed Bloodthirster', 4.39, 23), ("Rascal's Gloves", 4.52, 52), ("Titan's Vow", 5.17, 29)]
+best emblems for Lee Sin are [('Heavenly Emblem', 3.61, 416), ('Storyweaver Emblem', 3.85, 614), ('Sage Emblem', 4.2, 122)]
+best ornns for Lee Sin are [('Hullcrusher', 4.09, 151), ('Infinity Force', 4.11, 190), ("Death's Defiance", 4.51, 208)]
+best others for Lee Sin are [("Accomplice's Gloves", 3.68, 75), ('Tattoo of Force', 3.92, 24), ("Blacksmith's Gloves", 4.05, 111)]
+
+best craftables for Sylas are [('Crownguard', 4.14, 1171), ('Ionic Spark', 4.19, 821), ("Thief's Gloves", 4.2, 1425), ("Rabadon's Deathcap", 4.25, 585), ('Jeweled Gauntlet', 4.3, 1051), ('Evenshroud', 4.34, 582), ('Adaptive Helm', 4.35, 598), ('Steadfast Heart', 4.35, 615), ('Redemption', 4.37, 687), ("Dragon's Claw", 4.41, 718), ('Bloodthirster', 4.41, 2050), ("Titan's Resolve", 4.42, 2364), ("Warmog's Armor", 4.42, 1033), ('Hand Of Justice', 4.54, 1328), ('Gargoyle Stoneplate', 4.62, 754)]
+best radiants for Sylas are [("Rascal's Gloves", 4.34, 122), ('Blessed Bloodthirster', 4.59, 37), ("Titan's Vow", 4.78, 46)]
+best emblems for Sylas are [('Ghostly Emblem', 3.9, 156), ('Inkshadow Emblem', 4.41, 135), ('Storyweaver Emblem', 5.18, 105)]
+best ornns for Sylas are [('Hullcrusher', 4.14, 273), ("Zhonya's Paradox", 4.15, 261), ("Death's Defiance", 4.3, 350)]
+best others for Sylas are [('Tattoo of Protection', 3.84, 240), ('Tattoo of Force', 3.85, 271), ('Tattoo of Vitality', 4.18, 295)]
+
+best craftables for Lissandra are [('Edge of Night', 3.24, 567), ('Blue Buff', 3.3, 755), ('Hand Of Justice', 3.31, 452), ("Thief's Gloves", 3.47, 981), ('Statikk Shiv', 3.5, 360), ('Adaptive Helm', 3.51, 964), ('Hextech Gunblade', 3.53, 571), ("Archangel's Staff", 3.55, 739), ('Giant Slayer', 3.62, 697), ("Nashor's Tooth", 3.65, 752), ('Guardbreaker', 3.69, 426), ('Spear of Shojin', 3.73, 1997), ("Rabadon's Deathcap", 3.75, 849), ('Morellonomicon', 3.88, 534), ('Jeweled Gauntlet', 3.95, 1060)]
+best radiants for Lissandra are [('Blue Blessing', 2.79, 14), ("Rascal's Gloves", 3.28, 32), ('Spear of Hirana', 4.42, 12)]
+best emblems for Lissandra are [('Fated Emblem', 3.19, 475), ('Heavenly Emblem', 3.22, 189), ('Storyweaver Emblem', 3.42, 120)]
+best ornns for Lissandra are [("Trickster's Glass", 3.52, 150), ("Zhonya's Paradox", 3.55, 220), ('Manazane', 3.6, 246)]
+best others for Lissandra are [('Tattoo of Toxin', 3.2, 20), ("Accomplice's Gloves", 3.27, 30), ("Blacksmith's Gloves", 3.87, 75)]
+
+best craftables for Wukong are [('Blue Buff', 3.31, 1579), ('Edge of Night', 3.42, 2149), ('Hextech Gunblade', 3.44, 538), ('Deathblade', 3.45, 424), ("Sterak's Gage", 3.52, 1402), ("Warmog's Armor", 3.53, 427), ('Giant Slayer', 3.58, 1150), ("Thief's Gloves", 3.58, 2021), ('Infinity Edge', 3.63, 1107), ('Last Whisper', 3.65, 617), ('Hand Of Justice', 3.69, 3409), ('Quicksilver', 3.7, 634), ('Guardbreaker', 3.7, 683), ('Bloodthirster', 3.77, 3717), ("Titan's Resolve", 3.84, 3386)]
+best radiants for Wukong are [("Rascal's Gloves", 3.7, 105), ("Titan's Vow", 3.93, 57), ('Fist of Fairness', 3.98, 40)]
+best emblems for Wukong are [('Reaper Emblem', 3.4, 370), ('Duelist Emblem', 3.58, 289), ('Storyweaver Emblem', 3.79, 369)]
+best ornns for Wukong are [("Death's Defiance", 3.69, 465), ('Infinity Force', 3.83, 481), ('Hullcrusher', 3.88, 239)]
+best others for Wukong are [("Blacksmith's Gloves", 3.24, 206), ("Accomplice's Gloves", 3.72, 46), ('Tattoo of Force', 4.65, 26)]
+
+best craftables for Sivir are [("Thief's Gloves", 3.77, 109), ('Guardbreaker', 4.13, 55), ('Hextech Gunblade', 4.29, 34), ('Statikk Shiv', 4.53, 236), ('Spear of Shojin', 4.63, 97), ('Blue Buff', 4.65, 43), ("Runaan's Hurricane", 4.68, 91), ('Last Whisper', 4.78, 274), ('Morellonomicon', 4.85, 78), ('Red Buff', 4.88, 193), ('Hand Of Justice', 4.9, 48), ('Giant Slayer', 5.03, 147), ("Guinsoo's Rageblade", 5.15, 315), ('Deathblade', 5.29, 126), ('Infinity Edge', 5.39, 214)]
+best radiants for Sivir are [("Guinsoo's Reckoning", 4.83, 6), ('Zenith Edge', 5.67, 3), ('Demonslayer', 6.0, 3)]
+best emblems for Sivir are [('Ghostly Emblem', 4.2, 45), ('Inkshadow Emblem', 4.66, 64), ('Fortune Emblem', 4.9, 80)]
+best ornns for Sivir are [("Trickster's Glass", 4.18, 11), ("Gambler's Blade", 4.69, 35), ("Sniper's Focus", 6.04, 23)]
+best others for Sivir are [('Tattoo of Fury', 4.32, 38), ('Tattoo of Bombardment', 4.44, 63), ('Tattoo of Toxin', 4.64, 55)]
+
+best craftables for Aatrox are [('Adaptive Helm', 3.95, 241), ('Evenshroud', 3.97, 708), ('Hand Of Justice', 3.97, 234), ('Redemption', 4.06, 688), ('Steadfast Heart', 4.07, 326), ("Dragon's Claw", 4.08, 354), ('Ionic Spark', 4.1, 394), ('Crownguard', 4.13, 390), ("Warmog's Armor", 4.16, 493), ('Bramble Vest', 4.17, 269), ('Sunfire Cape', 4.23, 593), ("Thief's Gloves", 4.28, 982), ('Gargoyle Stoneplate', 4.31, 468), ('Bloodthirster', 4.33, 303), ("Titan's Resolve", 4.36, 383)]
+best radiants for Aatrox are [("Warmog's Pride", 4.25, 4), ("Rascal's Gloves", 4.38, 13), ("Dragon's Will", 5.0, 4)]
+best emblems for Aatrox are [('Dryad Emblem', 4.38, 324), ('Altruist Emblem', 4.49, 57), ('Storyweaver Emblem', 4.69, 178)]
+best ornns for Aatrox are [('Eternal Winter', 4.32, 87), ('Hullcrusher', 4.64, 73), ("Trickster's Glass", 4.68, 57)]
+best others for Aatrox are [('Tattoo of Protection', 3.73, 331), ('Tattoo of Force', 4.43, 263), ('Tattoo of Vitality', 4.48, 246)]
+
+best craftables for Riven are [('Redemption', 4.28, 460), ('Bramble Vest', 4.33, 196), ('Evenshroud', 4.4, 288), ("Protector's Vow", 4.41, 210), ('Sunfire Cape', 4.44, 529), ('Steadfast Heart', 4.48, 288), ('Gargoyle Stoneplate', 4.51, 333), ('Ionic Spark', 4.51, 288), ("Warmog's Armor", 4.58, 370), ("Dragon's Claw", 4.6, 282), ("Sterak's Gage", 4.61, 221), ('Bloodthirster', 4.62, 266), ("Thief's Gloves", 4.63, 1173), ('Adaptive Helm', 4.68, 176), ("Titan's Resolve", 4.69, 261)]
+best radiants for Riven are [('Absolution', 5.4, 5), ("Rascal's Gloves", 5.56, 9), ("Warmog's Pride", 5.8, 5)]
+best emblems for Riven are [('Heavenly Emblem', 4.12, 441), ('Dragonlord Emblem', 4.45, 555), ('Sage Emblem', 4.78, 423)]
+best ornns for Riven are [('Hullcrusher', 4.54, 59), ('Eternal Winter', 4.63, 62), ('Anima Visage', 5.12, 52)]
+best others for Riven are [('Tattoo of Protection', 3.73, 40), ("Accomplice's Gloves", 4.11, 179), ("Blacksmith's Gloves", 4.54, 57)]
+
+best craftables for Teemo are [('Statikk Shiv', 4.09, 143), ('Guardbreaker', 4.11, 73), ("Nashor's Tooth", 4.18, 248), ("Thief's Gloves", 4.21, 111), ('Red Buff', 4.22, 360), ("Archangel's Staff", 4.23, 163), ('Adaptive Helm', 4.34, 137), ('Morellonomicon', 4.43, 2893), ('Blue Buff', 4.48, 1042), ('Spear of Shojin', 4.53, 579), ('Jeweled Gauntlet', 4.66, 380), ("Rabadon's Deathcap", 4.68, 316), ('Giant Slayer', 4.85, 234), ('Hextech Gunblade', 4.89, 386), ("Guinsoo's Rageblade", 4.92, 144)]
+best radiants for Teemo are [('More More-ellonomicon', 4.41, 22), ("Rabadon's Ascended Deathcap", 4.92, 12), ('Blue Blessing', 5.13, 15)]
+best emblems for Teemo are [('Ghostly Emblem', 4.58, 45), ('Bruiser Emblem', 4.68, 47), ('Storyweaver Emblem', 5.02, 53)]
+best ornns for Teemo are [('Manazane', 3.8, 96), ('Deathfire Grasp', 3.93, 58), ("Sniper's Focus", 4.53, 64)]
+best others for Teemo are [('Tattoo of Toxin', 3.92, 222), ('Tattoo of Fury', 4.22, 67), ('Tattoo of Bombardment', 4.52, 65)]
+
+best craftables for Kai'Sa are [('Blue Buff', 4.1, 59), ('Edge of Night', 4.18, 131), ('Guardbreaker', 4.22, 601), ('Deathblade', 4.34, 1258), ('Last Whisper', 4.34, 3904), ("Thief's Gloves", 4.35, 122), ('Morellonomicon', 4.36, 119), ("Runaan's Hurricane", 4.37, 381), ('Hand Of Justice', 4.42, 1294), ('Infinity Edge', 4.43, 8391), ('Giant Slayer', 4.45, 5089), ('Spear of Shojin', 4.46, 5488), ('Red Buff', 4.59, 1352), ('Hextech Gunblade', 4.64, 532), ("Guinsoo's Rageblade", 4.85, 2565)]
+best radiants for Kai'Sa are [('Demonslayer', 4.07, 222), ('Luminous Deathblade', 4.45, 102), ('Zenith Edge', 4.46, 291)]
+best emblems for Kai'Sa are [('Ghostly Emblem', 4.39, 169), ('Storyweaver Emblem', 4.78, 40), ('Mythic Emblem', 5.0, 36)]
+best ornns for Kai'Sa are [('Manazane', 4.03, 465), ("Sniper's Focus", 4.25, 1080), ('Infinity Force', 4.5, 473)]
+best others for Kai'Sa are [('Tattoo of Toxin', 3.81, 693), ('Tattoo of Bombardment', 4.1, 855), ('Tattoo of Fury', 4.21, 1049)]
+
+best craftables for Xayah are [('Hextech Gunblade', 3.26, 381), ('Edge of Night', 3.4, 239), ('Quicksilver', 3.43, 112), ('Deathblade', 3.45, 664), ("Runaan's Hurricane", 3.48, 498), ('Guardbreaker', 3.5, 439), ('Giant Slayer', 3.5, 1362), ('Hand Of Justice', 3.52, 575), ('Red Buff', 3.6, 782), ('Infinity Edge', 3.61, 1405), ('Last Whisper', 3.61, 850), ('Morellonomicon', 3.65, 402), ("Thief's Gloves", 3.72, 422), ('Spear of Shojin', 3.8, 642), ("Guinsoo's Rageblade", 3.91, 1556)]
+best radiants for Xayah are [("Rascal's Gloves", 3.11, 18), ('Zenith Edge', 3.84, 19), ('Demonslayer', 4.58, 12)]
+best emblems for Xayah are [('Inkshadow Emblem', 3.47, 121), ('Ghostly Emblem', 3.49, 107), ('Bruiser Emblem', 4.29, 59)]
+best ornns for Xayah are [("Sniper's Focus", 3.13, 270), ('Infinity Force', 3.56, 172), ('Manazane', 3.58, 120)]
+best others for Xayah are [('Tattoo of Toxin', 3.2, 396), ('Tattoo of Fury', 3.22, 435), ('Tattoo of Bombardment', 3.28, 534)]
+
+best craftables for Udyr are [("Sterak's Gage", 3.49, 611), ('Steadfast Heart', 3.54, 690), ('Ionic Spark', 3.56, 808), ("Thief's Gloves", 3.57, 1990), ('Crownguard', 3.58, 1010), ('Sunfire Cape', 3.62, 616), ("Dragon's Claw", 3.65, 748), ("Warmog's Armor", 3.7, 1135), ('Giant Slayer', 3.7, 550), ('Jeweled Gauntlet', 3.76, 629), ('Hand Of Justice', 3.79, 1511), ("Rabadon's Deathcap", 3.82, 624), ('Bloodthirster', 3.86, 2009), ('Gargoyle Stoneplate', 3.87, 808), ("Titan's Resolve", 3.91, 2152)]
+best radiants for Udyr are [('Blessed Bloodthirster', 3.24, 25), ("Rascal's Gloves", 3.32, 148), ("Titan's Vow", 3.79, 33)]
+best emblems for Udyr are [('Ghostly Emblem', 3.54, 668), ('Fated Emblem', 3.66, 283), ('Bruiser Emblem', 4.16, 303)]
+best ornns for Udyr are [("Death's Defiance", 3.73, 360), ('Hullcrusher', 3.78, 388), ('Infinity Force', 3.79, 253)]
+best others for Udyr are [('Tattoo of Protection', 3.61, 538), ('Tattoo of Force', 3.66, 1116), ('Tattoo of Vitality', 3.86, 922)]
+
+best craftables for Kayle are []
+best radiants for Kayle are []
+best emblems for Kayle are []
+best ornns for Kayle are []
+best others for Kayle are [('Tome of Power', 4.18, 3867), ('Talisman of Speed', 4.45, 7561), ('Scroll of Force', 4.58, 5073), ('Talisman of Aid', 4.6, 6783), ('Talisman of Might', 4.64, 7532), ('Tome of Mending', 5.0, 55), ('Scroll of Haste', 5.2, 678), ('Tome of Swiftness', 5.2, 267)]
+
+best craftables for Kog'Maw are [("Nashor's Tooth", 4.13, 1333), ('Statikk Shiv', 4.22, 83), ('Blue Buff', 4.22, 1530), ('Jeweled Gauntlet', 4.28, 1035), ('Hextech Gunblade', 4.28, 464), ('Adaptive Helm', 4.32, 22), ("Guinsoo's Rageblade", 4.34, 38), ("Thief's Gloves", 4.5, 22), ("Rabadon's Deathcap", 4.5, 295), ('Red Buff', 4.51, 35), ('Hand Of Justice', 4.65, 20), ('Spear of Shojin', 4.68, 254), ('Giant Slayer', 4.79, 247), ("Archangel's Staff", 4.97, 104), ('Guardbreaker', 5.09, 45)]
+best radiants for Kog'Maw are [('Glamorous Gauntlet', 3.49, 37), ("The Baron's Gift", 3.6, 30), ('Blue Blessing', 4.67, 58)]
+best emblems for Kog'Maw are [('Fortune Emblem', 3.27, 11), ('Umbral Emblem', 3.6, 5), ('Heavenly Emblem', 4.6, 15)]
+best ornns for Kog'Maw are [('Manazane', 3.84, 38), ("Sniper's Focus", 3.91, 125), ("Goldmancer's Staff", 4.93, 28)]
+best others for Kog'Maw are [("Accomplice's Gloves", 2.75, 4)]
+
+best craftables for Alune are [("Archangel's Staff", 4.43, 196), ("Thief's Gloves", 4.45, 58), ('Red Buff', 4.5, 100), ('Adaptive Helm', 4.56, 109), ("Rabadon's Deathcap", 4.6, 147), ("Nashor's Tooth", 4.61, 147), ('Blue Buff', 4.61, 119), ('Morellonomicon', 4.64, 447), ('Statikk Shiv', 4.66, 162), ('Jeweled Gauntlet', 4.68, 303), ('Spear of Shojin', 4.79, 426), ('Hextech Gunblade', 4.85, 74), ('Giant Slayer', 5.14, 100), ("Guinsoo's Rageblade", 5.3, 66), ('Guardbreaker', 5.33, 36)]
+best radiants for Alune are [('More More-ellonomicon', 2.5, 4), ('Spear of Hirana', 3.8, 5), ('Glamorous Gauntlet', 5.83, 6)]
+best emblems for Alune are [('Reaper Emblem', 3.69, 65), ('Heavenly Emblem', 4.79, 24), ('Mythic Emblem', 5.28, 25)]
+best ornns for Alune are [('Deathfire Grasp', 4.32, 28), ("Sniper's Focus", 4.48, 31), ('Manazane', 4.48, 33)]
+best others for Alune are [('Tattoo of Bombardment', 4.0, 2), ("Accomplice's Gloves", 5.33, 3), ("Blacksmith's Gloves", 6.33, 3)]
+
+best craftables for Tahm Kench are [('Evenshroud', 4.36, 163), ("Thief's Gloves", 4.47, 331), ('Ionic Spark', 4.48, 218), ('Redemption', 4.5, 755), ("Dragon's Claw", 4.5, 652), ('Steadfast Heart', 4.51, 715), ('Gargoyle Stoneplate', 4.53, 1016), ("Titan's Resolve", 4.57, 83), ('Sunfire Cape', 4.57, 442), ('Adaptive Helm', 4.58, 201), ('Bramble Vest', 4.64, 436), ("Warmog's Armor", 4.72, 826), ("Protector's Vow", 4.75, 151), ('Crownguard', 4.83, 151), ('Bloodthirster', 4.84, 76)]
+best radiants for Tahm Kench are [("Warmog's Pride", 4.32, 19), ("Dragon's Will", 4.91, 11), ('Legacy of the Colossus', 5.31, 16)]
+best emblems for Tahm Kench are [('Ghostly Emblem', 4.11, 19), ('Heavenly Emblem', 4.27, 45), ('Storyweaver Emblem', 4.64, 50)]
+best ornns for Tahm Kench are [('Hullcrusher', 4.11, 55), ('Anima Visage', 4.36, 95), ('Eternal Winter', 4.37, 105)]
+best others for Tahm Kench are [("Accomplice's Gloves", 4.0, 18), ("Blacksmith's Gloves", 5.38, 26), ('Tattoo of Protection', 5.92, 12)]
+
+best craftables for Annie are [("Thief's Gloves", 4.13, 344), ('Ionic Spark', 4.17, 657), ('Crownguard', 4.18, 314), ('Adaptive Helm', 4.38, 260), ('Bramble Vest', 4.46, 681), ("Protector's Vow", 4.51, 223), ('Evenshroud', 4.53, 106), ("Warmog's Armor", 4.55, 1192), ('Bloodthirster', 4.57, 166), ('Redemption', 4.57, 632), ("Titan's Resolve", 4.6, 302), ('Gargoyle Stoneplate', 4.6, 1469), ('Steadfast Heart', 4.64, 833), ("Dragon's Claw", 4.74, 888), ('Sunfire Cape', 4.87, 446)]
+best radiants for Annie are [('Legacy of the Colossus', 4.08, 24), ('Dvarapala Stoneplate', 4.4, 20), ("Rascal's Gloves", 4.85, 20)]
+best emblems for Annie are [('Heavenly Emblem', 3.85, 39), ('Mythic Emblem', 4.52, 326), ('Dragonlord Emblem', 4.52, 44)]
+best ornns for Annie are [('Hullcrusher', 3.91, 143), ('Anima Visage', 4.0, 216), ('Eternal Winter', 4.01, 214)]
+best others for Annie are [('Tattoo of Protection', 3.14, 7), ("Blacksmith's Gloves", 4.44, 43), ("Accomplice's Gloves", 5.07, 15)]
+
+best craftables for Lillia are [("Thief's Gloves", 3.81, 186), ('Guardbreaker', 4.17, 274), ("Archangel's Staff", 4.19, 550), ('Statikk Shiv', 4.33, 279), ('Red Buff', 4.36, 329), ("Nashor's Tooth", 4.37, 626), ('Blue Buff', 4.4, 916), ('Adaptive Helm', 4.4, 245), ('Morellonomicon', 4.45, 790), ("Rabadon's Deathcap", 4.46, 650), ('Giant Slayer', 4.48, 803), ('Hextech Gunblade', 4.55, 667), ('Jeweled Gauntlet', 4.64, 1560), ('Spear of Shojin', 4.66, 1373), ("Guinsoo's Rageblade", 4.71, 140)]
+best radiants for Lillia are [('Blue Blessing', 3.56, 25), ('Glamorous Gauntlet', 4.91, 34), ('Demonslayer', 5.09, 23)]
+best emblems for Lillia are [('Umbral Emblem', 3.73, 22), ('Heavenly Emblem', 4.12, 26), ('Arcanist Emblem', 5.85, 13)]
+best ornns for Lillia are [("Sniper's Focus", 4.01, 154), ('Deathfire Grasp', 4.08, 95), ('Manazane', 4.48, 163)]
+best others for Lillia are [("Blacksmith's Gloves", 4.07, 15), ("Accomplice's Gloves", 5.0, 2), ('Tattoo of Fury', 7.0, 1)]
+
+best craftables for Nautilus are [('Adaptive Helm', 3.89, 329), ('Crownguard', 3.97, 267), ("Thief's Gloves", 3.99, 774), ('Ionic Spark', 4.01, 490), ('Evenshroud', 4.09, 251), ('Redemption', 4.12, 661), ("Protector's Vow", 4.14, 464), ("Titan's Resolve", 4.21, 122), ('Morellonomicon', 4.21, 145), ('Steadfast Heart', 4.23, 667), ("Warmog's Armor", 4.25, 934), ('Bramble Vest', 4.35, 607), ('Sunfire Cape', 4.4, 677), ("Dragon's Claw", 4.46, 668), ('Gargoyle Stoneplate', 4.55, 992)]
+best radiants for Nautilus are [("Warmog's Pride", 4.33, 6), ("Rascal's Gloves", 5.0, 11), ('Dvarapala Stoneplate', 5.67, 12)]
+best emblems for Nautilus are [('Heavenly Emblem', 3.39, 93), ('Porcelain Emblem', 3.98, 113), ('Invoker Emblem', 5.13, 79)]
+best ornns for Nautilus are [('Eternal Winter', 3.86, 121), ("Trickster's Glass", 4.13, 101), ('Anima Visage', 4.4, 129)]
+best others for Nautilus are [('Tattoo of Protection', 4.11, 19), ("Accomplice's Gloves", 4.29, 41), ("Blacksmith's Gloves", 4.66, 59)]
+
+best craftables for Hwei are [('Adaptive Helm', 3.53, 782), ("Archangel's Staff", 3.57, 1142), ('Statikk Shiv', 3.64, 825), ("Rabadon's Deathcap", 3.67, 1199), ('Guardbreaker', 3.7, 386), ("Thief's Gloves", 3.76, 355), ('Morellonomicon', 3.84, 3633), ("Nashor's Tooth", 3.85, 930), ('Hextech Gunblade', 3.87, 614), ('Spear of Shojin', 3.91, 4257), ('Giant Slayer', 3.94, 906), ('Red Buff', 3.99, 940), ('Blue Buff', 4.0, 504), ('Jeweled Gauntlet', 4.08, 1991), ("Guinsoo's Rageblade", 4.13, 617)]
+best radiants for Hwei are [('More More-ellonomicon', 2.57, 60), ('Glamorous Gauntlet', 3.68, 41), ('Spear of Hirana', 3.95, 59)]
+best emblems for Hwei are [('Heavenly Emblem', 3.73, 124), ('Invoker Emblem', 4.13, 202), ('Arcanist Emblem', 4.82, 84)]
+best ornns for Hwei are [('Manazane', 3.59, 437), ('Deathfire Grasp', 4.01, 167), ("Sniper's Focus", 4.07, 215)]
+best others for Hwei are [("Blacksmith's Gloves", 3.5, 32), ('Tattoo of Toxin', 4.03, 29), ('Tattoo of Fury', 6.8, 5)]
+
+best craftables for Azir are [("Thief's Gloves", 3.25, 361), ("Rabadon's Deathcap", 3.66, 971), ('Adaptive Helm', 3.74, 578), ("Archangel's Staff", 3.78, 869), ("Nashor's Tooth", 3.78, 989), ('Statikk Shiv', 3.79, 806), ('Hand Of Justice', 3.84, 302), ('Hextech Gunblade', 3.87, 634), ('Guardbreaker', 3.88, 408), ('Red Buff', 3.9, 383), ('Giant Slayer', 4.0, 1391), ('Jeweled Gauntlet', 4.05, 1890), ('Spear of Shojin', 4.09, 3101), ("Guinsoo's Rageblade", 4.16, 1306), ('Morellonomicon', 4.22, 619)]
+best radiants for Azir are [('Demonslayer', 3.87, 23), ('Glamorous Gauntlet', 3.94, 32), ('Spear of Hirana', 4.39, 54)]
+best emblems for Azir are [('Fated Emblem', 2.89, 53), ('Mythic Emblem', 3.71, 207), ('Arcanist Emblem', 3.9, 42)]
+best ornns for Azir are [('Manazane', 3.72, 224), ("Sniper's Focus", 3.76, 197), ('Deathfire Grasp', 3.81, 174)]
+best others for Azir are [("Blacksmith's Gloves", 3.15, 26), ('Tattoo of Toxin', 3.38, 24), ('Tattoo of Bombardment', 4.42, 12)]
+
+best craftables for Garen are [("Titan's Resolve", 4.42, 130), ("Thief's Gloves", 4.42, 129), ('Bloodthirster', 4.53, 113), ('Ionic Spark', 4.54, 46), ('Evenshroud', 4.61, 49), ('Crownguard', 4.77, 31), ('Sunfire Cape', 4.97, 88), ('Steadfast Heart', 5.08, 49), ('Redemption', 5.12, 86), ("Protector's Vow", 5.15, 46), ("Dragon's Claw", 5.33, 84), ('Bramble Vest', 5.36, 58), ("Archangel's Staff", 5.41, 37), ("Warmog's Armor", 5.47, 95), ('Gargoyle Stoneplate', 5.81, 99)]
+best radiants for Garen are [("Titan's Vow", 3.0, 3), ("Jak'sho the Protean", 6.0, 1), ("Warmog's Pride", 6.33, 3)]
+best emblems for Garen are [('Altruist Emblem', 4.5, 42), ('Sage Emblem', 4.67, 78), ('Dragonlord Emblem', 4.68, 41)]
+best ornns for Garen are [('Anima Visage', 5.25, 16), ('Hullcrusher', 5.37, 19), ('Eternal Winter', 6.39, 23)]
+best others for Garen are [("Accomplice's Gloves", 5.32, 28), ('Tattoo of Force', 6.0, 1), ("Blacksmith's Gloves", 6.4, 5)]
+
+best craftables for Zyra are [("Archangel's Staff", 3.84, 92), ('Blue Buff', 4.11, 63), ('Statikk Shiv', 4.25, 521), ('Red Buff', 4.41, 69), ("Rabadon's Deathcap", 4.42, 102), ("Thief's Gloves", 4.47, 207), ('Guardbreaker', 4.5, 66), ('Adaptive Helm', 4.52, 86), ('Spear of Shojin', 4.58, 302), ("Nashor's Tooth", 4.64, 154), ('Jeweled Gauntlet', 4.75, 157), ('Morellonomicon', 4.77, 146), ('Giant Slayer', 4.81, 132), ('Hextech Gunblade', 4.89, 79), ("Guinsoo's Rageblade", 4.9, 191)]
+best radiants for Zyra are [("Statikk's Favor", 4.0, 3), ('Fist of Fairness', 4.0, 2), ("Urf-Angel's Staff", 6.67, 3)]
+best emblems for Zyra are [('Heavenly Emblem', 3.95, 139), ('Dragonlord Emblem', 4.81, 162), ('Altruist Emblem', 4.94, 97)]
+best ornns for Zyra are [('Manazane', 3.94, 17), ('Deathfire Grasp', 4.48, 31), ("Sniper's Focus", 6.03, 32)]
+best others for Zyra are [("Blacksmith's Gloves", 2.4, 5), ("Accomplice's Gloves", 4.42, 12), ('Tattoo of Bombardment', 6.0, 2)]
+
+best craftables for Zoe are [('Statikk Shiv', 4.26, 779), ('Guardbreaker', 4.27, 160), ('Red Buff', 4.29, 324), ('Adaptive Helm', 4.43, 217), ("Nashor's Tooth", 4.5, 840), ("Rabadon's Deathcap", 4.5, 559), ("Archangel's Staff", 4.54, 413), ("Thief's Gloves", 4.57, 312), ('Hextech Gunblade', 4.59, 366), ('Giant Slayer', 4.72, 550), ('Spear of Shojin', 4.72, 1992), ('Morellonomicon', 4.72, 785), ('Jeweled Gauntlet', 4.79, 1434), ('Blue Buff', 4.84, 445), ("Guinsoo's Rageblade", 4.9, 228)]
+best radiants for Zoe are [('Spear of Hirana', 4.85, 26), ("Urf-Angel's Staff", 5.19, 16), ('Glamorous Gauntlet', 5.67, 18)]
+best emblems for Zoe are [('Porcelain Emblem', 3.57, 60), ('Mythic Emblem', 4.33, 46), ('Altruist Emblem', 4.57, 95)]
+best ornns for Zoe are [('Manazane', 4.46, 122), ("Sniper's Focus", 4.84, 67), ('Deathfire Grasp', 4.9, 93)]
+best others for Zoe are [("Blacksmith's Gloves", 3.82, 11), ('Tattoo of Bombardment', 4.33, 3), ("Accomplice's Gloves", 5.14, 14)]
+
+best craftables for Sett are [('Edge of Night', 3.34, 548), ("Dragon's Claw", 3.49, 444), ("Sterak's Gage", 3.5, 1023), ('Redemption', 3.5, 417), ('Giant Slayer', 3.57, 738), ('Sunfire Cape', 3.57, 452), ('Steadfast Heart', 3.58, 444), ('Infinity Edge', 3.58, 639), ("Thief's Gloves", 3.62, 1389), ('Hand Of Justice', 3.73, 1463), ("Warmog's Armor", 3.75, 587), ('Bloodthirster', 3.8, 1902), ("Titan's Resolve", 3.83, 1692), ('Guardbreaker', 3.93, 511), ('Quicksilver', 3.99, 462)]
+best radiants for Sett are [("Rascal's Gloves", 3.85, 93), ('Blessed Bloodthirster', 3.92, 48), ('Fist of Fairness', 4.43, 23)]
+best emblems for Sett are [('Dryad Emblem', 3.02, 161), ('Porcelain Emblem', 3.3, 386), ('Arcanist Emblem', 4.13, 142)]
+best ornns for Sett are [('Infinity Force', 3.65, 186), ('Anima Visage', 3.69, 108), ("Death's Defiance", 3.79, 213)]
+best others for Sett are [('Tattoo of Protection', 2.91, 56), ("Blacksmith's Gloves", 3.79, 133), ("Accomplice's Gloves", 3.96, 48)]
+
+best craftables for Irelia are [('Edge of Night', 3.38, 488), ('Quicksilver', 3.42, 206), ("Thief's Gloves", 3.55, 507), ('Morellonomicon', 3.6, 1465), ("Runaan's Hurricane", 3.6, 892), ('Guardbreaker', 3.62, 957), ('Bloodthirster', 3.64, 253), ('Red Buff', 3.67, 2729), ('Deathblade', 3.68, 1377), ('Hextech Gunblade', 3.71, 1166), ('Giant Slayer', 3.92, 3804), ('Last Whisper', 3.98, 690), ("Guinsoo's Rageblade", 4.07, 5429), ('Infinity Edge', 4.09, 4951), ('Hand Of Justice', 4.11, 1820)]
+best radiants for Irelia are [("Guinsoo's Reckoning", 3.95, 94), ('Demonslayer', 3.95, 84), ('Zenith Edge', 4.55, 101)]
+best emblems for Irelia are [('Heavenly Emblem', 3.51, 141), ('Altruist Emblem', 3.55, 62), ('Reaper Emblem', 3.92, 87)]
+best ornns for Irelia are [("Sniper's Focus", 3.89, 953), ('Infinity Force', 3.98, 459), ('Gold Collector', 4.01, 228)]
+best others for Irelia are [('Tattoo of Bombardment', 3.47, 53), ('Tattoo of Toxin', 3.66, 70), ('Tattoo of Fury', 4.44, 62)]
+
+best craftables for Kha'Zix are [('Hextech Gunblade', 3.47, 43), ('Quicksilver', 3.8, 44), ('Giant Slayer', 3.8, 86), ("Titan's Resolve", 3.93, 147), ('Guardbreaker', 3.96, 47), ("Thief's Gloves", 3.99, 337), ("Sterak's Gage", 4.07, 76), ('Hand Of Justice', 4.09, 285), ('Evenshroud', 4.1, 92), ('Edge of Night', 4.19, 206), ('Bloodthirster', 4.2, 211), ('Infinity Edge', 4.26, 153), ('Deathblade', 4.27, 73), ("Runaan's Hurricane", 4.43, 67), ('Last Whisper', 4.6, 87)]
+best radiants for Kha'Zix are [('Zenith Edge', 2.67, 3), ('Brink of Dawn', 3.57, 7), ("Rascal's Gloves", 5.0, 3)]
+best emblems for Kha'Zix are [('Umbral Emblem', 3.59, 66), ('Altruist Emblem', 4.53, 17), ('Sage Emblem', 4.64, 28)]
+best ornns for Kha'Zix are [('Infinity Force', 3.85, 13), ("Death's Defiance", 4.09, 11), ('Gold Collector', 4.75, 12)]
+best others for Kha'Zix are [("Accomplice's Gloves", 3.56, 25), ("Blacksmith's Gloves", 4.43, 7)]
+
+best craftables for Janna are [("Thief's Gloves", 3.9, 67), ('Guardbreaker', 4.27, 82), ("Nashor's Tooth", 4.28, 214), ('Adaptive Helm', 4.32, 109), ("Archangel's Staff", 4.42, 638), ('Statikk Shiv', 4.44, 324), ("Rabadon's Deathcap", 4.45, 210), ('Jeweled Gauntlet', 4.54, 388), ('Spear of Shojin', 4.54, 1155), ('Giant Slayer', 4.57, 159), ('Blue Buff', 4.58, 53), ("Guinsoo's Rageblade", 4.59, 1038), ('Hextech Gunblade', 4.6, 72), ('Red Buff', 4.76, 78), ('Morellonomicon', 4.83, 169)]
+best radiants for Janna are [('Spear of Hirana', 4.25, 16), ("Urf-Angel's Staff", 4.85, 13), ("Guinsoo's Reckoning", 5.31, 16)]
+best emblems for Janna are [('Heavenly Emblem', 3.81, 143), ('Storyweaver Emblem', 4.42, 122), ('Duelist Emblem', 4.64, 67)]
+best ornns for Janna are [("Gambler's Blade", 4.56, 39), ("Sniper's Focus", 4.97, 32), ('Manazane', 5.32, 34)]
+best others for Janna are [('Tattoo of Toxin', 3.5, 2), ("Accomplice's Gloves", 4.0, 9), ('Tattoo of Bombardment', 5.5, 2)]
+
+best craftables for Neeko are [('Evenshroud', 3.93, 1443), ('Redemption', 3.97, 994), ('Steadfast Heart', 4.02, 627), ('Sunfire Cape', 4.06, 1020), ("Dragon's Claw", 4.1, 631), ("Protector's Vow", 4.12, 337), ('Bramble Vest', 4.13, 500), ('Crownguard', 4.14, 511), ("Warmog's Armor", 4.22, 1012), ('Gargoyle Stoneplate', 4.23, 738), ("Thief's Gloves", 4.3, 1036), ('Ionic Spark', 4.33, 658), ("Titan's Resolve", 4.43, 462), ('Bloodthirster', 4.44, 383), ("Archangel's Staff", 4.54, 327)]
+best radiants for Neeko are [("Titan's Vow", 4.33, 15), ("Rascal's Gloves", 4.67, 12), ('Sunlight Cape', 5.17, 12)]
+best emblems for Neeko are [('Dragonlord Emblem', 4.0, 94), ('Storyweaver Emblem', 4.04, 97), ('Sage Emblem', 4.24, 95)]
+best ornns for Neeko are [('Eternal Winter', 4.11, 136), ('Anima Visage', 4.73, 81), ('Hullcrusher', 4.79, 71)]
+best others for Neeko are [("Accomplice's Gloves", 4.25, 84), ("Blacksmith's Gloves", 4.6, 62)]
+
+best craftables for Qiyana are [("Warmog's Armor", 3.78, 106), ('Last Whisper', 3.84, 100), ("Sterak's Gage", 3.88, 129), ('Redemption', 3.93, 146), ("Thief's Gloves", 4.04, 595), ('Edge of Night', 4.18, 179), ('Hand Of Justice', 4.2, 261), ('Evenshroud', 4.21, 427), ("Titan's Resolve", 4.23, 190), ('Blue Buff', 4.24, 97), ('Bloodthirster', 4.27, 199), ("Runaan's Hurricane", 4.29, 101), ('Sunfire Cape', 4.33, 138), ('Morellonomicon', 4.4, 162), ('Infinity Edge', 4.69, 101)]
+best radiants for Qiyana are [('Fist of Fairness', 3.0, 2), ('Zenith Edge', 6.0, 3), ('Equinox', 8.0, 2)]
+best emblems for Qiyana are [('Umbral Emblem', 3.95, 60), ('Dragonlord Emblem', 4.04, 136), ('Reaper Emblem', 4.59, 164)]
+best ornns for Qiyana are [('Diamond Hands', 4.47, 19), ("Death's Defiance", 4.55, 20), ("Trickster's Glass", 5.0, 23)]
+best others for Qiyana are [("Accomplice's Gloves", 3.54, 83), ('Tattoo of Force', 4.0, 1), ("Blacksmith's Gloves", 5.47, 17)]
+
+best craftables for Soraka are [('Statikk Shiv', 3.89, 767), ('Red Buff', 3.9, 460), ('Adaptive Helm', 4.07, 412), ('Guardbreaker', 4.12, 191), ("Thief's Gloves", 4.12, 436), ('Hextech Gunblade', 4.27, 217), ('Blue Buff', 4.32, 459), ("Archangel's Staff", 4.32, 650), ("Nashor's Tooth", 4.34, 577), ("Rabadon's Deathcap", 4.37, 576), ('Morellonomicon', 4.41, 2030), ('Spear of Shojin', 4.41, 1661), ('Giant Slayer', 4.48, 418), ("Guinsoo's Rageblade", 4.49, 431), ('Jeweled Gauntlet', 4.56, 910)]
+best radiants for Soraka are [("The Baron's Gift", 4.91, 11), ("Urf-Angel's Staff", 5.67, 9), ("Rabadon's Ascended Deathcap", 6.33, 9)]
+best emblems for Soraka are [('Storyweaver Emblem', 3.72, 337), ('Dragonlord Emblem', 4.07, 189), ('Reaper Emblem', 4.22, 274)]
+best ornns for Soraka are [('Manazane', 4.5, 101), ("Sniper's Focus", 4.53, 51), ('Deathfire Grasp', 4.95, 74)]
+best others for Soraka are [("Accomplice's Gloves", 3.13, 15), ("Blacksmith's Gloves", 5.07, 14), ('Tattoo of Bombardment', 8.0, 1)]
+
+best craftables for Diana are [('Crownguard', 4.16, 565), ("Thief's Gloves", 4.21, 853), ('Evenshroud', 4.32, 813), ('Adaptive Helm', 4.36, 471), ('Ionic Spark', 4.42, 830), ('Redemption', 4.43, 1261), ("Dragon's Claw", 4.45, 1061), ("Protector's Vow", 4.45, 489), ("Titan's Resolve", 4.48, 964), ('Sunfire Cape', 4.49, 1184), ('Gargoyle Stoneplate', 4.52, 1497), ('Steadfast Heart', 4.56, 1093), ('Bramble Vest', 4.58, 734), ('Bloodthirster', 4.64, 595), ("Warmog's Armor", 4.67, 1421)]
+best radiants for Diana are [("Dragon's Will", 4.19, 16), ("Titan's Vow", 5.35, 17), ('Dvarapala Stoneplate', 6.17, 18)]
+best emblems for Diana are [('Heavenly Emblem', 3.89, 699), ('Duelist Emblem', 4.02, 697), ('Storyweaver Emblem', 4.28, 1208)]
+best ornns for Diana are [('Eternal Winter', 4.34, 219), ('Anima Visage', 4.71, 158), ('Hullcrusher', 4.75, 115)]
+best others for Diana are [("Accomplice's Gloves", 3.94, 99), ('Tattoo of Protection', 4.27, 11), ("Blacksmith's Gloves", 4.89, 57)]
+
+best craftables for Rakan are [('Redemption', 3.28, 425), ('Adaptive Helm', 3.31, 575), ("Archangel's Staff", 3.4, 433), ("Warmog's Armor", 3.48, 492), ("Thief's Gloves", 3.5, 1574), ('Ionic Spark', 3.54, 801), ('Crownguard', 3.57, 670), ('Hand Of Justice', 3.63, 585), ('Hextech Gunblade', 3.72, 509), ("Rabadon's Deathcap", 3.75, 684), ('Morellonomicon', 3.75, 1352), ('Jeweled Gauntlet', 3.77, 755), ('Guardbreaker', 3.8, 442), ('Spear of Shojin', 3.81, 831), ('Giant Slayer', 4.01, 503)]
+best radiants for Rakan are [('More More-ellonomicon', 3.33, 15), ('Spear of Hirana', 3.4, 10), ("Rascal's Gloves", 3.96, 56)]
+best emblems for Rakan are [('Heavenly Emblem', 3.3, 488), ('Storyweaver Emblem', 3.76, 580), ('Duelist Emblem', 4.02, 209)]
+best ornns for Rakan are [("Zhonya's Paradox", 3.17, 127), ("Trickster's Glass", 3.34, 110), ('Manazane', 3.57, 107)]
+best others for Rakan are [("Accomplice's Gloves", 3.29, 56), ("Blacksmith's Gloves", 3.78, 129), ('Tattoo of Force', 5.0, 8)]
+
+best craftables for Jax are [("Titan's Resolve", 3.32, 28), ("Protector's Vow", 3.65, 77), ('Adaptive Helm', 3.73, 30), ('Bramble Vest', 3.75, 73), ('Ionic Spark', 3.93, 43), ('Evenshroud', 3.93, 115), ("Thief's Gloves", 4.03, 139), ('Redemption', 4.04, 139), ('Crownguard', 4.16, 50), ("Warmog's Armor", 4.21, 100), ('Steadfast Heart', 4.21, 80), ("Dragon's Claw", 4.23, 71), ('Sunfire Cape', 4.23, 121), ('Gargoyle Stoneplate', 4.54, 107), ('Morellonomicon', 4.58, 19)]
+best radiants for Jax are [('Equinox', 2.0, 1), ("Rascal's Gloves", 8.0, 1), ("Bulwark's Oath", 8.0, 1)]
+best emblems for Jax are [('Dryad Emblem', 4.07, 60), ('Ghostly Emblem', 4.24, 610), ('Bruiser Emblem', 4.43, 21)]
+best ornns for Jax are [('Eternal Winter', 2.5, 6), ('Anima Visage', 3.0, 5), ('Hullcrusher', 4.67, 6)]
+best others for Jax are [('Tattoo of Protection', 3.44, 54), ('Tattoo of Vitality', 3.95, 37), ('Tattoo of Force', 5.3, 37)]
+
+best craftables for Senna are [('Statikk Shiv', 3.62, 50), ('Red Buff', 3.94, 370), ('Deathblade', 3.95, 450), ('Guardbreaker', 3.97, 145), ('Infinity Edge', 3.97, 2180), ("Runaan's Hurricane", 3.99, 139), ('Last Whisper', 3.99, 1176), ('Giant Slayer', 4.1, 1021), ("Guinsoo's Rageblade", 4.19, 2332), ('Hand Of Justice', 4.2, 288), ('Hextech Gunblade', 4.21, 226), ('Morellonomicon', 4.44, 116), ('Spear of Shojin', 4.54, 175), ('Blue Buff', 4.67, 24), ("Thief's Gloves", 4.79, 56)]
+best radiants for Senna are [('Zenith Edge', 3.73, 41), ('Demonslayer', 3.88, 40), ("Guinsoo's Reckoning", 4.16, 61)]
+best emblems for Senna are [('Fated Emblem', 3.87, 15), ('Dryad Emblem', 4.06, 33), ('Ghostly Emblem', 4.22, 250)]
+best ornns for Senna are [('Gold Collector', 3.92, 85), ("Sniper's Focus", 4.46, 160), ('Infinity Force', 4.51, 67)]
+best others for Senna are [('Tattoo of Toxin', 3.99, 363), ('Tattoo of Bombardment', 4.03, 534), ('Tattoo of Fury', 4.24, 544)]
+
+best craftables for Shen are [('Adaptive Helm', 3.9, 328), ("Protector's Vow", 3.91, 324), ("Guinsoo's Rageblade", 4.02, 714), ('Bramble Vest', 4.04, 650), ('Evenshroud', 4.06, 715), ('Gargoyle Stoneplate', 4.07, 1519), ('Bloodthirster', 4.07, 202), ('Redemption', 4.08, 1096), ("Dragon's Claw", 4.15, 679), ('Steadfast Heart', 4.18, 540), ("Thief's Gloves", 4.22, 263), ("Warmog's Armor", 4.25, 893), ('Sunfire Cape', 4.29, 686), ('Crownguard', 4.29, 294), ('Ionic Spark', 4.31, 330)]
+best radiants for Shen are [('Legacy of the Colossus', 3.43, 14), ("Guinsoo's Reckoning", 3.44, 36), ('Dvarapala Stoneplate', 4.53, 15)]
+best emblems for Shen are [('Fated Emblem', 4.12, 40), ('Dryad Emblem', 4.17, 53), ('Inkshadow Emblem', 4.37, 168)]
+best ornns for Shen are [('Anima Visage', 4.18, 84), ('Eternal Winter', 4.27, 126), ('Hullcrusher', 4.49, 71)]
+best others for Shen are [('Tattoo of Protection', 3.62, 337), ('Tattoo of Force', 4.41, 138), ('Tattoo of Vitality', 4.48, 170)]
+
+best craftables for Illaoi are [('Bloodthirster', 3.99, 131), ('Crownguard', 4.0, 668), ('Adaptive Helm', 4.01, 570), ('Ionic Spark', 4.12, 1168), ("Protector's Vow", 4.14, 558), ('Evenshroud', 4.16, 724), ('Redemption', 4.19, 1328), ("Titan's Resolve", 4.22, 241), ("Thief's Gloves", 4.27, 890), ("Dragon's Claw", 4.27, 1099), ('Bramble Vest', 4.29, 915), ('Sunfire Cape', 4.29, 1382), ("Warmog's Armor", 4.37, 1523), ('Gargoyle Stoneplate', 4.37, 2119), ('Steadfast Heart', 4.43, 1144)]
+best radiants for Illaoi are [('Dvarapala Stoneplate', 4.12, 16), ("Rascal's Gloves", 4.29, 24), ("Warmog's Pride", 4.44, 16)]
+best emblems for Illaoi are [('Porcelain Emblem', 4.0, 460), ('Fated Emblem', 4.57, 247), ('Storyweaver Emblem', 4.64, 313)]
+best ornns for Illaoi are [('Eternal Winter', 3.93, 233), ('Hullcrusher', 4.27, 139), ('Anima Visage', 4.45, 149)]
+best others for Illaoi are [('Tattoo of Protection', 3.79, 224), ('Tattoo of Force', 4.32, 106), ('Tattoo of Vitality', 4.43, 134)]
+
+best craftables for Ahri are [('Guardbreaker', 3.12, 17), ("Thief's Gloves", 3.49, 67), ('Statikk Shiv', 3.97, 274), ("Rabadon's Deathcap", 4.05, 82), ("Guinsoo's Rageblade", 4.06, 36), ('Hextech Gunblade', 4.11, 35), ('Adaptive Helm', 4.14, 63), ('Blue Buff', 4.15, 95), ('Jeweled Gauntlet', 4.25, 131), ('Red Buff', 4.33, 39), ('Spear of Shojin', 4.35, 186), ("Nashor's Tooth", 4.38, 120), ('Giant Slayer', 4.41, 90), ("Archangel's Staff", 4.46, 83), ('Morellonomicon', 4.73, 99)]
+best radiants for Ahri are [('Glamorous Gauntlet', 3.33, 3), ('Blue Blessing', 6.0, 1), ("Rabadon's Ascended Deathcap", 6.5, 2)]
+best emblems for Ahri are [('Porcelain Emblem', 2.18, 17), ('Sniper Emblem', 4.26, 38), ('Heavenly Emblem', 4.48, 21)]
+best ornns for Ahri are [("Gambler's Blade", 4.38, 8), ("Goldmancer's Staff", 4.78, 9), ('Deathfire Grasp', 5.38, 8)]
+best others for Ahri are [("Blacksmith's Gloves", 3.0, 1), ("Accomplice's Gloves", 3.42, 12)]
+
+best craftables for Yasuo are [('Ionic Spark', 3.77, 78), ("Thief's Gloves", 4.08, 217), ('Adaptive Helm', 4.09, 33), ('Evenshroud', 4.15, 125), ('Crownguard', 4.29, 45), ("Titan's Resolve", 4.38, 48), ('Steadfast Heart', 4.39, 142), ("Protector's Vow", 4.4, 119), ('Sunfire Cape', 4.46, 259), ('Gargoyle Stoneplate', 4.5, 303), ('Bramble Vest', 4.54, 145), ('Redemption', 4.67, 181), ("Warmog's Armor", 4.74, 206), ("Dragon's Claw", 4.8, 174), ('Bloodthirster', 5.17, 36)]
+best radiants for Yasuo are [('Dvarapala Stoneplate', 5.0, 4), ("Warmog's Pride", 5.0, 2), ('Sunlight Cape', 5.0, 2)]
+best emblems for Yasuo are [('Heavenly Emblem', 4.04, 133), ('Dragonlord Emblem', 4.59, 64), ('Behemoth Emblem', 4.94, 36)]
+best ornns for Yasuo are [('Anima Visage', 4.27, 15), ('Eternal Winter', 4.35, 20), ("Death's Defiance", 4.77, 13)]
+best others for Yasuo are [('Tattoo of Force', 2.0, 2), ("Accomplice's Gloves", 4.76, 37), ("Blacksmith's Gloves", 4.88, 16)]
+
+best craftables for Lux are [('Guardbreaker', 3.35, 65), ('Blue Buff', 3.69, 93), ('Red Buff', 3.93, 153), ("Archangel's Staff", 3.97, 262), ("Rabadon's Deathcap", 3.98, 262), ('Hextech Gunblade', 3.99, 181), ('Giant Slayer', 3.99, 243), ("Nashor's Tooth", 4.0, 527), ('Adaptive Helm', 4.02, 107), ('Morellonomicon', 4.06, 252), ('Spear of Shojin', 4.06, 1185), ('Jeweled Gauntlet', 4.13, 853), ("Guinsoo's Rageblade", 4.17, 187), ('Statikk Shiv', 4.18, 489), ("Thief's Gloves", 4.35, 91)]
+best radiants for Lux are [("The Baron's Gift", 3.3, 10), ('Spear of Hirana', 3.76, 17), ('Glamorous Gauntlet', 4.33, 15)]
+best emblems for Lux are [('Sniper Emblem', 3.92, 25), ('Fated Emblem', 4.18, 28), ('Warden Emblem', 4.56, 18)]
+best ornns for Lux are [("Sniper's Focus", 3.31, 65), ('Manazane', 3.5, 52), ('Deathfire Grasp', 4.31, 29)]
+best others for Lux are [('Tattoo of Fury', 1.0, 1), ("Blacksmith's Gloves", 3.6, 5), ("Accomplice's Gloves", 5.0, 3)]
+
+best craftables for Thresh are [('Ionic Spark', 4.06, 663), ('Crownguard', 4.17, 466), ("Dragon's Claw", 4.21, 1749), ('Sunfire Cape', 4.22, 2120), ('Adaptive Helm', 4.22, 600), ('Redemption', 4.25, 1732), ("Sterak's Gage", 4.31, 59), ('Bramble Vest', 4.31, 1213), ('Gargoyle Stoneplate', 4.32, 3259), ("Titan's Resolve", 4.34, 100), ("Warmog's Armor", 4.36, 2315), ('Evenshroud', 4.4, 544), ('Steadfast Heart', 4.42, 1399), ("Thief's Gloves", 4.42, 368), ("Protector's Vow", 4.47, 539)]
+best radiants for Thresh are [("Warmog's Pride", 4.42, 24), ('Dvarapala Stoneplate', 4.46, 48), ('Legacy of the Colossus', 4.74, 23)]
+best emblems for Thresh are [('Dryad Emblem', 4.35, 127), ('Porcelain Emblem', 4.45, 87), ('Arcanist Emblem', 4.76, 97)]
+best ornns for Thresh are [('Eternal Winter', 4.15, 245), ('Anima Visage', 4.19, 227), ('Hullcrusher', 5.0, 143)]
+best others for Thresh are [('Tattoo of Protection', 2.5, 4), ("Accomplice's Gloves", 3.83, 18), ("Blacksmith's Gloves", 5.35, 23)]
+
+best craftables for Syndra are [("Thief's Gloves", 3.72, 329), ('Guardbreaker', 3.75, 354), ("Archangel's Staff", 3.95, 1541), ('Morellonomicon', 4.06, 394), ("Rabadon's Deathcap", 4.1, 1342), ("Nashor's Tooth", 4.11, 1602), ('Giant Slayer', 4.14, 1452), ('Statikk Shiv', 4.14, 387), ('Adaptive Helm', 4.15, 479), ('Blue Buff', 4.19, 3614), ('Hand Of Justice', 4.25, 318), ('Jeweled Gauntlet', 4.37, 3002), ('Red Buff', 4.4, 241), ('Hextech Gunblade', 4.48, 1696), ('Spear of Shojin', 4.49, 2015)]
+best radiants for Syndra are [("Rabadon's Ascended Deathcap", 4.29, 56), ("Urf-Angel's Staff", 4.49, 43), ('Blue Blessing', 4.78, 60)]
+best emblems for Syndra are [('Porcelain Emblem', 3.78, 302), ('Sniper Emblem', 4.12, 313), ('Dryad Emblem', 4.52, 48)]
+best ornns for Syndra are [("Zhonya's Paradox", 4.21, 155), ('Deathfire Grasp', 4.4, 198), ('Manazane', 4.46, 259)]
+best others for Syndra are [('Tattoo of Toxin', 3.67, 3), ("Blacksmith's Gloves", 4.0, 11), ("Accomplice's Gloves", 6.0, 1)]
+
+best craftables for Caitlyn are [("Runaan's Hurricane", 3.61, 147), ('Edge of Night', 3.76, 54), ("Thief's Gloves", 3.77, 185), ('Giant Slayer', 3.8, 458), ('Infinity Edge', 3.87, 499), ('Red Buff', 3.99, 287), ("Guinsoo's Rageblade", 4.03, 497), ('Hand Of Justice', 4.07, 144), ('Blue Buff', 4.07, 56), ('Deathblade', 4.09, 246), ('Guardbreaker', 4.11, 150), ('Last Whisper', 4.12, 364), ('Spear of Shojin', 4.13, 708), ('Statikk Shiv', 4.24, 344), ('Hextech Gunblade', 4.27, 78)]
+best radiants for Caitlyn are [('Crest of Cinders', 4.67, 3), ("Rascal's Gloves", 4.67, 3), ("Guinsoo's Reckoning", 5.5, 4)]
+best emblems for Caitlyn are [('Heavenly Emblem', 4.04, 27), ('Mythic Emblem', 4.12, 322), ('Inkshadow Emblem', 4.26, 125)]
+best ornns for Caitlyn are [('Infinity Force', 4.0, 40), ("Sniper's Focus", 4.05, 56), ("Gambler's Blade", 4.19, 27)]
+best others for Caitlyn are [('Tattoo of Fury', 3.79, 72), ('Tattoo of Bombardment', 4.37, 123), ('Tattoo of Toxin', 4.45, 78)]
+
+best craftables for Amumu are [('Bloodthirster', 3.65, 63), ('Ionic Spark', 4.04, 572), ('Adaptive Helm', 4.19, 386), ("Thief's Gloves", 4.21, 340), ('Crownguard', 4.26, 306), ('Sunfire Cape', 4.3, 867), ("Protector's Vow", 4.32, 242), ('Gargoyle Stoneplate', 4.33, 1515), ('Evenshroud', 4.34, 353), ('Redemption', 4.35, 825), ('Bramble Vest', 4.35, 664), ("Titan's Resolve", 4.37, 250), ("Dragon's Claw", 4.46, 847), ('Steadfast Heart', 4.51, 827), ("Warmog's Armor", 4.52, 999)]
+best radiants for Amumu are [('Dvarapala Stoneplate', 4.23, 22), ('Legacy of the Colossus', 4.63, 19), ("Dragon's Will", 5.0, 13)]
+best emblems for Amumu are [('Ghostly Emblem', 3.98, 66), ('Fated Emblem', 4.41, 375), ('Arcanist Emblem', 4.45, 419)]
+best ornns for Amumu are [('Eternal Winter', 4.37, 109), ('Hullcrusher', 4.55, 73), ('Anima Visage', 4.6, 91)]
+best others for Amumu are [('Tattoo of Protection', 3.71, 14), ("Blacksmith's Gloves", 4.33, 21), ("Accomplice's Gloves", 4.35, 17)]
+
+best craftables for Volibear are [('Bramble Vest', 3.93, 118), ("Thief's Gloves", 3.96, 209), ('Gargoyle Stoneplate', 4.06, 134), ('Redemption', 4.08, 172), ('Evenshroud', 4.1, 155), ("Warmog's Armor", 4.22, 246), ('Quicksilver', 4.23, 261), ("Titan's Resolve", 4.24, 5144), ("Sterak's Gage", 4.26, 176), ('Bloodthirster', 4.32, 2911), ('Sunfire Cape', 4.36, 143), ('Crownguard', 4.43, 199), ('Edge of Night', 4.49, 195), ('Hand Of Justice', 4.52, 1072), ("Dragon's Claw", 4.57, 132)]
+best radiants for Volibear are [('Blessed Bloodthirster', 4.1, 48), ("Titan's Vow", 4.32, 177), ('Fist of Fairness', 5.29, 28)]
+best emblems for Volibear are [('Ghostly Emblem', 3.96, 55), ('Dragonlord Emblem', 4.27, 30), ('Heavenly Emblem', 4.61, 31)]
+best ornns for Volibear are [("Zhonya's Paradox", 4.11, 85), ('Infinity Force', 4.25, 217), ("Death's Defiance", 4.52, 236)]
+best others for Volibear are [('Tattoo of Protection', 3.95, 92), ('Tattoo of Vitality', 4.35, 130), ('Tattoo of Force', 4.61, 128)]
+
+best craftables for Aphelios are [('Quicksilver', 3.74, 47), ('Statikk Shiv', 3.84, 106), ('Hextech Gunblade', 4.01, 156), ('Last Whisper', 4.16, 332), ("Runaan's Hurricane", 4.16, 451), ('Red Buff', 4.17, 1013), ('Deathblade', 4.21, 899), ('Guardbreaker', 4.3, 342), ('Infinity Edge', 4.31, 3866), ("Guinsoo's Rageblade", 4.31, 4675), ("Thief's Gloves", 4.33, 98), ('Giant Slayer', 4.34, 2170), ('Morellonomicon', 4.34, 53), ('Hand Of Justice', 4.45, 354), ('Spear of Shojin', 4.64, 70)]
+best radiants for Aphelios are [('Zenith Edge', 3.99, 75), ('Demonslayer', 4.05, 60), ("Guinsoo's Reckoning", 4.46, 147)]
+best emblems for Aphelios are [('Porcelain Emblem', 4.0, 83), ('Reaper Emblem', 4.54, 13), ('Warden Emblem', 5.25, 12)]
+best ornns for Aphelios are [('Gold Collector', 4.21, 131), ('Infinity Force', 4.44, 150), ("Sniper's Focus", 4.48, 393)]
+best others for Aphelios are [('Tattoo of Fury', 3.75, 4), ('Tattoo of Bombardment', 3.83, 6), ("Blacksmith's Gloves", 4.5, 4)]
+
+best craftables for Ornn are [("Sterak's Gage", 3.89, 164), ("Titan's Resolve", 3.9, 265), ('Evenshroud', 3.93, 1084), ("Protector's Vow", 3.94, 1215), ('Crownguard', 3.94, 809), ('Adaptive Helm', 3.96, 978), ('Ionic Spark', 3.98, 1039), ('Steadfast Heart', 4.01, 1780), ("Warmog's Armor", 4.09, 2837), ('Redemption', 4.1, 2079), ("Thief's Gloves", 4.14, 1339), ('Gargoyle Stoneplate', 4.14, 3240), ('Sunfire Cape', 4.17, 2007), ('Bramble Vest', 4.19, 1480), ("Dragon's Claw", 4.21, 2039)]
+best radiants for Ornn are [("Dragon's Will", 4.16, 19), ("Warmog's Pride", 4.81, 27), ("Rascal's Gloves", 5.06, 32)]
+best emblems for Ornn are [('Fated Emblem', 4.0, 1867), ('Heavenly Emblem', 4.24, 323), ('Ghostly Emblem', 4.4, 213)]
+best ornns for Ornn are [('Eternal Winter', 4.04, 459), ('Hullcrusher', 4.24, 262), ('Anima Visage', 4.28, 404)]
+best others for Ornn are [('Tattoo of Protection', 3.58, 163), ("Accomplice's Gloves", 4.07, 89), ("Blacksmith's Gloves", 4.46, 126)]
+
+best craftables for Rek'Sai are [('Adaptive Helm', 3.62, 29), ('Bloodthirster', 3.68, 22), ('Ionic Spark', 3.72, 58), ("Titan's Resolve", 3.83, 53), ("Thief's Gloves", 3.85, 122), ('Steadfast Heart', 4.01, 90), ('Bramble Vest', 4.07, 90), ("Dragon's Claw", 4.16, 103), ('Crownguard', 4.29, 24), ('Evenshroud', 4.32, 139), ('Sunfire Cape', 4.34, 175), ('Redemption', 4.36, 151), ("Warmog's Armor", 4.46, 114), ('Gargoyle Stoneplate', 4.63, 115), ("Protector's Vow", 4.63, 62)]
+best radiants for Rek'Sai are [('Absolution', 2.0, 1), ("Dragon's Will", 8.0, 1), ('Legacy of the Colossus', 8.0, 1)]
+best emblems for Rek'Sai are [('Inkshadow Emblem', 2.73, 15), ('Ghostly Emblem', 3.4, 35), ('Heavenly Emblem', 3.62, 16)]
+best ornns for Rek'Sai are [('Anima Visage', 4.09, 11), ('Hullcrusher', 4.55, 11), ('Eternal Winter', 4.67, 12)]
+best others for Rek'Sai are [('Tattoo of Protection', 3.83, 36), ('Tattoo of Vitality', 4.26, 27), ('Tattoo of Force', 5.0, 15)]
+
+best craftables for Kindred are [('Red Buff', 3.7, 452), ('Statikk Shiv', 3.94, 254), ('Guardbreaker', 4.11, 227), ('Hextech Gunblade', 4.13, 415), ("Rabadon's Deathcap", 4.14, 925), ('Morellonomicon', 4.2, 1740), ("Guinsoo's Rageblade", 4.2, 232), ("Archangel's Staff", 4.21, 581), ("Thief's Gloves", 4.21, 254), ('Giant Slayer', 4.28, 789), ("Nashor's Tooth", 4.32, 659), ('Blue Buff', 4.35, 1837), ('Hand Of Justice', 4.35, 434), ('Spear of Shojin', 4.4, 626), ('Jeweled Gauntlet', 4.62, 1401)]
+best radiants for Kindred are [("Rabadon's Ascended Deathcap", 4.24, 25), ('Blue Blessing', 4.59, 34), ('Demonslayer', 5.37, 19)]
+best emblems for Kindred are [('Umbral Emblem', 3.3, 96), ('Heavenly Emblem', 3.82, 1398), ('Sniper Emblem', 4.36, 56)]
+best ornns for Kindred are [('Manazane', 4.62, 66), ("Sniper's Focus", 4.76, 72), ('Deathfire Grasp', 4.89, 72)]
+best others for Kindred are [('Tattoo of Toxin', 4.1, 20), ("Accomplice's Gloves", 4.72, 25), ('Tattoo of Bombardment', 5.18, 11)]
+
+best craftables for Gnar are [("Sterak's Gage", 4.24, 335), ('Quicksilver', 4.32, 44), ('Bloodthirster', 4.37, 1809), ("Titan's Resolve", 4.41, 2538), ('Hand Of Justice', 4.43, 666), ('Hextech Gunblade', 4.44, 25), ('Edge of Night', 4.46, 93), ('Redemption', 4.56, 18), ('Infinity Edge', 4.61, 59), ('Giant Slayer', 4.64, 75), ("Warmog's Armor", 4.67, 21), ("Thief's Gloves", 4.78, 36), ('Last Whisper', 4.95, 39), ('Guardbreaker', 5.2, 20), ('Sunfire Cape', 5.52, 21)]
+best radiants for Gnar are [("Titan's Vow", 3.76, 82), ("Sterak's Megashield", 4.04, 25), ('Blessed Bloodthirster', 4.6, 42)]
+best emblems for Gnar are [('Fated Emblem', 4.46, 104), ('Reaper Emblem', 4.48, 44), ('Porcelain Emblem', 6.29, 7)]
+best ornns for Gnar are [('Infinity Force', 4.25, 97), ("Death's Defiance", 4.44, 94), ('Hullcrusher', 4.83, 30)]
+best others for Gnar are [('Tattoo of Force', 4.49, 39), ('Tattoo of Vitality', 4.52, 21), ('Tattoo of Protection', 4.6, 10)]
+
+best craftables for Ashe are [('Statikk Shiv', 3.73, 141), ('Edge of Night', 3.73, 94), ("Thief's Gloves", 3.88, 225), ('Guardbreaker', 3.94, 211), ("Runaan's Hurricane", 4.0, 372), ('Hextech Gunblade', 4.04, 224), ('Red Buff', 4.12, 545), ('Deathblade', 4.32, 484), ('Morellonomicon', 4.32, 99), ('Last Whisper', 4.36, 655), ('Giant Slayer', 4.38, 1074), ('Hand Of Justice', 4.39, 308), ("Guinsoo's Rageblade", 4.42, 2127), ('Spear of Shojin', 4.43, 87), ('Infinity Edge', 4.47, 1585)]
+best radiants for Ashe are [('Zenith Edge', 4.62, 29), ("Guinsoo's Reckoning", 4.87, 38), ('Demonslayer', 5.38, 26)]
+best emblems for Ashe are [('Arcanist Emblem', 3.5, 20), ('Fated Emblem', 3.91, 627), ('Ghostly Emblem', 4.25, 44)]
+best ornns for Ashe are [('Infinity Force', 4.45, 98), ('Gold Collector', 4.52, 71), ("Sniper's Focus", 4.79, 238)]
+best others for Ashe are [('Tattoo of Toxin', 3.81, 16), ('Tattoo of Bombardment', 4.25, 28), ('Tattoo of Fury', 4.82, 33)]
+
+best craftables for Yone are [('Quicksilver', 3.96, 373), ("Sterak's Gage", 4.07, 209), ("Titan's Resolve", 4.15, 6862), ('Bloodthirster', 4.21, 4667), ('Hand Of Justice', 4.27, 2805), ('Deathblade', 4.31, 65), ('Edge of Night', 4.31, 968), ("Thief's Gloves", 4.36, 87), ("Guinsoo's Rageblade", 4.38, 738), ('Guardbreaker', 4.42, 48), ('Giant Slayer', 4.45, 201), ('Infinity Edge', 4.65, 258), ('Hextech Gunblade', 4.66, 99), ('Last Whisper', 4.79, 99), ("Runaan's Hurricane", 5.17, 42)]
+best radiants for Yone are [('Fist of Fairness', 3.59, 86), ("Titan's Vow", 3.92, 306), ('Blessed Bloodthirster', 4.21, 86)]
+best emblems for Yone are [('Duelist Emblem', 4.23, 154), ('Dryad Emblem', 4.68, 31), ('Heavenly Emblem', 4.71, 136)]
+best ornns for Yone are [('Infinity Force', 4.07, 318), ("Death's Defiance", 4.21, 266), ("Zhonya's Paradox", 4.73, 44)]
+best others for Yone are [("Accomplice's Gloves", 2.0, 1), ('Tattoo of Fury', 5.5, 2), ("Blacksmith's Gloves", 6.75, 8)]
+
+best craftables for Malphite are [('Adaptive Helm', 3.69, 74), ("Sterak's Gage", 3.78, 37), ('Crownguard', 3.97, 110), ("Warmog's Armor", 3.99, 329), ("Titan's Resolve", 4.0, 44), ('Evenshroud', 4.03, 541), ('Steadfast Heart', 4.04, 159), ('Redemption', 4.04, 316), ("Thief's Gloves", 4.07, 321), ("Dragon's Claw", 4.2, 229), ("Protector's Vow", 4.21, 94), ('Ionic Spark', 4.23, 190), ('Sunfire Cape', 4.27, 341), ('Bramble Vest', 4.41, 188), ('Gargoyle Stoneplate', 4.56, 236)]
+best radiants for Malphite are [('Equinox', 4.86, 7), ('Sunlight Cape', 5.0, 4), ("Rascal's Gloves", 5.12, 8)]
+best emblems for Malphite are [('Sage Emblem', 3.95, 38), ('Ghostly Emblem', 4.0, 39), ('Mythic Emblem', 4.27, 303)]
+best ornns for Malphite are [('Hullcrusher', 4.44, 27), ('Anima Visage', 4.5, 44), ('Eternal Winter', 4.57, 51)]
+best others for Malphite are [("Blacksmith's Gloves", 4.09, 23), ("Accomplice's Gloves", 4.19, 43)]
+
+best craftables for Bard are [('Red Buff', 4.45, 166), ("Thief's Gloves", 4.53, 103), ('Hand Of Justice', 4.54, 123), ('Statikk Shiv', 4.57, 112), ("Guinsoo's Rageblade", 4.63, 2384), ('Last Whisper', 4.63, 70), ('Hextech Gunblade', 4.64, 1013), ("Rabadon's Deathcap", 4.71, 31), ('Giant Slayer', 4.71, 288), ('Guardbreaker', 4.72, 61), ('Morellonomicon', 4.9, 81), ("Runaan's Hurricane", 4.97, 64), ('Infinity Edge', 5.32, 121), ('Deathblade', 5.89, 64), ('Spear of Shojin', 6.15, 27)]
+best radiants for Bard are [('Crest of Cinders', 3.36, 11), ('Hextech Lifeblade', 3.96, 24), ("Guinsoo's Reckoning", 4.25, 110)]
+best emblems for Bard are [('Ghostly Emblem', 5.12, 25), ('Inkshadow Emblem', 5.28, 29), ('Bruiser Emblem', 5.55, 38)]
+best ornns for Bard are [("Gambler's Blade", 4.71, 124), ("Sniper's Focus", 5.36, 44), ('Infinity Force', 5.55, 22)]
+best others for Bard are [('Tattoo of Bombardment', 4.41, 46), ('Tattoo of Toxin', 4.73, 22), ('Tattoo of Fury', 5.58, 33)]
+
+best craftables for Darius are [('Edge of Night', 3.17, 12), ("Warmog's Armor", 3.37, 19), ('Sunfire Cape', 3.52, 48), ('Evenshroud', 3.68, 72), ('Bloodthirster', 3.72, 32), ('Crownguard', 3.79, 19), ('Gargoyle Stoneplate', 3.92, 13), ('Redemption', 3.96, 46), ('Ionic Spark', 4.31, 26), ("Rabadon's Deathcap", 4.43, 21), ('Hand Of Justice', 4.43, 37), ("Titan's Resolve", 4.45, 29), ("Thief's Gloves", 4.7, 50), ('Jeweled Gauntlet', 4.8, 20), ('Morellonomicon', 4.84, 43)]
+best radiants for Darius are [("Rascal's Gloves", 1.0, 1), ('Covalent Spark', 4.0, 1), ("Titan's Vow", 5.0, 1)]
+best emblems for Darius are [('Dragonlord Emblem', 3.98, 51), ('Heavenly Emblem', 3.99, 140), ('Fated Emblem', 4.64, 14)]
+best ornns for Darius are [('Diamond Hands', 4.33, 3), ('Eternal Winter', 4.43, 7), ('Anima Visage', 4.67, 3)]
+best others for Darius are [("Blacksmith's Gloves", 3.5, 2), ("Accomplice's Gloves", 3.78, 9), ('Tattoo of Force', 4.0, 1)]
+
+best craftables for Tristana are [("Thief's Gloves", 3.89, 76), ('Bloodthirster', 4.16, 107), ("Runaan's Hurricane", 4.17, 700), ('Guardbreaker', 4.21, 369), ('Hextech Gunblade', 4.22, 680), ('Giant Slayer', 4.24, 1382), ('Spear of Shojin', 4.25, 69), ('Edge of Night', 4.27, 183), ('Last Whisper', 4.28, 1127), ('Morellonomicon', 4.37, 315), ('Red Buff', 4.37, 355), ('Deathblade', 4.39, 531), ('Infinity Edge', 4.41, 2044), ('Hand Of Justice', 4.42, 1409), ("Guinsoo's Rageblade", 4.67, 634)]
+best radiants for Tristana are [('Demonslayer', 4.02, 42), ("Runaan's Tempest", 4.63, 30), ('Zenith Edge', 4.95, 42)]
+best emblems for Tristana are [('Heavenly Emblem', 3.0, 28), ('Umbral Emblem', 3.38, 13), ('Dragonlord Emblem', 3.88, 8)]
+best ornns for Tristana are [('Infinity Force', 4.0, 169), ('Gold Collector', 4.12, 104), ("Sniper's Focus", 4.37, 164)]
+best others for Tristana are [('Tattoo of Bombardment', 2.8, 10), ("Blacksmith's Gloves", 3.0, 10), ('Tattoo of Fury', 6.0, 7)]
+
+best craftables for Kobuko are [('Hand Of Justice', 4.1, 21), ('Bloodthirster', 4.18, 83), ("Archangel's Staff", 4.22, 18), ('Redemption', 4.32, 85), ("Thief's Gloves", 4.45, 29), ("Warmog's Armor", 4.59, 111), ("Titan's Resolve", 4.63, 101), ('Ionic Spark', 4.72, 29), ("Dragon's Claw", 4.73, 94), ('Evenshroud', 4.81, 26), ('Bramble Vest', 4.96, 51), ('Sunfire Cape', 4.97, 34), ('Steadfast Heart', 5.0, 53), ("Protector's Vow", 5.12, 16), ('Gargoyle Stoneplate', 5.63, 73)]
+best radiants for Kobuko are [("Dragon's Will", 4.25, 4), ("Warmog's Pride", 6.75, 4), ('Fist of Fairness', 7.33, 3)]
+best emblems for Kobuko are [('Dragonlord Emblem', 2.82, 11), ('Storyweaver Emblem', 5.62, 26), ('Heavenly Emblem', 6.0, 14)]
+best ornns for Kobuko are [('Eternal Winter', 3.0, 15), ('Anima Visage', 4.43, 21), ('Hullcrusher', 5.46, 13)]
+best others for Kobuko are [('Tattoo of Protection', 4.0, 2), ("Blacksmith's Gloves", 4.75, 4), ("Accomplice's Gloves", 5.0, 11)]
+
+best craftables for Yorick are [('Crownguard', 4.09, 55), ('Bramble Vest', 4.12, 111), ('Ionic Spark', 4.35, 52), ("Warmog's Armor", 4.38, 213), ('Gargoyle Stoneplate', 4.39, 126), ('Sunfire Cape', 4.41, 152), ('Bloodthirster', 4.45, 131), ('Steadfast Heart', 4.46, 120), ("Thief's Gloves", 4.47, 116), ("Protector's Vow", 4.53, 62), ('Redemption', 4.6, 220), ("Dragon's Claw", 4.63, 153), ("Titan's Resolve", 4.67, 143), ('Evenshroud', 4.73, 142), ("Archangel's Staff", 5.15, 48)]
+best radiants for Yorick are [("Titan's Vow", 4.5, 4), ("Warmog's Pride", 5.33, 3), ("Urf-Angel's Staff", 7.67, 3)]
+best emblems for Yorick are [('Ghostly Emblem', 4.13, 45), ('Fated Emblem', 4.36, 25), ('Heavenly Emblem', 4.57, 104)]
+best ornns for Yorick are [('Eternal Winter', 4.58, 12), ('Anima Visage', 5.0, 16), ('Diamond Hands', 5.11, 9)]
+best others for Yorick are [('Tattoo of Protection', 3.5, 2), ("Accomplice's Gloves", 4.73, 11), ("Blacksmith's Gloves", 5.29, 7)]
+
+---------BEST UNITS FOR EACH ITEM---------
+best units for Dragon's Claw are [('Thresh', 4.21, 1749), ('Ornn', 4.21, 2039), ('Illaoi', 4.27, 1099), ('Galio', 4.42, 4316), ('Diana', 4.45, 1061), ('Amumu', 4.46, 847), ('Annie', 4.74, 888)]
+best units for Titan's Resolve are [('Wukong', 3.84, 3386), ('Udyr', 3.91, 2152), ('Yone', 4.15, 6862), ('Volibear', 4.24, 5144), ('Kayn', 4.4, 4465), ('Gnar', 4.41, 2538), ('Sylas', 4.42, 2364)]
+best units for Bramble Vest are [('Ornn', 4.19, 1480), ('Illaoi', 4.29, 915), ('Thresh', 4.31, 1213), ('Amumu', 4.35, 664), ('Galio', 4.44, 2976), ('Annie', 4.46, 681), ('Diana', 4.58, 734)]
+best units for Absolution are [('Annie', 3.75, 12), ("Cho'Gath", 4.1, 10), ('Shen', 4.42, 12), ('Galio', 4.76, 45), ('Ornn', 4.88, 17), ('Thresh', 5.2, 10), ('Illaoi', 5.85, 13)]
+best units for Ionic Spark are [('Rakan', 3.54, 801), ('Udyr', 3.56, 808), ('Ornn', 3.98, 1039), ('Illaoi', 4.12, 1168), ('Sylas', 4.19, 821), ('Galio', 4.32, 1009), ('Diana', 4.42, 830)]
+best units for Gargoyle Stoneplate are [('Shen', 4.07, 1519), ('Ornn', 4.14, 3240), ('Thresh', 4.32, 3259), ('Amumu', 4.33, 1515), ('Illaoi', 4.37, 2119), ('Galio', 4.5, 8763), ('Diana', 4.52, 1497)]
+best units for Redemption are [('Neeko', 3.97, 994), ('Shen', 4.08, 1096), ('Ornn', 4.1, 2079), ('Illaoi', 4.19, 1328), ('Thresh', 4.25, 1732), ('Galio', 4.31, 4303), ('Diana', 4.43, 1261)]
+best units for Warmog's Armor are [('Udyr', 3.7, 1135), ('Ornn', 4.09, 2837), ('Thresh', 4.36, 2315), ('Illaoi', 4.37, 1523), ('Galio', 4.55, 6158), ('Annie', 4.55, 1192), ('Diana', 4.67, 1421)]
+best units for Hullcrusher are [('Udyr', 3.78, 388), ('Wukong', 3.88, 239), ('Lee Sin', 4.09, 151), ('Sylas', 4.14, 273), ('Ornn', 4.24, 262), ('Galio', 4.35, 664), ('Kayn', 4.49, 144)]
+best units for Sunfire Cape are [('Neeko', 4.06, 1020), ('Ornn', 4.17, 2007), ('Thresh', 4.22, 2120), ('Illaoi', 4.29, 1382), ('Amumu', 4.3, 867), ('Diana', 4.49, 1184), ('Galio', 4.53, 2491)]
+best units for Legacy of the Colossus are [("Cho'Gath", 3.59, 17), ('Annie', 4.08, 24), ('Amumu', 4.63, 19), ('Sylas', 4.64, 22), ('Thresh', 4.74, 23), ('Galio', 5.19, 64), ('Tahm Kench', 5.31, 16)]
+best units for Rabadon's Deathcap are [('Azir', 3.66, 971), ('Hwei', 3.67, 1199), ('Rakan', 3.75, 684), ('Lissandra', 3.75, 849), ('Syndra', 4.1, 1342), ('Kindred', 4.14, 925), ('Morgana', 4.47, 1022)]
+best units for Eternal Winter are [('Illaoi', 3.93, 233), ('Annie', 4.01, 214), ('Ornn', 4.04, 459), ('Thresh', 4.15, 245), ('Galio', 4.25, 1082), ('Diana', 4.34, 219), ('Sylas', 4.39, 208)]
+best units for Crownguard are [('Rakan', 3.57, 670), ('Udyr', 3.58, 1010), ('Ornn', 3.94, 809), ('Illaoi', 4.0, 668), ('Sylas', 4.14, 1171), ('Diana', 4.16, 565), ('Galio', 4.33, 1660)]
+best units for Bloodthirster are [('Wukong', 3.77, 3717), ('Sett', 3.8, 1902), ('Udyr', 3.86, 2009), ('Yone', 4.21, 4667), ('Kayn', 4.26, 4246), ('Volibear', 4.32, 2911), ('Sylas', 4.41, 2050)]
+best units for Evenshroud are [('Neeko', 3.93, 1443), ('Ornn', 3.93, 1084), ('Aatrox', 3.97, 708), ('Shen', 4.06, 715), ('Illaoi', 4.16, 724), ('Diana', 4.32, 813), ('Galio', 4.43, 1693)]
+best units for Steadfast Heart are [('Ornn', 4.01, 1780), ('Thresh', 4.42, 1399), ('Illaoi', 4.43, 1144), ('Galio', 4.45, 3445), ('Amumu', 4.51, 827), ('Diana', 4.56, 1093), ('Annie', 4.64, 833)]
+best units for Protector's Vow are [('Udyr', 3.62, 398), ('Ornn', 3.94, 1215), ('Illaoi', 4.14, 558), ('Nautilus', 4.14, 464), ('Galio', 4.21, 1616), ('Diana', 4.45, 489), ('Thresh', 4.47, 539)]
+best units for Diamond Hands are [('Wukong', 3.8, 146), ('Udyr', 4.04, 144), ('Sylas', 4.14, 159), ('Thresh', 4.19, 113), ('Galio', 4.25, 370), ('Kayn', 4.28, 89), ('Ornn', 4.44, 185)]
+best units for Aegis of the Legion are [('Galio', 3.87, 1086), ('Riven', 4.11, 835), ('Neeko', 4.13, 783), ('Diana', 4.2, 621), ('Ornn', 4.27, 466), ('Qiyana', 4.41, 288), ('Malphite', 4.42, 476)]
+best units for Anima Visage are [('Udyr', 3.76, 189), ('Annie', 4.0, 216), ('Thresh', 4.19, 227), ('Ornn', 4.28, 404), ('Galio', 4.3, 926), ('Sylas', 4.51, 196), ('Diana', 4.71, 158)]
+best units for Infinity Force are [('Udyr', 3.79, 253), ('Wukong', 3.83, 481), ('Irelia', 3.98, 459), ('Yone', 4.07, 318), ('Sylas', 4.21, 218), ('Kayn', 4.24, 527), ("Kai'Sa", 4.5, 473)]
+best units for Adaptive Helm are [('Lissandra', 3.51, 964), ('Hwei', 3.53, 782), ('Ornn', 3.96, 978), ('Thresh', 4.22, 600), ('Morgana', 4.27, 733), ('Sylas', 4.35, 598), ('Galio', 4.39, 1470)]
+best units for Heavenly Emblem are [('Rakan', 3.3, 488), ('Lee Sin', 3.61, 416), ('Kindred', 3.82, 1398), ('Diana', 3.89, 699), ('Kayn', 3.92, 662), ('Morgana', 3.98, 537), ('Riven', 4.12, 441)]
+best units for Accomplice's Gloves are [('Qiyana', 3.54, 83), ('Lee Sin', 3.68, 75), ('Aatrox', 3.93, 102), ('Diana', 3.94, 99), ('Ornn', 4.07, 89), ('Riven', 4.11, 179), ('Neeko', 4.25, 84)]
+best units for Randuin's Omen are [('Lissandra', 3.66, 223), ('Rakan', 3.77, 273), ('Neeko', 4.43, 254), ('Diana', 4.45, 245), ('Qiyana', 4.5, 288), ('Riven', 4.52, 357), ('Malphite', 4.7, 164)]
+best units for Zephyr are [('Soraka', 3.9, 131), ('Qiyana', 4.15, 59), ('Neeko', 4.21, 68), ('Zyra', 4.33, 66), ('Diana', 4.34, 71), ('Riven', 4.39, 122), ('Sivir', 4.99, 67)]
+best units for Banshee's Veil are [('Wukong', 3.61, 70), ("Kha'Zix", 3.79, 87), ('Qiyana', 3.84, 200), ('Malphite', 3.87, 93), ('Neeko', 4.15, 190), ('Diana', 4.24, 113), ('Sivir', 4.92, 153)]
+best units for Thief's Gloves are [('Rakan', 3.5, 1574), ('Udyr', 3.57, 1990), ('Wukong', 3.58, 2021), ('Sett', 3.62, 1389), ('Lee Sin', 3.96, 1434), ('Ornn', 4.14, 1339), ('Sylas', 4.2, 1425)]
+best units for Statikk Shiv are [('Hwei', 3.64, 825), ('Azir', 3.79, 806), ('Soraka', 3.89, 767), ('Morgana', 4.03, 604), ('Lux', 4.18, 489), ('Zyra', 4.25, 521), ('Zoe', 4.26, 779)]
+best units for Nashor's Tooth are [('Lissandra', 3.65, 752), ('Azir', 3.78, 989), ('Hwei', 3.85, 930), ('Syndra', 4.11, 1602), ("Kog'Maw", 4.13, 1333), ('Morgana', 4.27, 701), ('Zoe', 4.5, 840)]
+best units for Zeke's Herald are [('Zoe', 3.8, 187), ('Qiyana', 4.02, 145), ('Neeko', 4.05, 134), ('Zyra', 4.34, 220), ('Teemo', 4.37, 103), ('Sivir', 4.41, 411), ('Soraka', 4.48, 121)]
+best units for Death's Defiance are [('Wukong', 3.69, 465), ('Udyr', 3.73, 360), ('Sett', 3.79, 213), ('Yone', 4.21, 266), ('Sylas', 4.3, 350), ('Kayn', 4.3, 405), ('Volibear', 4.52, 236)]
+best units for Dragon's Will are [('Udyr', 3.5, 14), ('Thresh', 4.0, 17), ("Cho'Gath", 4.08, 13), ('Ornn', 4.16, 19), ('Diana', 4.19, 16), ('Galio', 4.77, 65), ('Illaoi', 5.64, 14)]
+best units for Warmog's Pride are [('Tahm Kench', 4.32, 19), ('Thresh', 4.42, 24), ('Annie', 4.79, 19), ('Ornn', 4.81, 27), ('Udyr', 4.84, 19), ('Sylas', 4.88, 17), ('Galio', 4.9, 104)]
+best units for Guardbreaker are [('Xayah', 3.5, 439), ('Irelia', 3.62, 957), ('Lissandra', 3.69, 426), ('Wukong', 3.7, 683), ('Rakan', 3.8, 442), ('Sett', 3.93, 511), ("Kai'Sa", 4.22, 601)]
+best units for Sterak's Gage are [('Udyr', 3.49, 611), ('Sett', 3.5, 1023), ('Wukong', 3.52, 1402), ('Kayn', 3.75, 762), ('Lee Sin', 3.84, 785), ('Sylas', 4.23, 248), ('Gnar', 4.24, 335)]
+best units for Quicksilver are [('Udyr', 3.26, 253), ('Wukong', 3.7, 634), ('Kayn', 3.81, 415), ('Yone', 3.96, 373), ('Sett', 3.99, 462), ('Volibear', 4.23, 261), ('Lee Sin', 4.4, 360)]
+best units for Porcelain Emblem are [('Sett', 3.3, 386), ('Udyr', 3.57, 112), ('Syndra', 3.78, 302), ('Nautilus', 3.98, 113), ('Illaoi', 4.0, 460), ('Ornn', 4.12, 130), ('Thresh', 4.45, 87)]
+best units for Morellonomicon are [('Irelia', 3.6, 1465), ('Rakan', 3.75, 1352), ('Hwei', 3.84, 3633), ('Kindred', 4.2, 1740), ('Soraka', 4.41, 2030), ('Teemo', 4.43, 2893), ('Morgana', 4.61, 4554)]
+best units for Mogul's Mail are [('Udyr', 3.94, 106), ('Ornn', 4.04, 165), ('Galio', 4.25, 439), ('Sylas', 4.34, 77), ('Illaoi', 4.38, 89), ('Thresh', 4.5, 139), ('Diana', 5.17, 71)]
+best units for Bruiser Emblem are [('Rakan', 3.6, 43), ('Sett', 4.1, 71), ('Irelia', 4.11, 46), ('Ornn', 4.14, 58), ('Udyr', 4.16, 303), ('Xayah', 4.29, 59), ('Teemo', 4.68, 47)]
+best units for Altruist Emblem are [('Irelia', 3.55, 62), ('Wukong', 3.64, 92), ('Lee Sin', 4.08, 110), ('Diana', 4.36, 137), ('Neeko', 4.47, 76), ('Zoe', 4.57, 95), ('Zyra', 4.94, 97)]
+best units for Shroud of Stillness are [('Lee Sin', 3.86, 43), ('Riven', 3.91, 108), ('Diana', 4.16, 57), ('Qiyana', 4.23, 47), ('Aatrox', 4.26, 43), ('Neeko', 4.34, 58), ('Malphite', 4.46, 52)]
+best units for Warden Emblem are [('Udyr', 3.73, 44), ('Lissandra', 3.89, 87), ('Ornn', 4.37, 104), ('Galio', 4.41, 41), ('Neeko', 4.52, 66), ('Thresh', 4.65, 80), ('Riven', 4.67, 40)]
+best units for Locket of the Iron Solari are [('Lee Sin', 3.73, 101), ('Neeko', 4.0, 186), ('Aatrox', 4.06, 125), ('Galio', 4.16, 159), ('Riven', 4.46, 216), ('Diana', 4.47, 172), ('Ornn', 4.55, 147)]
+best units for Dvarapala Stoneplate are [('Illaoi', 4.12, 16), ('Amumu', 4.23, 22), ('Annie', 4.4, 20), ('Thresh', 4.46, 48), ('Galio', 4.96, 113), ('Ornn', 5.0, 18), ('Diana', 6.17, 18)]
+best units for Trickster's Glass are [('Udyr', 3.22, 231), ('Rakan', 3.34, 110), ('Lissandra', 3.52, 150), ('Sylas', 4.12, 105), ('Nautilus', 4.13, 101), ('Ornn', 4.24, 230), ('Galio', 4.59, 199)]
+best units for Fortune Emblem are [('Udyr', 2.29, 62), ('Rakan', 3.11, 54), ('Lee Sin', 3.65, 78), ('Diana', 3.87, 104), ('Ornn', 4.88, 80), ('Sivir', 4.9, 80), ('Riven', 5.07, 230)]
+best units for Red Buff are [('Xayah', 3.6, 782), ('Irelia', 3.67, 2729), ('Hwei', 3.99, 940), ('Ashe', 4.12, 545), ('Aphelios', 4.17, 1013), ('Morgana', 4.26, 705), ("Kai'Sa", 4.59, 1352)]
+best units for Jak'sho the Protean are [('Lissandra', 2.43, 7), ('Hwei', 3.4, 10), ('Sylas', 4.08, 12), ('Sett', 4.22, 9), ('Udyr', 4.77, 13), ('Diana', 5.0, 13), ('Galio', 5.25, 20)]
+best units for Runaan's Hurricane are [('Wukong', 3.46, 301), ('Xayah', 3.48, 498), ('Irelia', 3.6, 892), ('Ashe', 4.0, 372), ('Aphelios', 4.16, 451), ('Tristana', 4.17, 700), ("Kai'Sa", 4.37, 381)]
+best units for Hand Of Justice are [('Wukong', 3.69, 3409), ('Sett', 3.73, 1463), ('Udyr', 3.79, 1511), ('Irelia', 4.11, 1820), ('Kayn', 4.21, 5127), ('Yone', 4.27, 2805), ('Lee Sin', 4.37, 1538)]
+best units for Arcanist Emblem are [('Azir', 3.9, 42), ('Sett', 4.13, 142), ('Amumu', 4.45, 419), ('Ornn', 4.56, 52), ('Soraka', 4.71, 65), ('Thresh', 4.76, 97), ('Hwei', 4.82, 84)]
+best units for Blue Buff are [('Lissandra', 3.3, 755), ('Wukong', 3.31, 1579), ('Syndra', 4.19, 3614), ("Kog'Maw", 4.22, 1530), ('Kindred', 4.35, 1837), ('Lillia', 4.4, 916), ('Teemo', 4.48, 1042)]
+best units for Chalice of Power are [('Hwei', 3.8, 51), ('Ahri', 4.15, 80), ('Zoe', 4.23, 297), ('Sivir', 4.35, 188), ('Zyra', 4.44, 281), ('Janna', 4.47, 73), ('Soraka', 4.58, 121)]
+best units for Invoker Emblem are [('Lissandra', 4.0, 45), ('Hwei', 4.13, 202), ('Soraka', 4.48, 31), ('Rakan', 4.51, 35), ('Neeko', 4.91, 34), ('Nautilus', 5.13, 79), ('Ornn', 5.26, 69)]
+best units for Rosethorn Vest are [('Udyr', 3.33, 12), ('Shen', 3.46, 13), ('Ornn', 3.71, 17), ('Thresh', 4.21, 14), ('Illaoi', 4.71, 14), ('Sylas', 5.0, 14), ('Galio', 5.29, 62)]
+best units for Hextech Gunblade are [('Irelia', 3.71, 1166), ('Azir', 3.87, 634), ('Hwei', 3.87, 614), ('Tristana', 4.22, 680), ('Syndra', 4.48, 1696), ('Lillia', 4.55, 667), ('Bard', 4.64, 1013)]
+best units for Rascal's Gloves are [('Udyr', 3.32, 148), ('Wukong', 3.7, 105), ('Sett', 3.85, 93), ('Rakan', 3.96, 56), ('Sylas', 4.34, 122), ('Lee Sin', 4.52, 52), ('Kayn', 4.67, 43)]
+best units for Demonslayer are [('Senna', 3.88, 40), ('Irelia', 3.95, 84), ('Tristana', 4.02, 42), ('Aphelios', 4.05, 60), ("Kai'Sa", 4.07, 222), ('Kayn', 4.38, 37), ('Ashe', 5.38, 26)]
+best units for Sunlight Cape are [('Ornn', 4.47, 17), ('Illaoi', 4.55, 11), ('Thresh', 4.64, 14), ('Galio', 4.71, 21), ('Diana', 5.0, 9), ('Sylas', 5.08, 12), ('Neeko', 5.17, 12)]
+best units for Blacksmith's Gloves are [('Wukong', 3.24, 206), ('Udyr', 3.64, 259), ('Rakan', 3.78, 129), ('Sett', 3.79, 133), ('Lee Sin', 4.05, 111), ('Sylas', 4.3, 199), ('Ornn', 4.46, 126)]
+best units for Gambler's Blade are [('Azir', 4.24, 86), ('Irelia', 4.52, 227), ('Hwei', 4.64, 84), ('Bard', 4.71, 124), ('Ashe', 4.74, 70), ("Kai'Sa", 4.92, 116), ('Aphelios', 4.92, 120)]
+best units for Deathblade are [('Xayah', 3.45, 664), ('Irelia', 3.68, 1377), ('Senna', 3.95, 450), ('Aphelios', 4.21, 899), ('Ashe', 4.32, 484), ("Kai'Sa", 4.34, 1258), ('Tristana', 4.39, 531)]
+best units for Covalent Spark are [('Udyr', 2.82, 11), ('Galio', 3.36, 14), ('Sylas', 3.86, 21), ('Diana', 4.67, 9), ("Cho'Gath", 4.83, 12), ('Illaoi', 4.83, 12), ('Ornn', 5.55, 11)]
+best units for Ghostly Emblem are [('Udyr', 3.54, 668), ('Sylas', 3.9, 156), ('Sett', 3.95, 110), ('Senna', 4.22, 250), ('Jax', 4.24, 610), ("Kai'Sa", 4.39, 169), ('Ornn', 4.4, 213)]
+best units for Spear of Hirana are [('Hwei', 3.95, 59), ('Lillia', 3.95, 20), ("Kai'Sa", 4.35, 92), ('Azir', 4.39, 54), ('Zoe', 4.85, 26), ('Syndra', 4.86, 21), ('Morgana', 5.09, 23)]
+best units for Willbreaker are [('Hwei', 3.0, 9), ('Irelia', 3.83, 23), ('Wukong', 4.35, 17), ('Aphelios', 4.42, 12), ('Kayn', 4.83, 12), ("Kai'Sa", 5.08, 52), ('Sylas', 5.1, 10)]
+best units for Tattoo of Vitality are [('Udyr', 3.86, 922), ('Sylas', 4.18, 295), ('Volibear', 4.35, 130), ('Illaoi', 4.43, 134), ('Shen', 4.48, 170), ('Aatrox', 4.48, 246), ('Galio', 4.63, 139)]
+best units for Jeweled Gauntlet are [('Azir', 4.05, 1890), ('Hwei', 4.08, 1991), ('Syndra', 4.37, 3002), ('Kindred', 4.62, 1401), ('Lillia', 4.64, 1560), ('Morgana', 4.69, 1540), ('Zoe', 4.79, 1434)]
+best units for Archangel's Staff are [('Lissandra', 3.55, 739), ('Hwei', 3.57, 1142), ('Azir', 3.78, 869), ('Syndra', 3.95, 1541), ('Soraka', 4.32, 650), ('Morgana', 4.38, 770), ('Janna', 4.42, 638)]
+best units for Needlessly Big Gem are [('Irelia', 3.41, 140), ('Zoe', 4.05, 160), ('Hwei', 4.21, 148), ('Soraka', 4.34, 587), ('Zyra', 4.69, 221), ('Sivir', 4.9, 162), ('Morgana', 5.47, 167)]
+best units for Obsidian Cleaver are [('Hwei', 3.35, 212), ('Irelia', 3.5, 299), ('Wukong', 4.25, 95), ('Soraka', 4.32, 138), ("Kai'Sa", 4.49, 79), ('Teemo', 4.64, 92), ('Morgana', 4.68, 230)]
+best units for Virtue of the Martyr are [('Neeko', 3.99, 162), ('Aatrox', 4.14, 114), ('Riven', 4.15, 208), ('Diana', 4.25, 153), ('Galio', 4.26, 182), ('Malphite', 4.42, 143), ('Ornn', 4.51, 164)]
+best units for Fated Emblem are [('Lissandra', 3.19, 475), ('Udyr', 3.66, 283), ('Ashe', 3.91, 627), ('Ornn', 4.0, 1867), ('Amumu', 4.41, 375), ('Gnar', 4.46, 104), ('Illaoi', 4.57, 247)]
+best units for Giant Slayer are [('Xayah', 3.5, 1362), ('Irelia', 3.92, 3804), ('Azir', 4.0, 1391), ('Syndra', 4.14, 1452), ('Tristana', 4.24, 1382), ('Aphelios', 4.34, 2170), ("Kai'Sa", 4.45, 5089)]
+best units for Royal Crownshield are [('Illaoi', 3.5, 8), ('Annie', 3.75, 8), ('Udyr', 4.19, 21), ('Galio', 4.25, 16), ('Sylas', 4.95, 21), ('Sett', 5.44, 9), ('Wukong', 5.71, 7)]
+best units for Umbral Emblem are [('Wukong', 2.88, 115), ('Kindred', 3.3, 96), ('Udyr', 3.37, 113), ("Kha'Zix", 3.59, 66), ('Qiyana', 3.95, 60), ('Ornn', 4.02, 53), ('Kayn', 4.3, 293)]
+best units for Sniper's Focus are [('Xayah', 3.13, 270), ('Azir', 3.76, 197), ('Irelia', 3.89, 953), ('Hwei', 4.07, 215), ("Kai'Sa", 4.25, 1080), ('Aphelios', 4.48, 393), ('Ashe', 4.79, 238)]
+best units for Infinity Edge are [('Xayah', 3.61, 1405), ('Senna', 3.97, 2180), ('Irelia', 4.09, 4951), ('Aphelios', 4.31, 3866), ('Tristana', 4.41, 2044), ("Kai'Sa", 4.43, 8391), ('Ashe', 4.47, 1585)]
+best units for Storyweaver Emblem are [('Soraka', 3.72, 337), ('Rakan', 3.76, 580), ('Wukong', 3.79, 369), ('Lee Sin', 3.85, 614), ('Diana', 4.28, 1208), ('Morgana', 4.3, 182), ('Illaoi', 4.64, 313)]
+best units for Last Whisper are [('Xayah', 3.61, 850), ('Wukong', 3.65, 617), ('Irelia', 3.98, 690), ('Senna', 3.99, 1176), ('Tristana', 4.28, 1127), ("Kai'Sa", 4.34, 3904), ('Ashe', 4.36, 655)]
+best units for Guinsoo's Rageblade are [('Xayah', 3.91, 1556), ('Irelia', 4.07, 5429), ('Senna', 4.19, 2332), ('Aphelios', 4.31, 4675), ('Ashe', 4.42, 2127), ('Bard', 4.63, 2384), ("Kai'Sa", 4.85, 2565)]
+best units for Dragonlord Emblem are [('Wukong', 3.63, 125), ('Ornn', 3.71, 119), ('Qiyana', 4.04, 136), ('Soraka', 4.07, 189), ('Galio', 4.19, 107), ('Riven', 4.45, 555), ('Zyra', 4.81, 162)]
+best units for Edge of Night are [('Lissandra', 3.24, 567), ('Sett', 3.34, 548), ('Wukong', 3.42, 2149), ('Udyr', 3.55, 489), ('Lee Sin', 4.01, 722), ('Kayn', 4.07, 3841), ('Yone', 4.31, 968)]
+best units for Dryad Emblem are [('Udyr', 3.01, 146), ('Sett', 3.02, 161), ('Kayn', 3.59, 153), ('Illaoi', 3.87, 171), ('Jax', 4.07, 60), ('Thresh', 4.35, 127), ('Aatrox', 4.38, 324)]
+best units for Equinox are [('Udyr', 3.71, 14), ('Ornn', 4.59, 17), ('Malphite', 4.86, 7), ('Sett', 4.89, 9), ('Galio', 5.09, 23), ('Diana', 5.14, 7), ('Thresh', 5.38, 8)]
+best units for Zhonya's Paradox are [('Lissandra', 3.55, 220), ('Udyr', 3.65, 170), ('Azir', 3.82, 131), ('Wukong', 3.99, 215), ('Sylas', 4.15, 261), ('Syndra', 4.21, 155), ('Kayn', 4.32, 184)]
+best units for Bulwark's Oath are [('Udyr', 3.56, 9), ('Wukong', 3.75, 12), ('Thresh', 3.75, 8), ('Ornn', 4.0, 14), ('Galio', 5.15, 26), ('Annie', 5.17, 6), ('Sylas', 6.12, 8)]
+best units for Fist of Fairness are [('Yone', 3.59, 86), ('Gnar', 3.96, 24), ('Wukong', 3.98, 40), ("Kai'Sa", 4.36, 72), ('Kayn', 4.45, 87), ('Irelia', 4.62, 39), ('Volibear', 5.29, 28)]
+best units for Spear of Shojin are [('Lissandra', 3.73, 1997), ('Hwei', 3.91, 4257), ('Azir', 4.09, 3101), ("Kai'Sa", 4.46, 5488), ('Syndra', 4.49, 2015), ('Morgana', 4.58, 3150), ('Zoe', 4.72, 1992)]
+best units for Gold Collector are [('Senna', 3.92, 85), ('Wukong', 3.96, 78), ('Irelia', 4.01, 228), ('Tristana', 4.12, 104), ('Aphelios', 4.21, 131), ("Kai'Sa", 4.3, 418), ('Kayn', 4.66, 133)]
+best units for Inkshadow Emblem are [('Xayah', 3.47, 121), ('Illaoi', 3.66, 185), ('Ornn', 4.14, 144), ('Caitlyn', 4.26, 125), ('Shen', 4.37, 168), ('Sylas', 4.41, 135), ('Riven', 4.77, 155)]
+best units for Tattoo of Bombardment are [('Xayah', 3.28, 534), ('Senna', 4.03, 534), ("Kai'Sa", 4.1, 855), ('Udyr', 4.15, 172), ('Caitlyn', 4.37, 123), ('Sivir', 4.44, 63), ('Teemo', 4.52, 65)]
+best units for More More-ellonomicon are [('Hwei', 2.57, 60), ('Rakan', 3.33, 15), ('Irelia', 3.8, 15), ('Teemo', 4.41, 22), ('Morgana', 4.57, 46), ('Lillia', 4.67, 12), ('Zoe', 5.14, 14)]
+best units for Manazane are [('Hwei', 3.59, 437), ('Lissandra', 3.6, 246), ('Azir', 3.72, 224), ("Kai'Sa", 4.03, 465), ('Syndra', 4.46, 259), ('Lillia', 4.48, 163), ('Morgana', 4.83, 277)]
+best units for Reaper Emblem are [('Wukong', 3.4, 370), ('Alune', 3.69, 65), ('Irelia', 3.92, 87), ('Soraka', 4.22, 274), ('Sylas', 4.28, 71), ('Qiyana', 4.59, 164), ('Morgana', 4.62, 204)]
+best units for Goldmancer's Staff are [('Azir', 3.85, 73), ('Hwei', 3.93, 95), ('Lillia', 4.18, 60), ('Sylas', 4.31, 51), ('Zoe', 4.66, 50), ('Morgana', 4.83, 69), ('Syndra', 4.84, 100)]
+best units for Tattoo of Toxin are [('Xayah', 3.2, 396), ("Kai'Sa", 3.81, 693), ('Teemo', 3.92, 222), ('Senna', 3.99, 363), ('Morgana', 4.0, 369), ('Udyr', 4.09, 181), ('Caitlyn', 4.45, 78)]
+best units for Glamorous Gauntlet are [("Kog'Maw", 3.49, 37), ('Hwei', 3.68, 41), ('Azir', 3.94, 32), ('Syndra', 4.0, 37), ('Lillia', 4.91, 34), ('Zoe', 5.67, 18), ('Morgana', 5.95, 21)]
+best units for Deathfire Grasp are [('Azir', 3.81, 174), ('Lissandra', 3.96, 137), ('Hwei', 4.01, 167), ('Lillia', 4.08, 95), ('Syndra', 4.4, 198), ('Morgana', 4.69, 137), ('Zoe', 4.9, 93)]
+best units for Sniper Emblem are [('Lissandra', 3.51, 45), ('Sett', 3.57, 28), ('Syndra', 4.12, 313), ('Ahri', 4.26, 38), ("Kai'Sa", 4.29, 28), ('Kindred', 4.36, 56), ('Morgana', 4.54, 35)]
+best units for Rabadon's Ascended Deathcap are [('Hwei', 3.12, 33), ("Kog'Maw", 4.05, 20), ('Morgana', 4.13, 15), ('Kindred', 4.24, 25), ('Syndra', 4.29, 56), ('Lillia', 4.48, 23), ('Azir', 4.73, 22)]
+best units for Duelist Emblem are [('Wukong', 3.58, 289), ('Udyr', 3.9, 39), ('Diana', 4.02, 697), ('Rakan', 4.02, 209), ('Soraka', 4.22, 37), ('Yone', 4.23, 154), ('Janna', 4.64, 67)]
+best units for Tattoo of Fury are [('Xayah', 3.22, 435), ('Caitlyn', 3.79, 72), ('Udyr', 3.91, 189), ("Kai'Sa", 4.21, 1049), ('Teemo', 4.22, 67), ('Senna', 4.24, 544), ('Irelia', 4.44, 62)]
+best units for Behemoth Emblem are [('Sett', 3.96, 102), ('Aatrox', 4.04, 45), ('Sylas', 4.15, 52), ('Neeko', 4.27, 37), ('Illaoi', 4.27, 62), ('Galio', 4.31, 35), ('Yasuo', 4.94, 36)]
+best units for Crest of Cinders are [('Irelia', 3.08, 65), ('Bard', 3.36, 11), ('Aphelios', 4.04, 56), ('Senna', 4.18, 17), ("Kai'Sa", 4.22, 76), ('Ashe', 4.81, 16), ('Tristana', 4.82, 17)]
+best units for Blue Blessing are [('Lissandra', 2.79, 14), ('Lillia', 3.56, 25), ('Hwei', 4.4, 15), ('Kindred', 4.59, 34), ("Kog'Maw", 4.67, 58), ('Syndra', 4.78, 60), ('Teemo', 5.13, 15)]
+best units for Urf-Angel's Staff are [('Azir', 3.67, 12), ('Syndra', 4.49, 43), ('Hwei', 4.56, 25), ('Janna', 4.85, 13), ('Lillia', 4.86, 21), ('Zoe', 5.19, 16), ('Morgana', 5.31, 16)]
+best units for Mythic Emblem are [('Azir', 3.71, 207), ('Illaoi', 3.88, 127), ('Udyr', 3.9, 128), ('Caitlyn', 4.12, 322), ('Malphite', 4.27, 303), ('Annie', 4.52, 326), ('Ornn', 4.64, 187)]
+best units for Hextech Lifeblade are [('Irelia', 3.73, 15), ('Bard', 3.96, 24), ('Kayn', 4.06, 18), ('Hwei', 4.38, 21), ("Kai'Sa", 4.43, 23), ('Syndra', 5.7, 20), ('Lillia', 5.87, 15)]
+best units for The Baron's Gift are [("Kog'Maw", 3.6, 30), ('Zoe', 4.13, 15), ('Hwei', 4.3, 20), ('Syndra', 4.48, 29), ('Azir', 4.79, 19), ('Lillia', 4.93, 14), ('Kindred', 5.5, 12)]
+best units for Blessed Bloodthirster are [('Sett', 3.92, 48), ('Volibear', 4.1, 48), ('Yone', 4.21, 86), ('Wukong', 4.37, 38), ('Kayn', 4.46, 67), ('Sylas', 4.59, 37), ('Gnar', 4.6, 42)]
+best units for Tattoo of Force are [('Udyr', 3.66, 1116), ('Kayn', 3.82, 110), ('Sylas', 3.85, 271), ('Illaoi', 4.32, 106), ('Shen', 4.41, 138), ('Aatrox', 4.43, 263), ('Volibear', 4.61, 128)]
+best units for Guinsoo's Reckoning are [('Shen', 3.44, 36), ('Irelia', 3.95, 94), ('Senna', 4.16, 61), ('Bard', 4.25, 110), ('Aphelios', 4.46, 147), ('Ashe', 4.87, 38), ("Kai'Sa", 5.48, 48)]
+best units for Brink of Dawn are [('Sett', 3.5, 10), ('Lee Sin', 3.7, 10), ('Wukong', 3.82, 28), ('Yone', 3.89, 57), ("Kai'Sa", 4.0, 14), ('Kayn', 4.15, 94), ('Udyr', 4.38, 13)]
+best units for Statikk's Favor are [('Morgana', 2.75, 4), ('Azir', 3.5, 8), ('Udyr', 3.67, 9), ('Zoe', 3.8, 15), ('Hwei', 5.25, 12), ('Wukong', 5.33, 6), ('Soraka', 5.67, 6)]
+best units for Sterak's Megashield are [('Kayn', 3.79, 34), ('Yone', 3.93, 29), ('Gnar', 4.04, 25), ('Volibear', 4.07, 15), ('Sett', 4.18, 22), ('Lee Sin', 4.42, 12), ('Wukong', 4.81, 26)]
+best units for Tattoo of Protection are [('Ornn', 3.58, 163), ('Udyr', 3.61, 538), ('Shen', 3.62, 337), ('Galio', 3.7, 404), ('Aatrox', 3.73, 331), ('Illaoi', 3.79, 224), ('Sylas', 3.84, 240)]
+best units for Zenith Edge are [('Senna', 3.73, 41), ('Aphelios', 3.99, 75), ("Kai'Sa", 4.46, 291), ('Irelia', 4.55, 101), ('Ashe', 4.62, 29), ('Tristana', 4.95, 42), ('Kayn', 5.44, 34)]
+best units for Quickestsilver are [('Sett', 3.4, 10), ('Wukong', 3.46, 13), ('Volibear', 4.17, 12), ('Lee Sin', 4.53, 15), ('Yone', 4.81, 36), ('Kayn', 5.4, 10), ('Sylas', 5.73, 11)]
+best units for Eternal Whisper are [('Senna', 3.29, 21), ('Irelia', 3.55, 22), ('Sett', 4.0, 10), ("Kai'Sa", 4.07, 72), ('Ashe', 4.27, 11), ('Kayn', 4.88, 16), ('Tristana', 5.12, 17)]
+best units for Titan's Vow are [('Gnar', 3.76, 82), ('Udyr', 3.79, 33), ('Yone', 3.92, 306), ('Wukong', 3.93, 57), ('Volibear', 4.32, 177), ('Kayn', 4.32, 103), ('Sylas', 4.78, 46)]
+best units for Luminous Deathblade are [('Senna', 3.56, 27), ('Tristana', 3.93, 28), ('Aphelios', 3.96, 51), ('Irelia', 4.19, 26), ("Kai'Sa", 4.45, 102), ('Yone', 4.62, 13), ('Ashe', 5.1, 20)]
+best units for Runaan's Tempest are [('Senna', 3.0, 13), ('Aphelios', 4.21, 33), ('Ashe', 4.23, 13), ('Udyr', 4.33, 12), ("Kai'Sa", 4.45, 38), ('Irelia', 4.46, 24), ('Tristana', 4.63, 30)]
+best units for Sage Emblem are [('Rakan', 3.73, 116), ('Lee Sin', 4.2, 122), ('Neeko', 4.24, 95), ('Soraka', 4.47, 104), ('Garen', 4.67, 78), ('Riven', 4.78, 423), ('Janna', 4.81, 62)]
+best units for Talisman of Aid are [('Kayle', 4.6, 6783)]
+best units for Tome of Swiftness are [('Kayle', 5.2, 267)]
+best units for Scroll of Haste are [('Kayle', 5.2, 678)]
+best units for Talisman of Speed are [('Kayle', 4.45, 7561)]
+best units for Scroll of Force are [('Kayle', 4.58, 5073)]
+best units for Tome of Mending are [('Kayle', 5.0, 55)]
+best units for Tome of Power are [('Kayle', 4.18, 3867)]
+best units for Talisman of Might are [('Kayle', 4.64, 7532)]
+
+--------------TRAITS---------------
+average placement of 10 Storyweaver is 1.18, top 4 rate 98.75, 80 spots
+average placement of 10 Fated is 1.23, top 4 rate 97.73, 44 spots
+average placement of 10 Mythic is 1.74, top 4 rate 95.48, 155 spots
+average placement of 6 Porcelain is 2.67, top 4 rate 79.77, 262 spots
+average placement of 7 Fortune is 2.92, top 4 rate 71.13, 142 spots
+average placement of 7 Heavenly is 2.99, top 4 rate 76.75, 2245 spots
+average placement of 6 Dryad is 3.12, top 4 rate 74.45, 642 spots
+average placement of 8 Duelist is 3.18, top 4 rate 77.24, 958 spots
+average placement of 9 Umbral is 3.25, top 4 rate 66.67, 12 spots
+average placement of 7 Inkshadow is 3.44, top 4 rate 70.93, 860 spots
+average placement of 8 Ghostly is 3.47, top 4 rate 69.93, 409 spots
+average placement of 5 Dragonlord is 3.61, top 4 rate 65.29, 1207 spots
+average placement of 8 Arcanist is 3.71, top 4 rate 64.02, 503 spots
+average placement of 4 Altruist is 3.73, top 4 rate 63.68, 647 spots
+average placement of 5 Exalted is 3.77, top 4 rate 65.96, 94 spots
+average placement of 4 Dragonlord is 3.78, top 4 rate 63.34, 4324 spots
+average placement of 3 Exalted is 3.83, top 4 rate 62.39, 5956 spots
+average placement of 1 Great is 3.86, top 4 rate 61.46, 19906 spots
+average placement of 1 Spirit Walker is 3.90, top 4 rate 61.67, 17356 spots
+average placement of 3 Altruist is 3.90, top 4 rate 60.26, 4077 spots
+average placement of 8 Bruiser is 3.91, top 4 rate 65.85, 246 spots
+average placement of 1 Lovers is 3.93, top 4 rate 60.59, 22648 spots
+average placement of 3 Heavenly is 3.93, top 4 rate 60.68, 2836 spots
+average placement of 7 Fated is 3.97, top 4 rate 59.08, 4560 spots
+average placement of 6 Sniper is 3.98, top 4 rate 60.98, 41 spots
+average placement of 6 Behemoth is 3.99, top 4 rate 62.03, 532 spots
+average placement of 3 Inkshadow is 4.05, top 4 rate 60.00, 10383 spots
+average placement of 2 Umbral is 4.08, top 4 rate 58.19, 5570 spots
+average placement of 2 Duelist is 4.10, top 4 rate 57.11, 9673 spots
+average placement of 2 Sage is 4.11, top 4 rate 56.55, 13678 spots
+average placement of 6 Heavenly is 4.11, top 4 rate 57.62, 2862 spots
+average placement of 1 Artist is 4.12, top 4 rate 55.87, 11531 spots
+average placement of 6 Ghostly is 4.12, top 4 rate 59.85, 3101 spots
+average placement of 2 Heavenly is 4.12, top 4 rate 56.66, 11391 spots
+average placement of 4 Reaper is 4.15, top 4 rate 56.77, 6045 spots
+average placement of 2 Behemoth is 4.19, top 4 rate 55.43, 22886 spots
+average placement of 2 Dryad is 4.22, top 4 rate 54.27, 11118 spots
+average placement of 2 Invoker is 4.24, top 4 rate 54.16, 7744 spots
+average placement of 4 Porcelain is 4.24, top 4 rate 54.83, 1906 spots
+average placement of 7 Mythic is 4.24, top 4 rate 54.63, 1706 spots
+average placement of 6 Warden is 4.26, top 4 rate 52.84, 229 spots
+average placement of 4 Warden is 4.27, top 4 rate 53.73, 1595 spots
+average placement of 2 Arcanist is 4.28, top 4 rate 53.77, 14754 spots
+average placement of 2 Sniper is 4.29, top 4 rate 54.18, 11554 spots
+average placement of 4 Arcanist is 4.29, top 4 rate 53.39, 1974 spots
+average placement of 2 Altruist is 4.30, top 4 rate 53.19, 10917 spots
+average placement of 5 Sage is 4.30, top 4 rate 53.29, 456 spots
+average placement of 2 Warden is 4.32, top 4 rate 53.47, 15422 spots
+average placement of 7 Storyweaver is 4.32, top 4 rate 52.64, 4111 spots
+average placement of 2 Porcelain is 4.34, top 4 rate 52.97, 6319 spots
+average placement of 2 Ghostly is 4.35, top 4 rate 52.87, 9184 spots
+average placement of 6 Umbral is 4.37, top 4 rate 54.60, 489 spots
+average placement of 5 Inkshadow is 4.37, top 4 rate 53.48, 1079 spots
+average placement of 3 Sage is 4.37, top 4 rate 52.14, 4348 spots
+average placement of 4 Trickshot is 4.37, top 4 rate 52.71, 7647 spots
+average placement of 3 Dragonlord is 4.43, top 4 rate 50.42, 5611 spots
+average placement of 6 Invoker is 4.46, top 4 rate 50.15, 646 spots
+average placement of 4 Sniper is 4.47, top 4 rate 52.73, 421 spots
+average placement of 3 Fated is 4.50, top 4 rate 48.60, 3076 spots
+average placement of 4 Sage is 4.52, top 4 rate 49.61, 1427 spots
+average placement of 3 Storyweaver is 4.53, top 4 rate 49.60, 16094 spots
+average placement of 2 Dragonlord is 4.53, top 4 rate 49.03, 8776 spots
+average placement of 2 Bruiser is 4.54, top 4 rate 49.08, 16461 spots
+average placement of 4 Bruiser is 4.54, top 4 rate 49.41, 8405 spots
+average placement of 5 Mythic is 4.57, top 4 rate 48.28, 2127 spots
+average placement of 4 Behemoth is 4.58, top 4 rate 48.87, 575 spots
+average placement of 4 Invoker is 4.63, top 4 rate 45.59, 1939 spots
+average placement of 6 Duelist is 4.66, top 4 rate 47.18, 3065 spots
+average placement of 6 Arcanist is 4.69, top 4 rate 45.72, 1684 spots
+average placement of 2 Reaper is 4.70, top 4 rate 46.08, 4538 spots
+average placement of 6 Bruiser is 4.70, top 4 rate 48.86, 483 spots
+average placement of 4 Umbral is 4.71, top 4 rate 45.50, 367 spots
+average placement of 4 Dryad is 4.72, top 4 rate 44.90, 1363 spots
+average placement of 3 Mythic is 4.73, top 4 rate 44.86, 3397 spots
+average placement of 4 Ghostly is 4.73, top 4 rate 46.67, 1924 spots
+average placement of 2 Trickshot is 4.76, top 4 rate 45.84, 6130 spots
+average placement of 4 Heavenly is 4.98, top 4 rate 41.71, 1659 spots
+average placement of 5 Heavenly is 5.06, top 4 rate 39.90, 2479 spots
+average placement of 5 Fated is 5.08, top 4 rate 38.37, 2244 spots
+average placement of 4 Duelist is 5.08, top 4 rate 36.66, 311 spots
+average placement of 5 Storyweaver is 5.73, top 4 rate 27.31, 1556 spots
+average placement of 3 Fortune is 6.58, top 4 rate 17.13, 356 spots
+average placement of 5 Fortune is 6.88, top 4 rate 13.42, 149 spots
+
+--------------UNITS---------------
+average placement of Lissandra is 3.83, top 4 rate 61.99, 12004 spots
+average placement of Wukong is 3.86, top 4 rate 61.63, 20115 spots
+average placement of Udyr is 3.88, top 4 rate 62.15, 17855 spots
+average placement of Rakan is 3.91, top 4 rate 60.38, 15046 spots
+average placement of Xayah is 3.93, top 4 rate 61.46, 7966 spots
+average placement of Sett is 3.95, top 4 rate 60.21, 12483 spots
+average placement of Irelia is 4.01, top 4 rate 58.93, 14576 spots
+average placement of Azir is 4.03, top 4 rate 57.76, 8959 spots
+average placement of Hwei is 4.09, top 4 rate 56.47, 11674 spots
+average placement of Senna is 4.22, top 4 rate 56.88, 5487 spots
+average placement of Soraka is 4.25, top 4 rate 54.27, 17734 spots
+average placement of Malphite is 4.28, top 4 rate 54.34, 10888 spots
+average placement of Lee Sin is 4.30, top 4 rate 53.43, 15148 spots
+average placement of Caitlyn is 4.30, top 4 rate 55.24, 6975 spots
+average placement of Yone is 4.30, top 4 rate 53.84, 7569 spots
+average placement of Kayn is 4.31, top 4 rate 54.22, 13218 spots
+average placement of Kindred is 4.32, top 4 rate 53.02, 11813 spots
+average placement of Qiyana is 4.32, top 4 rate 53.46, 12915 spots
+average placement of Shen is 4.33, top 4 rate 54.94, 7181 spots
+average placement of Ashe is 4.34, top 4 rate 52.31, 6857 spots
+average placement of Volibear is 4.36, top 4 rate 53.17, 6626 spots
+average placement of Ornn is 4.36, top 4 rate 51.82, 19061 spots
+average placement of Janna is 4.38, top 4 rate 51.96, 10233 spots
+average placement of Kha'Zix is 4.38, top 4 rate 52.38, 9744 spots
+average placement of Syndra is 4.39, top 4 rate 51.25, 10444 spots
+average placement of Ahri is 4.40, top 4 rate 51.02, 7920 spots
+average placement of Jax is 4.41, top 4 rate 52.65, 4790 spots
+average placement of Aphelios is 4.41, top 4 rate 50.91, 7431 spots
+average placement of Neeko is 4.41, top 4 rate 51.45, 16536 spots
+average placement of Nautilus is 4.41, top 4 rate 51.00, 8702 spots
+average placement of Diana is 4.42, top 4 rate 51.01, 19263 spots
+average placement of Aatrox is 4.43, top 4 rate 52.29, 16026 spots
+average placement of Illaoi is 4.44, top 4 rate 51.53, 13725 spots
+average placement of Lux is 4.45, top 4 rate 50.84, 4734 spots
+average placement of Morgana is 4.46, top 4 rate 51.28, 11870 spots
+average placement of Cho'Gath is 4.47, top 4 rate 50.84, 3578 spots
+average placement of Darius is 4.47, top 4 rate 51.41, 3451 spots
+average placement of Kai'Sa is 4.47, top 4 rate 51.05, 14037 spots
+average placement of Thresh is 4.49, top 4 rate 49.54, 9609 spots
+average placement of Tristana is 4.49, top 4 rate 51.06, 4681 spots
+average placement of Rek'Sai is 4.49, top 4 rate 50.02, 2461 spots
+average placement of Amumu is 4.51, top 4 rate 49.86, 7008 spots
+average placement of Yorick is 4.51, top 4 rate 50.81, 2535 spots
+average placement of Lillia is 4.51, top 4 rate 48.85, 5711 spots
+average placement of Sylas is 4.53, top 4 rate 50.07, 12500 spots
+average placement of Gnar is 4.53, top 4 rate 48.43, 2988 spots
+average placement of Kog'Maw is 4.53, top 4 rate 48.76, 4340 spots
+average placement of Yasuo is 4.55, top 4 rate 48.87, 7239 spots
+average placement of Kayle is 4.56, top 4 rate 48.81, 21876 spots
+average placement of Galio is 4.57, top 4 rate 48.62, 21827 spots
+average placement of Riven is 4.62, top 4 rate 47.78, 22695 spots
+average placement of Teemo is 4.63, top 4 rate 48.33, 8231 spots
+average placement of Sivir is 4.67, top 4 rate 46.99, 14083 spots
+average placement of Alune is 4.69, top 4 rate 46.31, 2427 spots
+average placement of Annie is 4.70, top 4 rate 45.12, 5630 spots
+average placement of Zyra is 4.72, top 4 rate 45.50, 10109 spots
+average placement of Tahm Kench is 4.73, top 4 rate 45.85, 5830 spots
+average placement of Zoe is 4.76, top 4 rate 44.99, 8713 spots
+average placement of Garen is 4.87, top 4 rate 42.21, 4608 spots
+average placement of Bard is 4.94, top 4 rate 41.48, 5229 spots
+average placement of Kobuko is 5.24, top 4 rate 39.59, 1157 spots
+
+---------3 STAR UNITS----------
+average placement of Illaoi is 3.55, top 4 rate 69.87, 1570 spots
+average placement of Thresh is 3.55, top 4 rate 67.72, 2289 spots
+average placement of Yone is 3.56, top 4 rate 68.83, 4200 spots
+average placement of Qiyana is 3.65, top 4 rate 66.52, 696 spots
+average placement of Aphelios is 3.67, top 4 rate 65.18, 2740 spots
+average placement of Amumu is 3.73, top 4 rate 66.62, 1417 spots
+average placement of Volibear is 3.78, top 4 rate 65.12, 2904 spots
+average placement of Kha'Zix is 3.80, top 4 rate 62.23, 421 spots
+average placement of Lux is 3.84, top 4 rate 63.29, 1106 spots
+average placement of Darius is 3.86, top 4 rate 62.28, 114 spots
+average placement of Tristana is 3.87, top 4 rate 62.51, 2705 spots
+average placement of Jax is 3.87, top 4 rate 64.97, 511 spots
+average placement of Ahri is 3.87, top 4 rate 64.77, 176 spots
+average placement of Shen is 3.87, top 4 rate 64.71, 2763 spots
+average placement of Senna is 3.90, top 4 rate 63.98, 3054 spots
+average placement of Neeko is 3.92, top 4 rate 62.24, 1475 spots
+average placement of Aatrox is 3.94, top 4 rate 62.67, 1953 spots
+average placement of Yasuo is 3.96, top 4 rate 61.32, 243 spots
+average placement of Diana is 3.96, top 4 rate 60.29, 1526 spots
+average placement of Soraka is 3.97, top 4 rate 60.45, 1143 spots
+average placement of Zoe is 3.99, top 4 rate 60.04, 1504 spots
+average placement of Tahm Kench is 4.00, top 4 rate 61.76, 1054 spots
+average placement of Caitlyn is 4.07, top 4 rate 58.87, 1899 spots
+average placement of Bard is 4.08, top 4 rate 59.37, 1014 spots
+average placement of Kindred is 4.10, top 4 rate 56.97, 2038 spots
+average placement of Cho'Gath is 4.15, top 4 rate 57.17, 1835 spots
+average placement of Malphite is 4.17, top 4 rate 56.03, 1426 spots
+average placement of Yorick is 4.19, top 4 rate 59.70, 541 spots
+average placement of Kobuko is 4.22, top 4 rate 56.74, 215 spots
+average placement of Alune is 4.22, top 4 rate 56.80, 463 spots
+average placement of Kog'Maw is 4.24, top 4 rate 55.28, 1874 spots
+average placement of Janna is 4.25, top 4 rate 54.82, 1111 spots
+average placement of Rek'Sai is 4.30, top 4 rate 54.38, 559 spots
+average placement of Gnar is 4.30, top 4 rate 53.01, 2075 spots
+average placement of Zyra is 4.32, top 4 rate 56.00, 450 spots
+average placement of Riven is 4.40, top 4 rate 55.18, 473 spots
+average placement of Teemo is 4.70, top 4 rate 49.36, 549 spots
+average placement of Garen is 4.78, top 4 rate 46.03, 189 spots
+average placement of Sivir is 5.00, top 4 rate 47.11, 121 spots
+
+---------CRAFTABLE ITEMS----------
+average placement of Sterak's Gage is 3.81, top 4 rate 63.73, 7941 spots
+average placement of Edge of Night is 3.85, top 4 rate 62.94, 13047 spots
+average placement of Quicksilver is 3.91, top 4 rate 62.01, 5185 spots
+average placement of Runaan's Hurricane is 3.94, top 4 rate 61.33, 6535 spots
+average placement of Guardbreaker is 3.97, top 4 rate 60.21, 10315 spots
+average placement of Thief's Gloves is 3.98, top 4 rate 60.19, 28518 spots
+average placement of Adaptive Helm is 4.01, top 4 rate 59.59, 14899 spots
+average placement of Red Buff is 4.01, top 4 rate 59.59, 15255 spots
+average placement of Statikk Shiv is 4.02, top 4 rate 59.10, 9701 spots
+average placement of Protector's Vow is 4.05, top 4 rate 59.30, 9698 spots
+average placement of Deathblade is 4.05, top 4 rate 59.10, 8551 spots
+average placement of Archangel's Staff is 4.06, top 4 rate 58.70, 11564 spots
+average placement of Crownguard is 4.06, top 4 rate 58.47, 11340 spots
+average placement of Ionic Spark is 4.06, top 4 rate 58.42, 13097 spots
+average placement of Nashor's Tooth is 4.10, top 4 rate 57.70, 12771 spots
+average placement of Evenshroud is 4.10, top 4 rate 58.19, 13883 spots
+average placement of Blue Buff is 4.11, top 4 rate 57.37, 16200 spots
+average placement of Rabadon's Deathcap is 4.11, top 4 rate 57.27, 13011 spots
+average placement of Hextech Gunblade is 4.13, top 4 rate 56.94, 15456 spots
+average placement of Hand Of Justice is 4.14, top 4 rate 57.18, 30306 spots
+average placement of Bloodthirster is 4.15, top 4 rate 56.88, 30144 spots
+average placement of Giant Slayer is 4.15, top 4 rate 56.69, 31604 spots
+average placement of Last Whisper is 4.16, top 4 rate 57.15, 12920 spots
+average placement of Redemption is 4.17, top 4 rate 56.31, 21992 spots
+average placement of Titan's Resolve is 4.20, top 4 rate 55.81, 36466 spots
+average placement of Infinity Edge is 4.23, top 4 rate 55.10, 30637 spots
+average placement of Morellonomicon is 4.25, top 4 rate 54.62, 26277 spots
+average placement of Bramble Vest is 4.25, top 4 rate 54.88, 14916 spots
+average placement of Steadfast Heart is 4.25, top 4 rate 55.11, 18201 spots
+average placement of Dragon's Claw is 4.27, top 4 rate 54.62, 20331 spots
+average placement of Sunfire Cape is 4.27, top 4 rate 54.39, 19302 spots
+average placement of Spear of Shojin is 4.30, top 4 rate 53.46, 32880 spots
+average placement of Warmog's Armor is 4.32, top 4 rate 53.56, 27866 spots
+average placement of Guinsoo's Rageblade is 4.33, top 4 rate 53.32, 31295 spots
+average placement of Jeweled Gauntlet is 4.34, top 4 rate 53.06, 22009 spots
+average placement of Gargoyle Stoneplate is 4.36, top 4 rate 52.62, 32002 spots
+
+---------RADIANT ITEMS----------
+average placement of More More-ellonomicon is 3.92, top 4 rate 58.66, 283 spots
+average placement of Crest of Cinders is 4.02, top 4 rate 59.79, 378 spots
+average placement of Rascal's Gloves is 4.04, top 4 rate 56.67, 997 spots
+average placement of Brink of Dawn is 4.07, top 4 rate 57.32, 314 spots
+average placement of Covalent Spark is 4.12, top 4 rate 60.74, 163 spots
+average placement of The Baron's Gift is 4.15, top 4 rate 56.84, 234 spots
+average placement of Titan's Vow is 4.17, top 4 rate 55.79, 950 spots
+average placement of Rabadon's Ascended Deathcap is 4.21, top 4 rate 56.45, 310 spots
+average placement of Eternal Whisper is 4.24, top 4 rate 55.13, 234 spots
+average placement of Statikk's Favor is 4.24, top 4 rate 58.20, 122 spots
+average placement of Demonslayer is 4.31, top 4 rate 53.03, 775 spots
+average placement of Blessed Bloodthirster is 4.31, top 4 rate 51.63, 461 spots
+average placement of Sunlight Cape is 4.35, top 4 rate 51.70, 176 spots
+average placement of Sterak's Megashield is 4.36, top 4 rate 50.49, 206 spots
+average placement of Fist of Fairness is 4.37, top 4 rate 53.78, 582 spots
+average placement of Spear of Hirana is 4.37, top 4 rate 50.00, 424 spots
+average placement of Luminous Deathblade is 4.39, top 4 rate 55.71, 350 spots
+average placement of Runaan's Tempest is 4.42, top 4 rate 51.69, 236 spots
+average placement of Guinsoo's Reckoning is 4.42, top 4 rate 53.42, 702 spots
+average placement of Quickestsilver is 4.42, top 4 rate 50.88, 171 spots
+average placement of Hextech Lifeblade is 4.43, top 4 rate 49.83, 299 spots
+average placement of Bulwark's Oath is 4.46, top 4 rate 51.41, 142 spots
+average placement of Glamorous Gauntlet is 4.46, top 4 rate 50.97, 361 spots
+average placement of Zenith Edge is 4.49, top 4 rate 50.20, 751 spots
+average placement of Legacy of the Colossus is 4.50, top 4 rate 50.81, 307 spots
+average placement of Blue Blessing is 4.50, top 4 rate 50.45, 333 spots
+average placement of Dragon's Will is 4.51, top 4 rate 49.27, 274 spots
+average placement of Rosethorn Vest is 4.51, top 4 rate 50.00, 238 spots
+average placement of Absolution is 4.57, top 4 rate 50.00, 220 spots
+average placement of Willbreaker is 4.62, top 4 rate 48.16, 245 spots
+average placement of Royal Crownshield is 4.68, top 4 rate 46.26, 147 spots
+average placement of Dvarapala Stoneplate is 4.72, top 4 rate 45.19, 405 spots
+average placement of Jak'sho the Protean is 4.73, top 4 rate 43.98, 191 spots
+average placement of Warmog's Pride is 4.75, top 4 rate 42.86, 371 spots
+average placement of Urf-Angel's Staff is 4.83, top 4 rate 46.09, 256 spots
+average placement of Equinox is 4.91, top 4 rate 41.22, 148 spots
+
+---------ORNN ITEMS----------
+average placement of Zhonya's Paradox is 4.06, top 4 rate 57.06, 2827 spots
+average placement of Manazane is 4.09, top 4 rate 56.64, 3432 spots
+average placement of Trickster's Glass is 4.11, top 4 rate 56.08, 2204 spots
+average placement of Eternal Winter is 4.14, top 4 rate 56.36, 4267 spots
+average placement of Death's Defiance is 4.14, top 4 rate 55.95, 3591 spots
+average placement of Infinity Force is 4.17, top 4 rate 56.10, 4923 spots
+average placement of Sniper's Focus is 4.20, top 4 rate 54.99, 5352 spots
+average placement of Diamond Hands is 4.22, top 4 rate 54.07, 2273 spots
+average placement of Gold Collector is 4.25, top 4 rate 55.27, 1896 spots
+average placement of Hullcrusher is 4.25, top 4 rate 54.56, 3642 spots
+average placement of Anima Visage is 4.25, top 4 rate 54.34, 3723 spots
+average placement of Mogul's Mail is 4.28, top 4 rate 53.39, 1856 spots
+average placement of Deathfire Grasp is 4.31, top 4 rate 53.01, 1796 spots
+average placement of Goldmancer's Staff is 4.38, top 4 rate 51.34, 1118 spots
+average placement of Gambler's Blade is 4.55, top 4 rate 48.78, 1769 spots
+
+---------EMBLEM ITEMS----------
+average placement of Porcelain Emblem is 3.72, top 4 rate 63.00, 2527 spots
+average placement of Umbral Emblem is 3.78, top 4 rate 63.35, 1700 spots
+average placement of Dryad Emblem is 3.86, top 4 rate 60.36, 1902 spots
+average placement of Heavenly Emblem is 3.87, top 4 rate 60.92, 7638 spots
+average placement of Fated Emblem is 3.95, top 4 rate 58.74, 4712 spots
+average placement of Ghostly Emblem is 3.97, top 4 rate 61.49, 3700 spots
+average placement of Fortune Emblem is 3.99, top 4 rate 56.23, 1428 spots
+average placement of Duelist Emblem is 4.00, top 4 rate 60.56, 1818 spots
+average placement of Mythic Emblem is 4.11, top 4 rate 55.99, 2570 spots
+average placement of Reaper Emblem is 4.12, top 4 rate 57.65, 1693 spots
+average placement of Dragonlord Emblem is 4.13, top 4 rate 54.96, 2400 spots
+average placement of Inkshadow Emblem is 4.17, top 4 rate 56.66, 1742 spots
+average placement of Storyweaver Emblem is 4.17, top 4 rate 55.34, 5181 spots
+average placement of Behemoth Emblem is 4.19, top 4 rate 56.11, 663 spots
+average placement of Sniper Emblem is 4.23, top 4 rate 54.75, 758 spots
+average placement of Warden Emblem is 4.29, top 4 rate 53.92, 753 spots
+average placement of Altruist Emblem is 4.29, top 4 rate 52.37, 1392 spots
+average placement of Sage Emblem is 4.41, top 4 rate 50.88, 1592 spots
+average placement of Bruiser Emblem is 4.42, top 4 rate 53.28, 1267 spots
+average placement of Arcanist Emblem is 4.45, top 4 rate 50.99, 1367 spots
+average placement of Invoker Emblem is 4.66, top 4 rate 45.17, 797 spots
+
+---------SUPPORT ITEMS----------
+average placement of Aegis of the Legion is 4.13, top 4 rate 55.42, 7422 spots
+average placement of Obsidian Cleaver is 4.14, top 4 rate 55.23, 2209 spots
+average placement of Banshee's Veil is 4.15, top 4 rate 56.26, 1918 spots
+average placement of Zeke's Herald is 4.22, top 4 rate 53.95, 2947 spots
+average placement of Shroud of Stillness is 4.23, top 4 rate 54.78, 1066 spots
+average placement of Virtue of the Martyr is 4.24, top 4 rate 54.06, 2218 spots
+average placement of Chalice of Power is 4.27, top 4 rate 52.32, 1963 spots
+average placement of Locket of the Iron Solari is 4.27, top 4 rate 54.94, 2268 spots
+average placement of Randuin's Omen is 4.38, top 4 rate 51.16, 3622 spots
+average placement of Needlessly Big Gem is 4.43, top 4 rate 51.04, 2896 spots
+average placement of Zephyr is 4.43, top 4 rate 49.03, 1860 spots
+
+---------OTHER ITEMS----------
+average placement of Tattoo of Protection is 3.69, top 4 rate 67.14, 2675 spots
+average placement of Tattoo of Toxin is 3.87, top 4 rate 62.76, 2742 spots
+average placement of Tattoo of Bombardment is 3.96, top 4 rate 60.99, 2658 spots
+average placement of Tattoo of Force is 4.01, top 4 rate 60.75, 2581 spots
+average placement of Accomplice's Gloves is 4.06, top 4 rate 58.52, 1685 spots
+average placement of Tattoo of Fury is 4.08, top 4 rate 59.07, 2734 spots
+average placement of Blacksmith's Gloves is 4.11, top 4 rate 56.89, 2243 spots
+average placement of Tattoo of Vitality is 4.17, top 4 rate 57.79, 2542 spots
+average placement of Tome of Power is 4.18, top 4 rate 54.90, 3867 spots
+average placement of Talisman of Speed is 4.45, top 4 rate 51.09, 7561 spots
+average placement of Scroll of Force is 4.58, top 4 rate 47.74, 5073 spots
+average placement of Talisman of Aid is 4.60, top 4 rate 48.28, 6783 spots
+average placement of Talisman of Might is 4.64, top 4 rate 47.00, 7532 spots
+average placement of Tome of Mending is 5.00, top 4 rate 41.82, 55 spots
+average placement of Scroll of Haste is 5.20, top 4 rate 36.73, 678 spots
+average placement of Tome of Swiftness is 5.20, top 4 rate 37.83, 267 spots
+
+---------AUGMENT 1----------
+average placement of Cybernetic Uplink III is 1.00, top 4 rate 100.00, 1 spots
+average placement of Lategame Specialist is 1.50, top 4 rate 100.00, 2 spots
+average placement of Three's a Crowd is 2.50, top 4 rate 100.00, 2 spots
+average placement of Midnight Siphon+ is 3.00, top 4 rate 100.00, 2 spots
+average placement of Ethereal Blades+ is 3.00, top 4 rate 66.67, 3 spots
+average placement of Impenetrable Bulwark is 3.00, top 4 rate 50.00, 2 spots
+average placement of Radiant Refactor is 3.25, top 4 rate 87.50, 8 spots
+average placement of Little Buddies is 3.57, top 4 rate 57.14, 7 spots
+average placement of Twin Terror II is 3.57, top 4 rate 68.03, 122 spots
+average placement of Rolling For Days I is 3.67, top 4 rate 66.67, 6 spots
+average placement of Teaming Up I is 3.67, top 4 rate 66.67, 3 spots
+average placement of Blinding Speed is 3.80, top 4 rate 80.00, 5 spots
+average placement of Gargantuan Resolve is 3.86, top 4 rate 61.17, 1311 spots
+average placement of Epoch+ is 3.86, top 4 rate 57.14, 7 spots
+average placement of Salvage Bin+ is 3.89, top 4 rate 44.44, 9 spots
+average placement of Mulched is 3.89, top 4 rate 62.77, 282 spots
+average placement of Sleight of Hand is 3.94, top 4 rate 59.71, 489 spots
+average placement of Twin Terror I is 3.99, top 4 rate 61.90, 147 spots
+average placement of Behemoth Crown is 4.00, top 4 rate 50.00, 2 spots
+average placement of Roll The Dice is 4.00, top 4 rate 50.00, 2 spots
+average placement of Slammin'+ is 4.00, top 4 rate 60.00, 10 spots
+average placement of Lucky Gloves+ is 4.00, top 4 rate 60.00, 5 spots
+average placement of Everything Must Go! is 4.01, top 4 rate 58.32, 679 spots
+average placement of Boiling Point is 4.02, top 4 rate 59.41, 202 spots
+average placement of Band of Thieves I is 4.03, top 4 rate 58.92, 426 spots
+average placement of Lucky Paws is 4.04, top 4 rate 59.22, 179 spots
+average placement of Inkshadow Crown is 4.06, top 4 rate 61.47, 109 spots
+average placement of Not Today is 4.06, top 4 rate 58.60, 314 spots
+average placement of Shopping Spree is 4.06, top 4 rate 58.37, 245 spots
+average placement of Phreaky Friday is 4.06, top 4 rate 59.91, 212 spots
+average placement of Trash to Treasure is 4.07, top 4 rate 56.57, 799 spots
+average placement of Portable Forge+ is 4.08, top 4 rate 53.85, 13 spots
+average placement of Fated Crown is 4.09, top 4 rate 54.84, 186 spots
+average placement of Well Fed is 4.09, top 4 rate 59.42, 69 spots
+average placement of Sniper Crest is 4.09, top 4 rate 54.36, 149 spots
+average placement of Accomplice is 4.10, top 4 rate 58.39, 459 spots
+average placement of Divine Rolls is 4.11, top 4 rate 56.36, 401 spots
+average placement of Inkshadow Crest is 4.11, top 4 rate 57.97, 395 spots
+average placement of Venerable Piggy Bank is 4.11, top 4 rate 55.97, 293 spots
+average placement of Warden Crown is 4.12, top 4 rate 62.50, 8 spots
+average placement of Ethereal Blades is 4.14, top 4 rate 59.16, 431 spots
+average placement of Capricious Forge is 4.14, top 4 rate 71.43, 7 spots
+average placement of Duelist Crest is 4.15, top 4 rate 57.54, 391 spots
+average placement of Heavenly Crest is 4.15, top 4 rate 56.76, 444 spots
+average placement of Fated Crest is 4.15, top 4 rate 54.53, 497 spots
+average placement of Mythic Crown is 4.18, top 4 rate 51.52, 33 spots
+average placement of Combat Caster is 4.19, top 4 rate 58.41, 113 spots
+average placement of Caretaker's Ally is 4.20, top 4 rate 55.79, 242 spots
+average placement of Stationary Support III is 4.21, top 4 rate 54.68, 331 spots
+average placement of You Have My Bow is 4.22, top 4 rate 56.70, 575 spots
+average placement of Pumping Up II is 4.22, top 4 rate 56.02, 714 spots
+average placement of Stationary Support I is 4.23, top 4 rate 56.55, 313 spots
+average placement of Know Your Enemy is 4.25, top 4 rate 56.25, 144 spots
+average placement of Too Much Candy is 4.25, top 4 rate 53.36, 566 spots
+average placement of Best Friends I is 4.26, top 4 rate 53.47, 288 spots
+average placement of Two Healthy is 4.27, top 4 rate 56.25, 432 spots
+average placement of Keepers II is 4.27, top 4 rate 53.25, 77 spots
+average placement of Wandering Trainer I is 4.28, top 4 rate 53.48, 1393 spots
+average placement of Over Encumbered is 4.28, top 4 rate 53.61, 720 spots
+average placement of Fully Adapted is 4.29, top 4 rate 53.98, 176 spots
+average placement of Idealism is 4.32, top 4 rate 54.04, 544 spots
+average placement of Fortune Crown is 4.33, top 4 rate 51.18, 211 spots
+average placement of Raining Gold+ is 4.33, top 4 rate 58.33, 12 spots
+average placement of Recombobulator is 4.33, top 4 rate 33.33, 3 spots
+average placement of Component Buffet is 4.34, top 4 rate 53.71, 674 spots
+average placement of Slammin' is 4.34, top 4 rate 51.68, 950 spots
+average placement of Ones Twos Three is 4.34, top 4 rate 52.89, 951 spots
+average placement of Metabolic Accelerator is 4.35, top 4 rate 50.82, 429 spots
+average placement of Reaper Crest is 4.35, top 4 rate 52.10, 238 spots
+average placement of Risky Moves is 4.35, top 4 rate 52.45, 204 spots
+average placement of Inspiring Epitaph is 4.36, top 4 rate 53.58, 405 spots
+average placement of Pumping Up I is 4.36, top 4 rate 55.01, 409 spots
+average placement of Dryad Crown is 4.36, top 4 rate 55.71, 70 spots
+average placement of Iron Assets is 4.37, top 4 rate 53.58, 713 spots
+average placement of Stimpack is 4.37, top 4 rate 50.96, 628 spots
+average placement of Support Cache is 4.37, top 4 rate 53.48, 503 spots
+average placement of Epoch is 4.38, top 4 rate 52.93, 837 spots
+average placement of Blistering Strikes is 4.38, top 4 rate 51.09, 503 spots
+average placement of Ghostly Crown is 4.38, top 4 rate 52.22, 90 spots
+average placement of Raining Gold is 4.38, top 4 rate 52.69, 1078 spots
+average placement of Radiant Relics is 4.38, top 4 rate 51.68, 476 spots
+average placement of Extended Duel is 4.38, top 4 rate 53.00, 400 spots
+average placement of Balanced Budget is 4.40, top 4 rate 60.00, 5 spots
+average placement of Fine Vintage is 4.40, top 4 rate 50.48, 1452 spots
+average placement of Tiniest Titan is 4.41, top 4 rate 53.16, 158 spots
+average placement of Unified Resistance I is 4.42, top 4 rate 50.94, 106 spots
+average placement of Featherweights I is 4.42, top 4 rate 54.03, 211 spots
+average placement of Fortune Crest is 4.42, top 4 rate 51.17, 639 spots
+average placement of Prismatic Ticket is 4.43, top 4 rate 52.26, 398 spots
+average placement of Porcelain Crest is 4.43, top 4 rate 49.28, 209 spots
+average placement of Tri Force I is 4.44, top 4 rate 53.69, 149 spots
+average placement of Ghostly Crest is 4.44, top 4 rate 53.28, 244 spots
+average placement of Stationary Support II is 4.44, top 4 rate 51.67, 598 spots
+average placement of Keepers I is 4.45, top 4 rate 55.36, 56 spots
+average placement of Pandora's Items III is 4.45, top 4 rate 54.71, 223 spots
+average placement of Trade Sector is 4.45, top 4 rate 49.79, 701 spots
+average placement of Built Different II is 4.45, top 4 rate 50.36, 419 spots
+average placement of Latent Forge is 4.46, top 4 rate 49.50, 303 spots
+average placement of Shock Treatment is 4.46, top 4 rate 48.90, 182 spots
+average placement of Mind Over Matter is 4.46, top 4 rate 48.85, 260 spots
+average placement of Living Forge is 4.46, top 4 rate 56.00, 175 spots
+average placement of Tiny Titans is 4.47, top 4 rate 50.23, 649 spots
+average placement of Behemoth Crest is 4.47, top 4 rate 51.11, 45 spots
+average placement of Best Friends II is 4.47, top 4 rate 51.73, 520 spots
+average placement of Sniper Crown is 4.48, top 4 rate 51.95, 77 spots
+average placement of Pick of the Litter is 4.48, top 4 rate 50.80, 874 spots
+average placement of Pumping Up III is 4.49, top 4 rate 49.41, 423 spots
+average placement of Enter the Dragon is 4.49, top 4 rate 49.71, 513 spots
+average placement of Umbral Crest is 4.49, top 4 rate 47.69, 65 spots
+average placement of Heavenly Crown is 4.49, top 4 rate 50.00, 158 spots
+average placement of Buried Treasures I is 4.50, top 4 rate 51.48, 573 spots
+average placement of Phreaky Friday + is 4.50, top 4 rate 50.00, 2 spots
+average placement of Duelist Crown is 4.50, top 4 rate 52.07, 121 spots
+average placement of Caretaker's Favor is 4.51, top 4 rate 49.25, 469 spots
+average placement of Tiny, but Deadly is 4.51, top 4 rate 49.53, 535 spots
+average placement of Buried Treasures II is 4.51, top 4 rate 49.50, 899 spots
+average placement of Unified Resistance II is 4.51, top 4 rate 51.05, 239 spots
+average placement of Wandering Trainer II is 4.52, top 4 rate 49.82, 1086 spots
+average placement of Salvage Bin is 4.52, top 4 rate 49.31, 509 spots
+average placement of Escort Quest is 4.53, top 4 rate 47.10, 310 spots
+average placement of Birthday Present is 4.53, top 4 rate 47.60, 563 spots
+average placement of What Doesn't Kill You is 4.53, top 4 rate 47.67, 514 spots
+average placement of A Cut Above is 4.54, top 4 rate 50.00, 324 spots
+average placement of Silver Spoon is 4.54, top 4 rate 49.53, 739 spots
+average placement of Long Distance Pals is 4.54, top 4 rate 52.59, 135 spots
+average placement of Midnight Siphon is 4.54, top 4 rate 54.41, 136 spots
+average placement of Prizefighter is 4.55, top 4 rate 52.08, 361 spots
+average placement of Hedge Fund is 4.55, top 4 rate 50.41, 244 spots
+average placement of Patient Study is 4.55, top 4 rate 47.18, 833 spots
+average placement of Stars are Born is 4.55, top 4 rate 51.18, 467 spots
+average placement of Dryad Crest is 4.56, top 4 rate 46.56, 189 spots
+average placement of Lucky Streak is 4.56, top 4 rate 47.54, 427 spots
+average placement of Portable Forge is 4.56, top 4 rate 49.45, 817 spots
+average placement of Long Shot is 4.56, top 4 rate 51.19, 168 spots
+average placement of You Have My Sword is 4.56, top 4 rate 49.20, 437 spots
+average placement of Lunch Money is 4.57, top 4 rate 48.45, 97 spots
+average placement of Cybernetic Bulk II is 4.57, top 4 rate 49.22, 128 spots
+average placement of Buried Treasures III is 4.57, top 4 rate 48.00, 375 spots
+average placement of Good For Something I is 4.57, top 4 rate 50.99, 202 spots
+average placement of Ascension is 4.57, top 4 rate 46.28, 188 spots
+average placement of Going Long is 4.58, top 4 rate 47.55, 286 spots
+average placement of It's Going to be Epic is 4.59, top 4 rate 50.34, 145 spots
+average placement of Mana Shield is 4.59, top 4 rate 46.25, 80 spots
+average placement of March of Progress is 4.60, top 4 rate 48.55, 276 spots
+average placement of Reaper Crown is 4.60, top 4 rate 47.44, 78 spots
+average placement of Build a Bud! is 4.60, top 4 rate 49.58, 240 spots
+average placement of Healing Orbs I is 4.61, top 4 rate 45.69, 232 spots
+average placement of Caretaker's Chosen is 4.61, top 4 rate 47.95, 292 spots
+average placement of Cluttered Mind is 4.62, top 4 rate 48.63, 874 spots
+average placement of Grim Harvest is 4.62, top 4 rate 50.16, 311 spots
+average placement of Level Up! is 4.62, top 4 rate 48.36, 550 spots
+average placement of Martyr is 4.62, top 4 rate 45.31, 245 spots
+average placement of Arcanist Crest is 4.63, top 4 rate 47.22, 288 spots
+average placement of Team Building is 4.63, top 4 rate 48.14, 781 spots
+average placement of New Recruit is 4.63, top 4 rate 47.04, 270 spots
+average placement of Lucky Ricochet is 4.63, top 4 rate 48.26, 717 spots
+average placement of Pandora's Items II is 4.65, top 4 rate 47.37, 342 spots
+average placement of Magic Wand is 4.65, top 4 rate 49.21, 252 spots
+average placement of Starter Kit is 4.65, top 4 rate 46.53, 331 spots
+average placement of Partial Ascension is 4.65, top 4 rate 46.48, 142 spots
+average placement of Branching Out is 4.66, top 4 rate 47.74, 886 spots
+average placement of The Road Less Traveled is 4.66, top 4 rate 45.30, 351 spots
+average placement of Crown Guarded is 4.66, top 4 rate 48.03, 127 spots
+average placement of Item Grab Bag I is 4.66, top 4 rate 46.15, 338 spots
+average placement of  The Golden Remover is 4.67, top 4 rate 46.38, 705 spots
+average placement of Bruiser Crown is 4.67, top 4 rate 51.52, 33 spots
+average placement of Harmacist I is 4.67, top 4 rate 47.62, 147 spots
+average placement of Scoreboard Scrapper is 4.67, top 4 rate 46.77, 310 spots
+average placement of Help Is On The Way is 4.68, top 4 rate 42.44, 238 spots
+average placement of Storyweaver Crown is 4.68, top 4 rate 42.68, 157 spots
+average placement of Dragon's Spirit is 4.68, top 4 rate 47.40, 346 spots
+average placement of Switching Gears is 4.70, top 4 rate 46.63, 178 spots
+average placement of Haunted House is 4.71, top 4 rate 47.21, 305 spots
+average placement of Clear Mind is 4.71, top 4 rate 45.86, 532 spots
+average placement of Storyweaver Crest is 4.71, top 4 rate 43.68, 451 spots
+average placement of Arcanist Crown is 4.73, top 4 rate 42.39, 92 spots
+average placement of Tons of Stats! is 4.73, top 4 rate 45.16, 186 spots
+average placement of Cybernetic Uplink II is 4.74, top 4 rate 47.22, 72 spots
+average placement of Jeweled Lotus II is 4.74, top 4 rate 45.28, 530 spots
+average placement of Wrath of the Moon is 4.75, top 4 rate 51.69, 89 spots
+average placement of Jeweled Lotus III is 4.75, top 4 rate 45.08, 244 spots
+average placement of Pandora's Items is 4.76, top 4 rate 46.44, 379 spots
+average placement of Three's Company is 4.76, top 4 rate 44.33, 882 spots
+average placement of Drop Blossom! is 4.77, top 4 rate 46.04, 328 spots
+average placement of Harmacist II is 4.77, top 4 rate 44.28, 332 spots
+average placement of Young and Wild and Free is 4.77, top 4 rate 44.16, 274 spots
+average placement of Mythic Crest is 4.77, top 4 rate 40.88, 137 spots
+average placement of Sharing Is Caring is 4.79, top 4 rate 40.00, 110 spots
+average placement of Silver Veil is 4.79, top 4 rate 45.21, 146 spots
+average placement of Porcelain Crown is 4.80, top 4 rate 43.90, 41 spots
+average placement of Sage Crown is 4.82, top 4 rate 47.06, 34 spots
+average placement of Healing Orbs II is 4.82, top 4 rate 42.14, 477 spots
+average placement of Storied Champion is 4.82, top 4 rate 45.07, 142 spots
+average placement of Scapegoat is 4.83, top 4 rate 44.06, 320 spots
+average placement of Bruiser Crest is 4.83, top 4 rate 48.51, 134 spots
+average placement of Exiles I is 4.84, top 4 rate 46.51, 43 spots
+average placement of Heroic Grab Bag is 4.84, top 4 rate 45.35, 699 spots
+average placement of Umbral Crown is 4.85, top 4 rate 53.85, 13 spots
+average placement of Cybernetic Bulk III is 4.85, top 4 rate 41.82, 55 spots
+average placement of Lucky Gloves is 4.86, top 4 rate 42.02, 188 spots
+average placement of Spirit Guardians is 4.86, top 4 rate 41.07, 56 spots
+average placement of Low Interest Rates is 4.93, top 4 rate 41.76, 170 spots
+average placement of Dragonlord Crest is 4.93, top 4 rate 41.06, 302 spots
+average placement of Silver Ticket is 4.94, top 4 rate 41.18, 51 spots
+average placement of Altruist Crest is 4.97, top 4 rate 37.86, 206 spots
+average placement of Gifts from the Fallen is 4.98, top 4 rate 43.15, 248 spots
+average placement of Warden Crest is 4.98, top 4 rate 45.61, 57 spots
+average placement of Sticks And Stones is 5.00, top 4 rate 40.62, 32 spots
+average placement of Crash Test Dummies is 5.00, top 4 rate 30.77, 13 spots
+average placement of Missed Connections is 5.00, top 4 rate 50.00, 2 spots
+average placement of Dragonlord Crown is 5.02, top 4 rate 44.00, 100 spots
+average placement of Invoker Crown is 5.03, top 4 rate 45.16, 31 spots
+average placement of Final Ascension is 5.04, top 4 rate 41.18, 51 spots
+average placement of Call to Adventure is 5.05, top 4 rate 40.37, 488 spots
+average placement of Big Grab Bag is 5.06, top 4 rate 43.75, 16 spots
+average placement of Learning to Spell is 5.06, top 4 rate 40.43, 188 spots
+average placement of Stand United II is 5.07, top 4 rate 42.54, 134 spots
+average placement of Big Gains is 5.08, top 4 rate 37.91, 153 spots
+average placement of Altruist Crown is 5.10, top 4 rate 34.69, 49 spots
+average placement of Ba-BOOM! is 5.15, top 4 rate 35.90, 78 spots
+average placement of Two for One is 5.17, top 4 rate 33.33, 6 spots
+average placement of Cybernetic Bulk I is 5.20, top 4 rate 33.85, 65 spots
+average placement of Raid Boss is 5.27, top 4 rate 33.33, 30 spots
+average placement of Sage Crest is 5.28, top 4 rate 28.28, 198 spots
+average placement of Harmacist III is 5.30, top 4 rate 32.86, 140 spots
+average placement of Drop Blossom!+ is 5.50, top 4 rate 50.00, 2 spots
+average placement of Invoker Crest is 5.83, top 4 rate 22.33, 103 spots
+average placement of Hedge Fund+ is 6.00, top 4 rate 0.00, 1 spots
+average placement of Tiniest Titan+ is 6.00, top 4 rate 25.00, 4 spots
+average placement of Heavy Hitters is 8.00, top 4 rate 0.00, 1 spots
+
+---------AUGMENT 2----------
+average placement of A Cut Above is 1.00, top 4 rate 100.00, 4 spots
+average placement of The Golden Egg is 2.00, top 4 rate 80.00, 5 spots
+average placement of Drop Blossom! is 2.00, top 4 rate 100.00, 1 spots
+average placement of Boiling Point is 3.20, top 4 rate 73.85, 65 spots
+average placement of Prizefighter is 3.21, top 4 rate 78.57, 14 spots
+average placement of Metabolic Accelerator is 3.30, top 4 rate 80.00, 20 spots
+average placement of Teaming Up II is 3.35, top 4 rate 75.00, 20 spots
+average placement of Balanced Budget+ is 3.47, top 4 rate 73.68, 19 spots
+average placement of Dynamic Duo is 3.50, top 4 rate 71.43, 14 spots
+average placement of Call to Chaos is 3.56, top 4 rate 72.22, 36 spots
+average placement of Stimpack is 3.61, top 4 rate 56.52, 23 spots
+average placement of Buried Treasures I is 3.71, top 4 rate 58.82, 17 spots
+average placement of Twin Terror II is 3.75, top 4 rate 60.00, 20 spots
+average placement of Portable Forge++ is 3.82, top 4 rate 68.18, 22 spots
+average placement of Divine Rolls is 3.83, top 4 rate 59.50, 200 spots
+average placement of Fated Crown is 3.84, top 4 rate 61.09, 221 spots
+average placement of Ethereal Blades+ is 3.85, top 4 rate 58.82, 34 spots
+average placement of Reaper Crown is 3.86, top 4 rate 63.78, 127 spots
+average placement of Latent Forge is 3.88, top 4 rate 62.50, 8 spots
+average placement of Duelist Crown is 3.89, top 4 rate 62.90, 124 spots
+average placement of Over Encumbered is 3.91, top 4 rate 56.52, 23 spots
+average placement of Pumping Up I is 3.92, top 4 rate 61.54, 13 spots
+average placement of ReinFOURcement is 3.95, top 4 rate 60.00, 20 spots
+average placement of Heavenly Crest is 3.97, top 4 rate 58.78, 410 spots
+average placement of Fated Crest is 3.98, top 4 rate 60.39, 361 spots
+average placement of Sniper Crest is 3.99, top 4 rate 62.82, 78 spots
+average placement of Pick of the Litter+ is 4.00, top 4 rate 63.16, 19 spots
+average placement of Pick of the Litter is 4.00, top 4 rate 64.29, 14 spots
+average placement of Lucky Gloves is 4.00, top 4 rate 57.14, 7 spots
+average placement of Duelist Crest is 4.00, top 4 rate 58.91, 258 spots
+average placement of Bruiser Crest is 4.02, top 4 rate 61.26, 111 spots
+average placement of Porcelain Crest is 4.02, top 4 rate 58.70, 46 spots
+average placement of Component Buffet is 4.03, top 4 rate 61.29, 31 spots
+average placement of Young and Wild and Free is 4.04, top 4 rate 59.57, 423 spots
+average placement of Dryad Crown is 4.05, top 4 rate 56.45, 62 spots
+average placement of Two Healthy is 4.06, top 4 rate 59.05, 398 spots
+average placement of Behemoth Crown is 4.06, top 4 rate 52.94, 17 spots
+average placement of Missed Connections is 4.06, top 4 rate 57.84, 185 spots
+average placement of Inkshadow Crown is 4.07, top 4 rate 60.00, 115 spots
+average placement of Too Much Candy is 4.08, top 4 rate 61.54, 26 spots
+average placement of Mythic Crown is 4.08, top 4 rate 57.14, 77 spots
+average placement of Extended Duel is 4.08, top 4 rate 59.43, 212 spots
+average placement of Fortune Crown is 4.09, top 4 rate 54.29, 140 spots
+average placement of What Doesn't Kill You is 4.09, top 4 rate 72.73, 11 spots
+average placement of Raining Gold is 4.10, top 4 rate 58.97, 39 spots
+average placement of Sniper Crown is 4.11, top 4 rate 60.53, 38 spots
+average placement of Mana Shield is 4.12, top 4 rate 62.50, 40 spots
+average placement of Haunted House is 4.15, top 4 rate 59.31, 204 spots
+average placement of Heavenly Crown is 4.15, top 4 rate 56.44, 264 spots
+average placement of Inkshadow Crest is 4.15, top 4 rate 55.60, 250 spots
+average placement of Overwhelming Force is 4.17, top 4 rate 56.76, 222 spots
+average placement of Gargantuan Resolve is 4.18, top 4 rate 55.81, 887 spots
+average placement of Epoch is 4.18, top 4 rate 54.55, 22 spots
+average placement of Drop Blossom!+ is 4.19, top 4 rate 51.85, 54 spots
+average placement of Lunch Money is 4.19, top 4 rate 56.72, 268 spots
+average placement of Reaper Crest is 4.19, top 4 rate 55.67, 194 spots
+average placement of Ghostly Crown is 4.20, top 4 rate 56.00, 150 spots
+average placement of Fully Adapted is 4.20, top 4 rate 40.00, 5 spots
+average placement of Accomplice is 4.20, top 4 rate 57.29, 494 spots
+average placement of Ghostly Crest is 4.21, top 4 rate 55.69, 246 spots
+average placement of Sleight of Hand is 4.22, top 4 rate 58.05, 379 spots
+average placement of Lucky Gloves+ is 4.23, top 4 rate 54.45, 685 spots
+average placement of Dryad Crest is 4.25, top 4 rate 51.69, 89 spots
+average placement of Big Grab Bag is 4.25, top 4 rate 55.04, 1239 spots
+average placement of Altruist Crest is 4.26, top 4 rate 51.16, 43 spots
+average placement of Porcelain Crown is 4.27, top 4 rate 52.27, 44 spots
+average placement of Twin Terror I is 4.28, top 4 rate 53.49, 43 spots
+average placement of Slammin'+ is 4.28, top 4 rate 54.44, 992 spots
+average placement of Keepers II is 4.28, top 4 rate 50.89, 169 spots
+average placement of Storyweaver Crest is 4.29, top 4 rate 52.85, 456 spots
+average placement of Hedge Fund++ is 4.29, top 4 rate 42.86, 14 spots
+average placement of Combat Caster is 4.29, top 4 rate 52.68, 355 spots
+average placement of Harmacist I is 4.30, top 4 rate 53.12, 817 spots
+average placement of Learning to Spell is 4.30, top 4 rate 60.00, 10 spots
+average placement of Everything Must Go! is 4.30, top 4 rate 52.47, 1052 spots
+average placement of Best Friends I is 4.30, top 4 rate 55.67, 591 spots
+average placement of Sage Crown is 4.30, top 4 rate 51.16, 43 spots
+average placement of Best Friends II is 4.31, top 4 rate 53.33, 857 spots
+average placement of Little Buddies is 4.32, top 4 rate 53.22, 575 spots
+average placement of Stand United II is 4.32, top 4 rate 52.75, 273 spots
+average placement of Tiny Titans is 4.33, top 4 rate 52.50, 2124 spots
+average placement of Inspiring Epitaph is 4.33, top 4 rate 53.04, 1037 spots
+average placement of Mulched is 4.33, top 4 rate 52.43, 103 spots
+average placement of Band of Thieves I is 4.33, top 4 rate 53.93, 777 spots
+average placement of Cybernetic Bulk I is 4.33, top 4 rate 53.14, 318 spots
+average placement of Level Up! is 4.33, top 4 rate 51.85, 27 spots
+average placement of Grim Harvest is 4.34, top 4 rate 56.02, 241 spots
+average placement of Unified Resistance II is 4.34, top 4 rate 53.03, 694 spots
+average placement of Silver Veil is 4.34, top 4 rate 51.63, 643 spots
+average placement of Pumping Up II is 4.35, top 4 rate 53.85, 26 spots
+average placement of Item Grab Bag I is 4.35, top 4 rate 52.55, 588 spots
+average placement of Keepers I is 4.36, top 4 rate 51.37, 183 spots
+average placement of Wrath of the Moon is 4.36, top 4 rate 52.83, 53 spots
+average placement of Stationary Support III is 4.36, top 4 rate 52.28, 373 spots
+average placement of Scoreboard Scrapper is 4.36, top 4 rate 52.00, 25 spots
+average placement of Midnight Siphon+ is 4.36, top 4 rate 63.64, 22 spots
+average placement of Heavy Hitters is 4.36, top 4 rate 53.70, 162 spots
+average placement of Storyweaver Crown is 4.37, top 4 rate 52.23, 224 spots
+average placement of Birthday Present is 4.38, top 4 rate 50.00, 8 spots
+average placement of Not Today is 4.38, top 4 rate 52.21, 249 spots
+average placement of Trash to Treasure is 4.38, top 4 rate 51.20, 627 spots
+average placement of Cybernetic Uplink III is 4.39, top 4 rate 51.25, 80 spots
+average placement of Capricious Forge is 4.40, top 4 rate 53.03, 462 spots
+average placement of Shopping Spree is 4.40, top 4 rate 50.00, 10 spots
+average placement of Tiny, but Deadly is 4.40, top 4 rate 52.05, 1243 spots
+average placement of Built Different II is 4.42, top 4 rate 50.00, 12 spots
+average placement of Team Building is 4.42, top 4 rate 53.17, 1403 spots
+average placement of Featherweights I is 4.42, top 4 rate 53.08, 373 spots
+average placement of Blistering Strikes is 4.43, top 4 rate 51.78, 1093 spots
+average placement of Unified Resistance I is 4.43, top 4 rate 51.75, 572 spots
+average placement of Phreaky Friday + is 4.43, top 4 rate 52.51, 179 spots
+average placement of Support Cache is 4.44, top 4 rate 51.35, 705 spots
+average placement of Portable Forge is 4.44, top 4 rate 56.10, 41 spots
+average placement of Final Ascension is 4.45, top 4 rate 49.21, 254 spots
+average placement of Lategame Specialist is 4.45, top 4 rate 51.32, 906 spots
+average placement of Arcanist Crown is 4.45, top 4 rate 51.65, 91 spots
+average placement of Cybernetic Bulk III is 4.46, top 4 rate 48.52, 237 spots
+average placement of Harmacist III is 4.46, top 4 rate 51.19, 504 spots
+average placement of Bruiser Crown is 4.47, top 4 rate 49.06, 53 spots
+average placement of Lucky Streak is 4.48, top 4 rate 51.19, 168 spots
+average placement of Caretaker's Chosen is 4.48, top 4 rate 61.90, 21 spots
+average placement of Tri Force I is 4.48, top 4 rate 52.40, 437 spots
+average placement of Martyr is 4.48, top 4 rate 50.81, 807 spots
+average placement of Magic Wand is 4.48, top 4 rate 50.45, 444 spots
+average placement of You Have My Sword is 4.48, top 4 rate 50.17, 590 spots
+average placement of Partial Ascension is 4.49, top 4 rate 50.52, 764 spots
+average placement of Impenetrable Bulwark is 4.49, top 4 rate 49.78, 452 spots
+average placement of Tons of Stats! is 4.49, top 4 rate 50.81, 431 spots
+average placement of Tiniest Titan+ is 4.50, top 4 rate 48.15, 569 spots
+average placement of Low Interest Rates is 4.50, top 4 rate 50.00, 4 spots
+average placement of Long Distance Pals is 4.50, top 4 rate 49.18, 305 spots
+average placement of Gifts from the Fallen is 4.51, top 4 rate 49.24, 656 spots
+average placement of New Recruit is 4.51, top 4 rate 50.43, 815 spots
+average placement of Raining Gold+ is 4.51, top 4 rate 48.70, 1308 spots
+average placement of Dragonlord Crest is 4.52, top 4 rate 49.19, 124 spots
+average placement of Healing Orbs I is 4.52, top 4 rate 49.04, 940 spots
+average placement of Warden Crown is 4.52, top 4 rate 52.17, 23 spots
+average placement of Silver Ticket is 4.53, top 4 rate 49.75, 197 spots
+average placement of You Have My Bow is 4.53, top 4 rate 50.89, 733 spots
+average placement of Stationary Support II is 4.53, top 4 rate 49.21, 632 spots
+average placement of Blinding Speed is 4.54, top 4 rate 49.57, 234 spots
+average placement of Jeweled Lotus III is 4.55, top 4 rate 48.20, 861 spots
+average placement of It's Going to be Epic is 4.55, top 4 rate 47.50, 80 spots
+average placement of Mythic Crest is 4.55, top 4 rate 48.25, 143 spots
+average placement of Arcanist Crest is 4.55, top 4 rate 46.72, 137 spots
+average placement of Invoker Crest is 4.56, top 4 rate 48.15, 54 spots
+average placement of Ones Twos Three is 4.56, top 4 rate 37.50, 16 spots
+average placement of Epoch+ is 4.57, top 4 rate 48.51, 771 spots
+average placement of Unleashed Arcana is 4.58, top 4 rate 47.50, 160 spots
+average placement of Know Your Enemy is 4.58, top 4 rate 48.15, 405 spots
+average placement of Roll The Dice is 4.58, top 4 rate 47.26, 201 spots
+average placement of Radiant Relics is 4.58, top 4 rate 47.32, 598 spots
+average placement of Caretaker's Favor is 4.59, top 4 rate 55.56, 27 spots
+average placement of  The Golden Remover is 4.60, top 4 rate 47.21, 1182 spots
+average placement of Healing Orbs II is 4.60, top 4 rate 48.95, 1142 spots
+average placement of Umbral Crest is 4.60, top 4 rate 48.84, 43 spots
+average placement of Exiles I is 4.61, top 4 rate 49.28, 138 spots
+average placement of Salvage Bin is 4.61, top 4 rate 55.56, 18 spots
+average placement of Two for One is 4.61, top 4 rate 48.46, 939 spots
+average placement of Fortune Crest is 4.61, top 4 rate 44.12, 238 spots
+average placement of Escort Quest is 4.62, top 4 rate 38.46, 13 spots
+average placement of Idealism is 4.63, top 4 rate 47.86, 583 spots
+average placement of Cybernetic Bulk II is 4.63, top 4 rate 43.57, 381 spots
+average placement of Prismatic Ticket is 4.63, top 4 rate 49.17, 604 spots
+average placement of Teaming Up I is 4.64, top 4 rate 47.38, 439 spots
+average placement of Raid Boss is 4.64, top 4 rate 45.45, 22 spots
+average placement of Crash Test Dummies is 4.64, top 4 rate 48.23, 678 spots
+average placement of Radiant Refactor is 4.64, top 4 rate 48.25, 599 spots
+average placement of Pumping Up III is 4.64, top 4 rate 52.00, 25 spots
+average placement of Rolling For Days I is 4.64, top 4 rate 46.55, 1203 spots
+average placement of Lucky Ricochet is 4.66, top 4 rate 46.42, 293 spots
+average placement of Portable Forge+ is 4.66, top 4 rate 47.43, 799 spots
+average placement of Slammin' is 4.66, top 4 rate 43.75, 32 spots
+average placement of Buried Treasures III is 4.67, top 4 rate 47.92, 480 spots
+average placement of Buried Treasures II is 4.67, top 4 rate 36.67, 30 spots
+average placement of Ascension is 4.68, top 4 rate 47.48, 556 spots
+average placement of Shock Treatment is 4.68, top 4 rate 43.98, 166 spots
+average placement of Harmacist II is 4.69, top 4 rate 46.80, 938 spots
+average placement of Jeweled Lotus II is 4.70, top 4 rate 46.20, 1197 spots
+average placement of Invoker Crown is 4.70, top 4 rate 48.48, 33 spots
+average placement of Cybernetic Uplink II is 4.71, top 4 rate 46.60, 206 spots
+average placement of Phreaky Friday is 4.71, top 4 rate 57.14, 7 spots
+average placement of Enter the Dragon is 4.72, top 4 rate 49.25, 67 spots
+average placement of Heroic Grab Bag is 4.72, top 4 rate 46.66, 988 spots
+average placement of One, Two, Five! is 4.72, top 4 rate 33.33, 18 spots
+average placement of Patient Study is 4.73, top 4 rate 50.00, 22 spots
+average placement of Tiniest Titan is 4.73, top 4 rate 36.36, 11 spots
+average placement of Mind Over Matter is 4.73, top 4 rate 45.38, 130 spots
+average placement of Recombobulator is 4.74, top 4 rate 44.97, 467 spots
+average placement of Wandering Trainer I is 4.74, top 4 rate 47.37, 38 spots
+average placement of Sage Crest is 4.76, top 4 rate 41.86, 86 spots
+average placement of Warden Crest is 4.76, top 4 rate 41.79, 67 spots
+average placement of Pandora's Items is 4.77, top 4 rate 44.78, 699 spots
+average placement of Salvage Bin+ is 4.77, top 4 rate 45.04, 413 spots
+average placement of Fine Vintage is 4.77, top 4 rate 44.11, 968 spots
+average placement of Crown Guarded is 4.77, top 4 rate 42.97, 128 spots
+average placement of Big Gains is 4.79, top 4 rate 42.86, 14 spots
+average placement of Ba-BOOM! is 4.79, top 4 rate 44.70, 264 spots
+average placement of Trade Sector is 4.79, top 4 rate 41.67, 24 spots
+average placement of Wandering Trainer II is 4.80, top 4 rate 40.00, 15 spots
+average placement of Hedge Fund+ is 4.81, top 4 rate 43.96, 546 spots
+average placement of Branching Out is 4.81, top 4 rate 43.57, 661 spots
+average placement of Sticks And Stones is 4.81, top 4 rate 40.00, 100 spots
+average placement of Balanced Budget is 4.83, top 4 rate 43.78, 772 spots
+average placement of Dragonlord Crown is 4.84, top 4 rate 44.44, 63 spots
+average placement of Long Shot is 4.87, top 4 rate 43.96, 91 spots
+average placement of Dragon's Spirit is 4.89, top 4 rate 41.27, 361 spots
+average placement of Pandora's Items II is 4.91, top 4 rate 41.85, 399 spots
+average placement of Spirit Guardians is 4.92, top 4 rate 41.67, 48 spots
+average placement of Iron Assets is 4.92, top 4 rate 45.83, 24 spots
+average placement of Three's a Crowd is 4.92, top 4 rate 43.26, 141 spots
+average placement of Pandora's Items III is 4.94, top 4 rate 42.51, 327 spots
+average placement of Well Fed is 4.94, top 4 rate 42.19, 64 spots
+average placement of Behemoth Crest is 4.94, top 4 rate 45.71, 35 spots
+average placement of Call to Adventure is 4.99, top 4 rate 38.59, 184 spots
+average placement of Switching Gears is 5.00, top 4 rate 33.33, 3 spots
+average placement of Umbral Crown is 5.00, top 4 rate 37.50, 24 spots
+average placement of Cluttered Mind is 5.00, top 4 rate 47.06, 17 spots
+average placement of Venerable Piggy Bank is 5.06, top 4 rate 44.00, 50 spots
+average placement of Help Is On The Way is 5.14, top 4 rate 42.86, 7 spots
+average placement of Caretaker's Ally is 5.20, top 4 rate 40.00, 5 spots
+average placement of Starter Kit is 5.33, top 4 rate 11.11, 9 spots
+average placement of Ethereal Blades is 5.33, top 4 rate 66.67, 3 spots
+average placement of Going Long is 5.43, top 4 rate 28.57, 7 spots
+average placement of The Road Less Traveled is 5.50, top 4 rate 31.58, 38 spots
+average placement of Hedge Fund is 5.53, top 4 rate 35.29, 17 spots
+average placement of Altruist Crown is 5.76, top 4 rate 23.81, 21 spots
+average placement of Midnight Siphon is 6.00, top 4 rate 0.00, 1 spots
+average placement of Sharing Is Caring is 6.00, top 4 rate 0.00, 2 spots
+average placement of Clear Mind is 6.12, top 4 rate 18.75, 16 spots
+average placement of Living Forge is 6.25, top 4 rate 25.00, 4 spots
+average placement of Good For Something I is 6.75, top 4 rate 25.00, 4 spots
+average placement of Scapegoat is 7.00, top 4 rate 0.00, 6 spots
+average placement of Infernal Contract is 8.00, top 4 rate 0.00, 1 spots
+
+---------AUGMENT 3----------
+average placement of Venerable Piggy Bank is 1.00, top 4 rate 100.00, 1 spots
+average placement of Iron Assets is 1.00, top 4 rate 100.00, 1 spots
+average placement of Starter Kit is 1.00, top 4 rate 100.00, 1 spots
+average placement of Pumping Up II is 2.00, top 4 rate 100.00, 2 spots
+average placement of Epoch is 2.00, top 4 rate 100.00, 1 spots
+average placement of Midnight Siphon+ is 2.00, top 4 rate 100.00, 1 spots
+average placement of Caretaker's Favor is 2.00, top 4 rate 100.00, 1 spots
+average placement of Cluttered Mind is 2.00, top 4 rate 100.00, 1 spots
+average placement of Wandering Trainer I is 3.00, top 4 rate 100.00, 4 spots
+average placement of Buried Treasures II is 3.00, top 4 rate 100.00, 2 spots
+average placement of Over Encumbered is 3.00, top 4 rate 100.00, 1 spots
+average placement of Two Healthy is 3.18, top 4 rate 81.82, 11 spots
+average placement of Young and Wild and Free is 3.20, top 4 rate 80.00, 5 spots
+average placement of Sleight of Hand is 3.50, top 4 rate 75.00, 8 spots
+average placement of Level Up! is 3.50, top 4 rate 50.00, 2 spots
+average placement of Boiling Point is 3.66, top 4 rate 63.97, 136 spots
+average placement of Epoch+ is 3.87, top 4 rate 60.87, 23 spots
+average placement of Duelist Crest is 3.88, top 4 rate 62.09, 277 spots
+average placement of Fortune Crown is 3.88, top 4 rate 56.10, 41 spots
+average placement of Dryad Crest is 3.89, top 4 rate 60.00, 150 spots
+average placement of The Golden Egg is 3.93, top 4 rate 57.11, 457 spots
+average placement of Reaper Crest is 3.99, top 4 rate 63.69, 358 spots
+average placement of Gargantuan Resolve is 4.00, top 4 rate 66.67, 33 spots
+average placement of Lategame Specialist is 4.00, top 4 rate 66.67, 9 spots
+average placement of Shopping Spree is 4.00, top 4 rate 100.00, 1 spots
+average placement of Clear Mind is 4.00, top 4 rate 100.00, 1 spots
+average placement of What Doesn't Kill You is 4.00, top 4 rate 100.00, 1 spots
+average placement of Pumping Up I is 4.00, top 4 rate 100.00, 1 spots
+average placement of Heavenly Crest is 4.04, top 4 rate 58.70, 753 spots
+average placement of Porcelain Crest is 4.09, top 4 rate 56.11, 180 spots
+average placement of Grim Harvest is 4.10, top 4 rate 57.76, 464 spots
+average placement of Heavenly Crown is 4.12, top 4 rate 58.69, 426 spots
+average placement of Heavy Hitters is 4.12, top 4 rate 56.32, 435 spots
+average placement of Porcelain Crown is 4.14, top 4 rate 55.14, 107 spots
+average placement of Divine Rolls is 4.14, top 4 rate 42.86, 7 spots
+average placement of Raining Gold+ is 4.17, top 4 rate 54.17, 48 spots
+average placement of Tiniest Titan+ is 4.17, top 4 rate 56.52, 23 spots
+average placement of Not Today is 4.18, top 4 rate 58.64, 295 spots
+average placement of Keepers I is 4.18, top 4 rate 51.52, 33 spots
+average placement of  The Golden Remover is 4.21, top 4 rate 58.33, 24 spots
+average placement of Fated Crest is 4.21, top 4 rate 52.60, 500 spots
+average placement of Best Friends I is 4.22, top 4 rate 54.78, 157 spots
+average placement of Fated Crown is 4.22, top 4 rate 54.27, 293 spots
+average placement of Inspiring Epitaph is 4.22, top 4 rate 55.76, 1657 spots
+average placement of Duelist Crown is 4.23, top 4 rate 57.87, 197 spots
+average placement of Harmacist I is 4.23, top 4 rate 55.52, 308 spots
+average placement of Wrath of the Moon is 4.23, top 4 rate 58.93, 56 spots
+average placement of Fortune Crest is 4.23, top 4 rate 56.25, 64 spots
+average placement of Band of Thieves I is 4.24, top 4 rate 53.85, 247 spots
+average placement of Shock Treatment is 4.25, top 4 rate 75.00, 4 spots
+average placement of Little Buddies is 4.25, top 4 rate 53.70, 1190 spots
+average placement of Blistering Strikes is 4.26, top 4 rate 53.36, 253 spots
+average placement of Dryad Crown is 4.27, top 4 rate 50.00, 74 spots
+average placement of Best Friends II is 4.27, top 4 rate 54.47, 894 spots
+average placement of Slammin'+ is 4.27, top 4 rate 51.52, 33 spots
+average placement of Capricious Forge is 4.28, top 4 rate 54.28, 573 spots
+average placement of Inkshadow Crown is 4.28, top 4 rate 53.57, 140 spots
+average placement of Stand United II is 4.28, top 4 rate 53.67, 695 spots
+average placement of Know Your Enemy is 4.29, top 4 rate 52.93, 735 spots
+average placement of Storyweaver Crown is 4.30, top 4 rate 54.38, 274 spots
+average placement of Extended Duel is 4.30, top 4 rate 52.61, 287 spots
+average placement of Inkshadow Crest is 4.30, top 4 rate 54.94, 253 spots
+average placement of Ghostly Crown is 4.31, top 4 rate 56.25, 176 spots
+average placement of New Recruit is 4.31, top 4 rate 53.20, 1765 spots
+average placement of Partial Ascension is 4.32, top 4 rate 51.67, 240 spots
+average placement of Pick of the Litter+ is 4.32, top 4 rate 53.11, 241 spots
+average placement of Accomplice is 4.32, top 4 rate 53.72, 605 spots
+average placement of Unified Resistance I is 4.33, top 4 rate 52.07, 217 spots
+average placement of Jeweled Lotus III is 4.33, top 4 rate 52.63, 1541 spots
+average placement of Hedge Fund+ is 4.33, top 4 rate 50.00, 18 spots
+average placement of Cybernetic Bulk I is 4.34, top 4 rate 51.01, 149 spots
+average placement of Mythic Crown is 4.34, top 4 rate 51.09, 137 spots
+average placement of Martyr is 4.35, top 4 rate 52.72, 1542 spots
+average placement of Cybernetic Uplink III is 4.36, top 4 rate 53.00, 200 spots
+average placement of Harmacist II is 4.36, top 4 rate 53.10, 1597 spots
+average placement of Mythic Crest is 4.37, top 4 rate 53.99, 263 spots
+average placement of Ghostly Crest is 4.37, top 4 rate 55.93, 329 spots
+average placement of Keepers II is 4.37, top 4 rate 51.26, 277 spots
+average placement of Combat Caster is 4.38, top 4 rate 50.95, 577 spots
+average placement of Tiny, but Deadly is 4.38, top 4 rate 52.48, 2096 spots
+average placement of Dragonlord Crest is 4.39, top 4 rate 52.25, 423 spots
+average placement of Jeweled Lotus II is 4.40, top 4 rate 51.62, 1848 spots
+average placement of Call to Chaos is 4.40, top 4 rate 50.46, 1851 spots
+average placement of Gifts from the Fallen is 4.41, top 4 rate 52.86, 1190 spots
+average placement of Unified Resistance II is 4.42, top 4 rate 51.76, 1080 spots
+average placement of Final Ascension is 4.43, top 4 rate 50.87, 519 spots
+average placement of Harmacist III is 4.43, top 4 rate 50.93, 972 spots
+average placement of Sniper Crest is 4.43, top 4 rate 48.62, 109 spots
+average placement of Support Cache is 4.43, top 4 rate 52.27, 836 spots
+average placement of Silver Veil is 4.44, top 4 rate 52.44, 246 spots
+average placement of Fine Vintage is 4.44, top 4 rate 47.46, 59 spots
+average placement of Lucky Ricochet is 4.45, top 4 rate 51.98, 631 spots
+average placement of Item Grab Bag I is 4.45, top 4 rate 50.46, 109 spots
+average placement of Cybernetic Bulk III is 4.45, top 4 rate 50.66, 608 spots
+average placement of You Have My Sword is 4.46, top 4 rate 49.80, 763 spots
+average placement of Tons of Stats! is 4.48, top 4 rate 49.73, 730 spots
+average placement of Cybernetic Uplink II is 4.48, top 4 rate 52.30, 348 spots
+average placement of Everything Must Go! is 4.48, top 4 rate 47.83, 1085 spots
+average placement of Ascension is 4.48, top 4 rate 50.71, 1051 spots
+average placement of Stationary Support II is 4.49, top 4 rate 51.18, 676 spots
+average placement of Roll The Dice is 4.49, top 4 rate 50.48, 313 spots
+average placement of Tri Force I is 4.49, top 4 rate 54.05, 111 spots
+average placement of Overwhelming Force is 4.49, top 4 rate 50.00, 326 spots
+average placement of Radiant Refactor is 4.50, top 4 rate 51.68, 1039 spots
+average placement of Behemoth Crest is 4.50, top 4 rate 52.86, 70 spots
+average placement of Dragon's Spirit is 4.50, top 4 rate 41.67, 12 spots
+average placement of Raid Boss is 4.50, top 4 rate 55.00, 40 spots
+average placement of Salvage Bin is 4.50, top 4 rate 50.00, 2 spots
+average placement of Metabolic Accelerator is 4.50, top 4 rate 50.00, 2 spots
+average placement of Heroic Grab Bag is 4.51, top 4 rate 49.20, 1193 spots
+average placement of Teaming Up II is 4.51, top 4 rate 49.79, 944 spots
+average placement of Lucky Gloves+ is 4.51, top 4 rate 49.58, 833 spots
+average placement of Spirit Guardians is 4.51, top 4 rate 51.11, 90 spots
+average placement of Cybernetic Bulk II is 4.53, top 4 rate 49.72, 704 spots
+average placement of Healing Orbs I is 4.53, top 4 rate 49.04, 312 spots
+average placement of Stationary Support III is 4.54, top 4 rate 50.17, 588 spots
+average placement of Reaper Crown is 4.55, top 4 rate 48.78, 205 spots
+average placement of Healing Orbs II is 4.56, top 4 rate 47.40, 1734 spots
+average placement of Long Distance Pals is 4.56, top 4 rate 50.00, 502 spots
+average placement of Tiny Titans is 4.56, top 4 rate 46.51, 43 spots
+average placement of Radiant Relics is 4.57, top 4 rate 49.60, 744 spots
+average placement of Impenetrable Bulwark is 4.57, top 4 rate 48.93, 562 spots
+average placement of Dragonlord Crown is 4.58, top 4 rate 47.16, 229 spots
+average placement of Arcanist Crown is 4.58, top 4 rate 49.06, 106 spots
+average placement of Mulched is 4.59, top 4 rate 47.75, 111 spots
+average placement of Exiles I is 4.59, top 4 rate 52.27, 44 spots
+average placement of Mana Shield is 4.61, top 4 rate 46.49, 114 spots
+average placement of Magic Wand is 4.61, top 4 rate 45.03, 604 spots
+average placement of Storyweaver Crest is 4.61, top 4 rate 47.24, 434 spots
+average placement of Rolling For Days I is 4.61, top 4 rate 49.74, 384 spots
+average placement of Balanced Budget+ is 4.61, top 4 rate 47.41, 1044 spots
+average placement of Blinding Speed is 4.63, top 4 rate 47.39, 268 spots
+average placement of Phreaky Friday + is 4.63, top 4 rate 49.58, 236 spots
+average placement of Crown Guarded is 4.63, top 4 rate 42.96, 142 spots
+average placement of Recombobulator is 4.64, top 4 rate 45.24, 168 spots
+average placement of Salvage Bin+ is 4.64, top 4 rate 47.28, 349 spots
+average placement of Big Grab Bag is 4.64, top 4 rate 47.36, 1440 spots
+average placement of Crash Test Dummies is 4.66, top 4 rate 47.69, 1017 spots
+average placement of You Have My Bow is 4.67, top 4 rate 46.62, 695 spots
+average placement of It's Going to be Epic is 4.67, top 4 rate 33.33, 3 spots
+average placement of Ba-BOOM! is 4.67, top 4 rate 49.20, 565 spots
+average placement of Haunted House is 4.67, top 4 rate 49.35, 308 spots
+average placement of Altruist Crest is 4.67, top 4 rate 45.87, 242 spots
+average placement of Portable Forge++ is 4.68, top 4 rate 46.42, 810 spots
+average placement of Branching Out is 4.69, top 4 rate 38.46, 13 spots
+average placement of One, Two, Five! is 4.70, top 4 rate 47.37, 304 spots
+average placement of Buried Treasures III is 4.71, top 4 rate 52.94, 17 spots
+average placement of Umbral Crown is 4.72, top 4 rate 48.00, 25 spots
+average placement of Well Fed is 4.73, top 4 rate 47.22, 108 spots
+average placement of Balanced Budget is 4.76, top 4 rate 48.28, 29 spots
+average placement of Arcanist Crest is 4.76, top 4 rate 46.96, 230 spots
+average placement of Team Building is 4.76, top 4 rate 47.62, 21 spots
+average placement of Two for One is 4.77, top 4 rate 41.94, 31 spots
+average placement of Pandora's Items is 4.78, top 4 rate 46.28, 121 spots
+average placement of Infernal Contract is 4.78, top 4 rate 46.75, 246 spots
+average placement of Hedge Fund++ is 4.78, top 4 rate 44.73, 749 spots
+average placement of Three's a Crowd is 4.79, top 4 rate 46.35, 192 spots
+average placement of Long Shot is 4.80, top 4 rate 60.00, 5 spots
+average placement of Trash to Treasure is 4.80, top 4 rate 43.39, 484 spots
+average placement of Unleashed Arcana is 4.81, top 4 rate 46.05, 291 spots
+average placement of Invoker Crown is 4.83, top 4 rate 44.16, 77 spots
+average placement of ReinFOURcement is 4.83, top 4 rate 44.72, 1270 spots
+average placement of Call to Adventure is 4.83, top 4 rate 50.00, 6 spots
+average placement of Warden Crest is 4.85, top 4 rate 43.27, 104 spots
+average placement of Invoker Crest is 4.86, top 4 rate 40.80, 125 spots
+average placement of Sniper Crown is 4.86, top 4 rate 39.53, 43 spots
+average placement of Dynamic Duo is 4.86, top 4 rate 42.51, 1268 spots
+average placement of Sage Crest is 4.88, top 4 rate 45.34, 322 spots
+average placement of Umbral Crest is 4.88, top 4 rate 48.05, 77 spots
+average placement of Enter the Dragon is 4.88, top 4 rate 41.21, 182 spots
+average placement of Silver Ticket is 4.91, top 4 rate 41.82, 55 spots
+average placement of Altruist Crown is 4.91, top 4 rate 35.82, 67 spots
+average placement of Bruiser Crown is 4.92, top 4 rate 42.67, 75 spots
+average placement of Idealism is 4.92, top 4 rate 38.46, 26 spots
+average placement of Teaming Up I is 4.95, top 4 rate 37.29, 59 spots
+average placement of Pandora's Items III is 4.97, top 4 rate 40.75, 265 spots
+average placement of Bruiser Crest is 4.97, top 4 rate 42.74, 234 spots
+average placement of The Road Less Traveled is 5.00, top 4 rate 33.33, 3 spots
+average placement of Going Long is 5.00, top 4 rate 0.00, 1 spots
+average placement of Storied Champion is 5.00, top 4 rate 0.00, 1 spots
+average placement of Prismatic Ticket is 5.00, top 4 rate 40.17, 575 spots
+average placement of Mind Over Matter is 5.01, top 4 rate 40.15, 137 spots
+average placement of Sage Crown is 5.07, top 4 rate 39.84, 123 spots
+average placement of Behemoth Crown is 5.08, top 4 rate 45.83, 24 spots
+average placement of Pandora's Items II is 5.09, top 4 rate 38.89, 306 spots
+average placement of Warden Crown is 5.12, top 4 rate 42.00, 50 spots
+average placement of Sticks And Stones is 5.14, top 4 rate 30.56, 36 spots
+average placement of Portable Forge+ is 5.21, top 4 rate 37.50, 24 spots
+average placement of Missed Connections is 5.62, top 4 rate 37.50, 16 spots
+average placement of Lunch Money is 6.00, top 4 rate 50.00, 4 spots
+average placement of Lucky Streak is 6.00, top 4 rate 0.00, 2 spots
+average placement of Prizefighter is 6.00, top 4 rate 0.00, 1 spots
+average placement of Fully Adapted is 6.00, top 4 rate 0.00, 1 spots
+average placement of Big Gains is 6.50, top 4 rate 0.00, 2 spots
+average placement of Twin Terror II is 6.50, top 4 rate 0.00, 2 spots
+average placement of Patient Study is 7.00, top 4 rate 0.00, 3 spots
+average placement of Too Much Candy is 7.00, top 4 rate 0.00, 1 spots
+average placement of Raining Gold is 7.00, top 4 rate 0.00, 2 spots
+average placement of Scoreboard Scrapper is 7.00, top 4 rate 0.00, 1 spots
+average placement of Caretaker's Chosen is 7.00, top 4 rate 0.00, 1 spots
+average placement of Component Buffet is 7.50, top 4 rate 0.00, 2 spots
+average placement of Twin Terror I is 8.00, top 4 rate 0.00, 2 spots
+average placement of Ethereal Blades+ is 8.00, top 4 rate 0.00, 1 spots
+
+--------------COMPS---------------
+average placement of 7 Fated, 2 Umbral, 2 Arcanist is 3.00, top 4 rate 74.90, 251 spots
+average placement of 7 Heavenly, 4 Reaper is 3.02, top 4 rate 75.90, 444 spots
+average placement of 7 Mythic, 2 Ghostly, 2 Arcanist is 3.08, top 4 rate 78.08, 260 spots
+average placement of 2 Duelist, 2 Heavenly, 4 Dragonlord is 3.10, top 4 rate 77.55, 294 spots
+average placement of 2 Ghostly, 7 Heavenly, 2 Sage is 3.10, top 4 rate 75.10, 241 spots
+average placement of 7 Fated, 4 Arcanist, 2 Dryad is 3.14, top 4 rate 74.31, 253 spots
+average placement of 6 Ghostly, 2 Arcanist, 3 Inkshadow is 3.14, top 4 rate 82.27, 203 spots
+average placement of 3 Storyweaver, 2 Duelist, 5 Dragonlord is 3.43, top 4 rate 67.86, 196 spots
+average placement of 3 Storyweaver, 2 Umbral, 4 Bruiser is 3.65, top 4 rate 66.49, 576 spots
+average placement of Built Different is 3.68, top 4 rate 66.07, 675 spots
+average placement of 3 Storyweaver, 2 Duelist, 4 Dragonlord is 3.69, top 4 rate 64.84, 987 spots
+average placement of 6 Ghostly, 2 Bruiser, 3 Inkshadow is 3.75, top 4 rate 67.75, 338 spots
+average placement of 6 Duelist, 2 Heavenly, 2 Sage is 3.77, top 4 rate 65.09, 507 spots
+average placement of 3 Storyweaver, 4 Bruiser, 3 Inkshadow is 3.86, top 4 rate 63.68, 3577 spots
+average placement of 7 Fated, 2 Arcanist, 2 Dryad is 4.00, top 4 rate 58.55, 2345 spots
+average placement of 2 Ghostly, 6 Heavenly, 2 Sage is 4.05, top 4 rate 59.92, 262 spots
+average placement of 7 Storyweaver, 2 Duelist, 2 Bruiser is 4.08, top 4 rate 57.45, 973 spots
+average placement of 6 Ghostly, 3 Inkshadow, 2 Sniper is 4.10, top 4 rate 60.47, 1151 spots
+average placement of 7 Fated, 2 Arcanist, 2 Porcelain is 4.11, top 4 rate 57.54, 464 spots
+average placement of 3 Storyweaver, 2 Ghostly, 4 Bruiser is 4.12, top 4 rate 57.29, 473 spots
+average placement of 7 Storyweaver, 2 Arcanist, 2 Bruiser is 4.12, top 4 rate 55.77, 581 spots
+average placement of 2 Heavenly, 2 Dryad, 2 Invoker is 4.12, top 4 rate 56.30, 540 spots
+average placement of 5 Mythic, 2 Ghostly, 2 Arcanist is 4.27, top 4 rate 55.94, 606 spots
+average placement of 3 Mythic, 3 Storyweaver, 4 Bruiser is 4.33, top 4 rate 53.81, 197 spots
+average placement of 6 Heavenly, 4 Reaper is 4.34, top 4 rate 53.40, 794 spots
+average placement of 3 Storyweaver, 2 Bruiser, 4 Dragonlord is 4.35, top 4 rate 52.61, 249 spots
+average placement of 7 Mythic, 2 Heavenly, 2 Invoker is 4.37, top 4 rate 52.58, 310 spots
+average placement of 6 Ghostly, 3 Inkshadow, 2 Behemoth is 4.54, top 4 rate 49.28, 207 spots
+average placement of 3 Storyweaver, 2 Duelist, 2 Bruiser is 4.57, top 4 rate 48.07, 984 spots
+average placement of 2 Ghostly, 2 Bruiser, 3 Inkshadow is 4.65, top 4 rate 46.19, 420 spots
+average placement of 3 Fated, 2 Ghostly, 2 Arcanist is 4.72, top 4 rate 42.92, 226 spots
+average placement of 3 Storyweaver, 2 Ghostly, 4 Sage is 4.73, top 4 rate 44.76, 210 spots
+average placement of 3 Mythic, 3 Storyweaver, 2 Arcanist is 4.81, top 4 rate 44.56, 698 spots
+average placement of 3 Storyweaver, 2 Bruiser, 2 Heavenly is 4.90, top 4 rate 40.48, 252 spots
+average placement of 7 Fated, 2 Arcanist, 2 Sniper is 4.90, top 4 rate 41.77, 328 spots
+average placement of 7 Storyweaver, 2 Bruiser, 3 Sage is 5.03, top 4 rate 38.91, 275 spots
+average placement of 3 Fated, 6 Arcanist, 2 Porcelain is 5.03, top 4 rate 40.00, 415 spots
+average placement of 5 Fated, 2 Arcanist, 2 Porcelain is 5.09, top 4 rate 35.99, 364 spots
+average placement of 5 Fated, 2 Arcanist, 2 Dryad is 5.18, top 4 rate 37.55, 546 spots
+average placement of 7 Storyweaver, 2 Bruiser, 2 Sage is 5.27, top 4 rate 32.15, 395 spots
+average placement of 5 Storyweaver, 2 Duelist, 2 Bruiser is 5.28, top 4 rate 32.94, 252 spots
+average placement of 3 Storyweaver, 2 Arcanist, 2 Heavenly is 5.36, top 4 rate 30.40, 352 spots
+average placement of 6 Duelist, 3 Dragonlord is 5.38, top 4 rate 30.95, 378 spots
+average placement of 3 Storyweaver, 2 Ghostly, 2 Bruiser is 5.64, top 4 rate 28.95, 228 spots
+average placement of 5 Heavenly, 4 Reaper is 5.65, top 4 rate 27.50, 651 spots
+average placement of 3 Storyweaver, 4 Bruiser, 4 Trickshot is 5.84, top 4 rate 22.79, 1900 spots
+average placement of 4 Ghostly, 3 Inkshadow, 2 Sniper is 5.90, top 4 rate 21.70, 341 spots
+average placement of 6 Arcanist, 2 Porcelain, 2 Warden is 6.09, top 4 rate 20.92, 196 spots
+average placement of 6 Duelist, 2 Dragonlord is 6.40, top 4 rate 11.80, 466 spots
+average placement of 4 Heavenly, 4 Reaper is 6.90, top 4 rate 8.65, 208 spots
+

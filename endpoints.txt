@@ -1,0 +1,6 @@
+path to assets:
+https://raw.communitydragon.org/latest/game/
+https://raw.communitydragon.org/pbe/game/
+
+path to core tft files:
+https://raw.communitydragon.org/latest/cdragon/tft/

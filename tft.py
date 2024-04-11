@@ -597,6 +597,7 @@ def get_league(cursor, server, region, league, mastercnt=0) -> list:
                 return summonerNames
             return random.sample(summonerNames, mastercnt)
         print(f'{league}s count in {server}: {len(json["entries"])}')
+        print(json['entries'])
         return [x['summonerName'] for x in json['entries']]
     else:
         league = league.upper()
