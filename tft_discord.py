@@ -6,7 +6,7 @@ import os
 import discord
 from dotenv import load_dotenv
 
-from tft import update_meta
+from fetch_data import update_meta
 
 load_dotenv()
 RIOT_API = os.environ.get('RIOT_API')

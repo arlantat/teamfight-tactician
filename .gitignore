@@ -6,3 +6,5 @@ tft_stats.db
 lookup_guide.xlsx
 test.py
 manual.py
+item_augment_map.json
+meta.txt

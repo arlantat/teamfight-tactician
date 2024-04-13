@@ -2,6 +2,17 @@ import json
 import os
 import requests
 from dotenv import load_dotenv
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+
+def init_request_session():
+    """Initialize a session with retries for requests."""
+    session = requests.Session()
+    retry = Retry(connect=3, backoff_factor=0.5)
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('https://', adapter)
+    return session
 
 
 def fetch_json(url):
