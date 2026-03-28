@@ -1,10 +1,22 @@
-.env
-sqlite-tutorial.py
-sql-schema-example.docx
-raw_matches.db-journal
-tft_stats.db
-lookup_guide.xlsx
-test.py
-manual.py
-item_augment_map.json
-meta.txt
+# Virtual environment
+.venv/
+
+# SQLite database (generated)
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
