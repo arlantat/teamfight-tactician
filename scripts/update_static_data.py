@@ -6,7 +6,11 @@ Usage:
 """
 
 import logging
+import sys
 from pathlib import Path
+
+# Ensure src/ is on sys.path for src-layout imports.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from tft.config import DB_PATH
 from tft.db.connection import get_connection, insert_rows, run_schema

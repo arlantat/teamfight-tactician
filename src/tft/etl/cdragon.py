@@ -113,6 +113,7 @@ def parse_champions(champions_raw: list[dict[str, Any]]) -> list[dict[str, Any]]
             api_name=ch["apiName"],
             name=ch.get("name", ""),
             cost=cost,
+            role=ch.get("role"),
             traits=json.dumps(ch.get("traits", []), ensure_ascii=False),
             icon_url=icon_url(ch.get("icon")),
         )

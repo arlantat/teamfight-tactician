@@ -90,6 +90,31 @@ After fetching, briefly note:
 2. The **current patch version** (visible in the CDragon response or URL)
 3. Confirm that the data was fetched successfully
 
+### Step 4: Verify Live API Response Shapes
+
+> **⚠ Critical:** The Riot API evolves frequently — fields are added, renamed,
+> and removed without deprecation notices.  **Never assume** endpoint response
+> shapes based on training data or documentation alone.
+
+Before writing or modifying any code that consumes a Riot API endpoint, **make
+a live test call** and inspect the actual JSON keys:
+
+```python
+# Example: inspect a single entry from the challenger league endpoint
+resp = requests.get(
+    f"{PLATFORM_BASE}/tft/league/v1/challenger",
+    headers={"X-Riot-Token": API_KEY},
+)
+entry = resp.json()["entries"][0]
+print(entry.keys())  # Verify which fields actually exist
+```
+
+**Known breaking changes** (as of March 2026):
+- League entries (`/tft/league/v1/{tier}`) now return `puuid` directly —
+  the old `summonerId` and `summonerName` fields have been **removed**.
+- The `TFT-SUMMONER-V1` lookup to convert summonerId → puuid is therefore
+  **no longer needed** for the league → match-history pipeline.
+
 ---
 
 ## 2. General Project Context
@@ -157,12 +182,22 @@ teamfight-tactician/
    files (e.g. a new analytics engine), create a new directory under `src/tft/`.
 3. **Scripts are thin wrappers.** Files in `scripts/` should only parse CLI
    args and call functions from `src/tft/`. No business logic in scripts.
-4. **SQL lives in `.sql` files.** DDL and complex queries go in dedicated SQL
+4. **Scripts must bootstrap `sys.path`.** Every script **must** include the
+   following preamble before any `tft.*` imports to work reliably with the
+   src-layout (Python 3.14 `.pth` processing is unreliable):
+
+   ```python
+   import sys
+   from pathlib import Path
+   sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+   ```
+
+5. **SQL lives in `.sql` files.** DDL and complex queries go in dedicated SQL
    files, not embedded in Python strings (simple one-liner queries are okay
    inline).
-5. **Never put application code in the project root.** Only config files,
+6. **Never put application code in the project root.** Only config files,
    README, and standard project metadata belong at the top level.
-6. **Tests mirror `src/` structure.** `src/tft/etl/cdragon.py` →
+7. **Tests mirror `src/` structure.** `src/tft/etl/cdragon.py` →
    `tests/test_etl_cdragon.py` (flat) or `tests/etl/test_cdragon.py` (nested).
 
 ---

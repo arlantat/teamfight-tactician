@@ -11,6 +11,7 @@ CREATE TABLE champions (
     api_name   TEXT PRIMARY KEY,
     name       TEXT NOT NULL,
     cost       INTEGER NOT NULL,
+    role       TEXT,                 -- CDragon role tag  e.g. 'APCaster', 'ADTank'
     traits     TEXT NOT NULL,        -- JSON array of trait names  e.g. '["Slayer","Noxus"]'
     icon_url   TEXT
 );

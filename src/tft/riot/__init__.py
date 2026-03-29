@@ -1,1 +1,1 @@
-"""Riot API sub-package — client and helpers (future)."""
+"""Riot API sub-package — client, rate limiter, and helpers."""

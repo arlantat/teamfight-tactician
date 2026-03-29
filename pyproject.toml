@@ -9,6 +9,7 @@ description = "TFT analytics companion — data pipelines, stats, and insights."
 requires-python = ">=3.12"
 dependencies = [
     "requests>=2.28",
+    "python-dotenv>=1.0",
 ]
 
 [project.optional-dependencies]
