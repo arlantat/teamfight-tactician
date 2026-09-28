@@ -1,31 +1,28 @@
-"""Icon URL resolution for CommunityDragon asset paths."""
+"""Resolve CommunityDragon texture paths and existing HTTPS image URLs."""
+
+import re
+from urllib.parse import urlsplit, urlunsplit
 
 from tft.config import CDRAGON_ASSET_BASE
 
 
 def icon_url(tex_path: str | None) -> str | None:
-    """Translate a CDragon ``.tex`` asset path to a raw PNG URL.
-
-    Rule:
-        1. Convert the path to **lowercase**.
-        2. Replace ``.tex`` / ``.dds`` → ``.png``.
-        3. Prepend the CDragon game-asset CDN base URL.
+    """Convert a CDragon texture path into an HTTPS image URL.
 
     Args:
-        tex_path: Internal CDragon asset path
-            (e.g. ``"ASSETS/Characters/Ahri/HUD/Icons2D/Ahri_Square.tex"``).
+        tex_path: Internal asset path or an already resolved HTTP(S) URL.
 
     Returns:
-        Full HTTPS URL to the PNG, or ``None`` if *tex_path* is falsy.
-
-    Examples:
-        >>> icon_url("ASSETS/Characters/Ahri/HUD/Icons2D/Ahri_Square.tex")
-        'https://raw.communitydragon.org/latest/game/assets/characters/ahri/hud/icons2d/ahri_square.png'
-
-        >>> icon_url(None) is None
-        True
+        A PNG asset URL, or None for an empty or unsupported URI.
     """
-    if not tex_path:
+    if not tex_path or tex_path.strip().lower() in {"", "none", "null"}:
         return None
-    cleaned = tex_path.lower().replace(".tex", ".png").replace(".dds", ".png")
+    path = tex_path.strip().replace("\\", "/")
+    parsed = urlsplit(path)
+    if parsed.scheme or parsed.netloc:
+        if parsed.scheme not in {"", "http", "https"} or not parsed.netloc:
+            return None
+        image_path = re.sub(r"\.(tex|dds)$", ".png", parsed.path, flags=re.IGNORECASE)
+        return urlunsplit(("https", parsed.netloc, image_path, parsed.query, parsed.fragment))
+    cleaned = re.sub(r"\.(tex|dds)$", ".png", parsed.path.lower().lstrip("/"))
     return f"{CDRAGON_ASSET_BASE}{cleaned}"

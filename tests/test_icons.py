@@ -33,3 +33,20 @@ class TestIconUrl:
         assert result is not None
         assert "ASSETS" not in result
         assert "assets" in result
+
+    @pytest.mark.parametrize("path", ["None", "null", " ", "javascript:alert(1)"])
+    def test_invalid_source_values_are_not_image_urls(self, path: str) -> None:
+        """Missing asset sentinels and unsupported schemes do not produce requests."""
+        assert icon_url(path) is None
+
+    def test_absolute_url_is_not_prefixed_or_lowercased(self) -> None:
+        """Already resolved image URLs preserve path case and gain HTTPS."""
+        assert icon_url("http://example.com/Assets/Ahri.PNG?version=1") == (
+            "https://example.com/Assets/Ahri.PNG?version=1"
+        )
+
+    def test_absolute_texture_url_gets_png_extension(self) -> None:
+        """Texture normalization also supports already absolute CDN paths."""
+        assert icon_url("https://example.com/Assets/Ahri.DDS") == (
+            "https://example.com/Assets/Ahri.png"
+        )

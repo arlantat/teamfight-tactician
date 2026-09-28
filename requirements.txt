@@ -1,4 +1,6 @@
-requests>=2.28
-python-dotenv>=1.0
-pandas>=2.2
-tabulate>=0.9
+requests==2.34.2
+python-dotenv==1.2.3
+fastapi==0.141.1
+uvicorn==0.52.4
+pandas==3.0.5
+tabulate==0.10.0

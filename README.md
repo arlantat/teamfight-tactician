@@ -1,203 +1,201 @@
 # Teamfight Tactician
 
-A TFT (Teamfight Tactics) analytics companion app. Static game data is sourced from [CommunityDragon](https://communitydragon.org/) and live match data from the [Riot Games API](https://developer.riotgames.com/).
+A local TFT companion for **Set 18 — Enchanted Wilds**. Explore champions,
+traits, equipment, and augments with Riot artwork, then plan a board with live
+trait counts. Inspect locally harvested ranked matches in Insights or generate
+an analysis report with the Python CLI.
 
-## Quick Start
+## Run locally
 
-```bash
-# 1. Create & activate virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
+Requires **Python 3.14+**. No Node.js or frontend build is required.
 
-# 2. Install the package (editable) + dev tools
-pip install -e ".[dev]"
-
-# 3. Fetch the latest set data
-python scripts/update_static_data.py
-
-# 4. Harvest ranked match data (requires Riot API key)
-cp .env.example .env       # then add your RIOT_API_KEY
-python scripts/match_harvester.py
-
-# 5. Run tests
-pytest
+```sh
+python3.14 -m venv .venv
+.venv/bin/python -m pip install -e '.[dev]'
+.venv/bin/python scripts/update_static_data.py --set 18 --patch 18.2 --with-abilities
+.venv/bin/python scripts/serve.py
 ```
 
-This creates a local `tft_data.db` SQLite database with six tables — **champions**, **traits**, and **items** for static set data, plus **players**, **matches**, and **match_participants** for ranked match data.
+Open **[http://127.0.0.1:8000](http://127.0.0.1:8000)**. The catalog and team builder do not require a
+Riot API key. Downloaded data is stored in a local, git-ignored SQLite database;
+team plans are saved in your browser on the same origin.
 
-## 🔄 Updating Data for a New Set
+## Explore and plan
 
-> **Every time a new TFT set or mid-set update goes live, re-run the data script to refresh your local database.**
+- **Overview:** an illustrated set landing page, the latest official patch notes,
+  and quick access to the catalog.
+- **Patch notes:** Riot's public titles, teasers, and section outlines, including
+  mid-patch updates. Full notes stay on [Riot's site](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/).
+- **Champions:** searchable roster, cost and trait filters, artwork, abilities,
+  star-level values, alternate forms, and base stats. The roster includes
+  playable Riftbeasts and Lux forms.
+- **Traits:** descriptions, breakpoints, and matching champions.
+- **Items:** equipment categories, stats, recipes, and component artwork.
+- **Augments:** searchable active-set entries with icons and tier filters.
+- **Team builder:** place and move units on a four-row hex board, inspect trait
+  progress, and save or restore a team locally.
+- **Insights:** view composition popularity, outcome comparisons, and
+  three-star four- and five-cost boards from locally harvested ranked data.
 
-```bash
-python scripts/update_static_data.py
+The app presents source data, a planning board, and observed match statistics.
+It does not simulate combat or infer optimal compositions from sparse samples.
+
+## Refresh game data
+
+```sh
+# Refresh Set 18 with the reviewed ability reference and Riot 18.2 corrections.
+.venv/bin/python scripts/update_static_data.py --set 18 --patch 18.2 --with-abilities
+
+# CommunityDragon-only catalog; omits supplemental numeric ability values.
+.venv/bin/python scripts/update_static_data.py --set 18
+
+# Import an already downloaded CommunityDragon JSON file.
+.venv/bin/python scripts/update_static_data.py --source /path/to/en_us.json --set 18
+
+# Reproduce a reviewed import from saved source files.
+.venv/bin/python scripts/update_static_data.py --source /path/to/en_us.json --set 18 --patch 18.2 --abilities-source /path/to/TFTSet18_latest_en_us.json
+
+# Use another database or port.
+.venv/bin/python scripts/serve.py --db /path/to/tft.db --port 8001
 ```
 
-The script automatically detects the latest set from CommunityDragon — no code changes needed. It will:
+Set 18 and TFT patch **18.2** were verified on **September 14, 2026** against
+[Riot's patch notes](https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-2/)
+and [CommunityDragon's live TFT JSON](https://raw.communitydragon.org/latest/cdragon/tft/en_us.json).
+That source identifies the canonical roster as `TFTSet18`, but incorrectly
+labels its name `Set10`. The app uses the verified display name and retains
+the original name in metadata. CDragon's client build (`16.18…` at verification)
+is recorded separately from the TFT patch; an unspecified patch stays unknown.
 
-1. Fetch the full TFT JSON from CDragon (`/latest/` always points to the live patch)
-2. Identify the active set by highest set number
-3. Drop and recreate all tables with fresh data
-4. Log how many champions, traits, and items were inserted
+Refreshes use the selected set's item and augment membership lists instead of
+assuming a prefix: Set 18 includes `DA_…` identifiers and reused content.
+Neutral encounters and props are excluded from the playable roster. Internal
+item rewards remain available in the Special category. Missing source values
+are not invented; some ability calculations are only available as symbolic
+expressions. Source-provided augment entries do not guarantee an augment can
+be offered in every mode or situation.
 
-### When to re-run
+### Numeric champion abilities
 
-| Event                                    | Action                                |
-| ---------------------------------------- | ------------------------------------- |
-| **New set launches** (e.g. Set 17)       | Run `python scripts/update_static_data.py` |
-| **Mid-set update** (e.g. Set 16.5)       | Run `python scripts/update_static_data.py` |
-| **B-patch with champion/item changes**   | Run `python scripts/update_static_data.py` |
-| **Regular patch** (balance only)         | Optional — descriptions may change    |
+CommunityDragon currently omits numeric variables for most Set 18 abilities.
+The optional supplement uses [MetaTFT's Set 18 export](https://data.metatft.com/lookups/TFTSet18_latest_en_us.json)
+to cover all **74 roster entries and 79 ability forms**, including the five
+AD/AP alternatives. The reviewed export was generated September 11, 2026 and
+is explicitly marked **PBE**. Its source label, generation time, and
+verification limits are shown in each champion's ability panel.
 
-## 🎮 Harvesting Ranked Match Data
+The main 18.2 numerical ability changes were cross-checked against Riot's notes.
+The supplement applies the September 14 corrections for Camille, LeBlanc,
+Teemo, Brambleback, and Ashe, plus Maokai's mana change. Brambleback's flat
+armor-ignore change is applied as a constant across stars; that interpretation
+and Ashe's ambiguous falloff wording are called out in the affected panels.
+Other live-client values have not been independently verified.
 
-The match harvester scrapes end-game data for top Challenger and Grandmaster players via the Riot Games API.
+Star selectors use the source's step curves. Health-dependent abilities retain
+their formulas, AP/AD scaling is explicit, and unresolved combat-dependent
+values remain labeled as variable. These are tooltip coefficients, not a combat
+damage simulator. Lux origins are joined by exact trait sets instead of names.
 
-### Prerequisites
+The importer accepts only the reviewed source fingerprint and target patch.
+If MetaTFT changes its export, enrichment fails before writing the database;
+review the new source and patch corrections before updating the allowlist.
+Refreshing without `--with-abilities` or `--abilities-source` replaces the
+supplement with the CommunityDragon-only catalog. Ability numbers are **not**
+updated automatically when Riot publishes a patch or mid-patch note.
 
-1. **Riot API key** — obtain from [developer.riotgames.com](https://developer.riotgames.com/)
-2. **Environment file** — copy the template and add your key:
+All static tables and metadata refresh in one transaction. A failed refresh
+leaves the previous catalog intact and never replaces match tables. Reload
+the browser after refreshing. The UI gives setup instructions for missing or
+older databases. Champion and icon images load from CommunityDragon and need
+network access; the set artwork is bundled locally.
 
-```bash
-cp .env.example .env
+## Ranked data and analytics
+
+Use a development key from the [Riot Developer Portal](https://developer.riotgames.com/)
+to collect a bounded sample. Add `RIOT_API_KEY` to your private `.env` file or
+export it in your shell; `.env.example` contains no credentials.
+
+```sh
+# For initial setup only, if .env does not already exist:
+cp -n .env.example .env
+# Add RIOT_API_KEY to .env using your editor, then run:
+.venv/bin/python scripts/match_harvester.py --servers NA --challengers 3 --grandmasters 3 --matches 2 --set 18
+.venv/bin/python scripts/delta_engine.py --db tft_data.db --output artifacts/delta_report.md
 ```
 
-Edit `.env`:
+Live league, match-history, and match-detail response shapes were verified with
+a private development key. The verification harvest stored **11 Set 18 ranked
+matches and 88 participant boards**. League entries provide PUUIDs directly;
+match details reported `TFT Unreal Version ?.?.?.?` as their game version and
+omitted augments. The parser retains that unknown version and stores an empty
+augment array instead of inventing source values.
 
-```env
-RIOT_API_KEY=RGAPI-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-RIOT_PLATFORM=na1        # na1, euw1, kr, etc.
-RIOT_REGION=americas     # americas, europe, asia, sea
+The typed harvester validates set, ranked queue, and complete participant
+rosters before saving each match atomically. Repeated runs skip complete
+matches and retry incomplete ones. Additive migrations preserve stored history.
+
+Insights and the report CLI share the same analysis service. With catalog
+metadata present, analysis includes only verified ranked matches from that
+catalog's set; old or unverified rows cannot enter the current sample.
+Databases without catalog set metadata retain historical analysis behavior.
+Use `--game-version` to restrict the report to one exact source version when
+available. An unknown version cannot establish patch compatibility.
+
+Reports describe observed associations, distinguish top-four rate from wins,
+and handle empty datasets. Composition comparisons require sufficient samples
+in both tracked tiers. Legacy rarity fallbacks are historical heuristics;
+source champion costs take precedence.
+
+## Configuration
+
+Environment variables are loaded from `.env` without overriding exported values.
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `TFT_DB_PATH` | `tft_data.db` in the project | SQLite catalog and match data |
+| `TFT_HOST` | `127.0.0.1` | Local web server interface |
+| `TFT_PORT` | `8000` | Web server port |
+| `RIOT_API_KEY` | empty | Required only for match harvesting |
+| `RIOT_PLATFORM` | `na1` | Riot platform routing |
+| `RIOT_REGION` | `americas` | Riot regional routing |
+
+## Development
+
+```sh
+.venv/bin/python -m pytest -q
+.venv/bin/ruff check src tests scripts
+
+# Optional JavaScript regression tests; requires Node.js.
+node --test tests/frontend/*.mjs
 ```
-
-### Running the harvester
-
-```bash
-python scripts/match_harvester.py
-```
-
-The script will:
-
-1. Fetch the **Challenger** and **Grandmaster** leaderboards
-2. Sort by LP and select the top 50 Challengers + top 200 Grandmasters
-3. Resolve each player's summoner ID → PUUID
-4. Fetch the last 15 match IDs per player
-5. Download full match details, filtered to the **current game version** only
-6. Upsert all data into `tft_data.db`
-
-### Rate limiting
-
-The harvester enforces Riot's development-key rate limits **strictly**:
-
-| Window     | Limit              |
-| ---------- | ------------------ |
-| Short      | 20 requests / 1s   |
-| Long       | 100 requests / 2m  |
-
-A dual sliding-window rate limiter sleeps preemptively before every request. If a `429 Too Many Requests` response is somehow received, exponential backoff with `Retry-After` header support kicks in.
-
-### Configurable tunables
-
-These defaults are set in `src/tft/config.py` and can be adjusted:
-
-| Constant                     | Default | Description                      |
-| ---------------------------- | ------- | -------------------------------- |
-| `HARVESTER_TOP_CHALLENGERS`  | 50      | Number of top Challengers        |
-| `HARVESTER_TOP_GRANDMASTERS` | 200     | Number of top Grandmasters       |
-| `HARVESTER_MATCH_COUNT`      | 15      | Recent matches to fetch per player |
-
-## Database Schema
-
-### `champions`
-
-| Column     | Type        | Description                              |
-| ---------- | ----------- | ---------------------------------------- |
-| `api_name` | TEXT (PK)   | Internal identifier (e.g. `TFT16_Ahri`)  |
-| `name`     | TEXT        | Display name                             |
-| `cost`     | INTEGER     | Gold cost (1–5)                          |
-| `traits`   | TEXT        | JSON array of trait names                |
-| `icon_url` | TEXT        | CDragon CDN URL for the champion splash  |
-
-### `traits`
-
-| Column     | Type        | Description                                              |
-| ---------- | ----------- | -------------------------------------------------------- |
-| `api_name` | TEXT (PK)   | Internal identifier                                      |
-| `name`     | TEXT        | Display name                                             |
-| `effects`  | TEXT        | JSON array of breakpoint objects (`minUnits`, `variables`) |
-| `icon_url` | TEXT        | CDragon CDN URL for the trait icon                       |
-
-### `items`
-
-| Column        | Type        | Description                              |
-| ------------- | ----------- | ---------------------------------------- |
-| `api_name`    | TEXT (PK)   | Internal identifier                      |
-| `name`        | TEXT        | Display name                             |
-| `description` | TEXT        | Item description with effect placeholders |
-| `icon_url`    | TEXT        | CDragon CDN URL for the item icon        |
-
-### `players`
-
-| Column          | Type        | Description                                 |
-| --------------- | ----------- | ------------------------------------------- |
-| `puuid`         | TEXT (PK)   | Riot PUUID                                  |
-| `summoner_name` | TEXT        | Display name at time of harvest             |
-| `tier`          | TEXT        | `CHALLENGER` or `GRANDMASTER`               |
-
-### `matches`
-
-| Column         | Type        | Description                                  |
-| -------------- | ----------- | -------------------------------------------- |
-| `match_id`     | TEXT (PK)   | Riot match ID (e.g. `NA1_12345`)             |
-| `game_version` | TEXT        | Patch version string                         |
-
-### `match_participants`
-
-| Column           | Type        | Description                                |
-| ---------------- | ----------- | ------------------------------------------ |
-| `match_id`       | TEXT (PK)   | FK → `matches.match_id`                    |
-| `puuid`          | TEXT (PK)   | FK → `players.puuid`                       |
-| `placement`      | INTEGER     | Final placement (1–8)                      |
-| `level`          | INTEGER     | Player level at game end                   |
-| `gold_left`      | INTEGER     | Gold remaining                             |
-| `time_eliminated`| REAL        | Seconds survived                           |
-| `traits_json`    | TEXT        | JSON array of active trait objects          |
-| `units_json`     | TEXT        | JSON array of unit objects (items, tier…)   |
-| `augments_json`  | TEXT        | JSON array of augment API names            |
-
-## Project Structure
 
 ```text
-teamfight-tactician/
-├── src/
-│   └── tft/                        # Main application package
-│       ├── config.py               # Settings, constants, env vars
-│       ├── db/                     # Database layer
-│       │   ├── connection.py       # SQLite connection helpers
-│       │   ├── models.py           # Dataclasses for DB rows
-│       │   ├── schema.sql          # DDL for static data tables
-│       │   └── match_schema.sql    # DDL for match harvester tables
-│       ├── etl/                    # Data pipelines
-│       │   ├── cdragon.py          # CDragon fetch + parse
-│       │   ├── icons.py            # Icon URL resolution
-│       │   └── match_parser.py     # Riot match JSON → DB rows
-│       ├── riot/                   # Riot API client
-│       │   ├── client.py           # Typed API wrapper
-│       │   └── rate_limiter.py     # Dual-window rate limiter
-│       └── utils/                  # Shared utilities
-│           └── logging.py          # Logging configuration
-├── scripts/
-│   ├── update_static_data.py       # Fetch static set data
-│   └── match_harvester.py          # Harvest ranked match data
-├── tests/                          # pytest test suite
-├── .env.example                    # Environment variable template
-├── pyproject.toml                  # Packaging + tool config
-├── requirements.txt                # Pinned dependencies
-├── AGENTS.md                       # AI agent coding standards
-└── README.md
+src/tft/
+  config.py        Environment configuration and shared constants
+  db/              Typed rows, SQLite helpers, canonical SQL schemas
+  etl/             Set selection, parsing, asset resolution, atomic refresh
+  abilities/       Reviewed numeric reference, exact form joins, patch corrections
+  riot/            Typed Riot client, rate limiting, bounded harvest, atomic storage
+  analysis/        Focused analytics modules and SQL
+  web/             Read-only catalog/analysis API and modular browser interface
+scripts/           CLI entry points
+tests/             Parsing, persistence, API, analytics, and frontend regression tests
 ```
 
-## Data Sources
+The web API exposes `GET /api/health`, `GET /api/catalog`, `GET /api/analysis`
+with an optional `game_version` query parameter, and `GET /api/news`. Analysis
+reads local match data without contacting Riot. News reads Riot's public TFT
+site (no API key), caches titles and heading outlines locally, and does not
+store article bodies. Static catalog reads use a
+single read-only transaction. UI source is served from
+`src/tft/web/static`; no generated JavaScript bundle is necessary.
 
-- **[CommunityDragon](https://raw.communitydragon.org/latest/cdragon/tft/en_us.json)** — Champions, traits, items, icons for the current set
-- **[Riot Developer API](https://developer.riotgames.com/apis)** — Challenger/Grandmaster leaderboards, summoner data, match history
+## Attribution
+
+TFT artwork, champions, icons, and other game assets belong to Riot Games.
+Static data and game icons are provided by
+[CommunityDragon](https://www.communitydragon.org/); set artwork comes from
+[Riot's Enchanted Wilds overview](https://teamfighttactics.leagueoflegends.com/en-us/set-overview/tft-set-18-enchanted-wilds/).
+Supplemental ability curves and calculations come from
+[MetaTFT](https://www.metatft.com/), with corrections from Riot's patch notes.
+Teamfight Tactician is an independent fan project and is not endorsed by Riot Games.

@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Run the TFT Delta Engine — Challenger vs Grandmaster knowledge gap analysis.
 
-Reads ``tft_data.db`` (must exist with harvested match data) and prints
-formatted markdown tables showing placement deltas, economy deltas, and
-Challenger-favoured item builds.
+Reads the local database and writes a Markdown report of composition
+popularity and observed final-board outcomes across ranked samples.
 
 Usage::
 
     .venv/bin/python scripts/delta_engine.py
 """
 
+import argparse
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -21,9 +22,17 @@ from tft.utils.logging import setup_logging  # noqa: E402
 
 
 def main() -> None:
-    """Entry point — run the delta engine analysis."""
+    """Parse command-line options and run the local analysis pipeline."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--db", type=Path, help="Existing SQLite database")
+    parser.add_argument("--output", type=Path, help="Markdown report destination")
+    parser.add_argument("--game-version", help="Exact stored game version to compare")
+    args = parser.parse_args()
     setup_logging()
-    run()
+    try:
+        run(args.db, args.output, args.game_version)
+    except (OSError, sqlite3.Error) as exc:
+        parser.exit(status=1, message=f"Analysis failed: {exc}\n")
 
 
 if __name__ == "__main__":

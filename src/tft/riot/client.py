@@ -1,25 +1,20 @@
-"""Riot API client for TFT league and match endpoints.
-
-All requests flow through :class:`RiotClient`, which binds a
-:class:`~tft.riot.rate_limiter.RateLimiter` and handles 429 back-off so
-callers never need to worry about rate limits.
-
-.. note::
-    The Riot API evolves frequently.  League entries now include ``puuid``
-    directly — the old ``summonerId`` / ``summonerName`` fields have been
-    removed.  Always inspect a live API response when debugging field-level
-    issues.
-"""
+"""Rate-limited Riot TFT client with validated source response boundaries."""
 
 import logging
 import time
-from typing import Any
+from types import TracebackType
+from typing import Any, cast
+from urllib.parse import quote
 
 import requests
 
 from tft.config import (
+    HARVESTER_MATCH_COUNT,
     REQUEST_TIMEOUT_SECONDS,
     RIOT_API_KEY,
+    RIOT_BACKOFF_BASE_SECONDS,
+    RIOT_BACKOFF_MAX_RETRIES,
+    RIOT_MATCH_COUNT_MAX,
     RIOT_PLATFORM_BASE,
     RIOT_RATE_LONG_LIMIT,
     RIOT_RATE_LONG_WINDOW,
@@ -27,149 +22,121 @@ from tft.config import (
     RIOT_RATE_SHORT_WINDOW,
     RIOT_REGION_BASE,
 )
+from tft.exceptions import RiotApiError
+from tft.riot.models import LeagueEntry, MatchPayload
 from tft.riot.rate_limiter import RateLimiter
 
 log = logging.getLogger(__name__)
 
-# Exponential back-off tunables for 429 retries.
-_BACKOFF_BASE_SECONDS: float = 1.0
-_BACKOFF_MAX_RETRIES: int = 5
-
-
-class RiotApiError(Exception):
-    """Raised when the Riot API returns an unexpected error."""
-
 
 class RiotClient:
-    """Thin wrapper around the Riot Games TFT API.
-
-    Args:
-        api_key: Riot API key.  Falls back to :data:`tft.config.RIOT_API_KEY`.
-        platform_base: Base URL for platform-scoped endpoints.
-        region_base: Base URL for regional-scoped endpoints.
-    """
+    """Own an authenticated HTTP session for TFT platform and regional routes."""
 
     def __init__(
         self,
         api_key: str = "",
         platform_base: str = "",
         region_base: str = "",
+        limiter: RateLimiter | None = None,
     ) -> None:
-        self._api_key = api_key or RIOT_API_KEY
-        if not self._api_key:
-            raise RiotApiError(
-                "RIOT_API_KEY is not set.  Export it or add it to your .env file."
-            )
-
+        """Configure routes and optionally share the key's request limiter."""
+        api_key = api_key or RIOT_API_KEY
+        if not api_key:
+            raise RiotApiError("RIOT_API_KEY is not set. Export it or add it to your .env file.")
         self._platform_base = platform_base or RIOT_PLATFORM_BASE
         self._region_base = region_base or RIOT_REGION_BASE
-
         self._session = requests.Session()
-        self._session.headers["X-Riot-Token"] = self._api_key
-
-        self._limiter = RateLimiter(
+        self._session.headers["X-Riot-Token"] = api_key
+        self._limiter = limiter or RateLimiter(
             short_limit=RIOT_RATE_SHORT_LIMIT,
             short_window=RIOT_RATE_SHORT_WINDOW,
             long_limit=RIOT_RATE_LONG_LIMIT,
             long_window=RIOT_RATE_LONG_WINDOW,
         )
 
-    # ------------------------------------------------------------------
-    # Core HTTP
-    # ------------------------------------------------------------------
+    def close(self) -> None:
+        """Release the session and its connection pool."""
+        self._session.close()
+
+    def __enter__(self) -> "RiotClient":
+        """Return this client for an explicitly bounded session lifetime."""
+        return self
+
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> None:
+        """Close the session, including when the caller raises."""
+        self.close()
 
     def _get(self, url: str) -> Any:
-        """Rate-limited GET with exponential back-off on 429.
-
-        Args:
-            url: Fully-qualified API URL.
-
-        Returns:
-            Parsed JSON response body.
-
-        Raises:
-            RiotApiError: After exhausting retries on 429.
-            requests.HTTPError: On non-429 HTTP errors.
-        """
-        for attempt in range(_BACKOFF_MAX_RETRIES):
+        """Request JSON with bounded retries, without exposing auth headers."""
+        for attempt in range(RIOT_BACKOFF_MAX_RETRIES):
             self._limiter.acquire()
-            resp = self._session.get(url, timeout=REQUEST_TIMEOUT_SECONDS)
+            response: requests.Response | None = None
+            try:
+                response = self._session.get(url, timeout=REQUEST_TIMEOUT_SECONDS)
+                try:
+                    response.raise_for_status()
+                except requests.HTTPError:
+                    if response.status_code != 429:
+                        raise
+                    if attempt + 1 == RIOT_BACKOFF_MAX_RETRIES:
+                        raise RiotApiError("Riot rate limit retries exhausted") from None
+                    try:
+                        delay = float(response.headers.get("Retry-After", ""))
+                    except ValueError:
+                        delay = RIOT_BACKOFF_BASE_SECONDS * 2 ** attempt
+                    log.warning("Riot rate limit reached; retrying in %.1fs", delay)
+                    time.sleep(max(0.0, delay))
+                    continue
+                return response.json()
+            except requests.RequestException as exc:
+                status = exc.response.status_code if exc.response is not None else "network"
+                raise RiotApiError(f"Riot request failed ({status})") from None
+            finally:
+                if response is not None:
+                    response.close()
+        raise RiotApiError("Riot request retries exhausted")
 
-            if resp.status_code != 429:
-                resp.raise_for_status()
-                return resp.json()
+    def get_league(self, tier: str) -> list[LeagueEntry]:
+        """Read league entries containing PUUIDs directly from a ranked league."""
+        tier = tier.lower()
+        if tier not in {"challenger", "grandmaster", "master"}:
+            raise ValueError("Unsupported league tier")
+        payload = self._get(f"{self._platform_base}/tft/league/v1/{tier}")
+        entries = payload.get("entries") if isinstance(payload, dict) else None
+        if not isinstance(entries, list) or any(
+            not isinstance(entry, dict)
+            or not isinstance(entry.get("puuid"), str)
+            or not entry["puuid"]
+            or not isinstance(entry.get("leaguePoints"), int)
+            for entry in entries
+        ):
+            raise RiotApiError("League response is missing valid PUUID/LP entries")
+        return cast(list[LeagueEntry], entries)
 
-            # 429 — honour Retry-After header, else exponential back-off.
-            retry_after = resp.headers.get("Retry-After")
-            delay = (
-                float(retry_after)
-                if retry_after
-                else _BACKOFF_BASE_SECONDS * (2 ** attempt)
-            )
-            log.warning(
-                "429 rate-limited (attempt %d/%d), sleeping %.1fs …",
-                attempt + 1,
-                _BACKOFF_MAX_RETRIES,
-                delay,
-            )
-            time.sleep(delay)
-
-        raise RiotApiError(
-            f"Exhausted {_BACKOFF_MAX_RETRIES} retries on 429 for {url}"
-        )
-
-    # ------------------------------------------------------------------
-    # League endpoints (platform-scoped)
-    # ------------------------------------------------------------------
-
-    def get_league(self, tier: str) -> list[dict[str, Any]]:
-        """Fetch the full league entries list for *tier*.
-
-        As of 2026 the response entries contain ``puuid`` directly — the old
-        ``summonerId`` and ``summonerName`` fields have been removed.
-
-        Args:
-            tier: ``"challenger"`` or ``"grandmaster"`` (case-insensitive).
-
-        Returns:
-            List of entry dicts, each containing at least ``puuid`` and
-            ``leaguePoints``.
-        """
-        tier_lower = tier.lower()
-        url = f"{self._platform_base}/tft/league/v1/{tier_lower}"
-        data = self._get(url)
-        entries: list[dict[str, Any]] = data.get("entries", [])
-        log.info("Fetched %d %s entries.", len(entries), tier_lower)
-        return entries
-
-    # ------------------------------------------------------------------
-    # Match endpoints (region-scoped)
-    # ------------------------------------------------------------------
-
-    def get_match_ids(self, puuid: str, count: int = 15) -> list[str]:
-        """Fetch recent match IDs for a player.
-
-        Args:
-            puuid: Player UUID.
-            count: Number of match IDs to retrieve (max 100).
-
-        Returns:
-            List of match ID strings (e.g. ``"NA1_12345"``).
-        """
+    def get_match_ids(self, puuid: str, count: int = HARVESTER_MATCH_COUNT) -> list[str]:
+        """Read a bounded list of recent match IDs using regional routing."""
+        if not 1 <= count <= RIOT_MATCH_COUNT_MAX:
+            raise ValueError(f"Match count must be 1–{RIOT_MATCH_COUNT_MAX}")
         url = (
-            f"{self._region_base}/tft/match/v1/matches/by-puuid"
-            f"/{puuid}/ids?count={count}"
+            f"{self._region_base}/tft/match/v1/matches/by-puuid/"
+            f"{quote(puuid, safe='')}/ids?count={count}"
         )
-        return self._get(url)
+        payload = self._get(url)
+        if not isinstance(payload, list) or any(not isinstance(mid, str) for mid in payload):
+            raise RiotApiError("Match history response must contain match ID strings")
+        return payload
 
-    def get_match(self, match_id: str) -> dict[str, Any]:
-        """Fetch the full match detail JSON.
-
-        Args:
-            match_id: A match ID string.
-
-        Returns:
-            Complete match data dict.
-        """
-        url = f"{self._region_base}/tft/match/v1/matches/{match_id}"
-        return self._get(url)
+    def get_match(self, match_id: str) -> MatchPayload:
+        """Read match JSON; the parser validates fields before persistence."""
+        url = f"{self._region_base}/tft/match/v1/matches/{quote(match_id, safe='')}"
+        payload = self._get(url)
+        if not isinstance(payload, dict) or any(
+            not isinstance(payload.get(key), dict) for key in ("metadata", "info")
+        ):
+            raise RiotApiError("Match response is missing metadata or info")
+        return cast(MatchPayload, payload)

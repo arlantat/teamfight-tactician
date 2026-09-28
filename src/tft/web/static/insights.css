@@ -1,0 +1,99 @@
+/* Match analysis uses the same quiet palette as the field guide. */
+.insights-content {
+  margin-top: 32px;
+}
+.insight-section {
+  margin: 38px 0;
+}
+.insight-section h2 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+.insight-table-wrap {
+  overflow: auto;
+  margin-top: 22px;
+  border: 1px solid #303e35;
+  border-radius: 12px;
+}
+.insight-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+.insight-table th {
+  background: #19251e;
+  color: #b2c4ae;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.insight-table th,
+.insight-table td {
+  padding: 15px 18px;
+  border-bottom: 1px solid #26362c;
+}
+.insight-table tr:last-child td {
+  border-bottom: 0;
+}
+.insight-table td:first-child {
+  min-width: 200px;
+  color: #e0e7d6;
+}
+.insight-table tbody tr:hover {
+  background: #17211a;
+}
+.insight-empty {
+  padding: 24px;
+  color: #a3b29f;
+  border: 1px dashed #344336;
+  border-radius: 12px;
+}
+.insight-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.insight-sample {
+  color: #c5dba8;
+}
+.insight-version {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #a3b29f;
+  font-size: 13px;
+}
+.insight-version select {
+  max-width: 350px;
+}
+.insight-command {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  margin: 18px 0;
+  padding: 15px 20px;
+  border-radius: 8px;
+  background: #0f1813;
+  color: #c9dfa8;
+  font-size: 13px;
+}
+.insight-notice {
+  padding: 15px 20px;
+  background: #27271b;
+  color: #d5caa4;
+  border-radius: 8px;
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .insight-version {
+    width: 100%;
+    align-items: start;
+    flex-direction: column;
+  }
+  .insight-version select {
+    width: 100%;
+    max-width: 100%;
+  }
+}
