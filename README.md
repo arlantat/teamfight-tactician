@@ -2,8 +2,8 @@
 
 A local TFT companion for **Set 18 — Enchanted Wilds**. Explore champions,
 traits, equipment, and augments with Riot artwork, then plan a board with live
-trait counts. Inspect locally harvested ranked matches in Insights or generate
-an analysis report with the Python CLI.
+trait counts. Inspect locally harvested ranked matches in Insights, filter them
+in the Explorer, or generate an analysis report with the Python CLI.
 
 ## Run locally
 
@@ -36,6 +36,13 @@ team plans are saved in your browser on the same origin.
   progress, and save or restore a team locally.
 - **Insights:** view composition popularity, outcome comparisons, and
   three-star four- and five-cost boards from locally harvested ranked data.
+- **Explorer:** filter harvested boards by unit (star level, item count, held
+  items), item copies, trait tier, augment, and player level. Filters combine
+  with AND, can be excluded, and can hold OR alternatives. Compare games,
+  frequency, average placement, Δ against the filtered average, top-four and
+  win rates for every unit, item, trait tier, augment, and level; drill into
+  one unit's star levels, item counts, items, and full builds. Click a row to
+  add it as a filter. Filters, scope, and tab are kept in a shareable URL.
 
 The app presents source data, a planning board, and observed match statistics.
 It does not simulate combat or infer optimal compositions from sparse samples.
@@ -177,14 +184,17 @@ src/tft/
   abilities/       Reviewed numeric reference, exact form joins, patch corrections
   riot/            Typed Riot client, rate limiting, bounded harvest, atomic storage
   analysis/        Focused analytics modules and SQL
+  explorer/        Board filters, cached board loading, and placement breakdowns
   web/             Read-only catalog/analysis API and modular browser interface
 scripts/           CLI entry points
 tests/             Parsing, persistence, API, analytics, and frontend regression tests
 ```
 
 The web API exposes `GET /api/health`, `GET /api/catalog`, `GET /api/analysis`
-with an optional `game_version` query parameter, and `GET /api/news`. Analysis
-reads local match data without contacting Riot. News reads Riot's public TFT
+with an optional `game_version` query parameter, `GET /api/explorer`, and
+`GET /api/news`. The explorer accepts `filters` (a JSON array), `game_version`,
+`rank`, and `focus` (a unit identifier); invalid filters return 400. Analysis
+and the explorer read local match data without contacting Riot. News reads Riot's public TFT
 site (no API key), caches titles and heading outlines locally, and does not
 store article bodies. Static catalog reads use a
 single read-only transaction. UI source is served from
