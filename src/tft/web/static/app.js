@@ -14,6 +14,7 @@ import { renderCatalog, displayEntries } from "./catalog.js";
 import { renderBuilder } from "./builder.js";
 import { showDetail } from "./details.js";
 import { renderInsights } from "./insights.js";
+import { renderExplorer } from "./explorer.js";
 import { renderNotes, renderNewsPreview } from "./notes.js";
 import { latestOfficialNotes, newsBadge, readSeen } from "./news-state.js";
 const ROUTES = [
@@ -25,6 +26,7 @@ const ROUTES = [
   "augments",
   "builder",
   "insights",
+  "explorer",
 ];
 const LABELS = {
   overview: "Overview",
@@ -35,6 +37,7 @@ const LABELS = {
   augments: "Augments",
   builder: "Team Builder",
   insights: "Insights",
+  explorer: "Explorer",
 };
 const main = document.querySelector("#main");
 let context;
@@ -86,7 +89,9 @@ function navigate() {
           ? renderBuilder(context)
           : route === "insights"
             ? renderInsights()
-            : renderCatalog(route, context),
+            : route === "explorer"
+              ? renderExplorer(context)
+              : renderCatalog(route, context),
   );
   updateNewsChrome();
   window.scrollTo({ top: 0, behavior: "instant" });

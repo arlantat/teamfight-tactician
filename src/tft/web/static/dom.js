@@ -33,6 +33,7 @@ export function icon(name, className = "") {
     search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
     leaf: '<path d="M20 3C8 2 1 8 5 16c8 5 15-2 15-13zM4 21 16 8"/>',
     notes: '<path d="M7 3h8l4 4v14H7zM15 3v4h4M9 12h6M9 16h4"/>',
+    explorer: '<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',
   };
   const node = el("span", `icon ${className}`);
   node.setAttribute("aria-hidden", "true");
