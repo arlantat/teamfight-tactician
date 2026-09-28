@@ -219,3 +219,16 @@ RIOT_BACKOFF_MAX_RETRIES = 5
 MATCH_SCHEMA_PATH = Path(__file__).resolve().parent / "db" / "match_schema.sql"
 MATCH_UPSERT_PATH = Path(__file__).resolve().parent / "db" / "match_upsert.sql"
 COMPLETED_MATCHES_PATH = Path(__file__).resolve().parent / "db" / "completed_matches.sql"
+
+# Match explorer. Limits bound request size; placements follow the ranked lobby.
+EXPLORER_MAX_FILTERS = 24
+EXPLORER_MAX_ALTERNATIVES = 8
+EXPLORER_MAX_UNIT_ITEMS = 3
+EXPLORER_MAX_QUERY_CHARS = 8000
+EXPLORER_MAX_STAR = 3
+EXPLORER_MAX_LEVEL = 10
+EXPLORER_MAX_TRAIT_TIER = 10
+EXPLORER_MAX_ITEM_COPIES = 10
+EXPLORER_LOBBY_SIZE = 8
+EXPLORER_TOP_PLACEMENT = 4
+EXPLORER_UNTRACKED_RANK = "UNTRACKED"

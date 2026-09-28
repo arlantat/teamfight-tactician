@@ -11,3 +11,7 @@ class MatchDataError(ValueError):
 
 class NewsSourceError(RuntimeError):
     """Riot's public TFT news page could not be read or had an unexpected shape."""
+
+
+class ExplorerQueryError(ValueError):
+    """An explorer filter request is malformed or exceeds the supported limits."""

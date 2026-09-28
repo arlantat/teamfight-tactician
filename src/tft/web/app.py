@@ -12,7 +12,8 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import RequestResponseEndpoint
 
 from tft.config import DB_PATH, WEB_STATIC_PATH
-from tft.exceptions import NewsSourceError
+from tft.exceptions import ExplorerQueryError, NewsSourceError
+from tft.explorer import ExplorerQuery, ExplorerResult, explore, parse_filters
 from tft.news import load_news
 from tft.web.catalog import Catalog, CatalogUnavailableError, read_catalog
 
@@ -85,6 +86,32 @@ def create_app(db_path: Path | None = None) -> FastAPI:
             "behavioral": json.loads(result.behavioral.to_json(orient="records")),
             "highrolls": json.loads(result.highrolls.to_json(orient="records")),
         }
+
+    @application.get("/api/explorer")
+    def explorer(
+        filters: str | None = None,
+        game_version: str | None = None,
+        rank: str | None = None,
+        focus: str | None = None,
+    ) -> ExplorerResult:
+        """Filter stored ranked boards and return placement statistics."""
+        try:
+            query = ExplorerQuery(
+                filters=parse_filters(filters),
+                game_version=game_version or None,
+                rank=rank or None,
+                focus_unit=focus.strip().lower() if focus and focus.strip() else None,
+            )
+        except ExplorerQueryError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
+        try:
+            return explore(database, query)
+        except (FileNotFoundError, sqlite3.Error, ValueError, KeyError) as exc:
+            log.warning("Match explorer unavailable: %s", exc)
+            raise HTTPException(
+                status_code=503,
+                detail="Refresh the catalog and harvest compatible match data.",
+            ) from exc
 
     @application.get("/api/news")
     def news() -> dict[str, Any]:
